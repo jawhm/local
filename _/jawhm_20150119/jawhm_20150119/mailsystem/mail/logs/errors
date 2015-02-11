@@ -1,0 +1,102 @@
+[11-Nov-2011 12:55:40 +0900]: IMAP Error: Login failed for soudan@jawhm.or.jp from 175.179.166.63. AUTHENTICATE CRAM-MD5: A0001 NO [AUTHENTICATIONFAILED] Authentication failed. in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_imap.php on line 199 (POST /mailsystem/mail/?_task=login&_action=login)
+[11-Nov-2011 13:06:52] MDB2 Error: connect failed (-24): _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+
+[11-Nov-2011 13:06:52 +0900]: DB Error: _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+ ** mysql(mysql)://roundcube:xxx@localhost/roundcubemail in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_mdb2.php on line 102 (GET /mailsystem/mail/)
+[11-Nov-2011 13:06:52] MDB2 Error: connect failed (-24): _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+
+[11-Nov-2011 13:06:52 +0900]: DB Error: _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+ ** mysql(mysql)://roundcube:xxx@localhost/roundcubemail in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_mdb2.php on line 102 (GET /mailsystem/mail/)
+[11-Nov-2011 13:07:18] MDB2 Error: connect failed (-24): _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+
+[11-Nov-2011 13:07:18 +0900]: DB Error: _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+ ** mysql(mysql)://roundcube:xxx@localhost/roundcube in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_mdb2.php on line 102 (GET /mailsystem/mail/)
+[11-Nov-2011 13:07:18] MDB2 Error: connect failed (-24): _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+
+[11-Nov-2011 13:07:18 +0900]: DB Error: _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+ ** mysql(mysql)://roundcube:xxx@localhost/roundcube in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_mdb2.php on line 102 (GET /mailsystem/mail/)
+[11-Nov-2011 13:07:19] MDB2 Error: connect failed (-24): _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+
+[11-Nov-2011 13:07:19 +0900]: DB Error: _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+ ** mysql(mysql)://roundcube:xxx@localhost/roundcube in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_mdb2.php on line 102 (GET /mailsystem/mail/)
+[11-Nov-2011 13:07:19] MDB2 Error: connect failed (-24): _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+
+[11-Nov-2011 13:07:19 +0900]: DB Error: _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+ ** mysql(mysql)://roundcube:xxx@localhost/roundcube in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_mdb2.php on line 102 (GET /mailsystem/mail/)
+[11-Nov-2011 13:07:20] MDB2 Error: connect failed (-24): _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+
+[11-Nov-2011 13:07:20 +0900]: DB Error: _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+ ** mysql(mysql)://roundcube:xxx@localhost/roundcube in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_mdb2.php on line 102 (GET /mailsystem/mail/)
+[11-Nov-2011 13:07:20] MDB2 Error: connect failed (-24): _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+
+[11-Nov-2011 13:07:20 +0900]: DB Error: _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+ ** mysql(mysql)://roundcube:xxx@localhost/roundcube in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_mdb2.php on line 102 (GET /mailsystem/mail/)
+[11-Nov-2011 13:07:21] MDB2 Error: connect failed (-24): _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+
+[11-Nov-2011 13:07:21 +0900]: DB Error: _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+ ** mysql(mysql)://roundcube:xxx@localhost/roundcube in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_mdb2.php on line 102 (GET /mailsystem/mail/)
+[11-Nov-2011 13:07:21] MDB2 Error: connect failed (-24): _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+
+[11-Nov-2011 13:07:21 +0900]: DB Error: _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+ ** mysql(mysql)://roundcube:xxx@localhost/roundcube in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_mdb2.php on line 102 (GET /mailsystem/mail/)
+[11-Nov-2011 13:07:25] MDB2 Error: connect failed (-24): _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+
+[11-Nov-2011 13:07:25 +0900]: DB Error: _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+ ** mysql(mysql)://roundcube:xxx@localhost/roundcube in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_mdb2.php on line 102 (GET /mailsystem/mail/)
+[11-Nov-2011 13:07:25] MDB2 Error: connect failed (-24): _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+
+[11-Nov-2011 13:07:25 +0900]: DB Error: _doConnect: [Error message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+[Native code: 1045]
+[Native message: Access denied for user 'roundcube'@'localhost' (using password: YES)]
+ ** mysql(mysql)://roundcube:xxx@localhost/roundcube in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_mdb2.php on line 102 (GET /mailsystem/mail/)
+[11-Nov-2011 13:08:19 +0900]: IMAP Error: Login failed for sodan from 175.179.166.63. AUTHENTICATE CRAM-MD5: A0001 NO [AUTHENTICATIONFAILED] Authentication failed. in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_imap.php on line 199 (POST /mailsystem/mail/?_task=login&_action=login)
+[23-Jun-2012 09:45:01 +0900]: IMAP Error: Login failed for meminf@jawhm.or.jp from 111.171.246.170. AUTHENTICATE CRAM-MD5: A0001 NO [AUTHENTICATIONFAILED] Authentication failed. in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_imap.php on line 199 (POST /mailsystem/mail/?_task=login&_action=login)
+[23-Jun-2012 09:45:43 +0900]: IMAP Error: Login failed for meminf@jawhm.or.jp from 111.171.246.170. AUTHENTICATE CRAM-MD5: A0001 NO [AUTHENTICATIONFAILED] Authentication failed. in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_imap.php on line 199 (POST /mailsystem/mail/?_task=login&_action=login)
+[15-Oct-2012 13:05:27 +0900]: IMAP Error: Login failed for yoyaku-tokyo@jawhm.or.jp from 111.171.236.164. AUTHENTICATE CRAM-MD5: A0001 NO [AUTHENTICATIONFAILED] Authentication failed. in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_imap.php on line 199 (POST /mailsystem/mail/?_task=login&_action=login)
+[13-Nov-2012 10:24:39 +0900]: IMAP Error: Login failed for sodan-fukuoka@jawhm.or.jp from 111.171.236.164. AUTHENTICATE CRAM-MD5: A0001 NO [AUTHENTICATIONFAILED] Authentication failed. in /var/www/vhosts/jawhm.or.jp/httpdocs/mailsystem/mail/program/include/rcube_imap.php on line 199 (POST /mailsystem/mail/?_task=login&_action=login)

@@ -1,0 +1,93 @@
+<?php
+require_once 'include/header.php';
+require_once 'include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='香港　ワーキングホリデービザ';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）や留学などの海外生活でよるある質問をまとめました。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/qanda-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '香港ワーキングホリデーのよくある質問';
+
+$header_obj->display_header();
+include('calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('qa'); ?>
+	  <h2 class="sec-title">香港 ワーキングホリデー</h2>
+	  <table class="qatable-aus">
+	    <tr>
+		  <th><img src="images/mflag11.gif" alt="" /><br />
+		  香港</th>
+		  <td>ワーキングホリデー協定国別に、よくあるご質問にお答えしています。</td>
+		</tr>
+	  </table>
+      <p>&nbsp;</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '香港';
+            $number_to_display = '6';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <h2 class="sec-title">よくある質問と回答</h2>
+      <p>&nbsp;</p>
+
+	  		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ１.香港ワーキングホリデービザ申請はどうすればいいですか？</h3>
+		<p class="text01m30">香港ワーキングホリデービザの申請は英語で行います。心配な方は留学会社をご利用ください。　日本ワーキングホリデー協会でも申請の手続きを行っております。　
+広東語もしくは英語が喋れた方がいいです。現地の就労は同じ雇用主の元で3ヶ月しかできません。語学学校には最高で6ヶ月通うことができます。</p>
+	  </div>
+
+	  		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ２.ビザ申請用紙には英語で書かなければいけないのでしょうか、また台湾の住所と電話番号を書く欄がありますが、どうしたらよいですか？</h3>
+		<p class="text01m30">名前はローマ字で記入しますが、その他の質問には日本語で記入できます。<br />
+台湾の住所・電話番号は事前に予約したホテルやユースホステルなどの住所・電話を記入してください（国際学舎・教師会館・ユースホステルを利用する場合は早い目に予約することをお勧めします）。</p>
+	  </div>
+
+
+
+
+
+		<div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+	  
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '香港';
+            $number_to_display = '6';
+            $start_display_from = '6'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <div class="advbox03">
+<?php
+	// 133
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 110, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿<?php
+require_once '../include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->title_page='在日韓国人ビザ申請';
+$header_obj->description_page='カナダのビザ。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../images/mainimg/visa-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '一般社団法人 日本ワーキング・ホリデー協会';
+
+$header_obj->display_header();
+
+?>
+	<div id="maincontent">
+    	  <?php echo $header_obj->breadcrumbs('country','v-can'); ?>
+	  <div class="visa-nav">
+	    <p>/<a href="v-aus.html">オーストラリア</a>/<a href="v-nz.html">ニュージーランド</a>/<a href="v-can.html">カナダ</a>/<a href="v-kor.html">韓国</a>/<a href="v-fra.html">フランス</a>/<a href="v-deu.html">ドイツ</a>/<a href="v-uk.html">イギリス</a>/<a href="v-ire.html">アイルランド</a>/<a href="v-dnk.html">デンマーク</a>/<a href="v-ywn.html">台湾</a>/<a href="v-hkg.html">香港</a>/</p>
+	  </div>
+	  <img src="../images/bflag03.gif" alt="" />
+	  <p class="bg-yellow"> <a href="http://www.international.gc.ca/missions/japan-japon/youth-jeunes/menu-jpn.asp" target="_blank">カナダ大使館</a> <br />
+〒107-8503東京都港区赤坂7-3-38　 TEL : 03-5412-6218(テープによる案内)<br />
+業務時間：月～金曜　午前9時～午後5時半 (昼休12時半～1時半) <br />
+※ワーキング・ホリデーの受付は、窓口では取り扱っていません。</p>
+	  <h2 class="sec-title">ビザ取得までのステップチャート</h2>
+	  <p class="text01">(在韓ニュージーランド大使館ホームページより抜粋)<br />
+2009年5月7日現在 </p>
+<h3 class="h3-01"> 申請条件 </h3>
+	  <ul class="list-disc">
+	    <li>韓国国籍を持ち韓国内に居住している人（日本での申請はできません）</li>
+	    <li>扶養家族を同伴しない人</li>
+	    <li>ワーキング・ホリデービザの申請は韓国内だけで可能</li>
+	    <li>観光を主目的に一定期間入国する人</li>
+	    <li>有効な旅券と往復航空券、または航空券を購入できる充分な資金を所有し</li>
+      </ul>
+	  <h3 class="h3-01"> 申請方法等は在韓国カナダ大使館のホームページを御覧下さい。 </h3>
+	  <p class="text01"> <a href="http://www.dfait-maeci.gc.ca/world/embassies/korea/working_holiday_program-en.asp" target="_blank">http://www.dfait-maeci.gc.ca/world/embassies/korea/working_holiday_program-en.asp</a> </p>
+	  
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+      
+	  <div class="visa-nav">
+	    <p>/<a href="v-aus.html">オーストラリア</a>/<a href="v-nz.html">ニュージーランド</a>/<a href="v-can.html">カナダ</a>/<a href="v-kor.html">韓国</a>/<a href="v-fra.html">フランス</a>/<a href="v-deu.html">ドイツ</a>/<a href="v-uk.html">イギリス</a>/<a href="v-ire.html">アイルランド</a>/<a href="v-dnk.html">デンマーク</a>/<a href="v-ywn.html">台湾</a>/<a href="v-hkg.html">香港</a>/</p>
+	  </div>
+
+
+
+
+
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

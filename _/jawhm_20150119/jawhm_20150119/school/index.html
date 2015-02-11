@@ -1,0 +1,63 @@
+<?php
+require_once '../include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->title_page='学校紹介特集';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）や留学で行ける各種語学学校のご案内です。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../images/mainimg/top-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '留学・ワーキングホリデー　学校紹介特集';
+
+$header_obj->display_header();
+
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs(); ?>
+	  <h2 class="sec-title">「学校紹介特集」への参加学校募集</h2>
+	  <div id="sitemapbox">
+
+		<p class="text01">現在、当協会では、「学校紹介特集」に掲載頂ける語学学校、高校、大学を募集します。</p>
+		<p class="text01">当協会ウェブページ内に、専用コーナーを設け各国の教育機関の紹介を行います。</p>
+		<p class="text01"></p>
+		<p class="text01"></p>
+		<p class="text01">&nbsp;</p>
+		<p class="text01">応募条件は以下の通りです。</p>
+		<p class="text01">&nbsp;</p>
+		<p class="text01">【応募条件】</p>
+		<p class="text01">　１．語学学校、専門学校、大学等の教育機関であること。</p>
+		<p class="text01">　２．協会の方針に賛同して頂けること。</p>
+		<p class="text01">　３．学校を紹介するホームーページ・ブログ等があり、</p>
+		<p class="text01">　　　当協会指定のバナー「私達はワーホリ生を応援しています。」を張って頂ける事。</p>
+		<p class="text01">　４．申し込み料金として１件当たり￥５０，０００－</p>
+		<p class="text01">&nbsp;</p>
+		<p class="text01">【申込方法】</p>
+		<p class="text01">　１．以下の内容を school@jawhm.or.jp にお送り下さい。</p>
+		<p class="text01">　　　　・　学校紹介文（２００文字程度まで）</p>
+		<p class="text01">　　　　・　本文（５０００文字程度まで）</p>
+		<p class="text01">　　　　・　写真３枚（学校ロゴ、校舎・学校等の写真、任意の写真）</p>
+		<p class="text01">　　　　・　リンク先ＵＲＬ</p>
+		<p class="text01">　２．内容を確認し、掲載可否を判定します。</p>
+		<p class="text01">　３．料金を指定の方法でお支払いください。</p>
+		<p class="text01">　４．当協会のホームページで掲載を開始します。</p>
+		<p class="text01">&nbsp;</p>
+		<p class="text01">【その他】</p>
+		<p class="text01">　１．掲載期間は２０１２年３月末日までの予定です。</p>
+		<p class="text01">　２．掲載後であっても当協会の判断により、掲載を削除する場合があります。</p>
+		<p class="text01">　　　なおこの場合、料金の返金には応じかねます。</p>
+		<p class="text01">　３．募集期間は２０１１年５月末日まで。</p>
+		<p class="text01">　　　但し、応募多数の場合、期限前に終了する場合があります。</p>
+		<p class="text01">&nbsp;</p>
+		<p class="text01">&nbsp;</p>
+		<p class="text01">この特集企画についてのご質問は info@jawhm.or.jp まで、お願い致します。</p>
+	  </div>
+	  </div>
+	  
+	</div>
+  
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

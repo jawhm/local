@@ -1,0 +1,144 @@
+@charset "utf-8";
+/* CSS Document */
+
+.lh_top {
+	width:100%;
+	height:25px;
+	background:url(images/menu_color.gif) left bottom repeat-x;
+	margin-bottom:1px;
+	font-size:1.2em;
+}
+
+.lh_top_left {
+	height:25px;
+	line-height:25px;
+	background:url(images/puce.jpg) left center no-repeat;
+	color:white;
+	padding-left:20px;
+}
+
+.lh_none,
+.lh_bottom,
+.lh_alone{
+	height:40px;
+	margin-bottom:1px;
+	padding-left:10px;
+	background:url(images/menu_color.gif) left top repeat-x;
+	border-left:1px solid #CBCBCB;
+	border-right:1px solid #CBCBCB;
+}
+.lh_top_small,
+.lh_none_small,
+.lh_bottom_small {
+	height:26px;
+	padding-left:10px;
+	background:url(images/menu_color.gif) left -160px repeat-x;
+	border-left:1px solid #CBCBCB;
+	border-right:1px solid #CBCBCB;
+}
+
+.lh_none_small,
+.lh_bottom_small{
+	margin-top:-1px;
+}
+
+.lh_bottom, 
+.lh_bottom_small,
+.lh_alone {
+	margin-bottom:5px;
+}
+
+.lh_none a,
+.lh_bottom a,
+.lh_alone a {
+	display:block;
+	line-height:40px;
+	text-decoration:none;
+}
+
+.lh_alone {
+	border-top:1px solid #CBCBCB;
+}
+
+
+.lh_top_small a,
+.lh_none_small a,
+.lh_bottom_small a {
+	display:block;
+	line-height:26px;
+	text-decoration:none;	
+}
+
+.lh_none a.two-lines,
+.lh_bottom a.two-lines,
+.lh_alone a.two-lines {
+	padding-top:5px;
+	height:35px;
+	line-height:15px;
+}
+
+.lh_none:hover,
+.lh_bottom:hover,
+.lh_alone:hover {
+	color:#000000;
+	background:url(images/menu_color.gif) left -40px repeat-x;
+}
+
+.lh_top_small:hover,
+.lh_none_small:hover,
+.lh_bottom_small:hover {
+	color:#000000;
+	background:url(images/menu_color.gif) left -186px repeat-x;
+}
+
+.lh_none#pink-menu {
+	padding-left:6px;
+	background:url(images/menu_color.gif) left -212px repeat-x;
+}
+.lh_none#orange-menu {
+	padding-left:6px;
+	background:url(images/menu_color.gif) left -252px repeat-x;
+}
+
+.lh_none#pink-menu span#border-pink,
+.lh_none#orange-menu span#border-orange{
+	float:left;
+	height:100%;
+	width:100%;
+	background:url(images/menu_color.gif) left top repeat-x;
+}
+
+
+.lh_none#pink-menu a,
+.lh_none#orange-menu a{
+	width:100%;
+	text-align:center;
+	border-left:none;
+}
+
+.lh_none#pink-menu a:hover {
+	background:url(images/menu_color.gif) left -80px repeat-x;
+}
+.lh_none#orange-menu a:hover {
+	background:url(images/menu_color.gif) left -120px repeat-x;
+}
+
+.lh_none#pink-menu a > span {
+	color:#EA2D81;
+	font-weight:bold;
+}
+.lh_none#orange-menu a > span {
+	color:#F58B00;
+	font-weight:bold;
+}
+
+.lh_none#check1 a,
+.lh_none#check2 a{
+	background:url(images/check.gif) left top repeat-x;
+}
+
+.lh_none#check1 a:hover,
+.lh_none#check2 a:hover{
+	background:url(images/check.gif) left bottom repeat-x;
+}
+

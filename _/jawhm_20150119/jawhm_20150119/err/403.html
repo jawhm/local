@@ -1,0 +1,50 @@
+<?php
+require_once '../include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->title_page='ワーホリに行こうよ';
+$header_obj->keywords_page='オーストラリア,ニュージーランド,カナダ,カナダ,韓国,フランス,ドイツ,イギリス,アイルランド,デンマーク,台湾,香港,ビザ,取得,方法,申請,手続き,渡航,外務省,厚生労働省,最新,ニュース,大使館';
+$header_obj->description_page='オーストラリア・ニュージーランド・カナダを初めとしたワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。';
+
+$header_obj->fncMenubar_function=false;
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="http://www.jawhm.or.jp/images/mainimg/top-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_link = 'nolink';
+$header_obj->footer_type = 'nolink';
+$header_obj->display_header();
+
+?>
+	<div id="error">
+    <div id="maincontent">
+	<div id="top-main">
+
+		<h2 class="sec-title">何をお探しでしたか？</h2>
+		<div class="top-entry01">
+			<p>お探しのページが見つかりません。どのような情報をお探しですか？</p>
+
+			<p><a href="http://www.jawhm.or.jp/start.html">初めてワーキングホリデーに行かれる方</a>はこちら</p>
+			<p><a href="http://www.jawhm.or.jp/visa/visa_top.html">どこの国にワーキングホリデーで行けるか</a>はこちら</p>
+			<p><a href="http://www.jawhm.or.jp/event.html">日本ワーキング・ホリデー協会のイベント情報</a>はこちら</p>
+			<p><a href="http://www.jawhm.or.jp/info.html">ワーキングホリデーに役立つリンク先情報</a>はこちら</p>
+			<p><a href="http://www.jawhm.or.jp/about.html">日本ワーキング・ホリデー協会について</a>はこちら</p>
+			<p><a href="http://www.jawhm.or.jp/index.html">どれにも、当てはまらない場合</a>はこちら</p>
+
+		</div><!--top-entry01END-->
+
+		<h2 class="sec-title">Sorry, page not found.</h2>
+		<div class="top-entry01">
+			<p>Please re-entry from our top page.</p>
+			<p>Go to top page of <a href="http://www.jawhm.or.jp/eng">Japan Association for Working Holiday Makers</a>.</p>
+		</div><!--top-entry01END-->
+
+	</div><!--top-mainEND-->
+	</div><!--maincontentEND-->
+    </div>
+
+  </div><!--contentsEND-->
+  </div><!--contentsboxEND-->
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

@@ -1,0 +1,407 @@
+﻿<?php
+// ini_set( "display_errors", "On");
+
+$redirection='/seminar/ser/place/nagoya/';
+
+require_once '../../include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->mobileredirect=$redirection;
+
+$header_obj->title_page='名古屋オフィスのご案内';
+$header_obj->description_page='日本ワーキングホリデー協会の名古屋オフィスのご案内です。ワーキングホリデー（ワーホリ）や留学をされる方向けの無料セミナー等のご案内をしています。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->add_css_files = '<link type="text/css" href="/css/jquery-ui-1.8.16.custom.css" rel="stylesheet" />	';
+$header_obj->add_style = '<style>
+.open {
+	font-size:9pt;
+	font-weight:bold;
+	color : orange;
+	cursor:pointer;
+	margin: 0 0 10px 0;
+}
+</style>
+';
+$header_obj->add_js_files = '<script type="text/javascript" src="/js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.16.custom.min.js"></script>
+<script>
+function fnc_next()	{
+	document.getElementById("form1").style.display = "none";
+	document.getElementById("form2").style.display = "";
+}
+function fnc_yoyaku(obj)	{
+	document.getElementById("form1").style.display = "";
+	document.getElementById("form2").style.display = "none";
+
+	document.getElementById("btn_soushin").disabled = false;
+	document.getElementById("btn_soushin").value = "送信";
+	document.getElementById("div_wait").style.display = "none";
+	document.getElementById("form_title").innerHTML = obj.getAttribute("title");
+	document.getElementById("txt_title").value = obj.getAttribute("title");
+	document.getElementById("txt_id").value = obj.getAttribute("uid");
+	$.blockUI({ message: $("#yoyakuform"),
+	css: { 
+		top:  ($(window).height() - 500) /2 + "px", 
+		left: ($(window).width() - 600) /2 + "px", 
+		width: "600px" 
+	}
+ });
+}
+function btn_cancel()	{
+	$.unblockUI();
+}
+function btn_submit()	{
+	obj = document.getElementById("txt_name");
+	if (obj.value == "")	{
+		alert("お名前（氏）を入力してください。");
+		obj.focus();
+		return false;
+	}
+	obj = document.getElementById("txt_name2");
+	if (obj.value == "")	{
+		alert("お名前（名）を入力してください。");
+		obj.focus();
+		return false;
+	}
+	obj = document.getElementById("txt_furigana");
+	if (obj.value == "")	{
+		alert("フリガナ（氏）を入力してください。");
+		obj.focus();
+		return false;
+	}
+	obj = document.getElementById("txt_furigana2");
+	if (obj.value == "")	{
+		alert("フリガナ（名）を入力してください。");
+		obj.focus();
+		return false;
+	}
+	obj = document.getElementById("txt_mail");
+	if (obj.value == "")	{
+		alert("メールアドレスを入力してください。");
+		obj.focus();
+		return false;
+	}
+	obj = document.getElementById("txt_tel");
+	if (obj.value == "")	{
+		alert("電話番号を入力してください。");
+		obj.focus();
+		return false;
+	}
+
+	if (!confirm("ご入力頂いた内容を送信します。よろしいですか？"))	{
+		return false;
+	}
+
+	$senddata = $("form").serialize();
+
+	document.getElementById("div_wait").style.display = "";
+
+	document.getElementById("btn_soushin").value = "処理中...";
+	document.getElementById("btn_soushin").disabled = true;
+
+	$.ajax({
+		type: "POST",
+		url: "/yoyaku/yoyaku.php",
+		data: $senddata,
+		success: function(msg){
+			document.getElementById("div_wait").style.display = "none";
+			alert(msg);
+			$.unblockUI();
+		},
+		error:function(){
+			alert("通信エラーが発生しました。");
+			$.unblockUI();
+		}
+	});
+}
+</script>
+';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="/images/nagoyatop.png" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '日本ワーキングホリデー協会　名古屋オフィスのご案内';
+
+$header_obj->display_header();
+
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs(); ?>
+
+	<p>
+		<img src="/images/nagoyaimage.png"  alt="日本ワーキング・ホリデー協会　名古屋オフィスオープンのご案内"/>
+
+	</p>
+
+<?php
+	// イベント読み込み
+	$cal = array();
+
+	$evt_ymd   = array();
+	$evt_title = array();
+	$evt_desc  = array();
+	$evt_img   = array();
+	$evt_btn   = array();
+	$evt_id	   = array();
+
+	try {
+		$ini = parse_ini_file('../../../bin/pdo_mail_list.ini', FALSE);
+		$db = new PDO($ini['dsn'], $ini['user'], $ini['password']);
+		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$db->query('SET CHARACTER SET utf8');
+		$rs = $db->query('SELECT id, year(hiduke) as yy, month(hiduke) as mm, day(hiduke) as dd, title, memo, place, k_use, k_title1, k_desc1, k_stat, free, pax, booking FROM event_list WHERE k_use = 1 AND hiduke >= DATE_SUB(CURDATE(),INTERVAL 7 DAY) ORDER BY hiduke, starttime, id');
+		$cnt = 0;
+		while($row = $rs->fetch(PDO::FETCH_ASSOC)){
+			$cnt++;
+			$year	= $row['yy'];
+			$month  = $row['mm'];
+			$day	= $row['dd'];
+
+			if ($row['place'] == 'event')	{
+				// イベント
+				$evt_id[] = $row['id'];
+				$evt_ymd[] = $year.substr('00'.$month,-2).substr('00'.$day,-2);
+				$evt_title[] = $row['k_title1'];
+				$evt_desc[]  = $row['k_desc1'];
+				if ($row['k_stat'] == 1)	{
+					if ($row['booking'] >= $row['pax'])	{
+						$evt_img[]   	= '<img src="./images/semi_full.jpg">';
+					}else{
+						$evt_img[]   	= '<img src="./images/semi_now.jpg">';
+					}
+				}elseif ($row['k_stat'] == 2)	{
+					$evt_img[]   	= '<img src="./images/semi_full.jpg">';
+				}else{
+					if ($row['booking'] >= $row['pax'])	{
+						$evt_img[]   	= '<img src="./images/semi_full.jpg">';
+					}else{
+						if ($row['booking'] >= $row['pax'] / 2)	{
+							$evt_img[]   	= '<img src="./images/semi_now.jpg">';
+						}else{
+							$evt_img[]	= '';
+						}
+					}
+				}
+				if ($row['free'] == 1)	{
+					$evt_btn[]	= '<div style="padding:5px 20px 5px 20px; border: 1px solid navy;">【こちらはメンバー様限定イベントです】<br/>メンバー登録を行って頂くとご予約が可能となります。<a href="./mem">登録はこちらからどうぞ</a></div>';
+				}else{
+					if ($row['k_stat'] == 2)	{
+						$evt_btn[]	= '';
+					}else{
+						if ($row['booking'] >= $row['pax'])	{
+							$evt_btn[]	= '<input class="button_yoyaku" type="button" value="キャンセル待ち" onclick="fnc_yoyaku(this);" title="[イベント]'.$row['k_title1'].'" uid="'.$row['id'].'">';
+						}else{
+							$evt_btn[]	= '<input class="button_yoyaku" type="button" value="予約" onclick="fnc_yoyaku(this);" title="[イベント]'.$row['k_title1'].'" uid="'.$row['id'].'">';
+						}
+					}
+				}
+				$cal[$year.$month.$day] .= '<img src="images/sa04.jpg">';
+			}
+
+		}
+	} catch (PDOException $e) {
+		die($e->getMessage());
+	}
+
+
+?>
+
+	<h2 class="sec-title" id="event">名古屋の無料セミナー情報</h2>
+	<p>
+		日本ワーキングホリデー協会、名古屋オフィスでは<br />
+		留学・ワーキングホリデーを検討中の方向けの無料セミナーを開催いたします。<br />
+		９割の方が、お一人でのご参加です。どうぞお気軽にご来場ください。<br />
+		&nbsp;<br />
+		<a target="_blank" href="/event/map/?p=nagoya">名古屋オフィスの場所はこちらです。</a><br />
+		名古屋駅から徒歩1分♪桜通口から名駅通りを名古屋ルーセントタワー方向に進んでください。<br />
+		地下通路をご利用の場合は、１番または１０番出口がおすすめです。<br />
+		旧名古屋中央郵便局（現在は名駅一丁目計画（仮称）により再開発中）の向かい側です。<br />
+		&nbsp;<br />
+	</p>
+
+<div style="border: 2px dotted navy; margin: 10px 0 10px 0; padding: 5px 10px 5px 10px; font-size:10pt;">
+【ご注意：スマートフォンをご利用の方へ】<br/>
+スマートフォンなど、ＰＣ以外のブラウザからご利用された場合、予約フォームが正しく機能しない場合があります。<br/>
+この場合、お手数ですが、以下の内容を toiawase@jawhm.or.jp までご連絡ください。<br/>
+　・　参加希望のイベント日程<br/>
+　・　お名前<br/>
+　・　当日連絡の付く電話番号<br/>
+　・　興味のある国<br/>
+　・　出発予定時期<br/>
+</div>
+
+
+<div style="margin:20px 0 0 0 ;" id="semi_show">
+<?php
+	require_once 'event_search.php';
+?>
+</div>
+
+
+	<h2 class="sec-title" id="event">無料セミナーのご案内</h2>
+	<div style="margin-left:15px;">
+		<p style="font-size:11pt;">
+			日本ワーキングホリデー協会では、各種交流会やパーティーなどのイベントや、<br/>
+			ワーキングホリデーの全てが解かる<a href="/seminar.html">無料セミナー</a>を随時開催しております。<br/>
+		</p>
+		<p style="font-size:11pt;">
+			東京、大阪、名古屋、仙台、福岡、沖縄でも随時開催しておりますので、<br/>
+			こちらの<a href="/seminar.html">無料セミナー</a>のページから、お近くの会場を検索してください。
+		</p>
+	</div>
+
+	<div style="height:30px;">&nbsp;</div>
+
+<div style="height:30px;">&nbsp;</div>
+<div style="text-align:center;">
+	<img src="/images/flag01.gif">
+	<img src="/images/flag03.gif">
+	<img src="/images/flag09.gif">
+	<img src="/images/flag05.gif">
+	<img src="/images/flag06.gif">
+	<img src="/images/mflag11.gif" width="40" height="26">
+	<img src="/images/flag08.gif">
+	<img src="/images/flag04.gif">
+	<img src="/images/flag02.gif">
+	<img src="/images/flag10.gif">
+	<img src="/images/flag07.gif">
+</div>
+
+
+	<div style="height:50px;">&nbsp;</div>
+
+	</div>
+
+
+	</div>
+  </div>
+  </div>
+
+<div id="yoyakuform" style="display:none; margin:15px 20px 15px 20px; font-size:10pt; cursor:default;">
+
+	<div id="form1" style="">
+
+		<div style="font-size:12pt; font-weight:bold; margin:0 0 8px 0;">イベント　予約フォーム</div>
+
+		<div style="font-size:9pt; font-weight:bold; margin:10px 0 10px 0; border: 1px dotted navy;;">
+			イベントのご予約に際し、以下の内容をご確認ください。
+		</div>
+
+		<div style="font-size:9pt; font-weight:; text-align:left; margin:10px 0 10px 20px;">
+			１．　このフォームでは、仮予約の受付を行います。<br/>
+			　　　予約確認のメールをお送りしますので、メールの指示に従って予約を確定してください。<br/>
+			　　　ご予約が確定されない場合、２４時間で仮予約は自動的にキャンセルされ<br/>
+			　　　イベントにご参加頂けません。ご注意ください。<br/>
+			&nbsp;<br/>
+			２．　携帯のメールアドレスをご使用の場合、info@jawhm.or.jp からのメール（ＰＣメール）が<br/>
+			　　　受信できるできる状態にしておいてください。<br/>
+			&nbsp;<br/>
+			３．　Ｈｏｔｍａｉｌ、Ｙａｈｏｏメールなどをご利用の場合、予約確認のメールが遅れて<br/>
+			　　　到着する場合があります。時間をおいてから受信確認を行うようにしてください。<br/>
+			&nbsp;<br/>
+			４．　予約確認メールが届かない場合、toiawase@jawhm.or.jp までご連絡ください。<br/>
+			　　　なお、迷惑フォルダ等に分類される場合もありますので、併せてご確認ください。<br/>
+			&nbsp;<br/>
+			最近、会場を間違えてご予約される方が増えております。<br/>
+			イベント内容・会場・日程等を十分ご確認の上、ご予約頂けますようお願い申し上げます。<br/>
+		</div>
+
+		<div style="margin-top:10px;">
+			<input type="button" class="button_cancel" value=" 取消 " onclick="btn_cancel();">　　　　　
+			<input type="button" class="button_submit" value="次へ" onclick="fnc_next();">
+		</div>
+
+	</div>
+
+	<div id="form2" style="display:none;">
+
+	<div style="font-size:12pt; font-weight:bold; margin:0 0 8px 0;">イベント　予約フォーム</div>
+
+	<form name="form_yoyaku">
+	<table style="width:560px;">
+		<tr style="background-color:lightblue;">
+			<td nowrap style="text-align:right;">イベント名&nbsp;</td>
+			<td id="form_title" style="text-align:left;"></td>
+			<input type="hidden" name="セミナー名" id="txt_title" value="">
+			<input type="hidden" name="セミナー番号" id="txt_id" value="">
+		</tr>
+		<tr>
+			<td nowrap style="border-bottom: 1px dotted pink; text-align:right;">お名前&nbsp;</td>
+			<td style="border-bottom: 1px dotted pink; text-align:left;">
+				(氏)<input type="text" name="お名前" id="txt_name" value="" size=10>
+				(名)<input type="text" name="お名前2" id="txt_name2" value="" size=10>
+			</td>
+		</tr>
+		<tr>
+			<td nowrap style="border-bottom: 1px dotted pink; text-align:right;">フリガナ&nbsp;</td>
+			<td style="border-bottom: 1px dotted pink; text-align:left;">
+				(氏)<input type="text" name="フリガナ" id="txt_furigana" value="" size=10>
+				(名)<input type="text" name="フリガナ2" id="txt_furigana2" value="" size=10>
+			</td>
+		</tr>
+		<tr style="background-color:white;">
+			<td nowrap valign="top" style="border-bottom: 1px dotted pink; text-align:right;">メールアドレス&nbsp;</td>
+			<td style="border-bottom: 1px dotted pink; text-align:left;">
+				<input type="text" name="メール" id="txt_mail" value="" size=40><br/>
+				<span style="font-size:8pt;">
+				※予約確認のメールをお送りします。必ず有効なアドレスを入力してください。<br/>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td nowrap style="border-bottom: 1px dotted pink; text-align:right;">当日連絡の付く電話番号&nbsp;</td>
+			<td style="border-bottom: 1px dotted pink; text-align:left;"><input type="text" name="電話番号" id="txt_tel" value="" size=20></td>
+		</tr>
+		<tr style="background-color:white;">
+			<td nowrap style="border-bottom: 1px dotted pink; text-align:right;">興味のある国&nbsp;</td>
+			<td style="border-bottom: 1px dotted pink; text-align:left;"><input type="text" name="興味国" id="txt_kuni" value="" size=50></td>
+		</tr>
+		<tr>
+			<td nowrap style="border-bottom: 1px dotted pink; text-align:right;">出発予定時期&nbsp;</td>
+			<td style="border-bottom: 1px dotted pink; text-align:left;"><input type="text" name="出発時期" id="txt_jiki" value="" size=50></td>
+		</tr>
+		<tr>
+			<td nowrap valign="top" style="border-bottom: 1px dotted pink; text-align:right;">同伴者有無&nbsp;</td>
+			<td style="border-bottom: 1px dotted pink; text-align:left;">
+				<input type="checkbox" name="同伴者" id="txt_dohan"> 同伴者あり<br/>
+				<span style="font-size:8pt;">
+				　　※同伴者ありの場合、２人分の席を確保致します。<br/>
+				　　※３名以上でご参加の場合は、メールにてご連絡ください。<br/>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td nowrap style="border-bottom: 1px dotted pink; text-align:right;">今後のご案内&nbsp;</td>
+			<td style="border-bottom: 1px dotted pink; text-align:left;"><input type="checkbox" name="メール会員" id="txt_mailmem" checked> このメールアドレスをメール会員(無料)に登録する</td>
+		</tr>
+		<tr style="background-color:white;">
+			<td nowrap style="text-align:right;">その他&nbsp;</td>
+			<td style="text-align:left;"><input type="text" name="その他" id="txt_memo" value="" size=50></td>
+		</tr>
+	</table>
+	</form>
+
+	<div style="font-size:9pt; font-weight:bold; margin:10px 0 10px 0; border: 1px dotted navy;;">
+		このフォームでは仮予約を行います。<br/>
+		予約確認のメールをお送りしますので、メールの指示に従って予約を確定させてください。<br/>
+	</div>
+
+	<div id="div_wait" style="display:none;">
+		<img src="images/ajaxwait.gif">
+		&nbsp;予約処理中です。しばらくお待ちください。&nbsp;
+		<img src="images/ajaxwait.gif">
+	</div>
+
+	<input type="button" class="button_cancel" value=" 取消 " onclick="btn_cancel();">　　　　　
+	<input type="button" class="button_submit" value=" 送信 " id="btn_soushin" onclick="btn_submit();">
+
+	</div>
+
+</div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>
+

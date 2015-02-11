@@ -1,0 +1,81 @@
+.nittei	{
+	margin: 5px 0 15px 25px;
+	font-size: 10pt;
+}
+
+.nittei_span	{
+	background: orange;
+	padding: 0 10px 0 10px;
+	border-bottom: 1px dotted white;
+	text-align: center;
+}
+.nittei_span p {
+  font-size: 9pt;
+}
+
+.nittei_naiyou	{
+	padding-left:10px;
+	border-bottom: 1px solid orange;
+	width:520px;
+}
+
+.nittei_title	{
+	font-size: 10pt;
+	padding-top:8px;
+}
+
+.nittei_setumei	{
+	font-size: 9pt;
+	padding: 5px 10px 5px 15px;
+}
+
+.wh_box	{
+	text-align: center
+}
+.wh_box1	{
+	margin: 0px auto;
+	text-align: left;
+	width: 100%;
+}
+.wh_div	{
+	float: left;
+	width: 150px;
+	margin-right: 1px;
+	text-align: center;
+	color: orangered;
+	font-size: 9pt;
+}
+a.wh_menu	{
+	color: black;
+	text-decoration: none;
+	background-color: white;
+	padding:9px 0px;
+	width: 149px;
+	display: block
+}
+a:hover.wh_menu	{
+	background-color: orange;
+	font-weight: bold;
+	color: white;
+}
+a:active.wh_menu	{
+	background-color: orange;
+	font-weight: bold;
+	color: white;
+}
+
+.block01	{
+	margin: 8px 20px 8px 20px;
+	padding: 10px 20px 10px 20px;
+	background: #ADD8E6;
+}
+
+.block02	{
+	margin: 8px 20px 8px 20px;
+	padding: 10px 20px 10px 20px;
+	background: #F5DEB3;
+}
+
+.mgb10 {margin-bottom: 10px;}
+
+

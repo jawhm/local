@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+div#choice-conbini {
+	text-align:center;	
+}
+
+div#choice-conbini input.radio {
+	display:none;	
+}
+
+div#choice-conbini label {
+	display:inline-block;
+	cursor:pointer;
+	border: 1px dotted navy;
+}
+
+div#choice-conbini label:hover{
+	border:1px solid #9BDEFF;
+}
+
+div#choice-conbini input:checked + label {
+	border-color:#B4CDE5;	
+}
+
+label#label_lawson {
+	background:url(images/logo_lawson.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#label_lawson {
+	background:url(images/logo_lawson_over.gif);
+}
+
+label#lable_circleK {
+	background:url(images/logo_circleK.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#lable_circleK {
+	background:url(images/logo_circleK_over.gif);
+}
+
+label#label_threef {
+	background:url(images/logo_threef.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#label_threef {
+	background:url(images/logo_threef_over.gif);
+}
+
+label#label_dailyyamazaki {
+	background:url(images/logo_dailyyamazaki.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#label_dailyyamazaki {
+	background:url(images/logo_dailyyamazaki_over.gif);
+}
+
+label#label_familymart {
+	background:url(images/logo_familymart.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#label_familymart {
+	background:url(images/logo_familymart_over.gif);
+}
+
+label#label_ministop {
+	background:url(images/logo_ministop.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#label_ministop {
+	background:url(images/logo_ministop_over.gif);
+	width:70px;
+	height:70px;
+}
+
+input:checked + label#label_seicomart {
+	background:url(images/logo_seicomart_over.gif);
+}
+label#label_seicomart {
+	background:url(images/logo_seicomart.gif);
+	width:70px;
+	height:70px;
+}
+
+label#label_seven {
+	background:url(images/logo_seven.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#label_seven {
+	background:url(images/logo_seven_over.gif);
+}
+
+label#label_yamazakidaily {
+	background:url(images/logo_yamazakidailysore.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#label_yamazakidaily {
+	background:url(images/logo_yamazakidailysore_over.gif);
+}

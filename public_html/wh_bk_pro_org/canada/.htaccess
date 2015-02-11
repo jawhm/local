@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(jawhm\.or.jp)(:80)?
+RewriteRule ^(.*) http://www.jawhm.or.jp/wh/australia/$1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$ http://www.jawhm.or.jp/wh/australia/$1 [R=301,L]
+

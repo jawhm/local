@@ -1,0 +1,92 @@
+<?php
+require_once 'include/header.php';
+require_once 'include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='ドイツ　ワーキングホリデービザ';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）や留学などの海外生活でよるある質問をまとめました。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/qanda-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'ドイツワーキングホリデーのよくある質問';
+
+$header_obj->display_header();
+include('calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('qa'); ?>
+	  <h2 class="sec-title">ドイツ　ワーキングホリデー</h2>
+	  <table class="qatable-aus">
+	    <tr>
+		  <th><img src="images/mflag06.gif" alt="" /><br />ドイツ</th>
+		  <td>ワーキングホリデー協定国別に、よくあるご質問にお答えしています。</td>
+		</tr>
+	  </table>
+      <p>&nbsp;</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'ドイツ';
+            $number_to_display = '6';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <h2 class="sec-title">よくある質問と回答</h2>
+      <p>&nbsp;</p>
+
+	  <div class="qa-abox-country">
+	    <h3 class="q-title">Ｑ１.いつドイツワーキングホリデーに行けば良いですか？（季節など）</h3>
+		<p class="text01">ドイツには春に行きましょう。　9月にはブーツを履いててもおかしくないくらい寒くなります。到着して冬っていうのは辛いですよ。　ただでさえ海外で体調を崩しやすいのに寒いのは体に厳しいかもしれません</p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ２.ビザの申請</h3>
+		<p class="text01m30">窓口申請で1週間、郵送申請で3週間程度です。しかし1週間過ぎたからといっても心配しないでください。　ドイツ領事館でビザ申請後に海外旅行保険へ申込みをされる方は、保険料の支払い完了が保険会社から領事館へ通知されるまではビザが発給されません。</p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ３.ワーキングホリデーが終わった後にドイツへの再入国の方法</h3>
+		<p class="text01m30">ドイツでワーキングホリデーが終了してビザ期間が切れて日本に帰国すればドイツへの再入国は可能です。　ドイツの近くの国に出てからすぐに入るとドイツへは入国できません。シェンゲン協定国（ユーロ圏よりも広いです）以外へ出国してください。さらに3ヶ月以上経過しないとドイツに再入国は出来ません。</p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ４.ワーキングホリデービザの延長。</h3>
+		<p class="text01m30">ドイツのワーキング・ホリデー・ビザは終了後、学生ビザに変更して滞在延長する方が多いです。</p>
+		<div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+	  
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'ドイツ';
+            $number_to_display = '6';
+            $start_display_from = '6'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+
+	  <div class="advbox03">
+<?php
+	// 127
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 105, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+</div>
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

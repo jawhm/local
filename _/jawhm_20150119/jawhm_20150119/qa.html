@@ -1,0 +1,185 @@
+﻿<?php
+require_once 'include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='よくある質問 Q&amp;A';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）や留学でのよるある質問をまとめました。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/qanda-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'ワーキングホリデーのよくある質問 Q&amp;A';
+
+$header_obj->display_header();
+include('calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs(); ?>
+	  <h2 class="sec-title">協定国別 Q&amp;A</h2>
+	  <p class="text01">ワーキングホリデー協定国別に、よくあるご質問にお答えしています。</p>
+	  <div class="mcontent-country-box">
+	    <ul class="country-box-01">
+		  <li class="c-01"><a href="/qa_aus.html">オーストラリアQandA</a></li>
+		  <li class="c-02"><a href="/qa_kor.html">韓国QandA</a></li>
+		  <li class="c-03"><a href="/qa_uk.html">イギリスQandA</a></li>
+		  <li class="c-04"><a href="/qa_ywn.html">台湾QandA</a></li>
+		</ul>
+		<ul class="country-box-01">
+		  <li class="c-05"><a href="/qa_nz.html">ニュージーランドQandA</a></li>
+		  <li class="c-06"><a href="/qa_fra.html">フランスQandA</a></li>
+		  <li class="c-07"><a href="/qa_ire.html">アイルランドQandA</a></li>
+		  <li class="c-08"><a href="/qa_hkg.html">香港QandA</a></li>
+		</ul>
+		<ul class="country-box-02">
+		  <li class="c-09"><a href="/qa_can.html">カナダQandA</a></li>
+		  <li class="c-10"><a href="/qa_deu.html">ドイツQandA</a></li>
+		  <li class="c-11"><a href="/qa_dnk.html">デンマークQandA</a></li>
+		</ul>
+	  </div>
+      <p>&nbsp;<br /></p>
+
+	  <div style="float:left;">
+      <?php 
+			//settings for the calendar module display
+            $country_to_display = '';
+            $number_to_display = '6';
+            
+			display_horizontal_calendar($country_to_display,$number_to_display); 
+      ?>
+      </div>
+	  <h2 id="question" class="sec-title">よくある質問 Q&amp;A</h2>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">ビザについて</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans01">何カ国もＷＨビザを同時に申請し、利用することは可能でしょうか？</a></li>
+		  <li><a href="qanda/qa.html#ans01">30 歳までと書いてあるが、30 歳までにビザを取得して渡航しなければいけないのですか？</a></li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">協会のサービスについて</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans02">協会のメンバーになると、どんなメリット（何ができる）があるのですか？</a></li>
+		  <li><a href="qanda/qa.html#ans02">海外（ワーホリ対象国）に協会の支部はありますか？</a></li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">エージェントについて</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans03">エージェントを使った方がいいのでしょうか？</a></li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">渡航準備の流れについて</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans04">とりあえず行けばなんとかなりますか？</a></li>
+		  <li><a href="qanda/qa.html#ans04">何を用意すればワーホリができるんですか？</a></li>
+		  <li><a href="qanda/qa.html#ans04">出発のどれくらい前から準備を始めればよいですか？</a></li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">持ち物について</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans05">何を持っていけばいいですか？</a></li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">荷物の形態について</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans06">荷物はどのように持っていきますか？スーツケースとバックパックどちらがいいのでしょうか？</a></li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">公的手続きについて</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans07">渡航前の公的手続きは何をすればいいですか？</a></li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">お金の持ち込み方について</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans08">お金はどのように持っていけばいいですか？</a></li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">住居について</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans09">住む場所はどうやってみつけるのですか？</a></li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">学校について</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans10">学校はどうやって決めたらいいですか？</a></li>
+		  <li><a href="qanda/qa.html#ans10">学校はどうやって探せばよいですか？</a></li>
+		  <li><a href="qanda/qa.html#ans10">語学学校ってどんなところですか？</a></li>
+		  <li><a href="qanda/qa.html#ans10">学校はいつぐらいのタイミングで申し込めばいいですか？</a></li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">仕事の探し方について</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans11">仕事はどのように探せばよいですか？</a></li>
+		  <li><a href="qanda/qa.html#ans11">ファームジョブ(ピッキングなど)の探し方は？</a></li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">仕事の種類について</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans12">現地には日本人が働ける仕事はありますか？（職種など）</a></li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">パソコン、ネット環境について</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans13">パソコンは持っていったほうが良いですか？</a></li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">携帯電話について</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans14">現地で携帯電話が使えますか？</a></li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">航空券・海外旅行保険について</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans15">航空券はいくらぐらいで購入できますか？ 片道航空券でもいいですか？</a></li>
+		  <li>海外旅行保険は、いくらぐらいかかりますか？</li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">トラブルに関して</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans16">どんなトラブルがありますか？</a></li>
+		  <li>病気やけがについて</li>
+	    </ul>
+	  </div>
+	  <div class="qa-qbox">
+	    <h3 class="qa-qtitle">帰国後に関して</h3>
+	    <ul>
+	      <li><a href="qanda/qa.html#ans17">ワーキング・ホリデー帰国後の就職は難しいですか？</a></li>
+	    </ul>
+  </div>
+	  <div class="advbox03">
+<?php
+	// 121
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 99, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

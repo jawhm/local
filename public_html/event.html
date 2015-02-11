@@ -1,0 +1,112 @@
+<?php
+// ini_set( "display_errors", "On");
+
+include './seminar_module/seminar_module.php';
+$config = array(
+	'view_mode' => 'list',
+    'list' => array(
+        'past_view' => '',
+        'count_field_active' => '',
+        'place_default' => 'event',
+    )
+);
+$sm = new SeminarModule($config);
+
+$redirection='/seminar/ser/place/event/';
+
+require_once 'include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+//$header_obj->mobileredirect=$redirection;
+
+$header_obj->title_page='イベントカレンダー';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）や留学をされる方向けの無料セミナー等のご案内をしています。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+$header_obj->add_css_files = $sm->get_add_css();
+$header_obj->add_style = $sm->get_add_style();
+$header_obj->add_js_files = $sm->get_add_js();
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/event-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '日本ワーキングホリデー協会のイベントカレンダー';
+
+$header_obj->display_header();
+
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs(); ?>
+
+	  <h2 class="sec-title">イベントカレンダー</h2>
+
+<span style="font-size:12pt;">
+<a href="#event"><img src="images/arrow0302.gif"> イベント</a>
+<a href="seminar.html"><img src="images/arrow0313.gif"> 各地の無料セミナー</a>　　
+</span>
+<p class="text01">
+	<center>
+	<a href="http://www.jawhm.or.jp/ja/5079"><img  src="http://www.jawhm.or.jp/ja/wp-content/uploads/2013/11/cda9a889e9b5e5e8704e810df86f8a8e.gif" width="49%"/></a> <a href="/event/iwateseminar/"><img src="http://www.jawhm.or.jp/images/uploads/files/banner.gif" width="49%"></a>
+	</center>
+</p>
+<div style="border: 2px dotted navy; margin: 10px 0 10px 0; padding: 5px 10px 5px 10px; font-size:10pt;">
+【ご注意：スマートフォンをご利用の方へ】<br/>
+スマートフォンなど、ＰＣ以外のブラウザからご利用された場合、予約フォームが正しく機能しない場合があります。<br/>
+この場合、お手数ですが、以下の内容を toiawase@jawhm.or.jp までご連絡ください。<br/>
+　・　参加希望のイベント日程<br/>
+　・　お名前<br/>
+　・　当日連絡の付く電話番号<br/>
+　・　興味のある国<br/>
+　・　出発予定時期<br/>
+</div>
+
+	<h2 class="sec-title" id="event">イベント情報</h2>
+	<p>イベントのご予約は、「予約」ボタンから予約フォームをご利用ください。<br/>
+	予約フォームがご利用できない場合は、お名前・電話番号を明記の上、 toiawase@jawhm.or.jp までご連絡下さい。</p>
+
+        <div style="margin:20px 0 0 0 ;" id="semi_show">
+            <?php $count = $sm->show(); ?>
+        </div>
+
+
+	<div style="height:30px;">&nbsp;</div>
+
+<div style="height:30px;">&nbsp;</div>
+<div style="text-align:center;">
+	<img src="images/flag01.gif">
+	<img src="images/flag03.gif">
+	<img src="images/flag09.gif">
+	<img src="images/flag05.gif">
+	<img src="images/flag06.gif">
+	<img src="images/mflag11.gif" width="40" height="26">
+	<img src="images/flag08.gif">
+	<img src="images/flag04.gif">
+	<img src="images/flag02.gif">
+	<img src="images/flag10.gif">
+	<img src="images/flag07.gif">
+</div>
+
+<div style="margin: 10px 0 10px 0; padding: 35px 20px 10px 20px; border: 2px orange dotted; font-size:10pt; font-bold: bold;">
+	
+	<center><a href="seminar.html"><img src="images/fair_seminar_off.png" width="40%"></a>　<a href="ja/4377"><img src="images/fair_log_off.png"  width="40%"></a></center><br/>
+
+</div>
+
+<div style="margin: 10px 0 10px 0; padding: 10px 20px 10px 20px; border: 2px orange dotted; font-size:10pt; font-bold: bold;">
+	<center>
+	日本全国出張セミナー定期開催中！<br/>
+	<a href="event/japanseminar"><img  src="event/japanseminar/images/banner.gif" height="80px"></a>&nbsp;&nbsp;<a href="kyusyu.html"><img src="/images/sidebanner03.gif"></a><br/>
+</div>
+
+	<div style="height:50px;">&nbsp;</div>
+
+	</div>
+
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>
+

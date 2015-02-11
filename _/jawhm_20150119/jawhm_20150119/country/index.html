@@ -1,0 +1,155 @@
+<?php
+require_once '../include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->title_page='ワーキングホリデー国データ';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../images/mainimg/visa-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'ワーキングホリデーで行ける国 | ワーキングホリデー協定国';
+
+//add javascript for country info
+$header_obj->add_js_files='
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<!--[if IE]><script type="text/javascript" src="/country/country_info/js/excanvas.js"></script><![endif]-->
+<script type="text/javascript" src="/country/country_info/js/coolclock.js"></script>
+<script type="text/javascript" src="/country/country_info/js/moreskins.js"></script>
+<script type="text/javascript" src="/country/country_info/js/map.js"></script>';
+
+$header_obj->add_css_files='<link rel="stylesheet" href="/country/country_info/style.css" type="text/css" />';
+$header_obj->add_style='
+<style type="text/css">
+
+.messagepop {
+  position:absolute;
+  float:left;
+  bottom:5px;
+  left:5px;
+  display:none;
+
+  padding:10px;
+
+  background-color:#FFFFFF;
+  border:1px solid #999999;
+  cursor:default;
+  text-align:left;
+  width:auto;
+  z-index:50;
+}
+#interactive-map{
+  position:relative;
+  margin-bottom:30px;
+}
+</style>';
+
+$header_obj->display_header();
+include('../calendar_module/mod_event_horizontal.php');
+?>
+
+	<div id="maincontent">
+       <?php echo $header_obj->breadcrumbs(); ?>
+	  
+	  <h2 class="sec-title">ワーキングホリデー 国データ</h2>
+    <p class="text01">現在、日本がワーキング・ホリデー協定を結んでいるのは下記の11ヶ国です。<br/>
+    下の地図から、<strong>興味のある国を選んでください。</strong></p>
+	  <div id="interactive-map">
+		  <a id="zoomout" href="./" title="Zoom Out">Zoom Out</a>			
+		  <div id="chart"></div>
+		  <div class="messagepop pop">
+		  	<div id="details"></div>
+		  	<a id="close" href="./" title="close">X</a>
+		  </div>
+	  </div>
+    <div class="step1-country">
+    <a id="AU" class="view" href="#interactive-map"><img src="../images/step1-coun01.gif" alt="" /></a>
+    <a class="visa-btn" href="australia" title="オーストラリア国情報へ">オーストラリア国情報へ</a>
+    <a class="visa-btn" href="../visa/v-aus.html" title="オーストラリアのワーキングホリデー（ワーホリ）ビザ情報">オーストラリアビザ情報へ</a>
+    </div>
+    <div class="step1-country">
+    <a id="CA" class="view" href="#interactive-map"><img src="../images/step1-coun03.gif" alt="" /></a>
+    <a class="visa-btn" href="canada" title="カナダ国情報へ">カナダ国情報へ</a>
+    <a class="visa-btn" href="../visa/v-can.html" title="カナダのワーキングホリデー（ワーホリ）ビザ情報">カナダビザ情報へ</a>
+    </div>
+    <div class="step1-country2">
+    <a id="NZ" class="view" href="#interactive-map"><img src="../images/step1-coun02.gif" alt="" /></a>
+    <a class="visa-btn" href="newzealand" title="ニュージーランド国情報へ">ニュージーランド国情報へ</a>
+    <a class="visa-btn" href="../visa/v-nz.html" title="ニュージーランドのワーキングホリデー（ワーホリ）ビザ情報">ニュージーランドビザ情報へ</a>
+    </div>
+    <div class="step1-country">
+    <a id="KR" class="view" href="#interactive-map"><img src="../images/step1-coun04.gif" alt="" /></a>
+    <a class="visa-btn" href="southkorea" title="韓国国情報へ">韓国国情報へ</a>
+    <a class="visa-btn" href="../visa/v-kor.html" title="韓国のワーキングホリデー（ワーホリ）ビザ情報">韓国ビザ情報へ</a>
+    </div>
+    <div class="step1-country">
+    <a id="FR" class="view" href="#interactive-map"><img src="../images/step1-coun05.gif" alt="" /></a>
+    <a class="visa-btn" href="france" title="フランス国情報へ">フランス国情報へ</a>
+    <a class="visa-btn" href="../visa/v-fra.html" title="フランスのワーキングホリデー（ワーホリ）ビザ情報">フランスビザ情報へ</a>
+    </div>
+    <div class="step1-country2">
+    <a id="DE" class="view" href="#interactive-map"><img src="../images/step1-coun06.gif" alt="" /></a>
+    <a class="visa-btn" href="germany" title="ドイツ国情報へ">ドイツ国情報へ</a>
+    <a class="visa-btn" href="../visa/v-deu.html" title="ドイツのワーキングホリデー（ワーホリ）ビザ情報">ドイツビザ情報へ</a>
+    </div>
+    <div class="step1-country">
+    <a id="GB" class="view" href="#interactive-map"><img src="../images/step1-coun07.gif" alt="" /></a>
+    <a class="visa-btn" href="unitedkingdom" title="イギリス国情報へ">イギリス国情報へ</a>
+    <a class="visa-btn" href="../visa/v-uk.html" title="イギリスのワーキングホリデー（ワーホリ）ビザ情報">イギリスビザ情報へ</a>
+    </div>
+    <div class="step1-country">
+    <a id="IE" class="view" href="#interactive-map"><img src="../images/step1-coun08.gif" alt="" /></a>
+    <a class="visa-btn" href="ireland" title="アイルランド国情報へ">アイルランド国情報へ</a>
+    <a class="visa-btn" href="../visa/v-ire.html" title="アイルランドのワーキングホリデー（ワーホリ）ビザ情報">アイルランドビザ情報へ</a>
+    </div>
+    <div class="step1-country2">
+    <a id="DK" class="view" href="#interactive-map"><img src="../images/step1-coun09.gif" alt="" /></a>
+    <a class="visa-btn" href="denmark" title="デンマーク国情報へ">デンマーク国情報へ</a>
+    <a class="visa-btn" href="../visa/v-dnk.html" title="デンマークのワーキングホリデー（ワーホリ）ビザ情報">デンマークビザ情報へ</a>
+    </div>
+    <div class="step1-country">
+    <a id="TW" class="view" href="#interactive-map"><img src="../images/step1-coun10.gif" alt="" /></a>
+    <a class="visa-btn" href="taiwan" title="台湾国情報へ">台湾国情報へ</a>
+    <a class="visa-btn" href="../visa/v-ywn.html" title="台湾のワーキングホリデー（ワーホリ）ビザ情報">台湾ビザ情報へ</a>
+    </div>
+    <div class="step1-country">
+    <a id="HK" class="view" href="#interactive-map"><img src="../images/step1-coun11.gif" alt="" /></a>
+    <a class="visa-btn" href="hongkong" title="香港国情報へ">香港国情報へ</a>
+    <a class="visa-btn" href="../visa/v-hkg.html" title="香港のワーキングホリデー（ワーホリ）ビザ情報">香港ビザ情報へ</a>
+    </div>
+
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+
+    <div class="seminar-listing-title-red">▼▼▼まずは無料セミナーへ！ワーキングホリデー＆留学の無料セミナーはこちら！▼▼▼</div>
+
+	<?php 
+			//settings for the calendar module display
+            $country_to_display = '';
+            $number_to_display = '10';
+            $start_display_from = ''; //empty is begining
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from); 
+      ?>
+    
+  	  <div class="advbox03">
+<?php
+	// 103
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 94, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

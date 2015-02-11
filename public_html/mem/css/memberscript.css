@@ -1,0 +1,197 @@
+@charset "utf-8";
+/* CSS Document */
+
+#signupForm { width: 860px; }
+#signupForm label.error {
+	margin-left: 10px;
+	width: auto;
+	display: none;
+}
+.entrytable	{
+	font-size:11pt;
+	border : 1px solid navy;
+}
+.entrytable tr	{
+	border-top: 1px solid navy;
+}
+.dummy tr	{
+	border-top: none;
+}
+.must	{
+	color: red;
+	font-weight: bold;
+	font-size : 9pt;
+}
+.focus	{
+	color:	#000000;
+}
+.td_flag	{
+	background : #A7FFFF;
+	font-size:11pt;
+	padding: 0 10px 0 10px;
+	width : 5%;
+}
+.td_tag		{
+	background : #A7FFFF;
+	font-size:11pt;
+	width : 17%;
+}
+.td_method	{
+	font-size : 9pt;
+	background : #A7FFFF;
+	text-align : right;
+	padding-right : 5px;
+	color : blue;
+	width : 9%;
+}
+.td_input	{
+	padding	: 10px 10px 10px 10px;
+	background : white;
+	border-left: 1px solid navy;
+}
+.sample	{
+	font-size : 9pt;
+	color : darkgray;
+}
+.postcode	{
+	font-size:9pt;
+}
+.postcode a:visited	{
+	color : red;
+}
+.postcode a:link	{
+	color : red;
+}
+
+.tooltip	{
+}
+.tooltipmsg	{
+	background: #ffc;
+	border: 1px solid #fc6;
+	font-size : 9pt;
+	top: 0px;
+	left: 0;
+	text-align: left;
+	padding: 8px 10px 10px 10px;
+	margin: 5px 5px 0px 5px;
+	z-index: 2;
+	display: none;
+}
+
+.td_check_tag		{
+	padding	: 2px 10px 2px 10px;
+	background : #A7FFFF;
+	font-size:11pt;
+}
+.td_check_input	{
+	padding	: 2px 10px 2px 10px;
+	background : white;
+}
+
+.orange_info{
+	font-size:11pt; font-weight:bold; margin:15px 50px 15px 0; padding: 10px 20px 10px 20px; color:white; background-color:orange;
+}
+
+.title_bar {
+	margin:20px 20px 16px 0; padding: 5px 0 5px 10px; font-size:11pt; font-weight:bold; background-color:aqua; color:navy;
+}
+
+.navy_frame {
+	border:1px solid navy; margin: 20px 80px 20px 0; padding: 18px 20px 10px 20px;
+}
+
+.frame {
+	margin: 20px 80px 20px 0; 
+	padding: 18px 20px 10px 20px;
+}
+
+input.send_btn {
+	cursor:pointer;
+	width:350px; height:30px; margin:18px 0 10px 180px; font-size:11pt; font-weight:bold; 
+}
+
+input.send_btn_small {
+	margin-top:10px;
+	cursor:pointer;
+	min-width:150px;
+	padding-left:5px;
+	padding-right:5px;
+	height:20px; 
+	font-size:.0.9em;
+	border:1px solid #999999;
+}
+
+table.payment-process {
+	width:550px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:10px;
+	border-collapse: separate;
+	border-spacing: 5px;
+	*border-collapse: expression('separate', cellSpacing = '5px'); /* For IE6 IE7, old version */
+}
+table.payment-process tr {
+}
+table.payment-process td {
+	font-size:1.3em;
+	text-align:center;
+	padding:10px;
+	border:1px solid #DBDBDB;
+}
+
+table.payment-process td.label-payment {
+	background-color:#F0F0F0;
+}
+
+table.payment-process input {
+	padding:2px;
+	border:1px solid #999999;
+}
+.middle{
+	margin-right:auto;
+	margin-left:auto;
+	width:550px;
+
+	text-align:center;
+}
+p.payment-info {
+	margin-top:10px;
+	padding:10px;
+	background-color:#D5E9FD;
+	border:1px solid #004080;
+}
+
+p.btn-back {
+	text-align:right;
+}
+
+#payment-nb {
+	padding-left:55px;
+}
+
+input.orange-btn{
+	height:30px;
+	padding-left:20px;
+	padding-right:20px;
+	color:white;
+	font-weight:bold;
+	font-size:1.4em;
+	border-left:1px solid #CE772E;
+	border-right:1px solid #D07D38;
+	border-top:none;
+	border-bottom:none;
+	background:url('images/orange_btn.gif')	repeat-x;
+	cursor:pointer;
+}
+
+input.btn-blue {
+	float:right;
+	height:30px;
+	padding-left:10px;
+	padding-right:10px;
+	color:white;
+	font-weight:bold;
+	border:1px solid red;
+	background:url('images/blue_btn.gif') repeat-x;
+	cursor:pointer;
+}

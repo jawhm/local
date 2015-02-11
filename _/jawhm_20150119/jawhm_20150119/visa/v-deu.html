@@ -1,0 +1,259 @@
+﻿<?php
+require_once '../include/header.php';
+require_once '../include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->title_page='ドイツビザ情報';
+$header_obj->description_page='ドイツのビザ。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../images/mainimg/visa-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'ワーキングホリデー協定国（ドイツ） |  ワーホリビザ情報';
+
+$header_obj->display_header();
+
+include('../calendar_module/mod_event_horizontal.php');
+?>
+<body>
+	<div id="maincontent">
+        	  <?php echo $header_obj->breadcrumbs('country'); ?>
+	  <div class="visa-nav">
+	    <p>/<a href="v-aus.html">オーストラリア</a>/<a href="v-nz.html">ニュージーランド</a>/<a href="v-can.html">カナダ</a>/<a href="v-kor.html">韓国</a>/<a href="v-fra.html">フランス</a>/<a href="v-deu.html">ドイツ</a>/<a href="v-uk.html">イギリス</a>/<a href="v-ire.html">アイルランド</a>/<a href="v-dnk.html">デンマーク</a>/<a href="v-ywn.html">台湾</a>/<a href="v-hkg.html">香港</a>/</p>
+	  </div>
+	  <img src="../images/bflag06.gif" alt="" />
+
+
+	<p class="text01">
+	<span class="centered-btn"><a class="visa-btn country-info" href="../country/germany" title="ドイツ国情報へ">ドイツ国情報へ</a></span>
+	<b>ドイツのワーキングホリデービザの取得方法についてご案内します。</b></p>
+
+<!--
+	<div class="advbox04">
+-->
+<?php
+
+/**********************
+
+	// 049
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 54, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 050
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 55, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 051
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 56, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 052
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 57, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 053
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 58, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+***********************/
+
+?>
+<!--
+	  </div>
+-->
+
+	 <h2 class="sec-title">ビザ取得までのステップチャート</h2>
+	  <h3 class="h3-01">参加可能年齢　18～30歳（31歳の誕生日までに申請）　</h3>
+	  <p class="text01">ドイツ大使館（東京）及び大阪・神戸ドイツ総領事館のHPで申請要項を確認して下さい。<br />
+東日本居住の方はドイツ大使館HP、西日本居住の方は大阪・神戸ドイツ総領事館HPをそれぞれ閲覧すること。 </p>
+	 
+	  <img src="../images/visa-german-flow.gif" alt="" />
+	  <p class="text10p-tyu">※１　申請場所：長野、山梨、静岡、新潟もしくは同県以東に居住している方　⇒ドイツ大使館<br />富山、岐阜、愛知もしくは同県以西に居住している方　⇒大阪・神戸ドイツ総領事館</p>
+	  <p class="text10p-tyu">※２　東京のドイツ大使館と大阪・神戸ドイツ総領事館の窓口で申請を行います。大使館と総領事館では申請に必要な書類が異なるので注意が必要です。</p>
+	  <p class="text10p-tyu">※３　先に保険加入、保険料の支払いを済ませたほうが早くビザが発給されるので遠方に居住している人にはお薦めです。 </p>
+
+<br />
+
+	  <p class="bg-yellow"> <a href="http://www.tokyo.diplo.de/" target="_blank">在日ドイツ連邦共和国大使館</a> <br />
+〒106-0047 東京都港区南麻布4-5-10　電話：03-5791-7700 Fax：03-5791-7773 </p>
+	  <h3 class="h3-01">外務省ＨＰで基本情報を確認しよう</h3>
+		    <ul class="list-visabasic">
+			  <a href="http://www.mofa.go.jp/mofaj/area/germany/data.html" target="_blank">基本情報</a>
+			  <a href="http://www2.anzen.mofa.go.jp/info/pcinfectionspothazardinfo.asp?id=165" target="_blank">安全情報</a>
+			  <a href="http://www.mofa.go.jp/mofaj/annai/zaigai/list/europe/germany.html" target="_blank">在外公館</a>
+			</ul>
+
+            <br/>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'ドイツ';
+            $number_to_display = '2';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+		<center>
+		<p><font color="orangered">ビザの申請、ひとりでできますか？</font></p>
+		<a href="/mem/#meritt"><img src="images/memline3_off.gif"></a></center>
+
+	  <h2 class="sec-title">ビザについて</h2>
+	  <h3 class="h3-01">ドイツ・ワーキング・ホリデーの手引き</h3>
+	  <p class="text01">ワーキングホリデー・ビザ（以下、WHVビザ）制度は日独両国の合意に基づくもので、
+				日本の若い人たちにドイツの文化や日々の暮らしに触れる機会を 提供するためのものです。
+				滞在可能な期間は3ヵ月以上1年以内で、最長365日、ドイツのさまざまな職場で働くことができます。
+				WHVビザを申請できるのは1回限りですので、ご注意下さい。</p>
+	  
+	  <h3 class="h3-01">ビザの発給要件</h3>
+	  <p class="text01">>>参加資格者<br />　
+				● 日本国籍を有していること<br />　
+				● 18歳以上であり、申請時に31歳に達していないこと<br />　
+				● 親族（子供など）が同行することはできない</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'ドイツ';
+            $number_to_display = '2';
+            $start_display_from = '2'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+		<center>
+		<p><font color="orangered">ビザの申請、ひとりでできますか？</font></p>
+		<a href="/mem/#meritt"><img src="images/memline5_off.gif"></a></center>
+
+	  <h2 class="sec-title">申請方法</h2>
+	  <h3 class="h3-01">申請書請求方法</h3>
+	  <p class="text01">
+			2010年6月15日から、世界各国のドイツの大使館・総領事館で申請することができるようになりました。</br>
+			日本人の場合は、ビザなしでドイツに入国してから、管轄当局（通常、外国人局）で申請することができます。</p>
+	  <p class="text01">
+			<font color ="red">注意！<br/>
+			世界各国のドイツの大使館・総領事館、あるいはドイツ国内の外人局では受け付けていない場合もあります。</br>
+			申請をされる際には事前に直接各大使館及び外人局に問い合わせることをお勧めします。</font></p>
+
+	  
+	   <h3 class="h3-01">申請に必要な書類　<font color>※申請手続きは本人しかできません。</h3>
+	  <ul class="list-number">
+	  <li>記入済みのWHVビザ申請書(Web版の申請書,　大阪の場合は長期ビザ用の申請書と合わせて各1部持ってきて下さい）</li>
+	  <li>パスポート用写真（35x45mm 正面撮影、その他の規定については詳細を参照）1枚</li>
+	  <li>日本国パスポート（ビザの有効期限が切れた後、なお3ヵ月以上有効期限の残っているパスポートが必要です。）</li>
+	  <li>往復航空券予約の証明書</li>
+	  <li>ドイツでの全滞在期間有効な旅行者用医療保険および旅行賠償責任保険<br/>
+		（歯科の治療にも適用され、女性の場合は妊娠時にも適用される保険に加入していることを証明するものを提示してください。）</li>
+	  <li>生活費支払い能力の証明（預金通帳および通帳のコピー、または金融機関発行の残高証明書）<br/c>
+		1年間滞在する場合には最低2,000ユーロの資金があることを証明しなくてはなりません。片道航空券しかない場合は、この2倍の金額を証明する必要があります。</li>
+	  </ul>
+	  <p class="text01">自分で保険会社・代理店を見つけられない場合は保険仲介会社を利用することが出来る。大使館や当協会に用意されている申込用紙にローマ字で記入して、自分で直接保険会社にFAXで申し込みを行う。保険会社のHPからオンラインで申し込むこともできる。その際はメンバーズカードを別途FAXなどで送らなければならない。メールアドレスを記入してあればメールで、あるいはFAXで、保険会社より請求書が届くので保険料を支払う。保険料が支払われた旨の通知が 保険会社から大使館宛に届いた後、ビザが発行される。<br />
+	  
+	  <h3 class="h3-01">申請に必要な書類 （大阪・神戸のドイツ総領事館の場合）</h3>
+	  <ul class="list-number">
+	  <li> 大阪のドイツ総領事館で申請の方は、手続き終了後、宅急便の着払いで返送することができます。</li>
+	  </ul>
+<div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p></div>
+	  <h3 class="h3-01">注意点</h3>
+	  <p class="text01">　・ WHVビザの発給には3日ほどかかります。<br/>　
+				・ WHVビザの発給を保証するものではありません。場合によっては、追加の書類が必要になることもあります。<br/>　
+				・ ドイツ入国にあたって、生活費の証明と旅行者用医療保険加入証明を携帯することをお薦めします。<br/>　
+　　	<h3 class="h3-01">申請先</h3>
+	  <p class="text01">>>在日ドイツ連邦共和国大使館<br />
+	　（領事部受付時間：月～金8:00‐11:00）<br />
+	　〒１０６-００４７<br />
+	　東京都港区南麻布４-５-１０（地下鉄日比谷線広尾駅下車 出口１より徒歩５分）<br />
+	　電話：０３-５７９１-７７００ Fax：０３-５７９１-７７７３<br />
+	　E-mail：info@tokyo.diplo.de<br />
+<a href="http://www.tokyo.diplo.de">http://www.tokyo.diplo.de</a></p>
+       <p class="text01">>>在大阪神戸ドイツ連邦共和国総領事館<br />
+	　（領事部受付時間：月～金9:00‐12:00）<br />
+	　〒５３１-６０３５<br />
+	　大阪市北区大淀中１-１-８８-３５０１<br />
+	　梅田スカイビル　タワーイースト３５階（JR大阪駅より徒歩10分）<br />
+	　電話：０６-６４４０-５０７０ Fax：０６-６４４０-５０８０<br />
+	　E-mail：info@osaka-kobe.diplo.de<br />
+	　<a href="http://www.osaka-kobe.diplo.de">http://www.osaka-kobe.diplo.de</a><br />
+	　*時間帯等の詳細は変わることがあります。<br />
+	　詳しくは大使館・領事館のホームページ又は直接お問い合わせください。</p>
+	  	  
+	&nbsp;<br/>
+	&nbsp;<br/>
+	<p class="text01">
+	【注意】<br/>
+	ここに記載のある情報は法改正等により予告なく変更することもあります。<br/>
+	また、このページの内容は各国大使館・領事館等より情報を収集し細心の注意を払って作成しておりますが、<br/>
+	正確なものであることを保証するものではありません。<br/>
+	ビザ取得の際は、必ず各国大使館・領事館等の情報をご自身でもご確認ください。
+	</p>
+     <br />
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'ドイツ';
+            $number_to_display = '2';
+            $start_display_from = '4'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+      <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+
+		<center>
+		<p><font color="orangered">ビザの申請、ひとりでできますか？</font></p>
+		<a href="/mem/#meritt"><img src="images/memline3_off.gif"></a></center>
+
+<br />
+
+	  <div class="visa-nav">
+	    <p>/<a href="v-aus.html">オーストラリア</a>/<a href="v-nz.html">ニュージーランド</a>/<a href="v-can.html">カナダ</a>/<a href="v-kor.html">韓国</a>/<a href="v-fra.html">フランス</a>/<a href="v-deu.html">ドイツ</a>/<a href="v-uk.html">イギリス</a>/<a href="v-ire.html">アイルランド</a>/<a href="v-dnk.html">デンマーク</a>/<a href="v-ywn.html">台湾</a>/<a href="v-hkg.html">香港</a>/</p>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

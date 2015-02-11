@@ -1,0 +1,331 @@
+<?php
+require_once '../include/header.php';
+require_once '../include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->title_page='イギリスビザ情報';
+$header_obj->description_page='イギリスのビザ。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../images/mainimg/visa-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'ワーキングホリデー協定国（イギリス） | ワーホリビザ情報';
+
+$header_obj->display_header();
+
+include('../calendar_module/mod_event_horizontal.php');
+
+?>
+	<div id="maincontent">
+       <?php echo $header_obj->breadcrumbs('country'); ?>
+	  <div class="visa-nav">
+	    <p>/<a href="v-aus.html">オーストラリア</a>/<a href="v-nz.html">ニュージーランド</a>/<a href="v-can.html">カナダ</a>/<a href="v-kor.html">韓国</a>/<a href="v-fra.html">フランス</a>/<a href="v-deu.html">ドイツ</a>/<a href="v-uk.html">イギリス</a>/<a href="v-ire.html">アイルランド</a>/<a href="v-dnk.html">デンマーク</a>/<a href="v-ywn.html">台湾</a>/<a href="v-hkg.html">香港</a>/</p>
+	  </div>
+	  <img src="../images/bflag07.gif" alt="" />
+	<p class="text01">
+	<span class="centered-btn"><a class="visa-btn country-info" href="../country/unitedkingdom" title="イギリス国情報へ">イギリス国情報へ</a></span>
+	<b>イギリスのワーキングホリデービザの取得方法についてご案内します。</b>	</p>
+
+
+	<div style="margin:20px auto 20px auto; padding:20px 20px 20px 20px; border: 2px dotted navy;">
+		<p style="font-size:12pt;">
+			【２０１４年のイギリス、ワーキングホリデービザの取得を検討中の方へ】
+		</p>
+		<p>
+			&nbsp;<br/>
+			<span style="font-size: large; color: #ff0000;">2014年イギリスワーキングホリデービザ（イギリスワーホリ2014YMS）の要項が発表されました(2013.11.29)</span><br />
+			&nbsp;<br/>
+			<a href="http://www.jawhm.or.jp/ja/2468">こちらも併せてご確認ください。</a><br/>
+			&nbsp;<br/>
+			2014年のYouth Mobility Scheme（イギリスワーキングホリデービザ）の情報は、<br />
+			<a href="/seminar"><strong>イギリス無料セミナー</strong></a>にてご案内しております。<br />
+			
+			&nbsp;<br/>
+	       <?php 
+			//settings for the calendar module display
+            $country_to_display = 'イギリス';
+            $number_to_display = '2';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from); 
+      ?>
+			&nbsp;<br/>
+			<small>※日本ワーキング・ホリデー協会では抽選に関しての電話お問い合わせは受け付けておりませんのでご了承くださいませ。</small><br />
+			
+	
+			<br/>
+	</p>
+		</p>
+	</div>
+
+<!--
+	<div class="advbox04">
+-->
+
+<?php
+
+/**********************
+
+	// 061
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 59, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 062
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 60, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 063
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 61, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 064
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 62, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 065
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 63, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+******************/
+?>
+<!--
+	  </div>
+-->
+
+	  <h2 class="sec-title">イギリス ユース・モビリティー・スキーム ビザ申請の手引き</h2>
+	  <h3 class="h3-01">2014年度申請について（2013.11.29現在）</h3>
+	<br/>
+ 	<p class="text01">
+	《UK BORDER》<br/>
+	http://www.ukba.homeoffice.gov.uk/sitecontent/microsite_translations/translationsnews/2013/november/75-yms-japanese<br/>
+	 <br/>
+	2014年度Youth Mobility Scheme　は1月に開始されます。 <br/>
+	定員1000名で、英国に最長2年間滞在でき、就労及び就学が可能です。 <br/>
+	<br/>
+	  <p class="bg-yellow"> <a href="http://www.uknow.or.jp/" target="_blank">英国大使館</a><br />
+〒102-8381 東京都千代田区一番町１　　Tel: (03)5211-1100</p>
+
+
+	  <h3 class="h3-01">外務省ＨＰで基本情報を確認しよう</h3>
+		    <ul class="list-visabasic">
+			  <a href="http://www.mofa.go.jp/mofaj/area/uk/data.html" target="_blank">基本情報</a>
+			  <a href="http://www2.anzen.mofa.go.jp/info/pcinfectionspothazardinfo.asp?id=154" target="_blank">安全情報</a>
+			  <a href="http://www.mofa.go.jp/mofaj/annai/zaigai/list/europe/uk.html" target="_blank">在外公館</a>
+			</ul>
+            <br />
+
+	<br/>
+
+	  <h2 class="sec-title">ビザ取得までのステップ</h2>
+	  <h3 class="h3-01">参加可能年齢　18～30歳（申請時30歳であれば31歳での入国が可能）</h3>
+	<br/>
+	<p class="text01">
+	2014年度Youth Mobility Scheme　に申請予約を希望される方は、EメールをYMS2014-APPOINTMENT@vfshelpline.com 宛てに1通のみお送りください。<br/>
+	</p>
+	<p class="text01">
+	メールの題名には必ず申請者の氏名（パスポートと同じ表記）、生年月日、及びパスポート番号を明記してください。<br/>
+	</p>
+	<br/>
+	 <ul class="list-disc">
+	<li>
+	例：YAMADA Taro - 31/01/1990 - TH123456789
+	</li>
+	</ul>
+	<br/>
+	<p class="text01">
+	また、送付されるEメール本文には、ご自身の下記情報を必ず明記してください。
+	</p>
+	<br/>
+	  <ul class="list-disc">
+	<li>Name　（氏名）</li>
+	<li>Date of birth（生年月日）</li>
+	<li>Passport Number（パスポート番号）</li>
+	<li>Country to submit the application （申請手続きを行う国）</li>
+	<li>Home and mobile phone number　（電話番号・携帯電話番号）</li>
+	</ul>
+	<br/>
+	<p class="text01">
+	上記Eメールアカウントの受付期間は48時間となり、日本時間2014年1月6日月曜日12時（正午）から1月8日水曜日12時（正午）までとなります。この時間内に受信された全てのEメールに対して、確認の自動返信が送られます。
+	</p>
+	
+	<p class="text01">
+	上記Eメールアカウントでの受付期間終了後に、1000名の申請者がランダム抽選で選ばれます。抽選で選ばれた申請者には1月15日水曜日に、申請可能通知、予約方法の詳細及びYouth Mobility Scheme　ビザ申請に必要な書類に関するEメールが送られます。抽選で選ばれた場合のみ、この申請可能通知のEメールを受け取ることができます。
+	</p>
+
+	<p class="text01">
+	海外在住の日本国籍者も上記の方法でお申し込みください。抽選で選ばれた申請者は在住国での申請が可能です。2014年度 Youth Mobility Scheme　ビザを英国内から申請することはできませんので、予めご注意ください。抽選で選ばれた場合、在マニラUK Visas and Immigrationは申請者が在住する国　（英国以外）の申請センターへ、その方が抽選で選ばれており、申請可能であることを連絡致します。
+	</p>
+	<p class="text01">
+	2つ目に送られる申請可能通知Eメールを受け取られていない場合は申請はできませんので予めご了承ください。
+	</p>
+	<p class="text01">
+		<div align="right">（UK BORDERサイト参照）</div>
+	<P>
+	&nbsp;<br/>
+
+	<p class="text01">
+	ビザの詳細につきましてはイギリスセミナーにてお知らせしてまいりますので奮ってご参加下さいませ。<br/>
+	<small>※日本ワーキング・ホリデー協会では抽選に関しての電話お問い合わせは受け付けておりませんのでご了承くださいませ。</small><br/>
+	</p>
+       <?php 
+			//settings for the calendar module display
+            $country_to_display = 'イギリス';
+            $number_to_display = '2';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from); 
+      ?>
+
+		<center>
+		<p><font color="orangered">ビザの申請、ひとりでできますか？</font></p>
+		<a href="/mem/#meritt"><img src="images/memline5_off.gif"></a></center>
+
+	<p class="text01">&nbsp;</p>
+
+	  <h2 class="sec-title">イギリスワーキングホリデービザ応募に関しての注意点</h2>
+	<p>&nbsp;</p>
+	
+	<p class="text01">
+	・出来るだけ早くから、イギリスワーキングホリデーの準備を心掛ける事は大変良い事ですが、憶測や非公式な情報に振り回されては全く意味がありません。
+	</p>
+ 
+	<p class="text01">
+	・ イギリスワーキングホリデービザの応募情報は毎年１０～１２月に発表されます。それまではいろいろな噂が飛びますが噂には振り回されないようにして下さい。　もしイギリスワーキングホリデーに関してそのような噂をお聞きになって不安になられたら、当協会にメールでお問い合わせ下さい。当協会スタッフが調査します。
+	</p>
+
+	<p class="text01">
+	・イギリスワーキングホリデービザの応募要項が発表されてからでも十分な準備期間はあります。あせらずに準備を進めましょう。
+	</p>
+
+	<h3 class="h3-01">要注意！イギリスワーキングホリデービザ</h3>
+	<p class="text01">
+	イギリスワーキングホリデービザ（ワーホリビザ）は毎年取りにくくなっています。
+2011年までは先着順となっており、開始日の1月1日になった途端にイギリスのワーキングホリデービザシステムが停止してしまうほど、多人数の方が一斉にイギリス移民局へ応募されました。システム復旧に数日かかったこともあり、2012年からイギリスビザセンターに48時間以内にメールを送った人の中から抽選で1000名にイギリスワーキングホリデービザ（ワーホリビザ）申請の権利が与えられました。
+	</p>
+	<p class="text01">
+	1000名の日本人イギリスワーキングホリデー（ワーホリビザ）枠に対して１～２万人の応募者があるとも言われており、宝くじのようだと言われています。もしかしたらそれ以上の応募者がいるかも知れません。
+	</p>
+
+ 	<p class="text01">
+	そんなイギリスのビザ取得が困難な状況を利用して「業者に手数料を払うとイギリスワーキングホリデービザが取れやすくなる」と謳う業者が出ています。<br/><br/>	
+	</p>
+
+ 	<p class="text01">
+	イギリスワーキングホリデービザの発表の前に日本ワーキングホリデー協会にある女性から電話を頂きました。<br />
+	<br />
+	「私、イギリスのワーホリビザを取得しました。イギリスのの学校とホームステイの手続きをお願いしたいのですが．．．」<br />
+	<br />
+	当協会スタッフはイギリスワーキングホリデービザ（ワーホリビザ）当選発表前にこのような電話を受けて驚き、すぐにイギリス大使館、イギリスビザセンター、 
+	イギリス現地サポートオフィスなどに確認を行ったのですが全くそのような事実はなく、分かったことはその方は「ある業者に”イギリスワーホリビザ取得に強い”と言われ、手数料数万円を払いました。」とのことでした。　<br />
+	<br />
+	残念ながらその女性はイギリスワーキングホリデービザが当選しませんでした。
+	</p>
+	<p class="text01">
+	「必ずイギリスのワーキングホリデービザが取得できる方法を教えます。」<br />
+	「イギリスのビザの抽選に有利です。」<br />
+	などと言って、手数料を取ったり、何らかしらの契約を迫る個人や団体があるようですが、
+	イギリスのワーキングホリデービザは正しい手順で手続きを行えば、全ての方が公平に抽選を受ける権利がありますので、
+	イギリスのビザ申請を予定している方は、正確な情報収集を行うように努めてください。
+	</p>
+	<br/>
+<center>
+	<div style="width: 90%; padding: 20px; background-color: #efefef;">
+	<p><strong><span style="color: #000000;">
+	イギリスワーキングホリデービザ取得において業者を利用する方は下記の点に特に注意してください。
+	</span></strong>
+	</p>
+	&nbsp;<br/>
+	<ul class="list-disc">
+	<li>イギリスのワーキングホリデービザ取得に強い業者というのは一切ありません。</li>
+	<li>手数料を払ったからといって、ビザ取得において特別扱いされることはありません。</li>
+	<li>イギリスワーキングホリデービザ取得発表の前にビザ取得が確定することはありません。</li>
+	</ul>
+	</div>
+	&nbsp;<br/>
+	<p class="text01"></p>
+</center>
+	  <h3 class="h3-01">日本ワーキングホリデー協会では</h3>
+	<p class="text01">
+	イギリスワーキングホリデービザ（ワーホリビザ）取得のためのセミナーを行っていきます。
+	</p>
+	<p class="text01"> 
+		2014年 イギリスワーキングホリデービザ（ワーホリビザ）
+		応募要項が発表されましたら、毎日イギリスワーキングホリデービザに関する無料セミナーを開催する予定です。
+		イギリスワーキングホリデービザ応募や申請においての今までの失敗例や注意点をふまえセミナーでお伝えします。
+		イギリスセミナーは毎年多くの方の参加があり、満員でご予約がおとりにくくなる傾向にございますので、
+		お早めのご予約をお勧めしております。
+		一人でも多くの方にイギリスワーキングホリデーの可能性を広げていただけるように願っています。
+	</p>
+      <?php 
+			//settings for the calendar module display
+            $country_to_display = 'イギリス';
+            $number_to_display = '2';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from); 
+      ?>
+
+<p><center><a href="http://www.jawhm.or.jp/seminar/seminar" rel="lightbox"><img class="alignnone size-full wp-image-2490" title="ワーキングホリデー（ワーホリ）＆留学無料セミナー開催中" src="http://www.jawhm.or.jp/ja/wp-content/uploads/2012/11/2d0cb765a6f4fdf2006e3bb114cd5ee0.png"  /></a></center></p>
+
+<p>&nbsp;</p>
+<p><span style="font-size: x-small;">＊ 日本ワーキングホリデー協会でも毎年多くのイギリスワーキングホリデービザ取得のお手伝いをしております。</span></p>
+<p><span style="font-size: x-small;">お手伝い件数は日本で一番多いかもしれませんし 応募者数が多いので取得される方もその分多くなりますが、当協会がお手伝いするから、もしくは当協会のビザ取扱い件数が多いからという理由で取得する確率 も高くなると言う事もありません。　</span></p>
+<p><span style="font-size: x-small;">協会はあくまでもお手伝いですのでいかなるビザの取得を保障するものではありません。</span></p>
+
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+      	  		<center>
+		<p><font color="orangered">ビザの申請、ひとりでできますか？</font></p>
+		<a href="/mem/#meritt"><img src="images/memline3_off.gif"></a></center>
+<br/>
+
+	  <div class="visa-nav">
+	    <p>/<a href="v-aus.html">オーストラリア</a>/<a href="v-nz.html">ニュージーランド</a>/<a href="v-can.html">カナダ</a>/<a href="v-kor.html">韓国</a>/<a href="v-fra.html">フランス</a>/<a href="v-deu.html">ドイツ</a>/<a href="v-uk.html">イギリス</a>/<a href="v-ire.html">アイルランド</a>/<a href="v-dnk.html">デンマーク</a>/<a href="v-ywn.html">台湾</a>/<a href="v-hkg.html">香港</a>/</p>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

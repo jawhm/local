@@ -1,0 +1,100 @@
+<?php
+require_once 'include/header.php';
+require_once 'include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='イギリス　ワーキングホリデービザ';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）や留学などの海外生活でよるある質問をまとめました。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/qanda-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'イギリスワーキングホリデーのよくある質問';
+
+$header_obj->display_header();
+include('calendar_module/mod_event_horizontal.php');
+
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('qa'); ?>
+	  <h2 class="sec-title">イギリス　留学・ワーキングホリデー</h2>
+	  <table class="qatable-aus">
+	    <tr>
+		  <th><img src="images/mflag07.gif" alt="" /><br />イギリス</th>
+		  <td>ワーキングホリデー協定国別に、よくあるご質問にお答えしています。</td>
+		</tr>
+	  </table>
+      <p>&nbsp;</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'イギリス';
+            $number_to_display = '6';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <h2 class="sec-title">よくある質問と回答</h2>
+	  <div class="qa-abox-country">
+	    <h3 class="q-title">Ｑ１.イギリスワーキングホリデーの仕事はすぐ見つかりますか？</h3>
+		<p class="text01">英語ができなければ皿洗いからがんばりましょう。1年間日本語環境で皿洗いはお勧めしません。英語が伸びないからです。英語が伸びれば様々なアルバイトのチャンスがありますがヨーロッパの大不況もあり厳しいです。ロンドンには日本食レストランも多く他の都市よりは圧倒的に見つけやすいです。<br />
+英語力は大きく左右しますワーキング・ホリデー・メーカーが就く仕事としては日本食レストランのウェイターウェイトレス給仕、お土産屋、旅行会社、配達業、など日本語で出来る仕事が多いです。　イギリスの最低賃金は18歳から21歳が￡4.77、22歳以上が￡5.73です。そこから所得税、社会保険料が天引きされます。英語ができなければそれ以下というのも現実です。</p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ２.イギリスに到着後にしなければならない手続き</h3>
+		<p class="text01m30">イギリスでワーキングホリデーが就労する場合、National Insurance Number という社会保険番号が必要になります。<br />
+仕事が決まったら、雇用主から雇用照明をもらい、自分で勤務地を管轄するジョブセンターに予約しましょう。面接時にパスポート・雇用証明・住所証明・語学学校学生証をそろえて申請します。後日郵送にて番号が届きます。その通知書を勤務されている雇用主へ申告してください。 この手続きは必ず行ってください。　不安な方は日本語サポートセンターなどにお問い合わせください。</p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ３.イギリスでの銀行口座の開設！</h3>
+		<p class="text01m30">ワーキングホリデーでイギリスに行ったら必ず銀行口座は必要になりますよね？　イギリスで働く人は給与を振り込んでもらうために必ず必要です。　銀行口座はなるべく早く作ってくださいイギリスの滞在先住所に近い支店または通っている語学学校や勤務している職場に近い支店です。<br />
+開設に必要なもの、<br />
+・パスポート<br />
+・身元保証書、語学学校での在籍証明や職場からの在勤証明書です <br />
+・口座開設申込書、銀行にあります。記入して提出<br />
+・クレジットカード（日本で作ったもの）<br />
+・住所証明書（公共料金の請求書など）<br />
+住所証明書は公共料金の請求書等が求められるため用意するのは無理でしょう。そこでクレジットカードが有効になります。必ず日本でワーキングホリデーに行く前にクレジットカードを作っておきましょう。海外では身分証明として大変有効です。<br />
+</p>
+	  </div>
+		<div class="qa-abox-country">
+		<p class="text01m30"></p>
+		<div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'イギリス';
+            $number_to_display = '6';
+            $start_display_from = '6'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	 
+	  <div class="advbox03">
+<?php
+	// 128
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 106, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

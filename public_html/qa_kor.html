@@ -1,0 +1,92 @@
+<?php
+require_once 'include/header.php';
+require_once 'include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='韓国　ワーキングホリデービザ';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）や留学などの海外生活でよるある質問をまとめました。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/qanda-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '韓国ワーキングホリデーのよくある質問';
+
+$header_obj->display_header();
+include('calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('qa'); ?>
+	  <h2 class="sec-title">韓国　ワーキングホリデー</h2>
+	  <table class="qatable-aus">
+	    <tr>
+		  <th><img src="images/mflag04.gif" alt="" /><br />韓国</th>
+		  <td>ワーキングホリデー協定国別に、よくあるご質問にお答えしています。</td>
+		</tr>
+	  </table>
+      <p>&nbsp;</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '韓国';
+            $number_to_display = '6';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <h2 class="sec-title">よくある質問と回答</h2>
+      <p>&nbsp;</p>
+	  <div class="qa-abox-country">
+	    <h3 class="q-title">Ｑ１.いつ韓国ワーキングホリデーに行くのがいいですか？</h3>
+		<p class="text01"> 韓国は近いので帰国も簡単です。夏は暑くて冬はマイナス20度ですので気を付けるといいでしょう。新学期はが9月です。9月前に行くのもいいですね。　ワーキングホリデー終了後もすぐに再入国できます。　韓国ワーキングホリデーを延長したい場合は他のビザへの変更はできないので日本に帰国してから観光ビザで再入国した方がいいでしょう　</p>
+	  </div>
+		    <div class="qa-abox-country">
+		<h3 class="q-title">Ｑ２.韓国到着後にすぐすること</h3>
+		<p class="text01m30">外国人登録証を貰いに行きます。そして再入国許可証をもらいます。そして在韓日本大使館に在留届を出します。　銀行口座は外国人登録証があれば開設できます。</p>
+	  </div>
+	    <div class="qa-abox-country">
+		<h3 class="q-title">Ｑ３.韓国で仕事は見つかりますか？</h3>
+		<p class="text01m30">韓国語が出来れば大丈夫でしょうが一般的ワーキングホリデーは観光客相手のレストラン。時給は300円～。　地方ではソウルよりも生活費は安くなるがバイトなどは見つかりにくい。</p>
+	  </div>
+	    <div class="qa-abox-country">
+		<h3 class="q-title">Ｑ４.韓国は儒教の国ですので礼儀を重んじた行動をしてください</h3>
+		<p class="text01m30">・目上の人の前では絶対にタバコは吸わない。<br />・お酒は顔を横に向けて飲むようにする。<br />
+				・優先席には座らない</p>
+	  </div>
+		<div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '韓国';
+            $number_to_display = '6';
+            $start_display_from = '6'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	 
+	  <div class="advbox03">
+<?php
+	// 125
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 103, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

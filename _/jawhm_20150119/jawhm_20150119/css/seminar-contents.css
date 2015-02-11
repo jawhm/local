@@ -1,0 +1,50 @@
+
+.orange-solid {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+
+#contentsbox { 
+	width: 1200px;
+}
+
+
+* html #contentsbox {
+	width: 1210px;
+}
+
+
+#contents {	
+	width: 1180px;
+	margin-right: 3px;
+	background-image: none;
+}
+
+#contentswide {
+	width: 1180px;
+}
+
+* html #contents {
+	width: 1192px;
+}
+
+
+#maincontent {
+	width: 900px;
+}
+
+
+#maincontentwide {
+	width: 1130px;
+}
+
+
+#topicpath {
+	width:890px;
+}
+
+#maincontent h2.sec-title {
+	width:880px;
+}

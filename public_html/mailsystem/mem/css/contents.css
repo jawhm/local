@@ -1,0 +1,256 @@
+@CHARSET "UTF-8";
+
+table.listdata	{
+	background:	aliceblue;
+}
+table.listdata TH	{
+	background:	navy;
+	color: white;
+	text-weight: bodl;
+}
+table.listdata TD	{
+	border-bottom: 1px dotted navy;
+}
+.listdata .odd	{
+	background: cyan;
+}
+
+table.listdata2	{
+	background:	Oldlace;
+}
+table.listdata2 TH	{
+	background:	DarkGreen;
+	color: white;
+	text-weight: bodl;
+}
+table.listdata2 TD	{
+	border-bottom: 1px dotted DarkGreen;
+}
+.listdata2 .odd	{
+	background: MediumSpringGreen;
+}
+
+.label {
+	background: cyan;
+}
+.label2 {
+	background: MediumSpringGreen;
+}
+
+.infield	{
+	border-bottom: 1px dotted navy;
+}
+
+
+
+.bar_top	{
+	width: 1000px;
+	height: 30px;
+	background-color: navy;
+	color: white;
+	font-size: 16pt;
+	font-weight: bold;
+	vertical-align: middle;
+	padding: 5px 0 0 50px ;
+	text-align: left;
+}
+
+.bar_bottom	{
+	width: 1000px;
+	height: 17px;
+	background-color: navy;
+	color: white;
+	font-size: 9pt;
+	font-weight: bold;
+	margin: 5px 0 0 0;
+	text-align:right;
+	padding: 1px 50px 0 0;
+}
+
+#bar_loginuser	{
+	position: absolute;
+	top: 20px;
+	left: 600px;
+	width: 390px;
+	text-align: right;
+	color: white;
+	font-size: 10pt;
+}
+
+#bar_status		{
+	position: absolute;
+	top: 10px;
+	left: 16px;
+	display: none;
+}
+
+.div_topmenu	{
+	border: 1px solid navy;
+	width: 1000px;
+	text-align: left;
+
+}
+
+.div_notice		{
+	border: 1px solid navy;
+	width: 1000px;
+	margin: 5px 0 3px 0;
+	text-align: left;
+}
+
+.div_sidemenu	{
+	width: 220px;
+}
+
+.div_main		{
+	width: 760px;
+
+}
+
+.div_main_wide		{
+	width: 1000px;
+
+}
+
+.cont_title		{
+	border-left: 3px solid indigo;
+	border-top: 1px solid indigo;
+	padding: 3px 0 1px 10px;
+	font-size: 12pt;
+	font-weight: bold;
+	color: #191970;
+}
+
+.cont_main		{
+	background-color: aliceblue;
+	margin: 0 0 8px 0;
+	padding: 8px 0 5px 12px;
+	font-size: 10pt;
+}
+
+.menu_link	{
+	line-height: 140%;
+}
+
+.menu_title		{
+	border-left: 3px solid indigo;
+	border-top: 1px solid indigo;
+	padding: 3px 0 1px 10px;
+	font-size: 12pt;
+	font-weight: bold;
+	color: #191970;
+}
+
+.menu_main		{
+	background-color: aliceblue;
+	margin: 0 0 8px 0;
+	padding: 8px 0 5px 12px;
+	font-size: 10pt;
+}
+
+
+h1	{
+	color: white;
+	background-color: #525D76;
+	font-size: 22px;
+	width: 980px;
+	padding-left: 10px;
+}
+
+.button_logout	{
+	background: url(../images/button_logout.png) no-repeat 0 0;
+	width: 90px;
+	height: 22px;
+	padding-right: 5px;
+	color: navy;
+	background-color: white;
+	text-align: right;
+	cursor: pointer;
+}
+
+.button_submit	{
+	background: url(../images/button_submit.png) no-repeat 0 0;
+	padding-left: 16px;
+	cursor: pointer;
+}
+
+.button_copy	{
+	background: url(../images/button_copy.png) no-repeat 0 0;
+	padding-left: 16px;
+	cursor: pointer;
+}
+
+.button_go	{
+	background: url(../images/button_go.png) no-repeat 0 0;
+	padding-left: 16px;
+	cursor: pointer;
+}
+
+.button_home	{
+	background: url(../images/button_home.png) no-repeat 0 0;
+	padding-left: 16px;
+	cursor: pointer;
+}
+
+.button_del	{
+	background: url(../images/button_del.png) no-repeat 0 0;
+	padding-left: 16px;
+	cursor: pointer;
+}
+
+.button_csv	{
+	background: url(../images/button_disk.png) no-repeat 0 0;
+	padding-left: 16px;
+	cursor: pointer;
+}
+
+.button_cancel	{
+	background: url(../images/button_cancel.png) no-repeat 0 0;
+	padding-left: 16px;
+	cursor: pointer;
+}
+
+.button_save	{
+	background: url(../images/icons/silk/disk.png) no-repeat 0 0;
+	padding-left: 16px;
+	cursor: pointer;
+}
+
+.button_rev		{
+	background: url(../images/icons/silk/date_previous.png) no-repeat 0 0;
+	padding-left: 16px;
+	cursor: pointer;
+}
+
+.button_list		{
+	background: url(../images/icons/silk/application_cascade.png) no-repeat 0 0;
+	padding-left: 16px;
+	cursor: pointer;
+}
+
+.button_recep	{
+	background: url(../images/icons/silk/application_xp_terminal.png) no-repeat 0 0;
+	padding-left: 16px;
+	cursor: pointer;
+}
+
+table.list-data{
+    width: 100%;
+    font-size: 12pt;
+}
+table.list-data, table.list-data th, table.list-data tr td{
+    border-collapse: collapse;
+    border: #333 solid 1px;
+}
+table.list-data th{
+    padding: 5px;
+    color: #333;
+    background: #ccc;
+}
+table.list-data td{
+    padding: 5px;
+}
+.error{
+    display: block;
+    color: #b30000;
+}

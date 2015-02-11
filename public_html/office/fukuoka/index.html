@@ -1,0 +1,184 @@
+<?php
+//require_once 'include/header.php';
+//$redirection='/event/map/mob.php?p=tokyo';
+
+require_once '../../include/header.php';
+require_once '../../include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+$header_obj->mobileredirect=$redirection;
+$header_obj->title_page='福岡オフィスのご案内';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法を発信しています。ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。ワーホリなら日本ワーキングホリデー協会';
+$header_obj->keywords_page='福岡,オフィス,海外,ふくおか,フクオカ,ワーホリ,セミナー会場,日本ワーキングホリデー協会,ワーホリ協会';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="/images/mainimg/access-mainimg.gif" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '日本ワーキング・ホリデー協会福岡オフィスへはJR天神駅から徒歩8分！初心者セミナーでは最新情報と正しい知識をみにつけることができます。';
+
+$header_obj->display_header();
+include('../../calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('access'); ?>
+	  <h2 class="sec-title">アクセス</h2>
+
+	  <div class="table-base" style="margin-bottom:20px;">
+	    <h3 class="table-base-title" style="font-size:18pt;" id="tokyo-office">福岡オフィス</h3>
+	    <table>
+		  <tr>
+		    <th>住所</th>
+			<td>福岡セミナーは福岡オフィスで開催されます。<br/>
+				〒810-0004 福岡市中央区渡辺通4-6-20　星野ビル6階1号室</td>
+		  </tr>
+		  <tr>
+		    <th>福岡オフィス周辺地図<img src="../../images/office/fukuoka/fukuoka_02.jpg" style="padding:10px;" alt="ワーキングホリデー福岡オフィス　ビル外見写真"></th>
+			<td>
+<?php if($header_obj->mobilepage) { ?>
+	<iframe width="85%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?q=%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%B8%A1%E8%BE%BA%E9%80%9A4-6-20%E3%80%80%E6%98%9F%E9%87%8E%E3%83%93%E3%83%AB6%E9%9A%8E1%E5%8F%B7%E5%AE%A4&amp;oe=utf-8&amp;aq=t&amp;hl=ja&amp;client=firefox-a&amp;ie=UTF8&amp;hq=&amp;hnear=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%B8%A1%E8%BE%BA%E9%80%9A%EF%BC%94%E4%B8%81%E7%9B%AE%EF%BC%96%E2%88%92%EF%BC%92%EF%BC%90+%E6%98%9F%E9%87%8E%E3%83%93%E3%83%AB&amp;t=m&amp;brcurrent=3,0x3541919aec3eeba1:0x65b0682cf5ba88c5,0&amp;ll=33.586023,130.402479&amp;spn=0.0143,0.038538&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.jp/maps?q=%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%B8%A1%E8%BE%BA%E9%80%9A4-6-20%E3%80%80%E6%98%9F%E9%87%8E%E3%83%93%E3%83%AB6%E9%9A%8E1%E5%8F%B7%E5%AE%A4&amp;oe=utf-8&amp;aq=t&amp;hl=ja&amp;client=firefox-a&amp;ie=UTF8&amp;hq=&amp;hnear=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%B8%A1%E8%BE%BA%E9%80%9A%EF%BC%94%E4%B8%81%E7%9B%AE%EF%BC%96%E2%88%92%EF%BC%92%EF%BC%90+%E6%98%9F%E9%87%8E%E3%83%93%E3%83%AB&amp;t=m&amp;brcurrent=3,0x3541919aec3eeba1:0x65b0682cf5ba88c5,0&amp;ll=33.586023,130.402479&amp;spn=0.0143,0.038538&amp;z=14&amp;iwloc=A&amp;source=embed" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+<?php } else {	?>
+	<iframe width="450" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?q=%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%B8%A1%E8%BE%BA%E9%80%9A4-6-20%E3%80%80%E6%98%9F%E9%87%8E%E3%83%93%E3%83%AB6%E9%9A%8E1%E5%8F%B7%E5%AE%A4&amp;oe=utf-8&amp;aq=t&amp;hl=ja&amp;client=firefox-a&amp;ie=UTF8&amp;hq=&amp;hnear=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%B8%A1%E8%BE%BA%E9%80%9A%EF%BC%94%E4%B8%81%E7%9B%AE%EF%BC%96%E2%88%92%EF%BC%92%EF%BC%90+%E6%98%9F%E9%87%8E%E3%83%93%E3%83%AB&amp;t=m&amp;brcurrent=3,0x3541919aec3eeba1:0x65b0682cf5ba88c5,0&amp;ll=33.586023,130.402479&amp;spn=0.0143,0.038538&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.jp/maps?q=%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%B8%A1%E8%BE%BA%E9%80%9A4-6-20%E3%80%80%E6%98%9F%E9%87%8E%E3%83%93%E3%83%AB6%E9%9A%8E1%E5%8F%B7%E5%AE%A4&amp;oe=utf-8&amp;aq=t&amp;hl=ja&amp;client=firefox-a&amp;ie=UTF8&amp;hq=&amp;hnear=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%B8%A1%E8%BE%BA%E9%80%9A%EF%BC%94%E4%B8%81%E7%9B%AE%EF%BC%96%E2%88%92%EF%BC%92%EF%BC%90+%E6%98%9F%E9%87%8E%E3%83%93%E3%83%AB&amp;t=m&amp;brcurrent=3,0x3541919aec3eeba1:0x65b0682cf5ba88c5,0&amp;ll=33.586023,130.402479&amp;spn=0.0143,0.038538&amp;z=14&amp;iwloc=A&amp;source=embed" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+<?php } ?>
+			</td>
+		  　</tr>
+		  <tr>
+			<th>アクセス方法</th>
+			<td>【JR天神駅から徒歩8分】<br/>
+			駅から　天神駅南口　まっすぐ渡辺通りを薬院方面へ下る(南方面）<br/>
+			ロフトを通り超え最初の1個目の信号をわたって最初の茶緑色の星野ビル６階です。<br/>
+			【JR天神駅から】　⇒　<u><a href="http://www.jawhm.or.jp/blog/fukuokablog/item/321" target="_blank">詳細はこちらから</a></u><br/>
+			【西鉄薬院駅から】　⇒　<u><a href="http://www.jawhm.or.jp/blog/fukuokablog/item/485" target="_blank">詳細はこちらから</a></u><br/>
+<?php if($header_obj->mobilepage) { ?>
+	<iframe width="85%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=d&amp;source=s_d&amp;saddr=%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;daddr=%E3%80%92810-0004+%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%B8%A1%E8%BE%BA%E9%80%9A4-6-20%E3%80%80%E6%98%9F%E9%87%8E%E3%83%93%E3%83%AB6%E9%9A%8E1%E5%8F%B7%E5%AE%A4&amp;geocode=FcaDAAId7cHFBw%3BFVt7AAIdasjFByGXCd8UEziEqylh3tGTmpFBNTGXCd8UEziEqw&amp;aq=&amp;sll=33.587596,130.402361&amp;sspn=0.004773,0.010568&amp;hl=ja&amp;brcurrent=3,0x354191908c850143:0x8345f210fd151d11,0&amp;dirflg=w&amp;mra=dme&amp;mrsp=0&amp;sz=17&amp;ie=UTF8&amp;t=m&amp;ll=33.587596,130.40235&amp;spn=0.005363,0.00912&amp;z=16&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.jp/maps?f=d&amp;source=embed&amp;saddr=%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;daddr=%E3%80%92810-0004+%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%B8%A1%E8%BE%BA%E9%80%9A4-6-20%E3%80%80%E6%98%9F%E9%87%8E%E3%83%93%E3%83%AB6%E9%9A%8E1%E5%8F%B7%E5%AE%A4&amp;geocode=FcaDAAId7cHFBw%3BFVt7AAIdasjFByGXCd8UEziEqylh3tGTmpFBNTGXCd8UEziEqw&amp;aq=&amp;sll=33.587596,130.402361&amp;sspn=0.004773,0.010568&amp;hl=ja&amp;brcurrent=3,0x354191908c850143:0x8345f210fd151d11,0&amp;dirflg=w&amp;mra=dme&amp;mrsp=0&amp;sz=17&amp;ie=UTF8&amp;t=m&amp;ll=33.587596,130.40235&amp;spn=0.005363,0.00912&amp;z=16" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>			</td>
+<?php } else {	?>
+	<iframe width="425" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=d&amp;source=s_d&amp;saddr=%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;daddr=%E3%80%92810-0004+%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%B8%A1%E8%BE%BA%E9%80%9A4-6-20%E3%80%80%E6%98%9F%E9%87%8E%E3%83%93%E3%83%AB6%E9%9A%8E1%E5%8F%B7%E5%AE%A4&amp;geocode=FcaDAAId7cHFBw%3BFVt7AAIdasjFByGXCd8UEziEqylh3tGTmpFBNTGXCd8UEziEqw&amp;aq=&amp;sll=33.587596,130.402361&amp;sspn=0.004773,0.010568&amp;hl=ja&amp;brcurrent=3,0x354191908c850143:0x8345f210fd151d11,0&amp;dirflg=w&amp;mra=dme&amp;mrsp=0&amp;sz=17&amp;ie=UTF8&amp;t=m&amp;ll=33.587596,130.40235&amp;spn=0.005363,0.00912&amp;z=16&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.jp/maps?f=d&amp;source=embed&amp;saddr=%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;daddr=%E3%80%92810-0004+%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%B8%A1%E8%BE%BA%E9%80%9A4-6-20%E3%80%80%E6%98%9F%E9%87%8E%E3%83%93%E3%83%AB6%E9%9A%8E1%E5%8F%B7%E5%AE%A4&amp;geocode=FcaDAAId7cHFBw%3BFVt7AAIdasjFByGXCd8UEziEqylh3tGTmpFBNTGXCd8UEziEqw&amp;aq=&amp;sll=33.587596,130.402361&amp;sspn=0.004773,0.010568&amp;hl=ja&amp;brcurrent=3,0x354191908c850143:0x8345f210fd151d11,0&amp;dirflg=w&amp;mra=dme&amp;mrsp=0&amp;sz=17&amp;ie=UTF8&amp;t=m&amp;ll=33.587596,130.40235&amp;spn=0.005363,0.00912&amp;z=16" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>			</td>
+<?php } ?>
+		  </tr>
+		  <tr>
+		    <th>連絡先</th>
+			<td>ワーキングホリデー（ワーホリ）セミナーご予約<br/>TEL：092-739-0707 <br/>FAX:092-739-0708<br/>
+			渡航先情報・ビザ申請・その他のワーキングホリデー相談はメール ( info@jawhm.or.jp ) にてお願い致します。（メンバー様優先）</td>
+		  </tr>
+		  <tr>
+		    <th>営業時間</th>
+			<td>OPEN 11:00 - CLOSE 19:00<br/>
+			福岡オフィスは木曜日が定休日となっております。<br/>
+			※ご注意　個別でのカウンセリングをご希望の場合は、事前にご予約をお願い致します。<br/>
+			</td>
+		  </tr>
+	  	<tr>
+		    <th>スケジュール</th>
+			<td>福岡オフィスでも、様々なセミナーを開催しております。<br/>
+				福岡のワーホリセミナーは東京のように毎日開催することはできませんが、アットホームなオフィスとスタッフで、皆さまを全力サポートすることが福岡ワーホリセミナーの特徴です。 東京セミナーの場合は全国様々な場所からセミナーに参加される方が多いですが、福岡ワーホリセミナーは福岡の若者を対象として開催される為、少人数で気取らず気軽に参加できますよ。 
+			</td>
+		  </tr>
+<!--
+	  	<tr>
+		    <th>留学カウンセリング</th>
+			<td>
+			しっかりと英語を学びたいお客様向けの留学プランニングもお任せください。セミナー参加後にカウンセリングへご予約いただくことも可能です。<br/>
+			海外留学経験を持つカウンセラーがビザ取得方法や語学学校選び現地の生活安全情報までしっかりサポートいたします。
+			</td>
+		  </tr>
+-->
+	  <!--
+	  	<tr>
+		    <th>出張ワーホリセミナー</th>
+			<td>
+				大学/専門学校を対象に東京オフィス　新宿本店では学生向け出張ワーホリセミナーを催行いたします。<br/>
+				東京オフィス　新宿本店対応地区：<br/>青森県、岩手県、宮城県、秋田県、山形県、福島県、 北海道、島根県、 岡山県、広島県、 山口県、鳥取県<br/><br/>
+				ご相談は ( info@jawhm.or.jp )までお願い致します。法人担当がご回答させていただきます。
+				</td>
+		  </tr>
+-->
+<tr>
+		    <th>福岡スタッフから<img src="../../images/office/fukuoka/gaiken.jpg" style="padding:10px;"　alt="ワーキングホリデー東京オフィス　新宿本店　オフィス内写真"></th>
+			<td>福岡オフィスに来られるお客様はいつも元気いっぱいで、お話をしているとこっちまで元気になります！
+				ワーキングホリデーの制度をもっと福岡の人に知ってもらう、そして皆さんが福岡から世界中に飛び立っていけるようにサポートをすることが私たちの使命です！
+				海外経験豊富なスタッフがいつでも貴方の来店をお待ちしていますよ！ワーホリに関する質問や相談だけでなく、海外へ行ってからの生活について、楽しかったこと辛かったこと、色々お答えしますので、是非一度オフィスへお越し下さいませ！<br/>
+				<a href="/blog/fukuokablog/" target="_blank"><img src="../../images/office/blog_off.gif" style="padding:10px;" alt="ワーキングホリデー協会スタッフブログはこちら"></a><br/>
+
+			</td>
+		  </tr>
+
+		  <tr>
+		    <th>manlyについて<img src="../../images/office/fukuoka/tennai2.jpg" style="padding:10px;"　alt="ワーキングホリデー東京オフィス　新宿本店　オフィス内写真"></th>
+			<td><strong>CafeBar Manly　カフェバー　マンリー</strong><br/>
+				<br/>カフェ・レストラン「Manly（マンリー）」は、天神の今泉にオーストラリア・シドニーのビーチ沿いにあるような全面ガラス張りの可愛くて開放的な空間が魅力的な飲食店です。
+				普段は飲食店として経営されていますが、福岡オフィスではMnalyの一室をお借りしてワーホリセミナーなどの開催も行っております。
+				１５名様から貸切もできるのでアットホームなパーティーができるのもManlyの魅力の一つ。
+				留学・ワーキングホリデーのご相談だけでなく、女子会・デート・さまざまな記念日・お一人様のゆったりカフェなどそれぞれのシーンでお楽しみください。<br/>
+				<br/>CafeBar Manly　カフェバー　マンリー<br/>
+					福岡県福岡市中央区今泉1‐18‐55<br/>
+					<A Href="http://www.hotpepper.jp/strJ000761870/">http://www.hotpepper.jp/strJ000761870/</A><br/>
+					<br/>
+<?php if($header_obj->mobilepage) { ?>
+	<iframe width="85%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E4%BB%8A%E6%B3%891%E2%80%9018%E2%80%9055&amp;aq=&amp;sll=33.587596,130.402898&amp;sspn=0.004773,0.010568&amp;brcurrent=3,0x3541918368d41305:0x23eba85ed0633748,0&amp;dirflg=w&amp;ie=UTF8&amp;hq=&amp;hnear=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E4%BB%8A%E6%B3%89%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%98%E2%88%92%EF%BC%95%EF%BC%95&amp;t=m&amp;ll=33.583235,130.401471&amp;spn=0.005363,0.00912&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E4%BB%8A%E6%B3%891%E2%80%9018%E2%80%9055&amp;aq=&amp;sll=33.587596,130.402898&amp;sspn=0.004773,0.010568&amp;brcurrent=3,0x3541918368d41305:0x23eba85ed0633748,0&amp;dirflg=w&amp;ie=UTF8&amp;hq=&amp;hnear=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E4%BB%8A%E6%B3%89%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%98%E2%88%92%EF%BC%95%EF%BC%95&amp;t=m&amp;ll=33.583235,130.401471&amp;spn=0.005363,0.00912&amp;z=16&amp;iwloc=A" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+<?php } else {	?>
+	<iframe width="425" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E4%BB%8A%E6%B3%891%E2%80%9018%E2%80%9055&amp;aq=&amp;sll=33.587596,130.402898&amp;sspn=0.004773,0.010568&amp;brcurrent=3,0x3541918368d41305:0x23eba85ed0633748,0&amp;dirflg=w&amp;ie=UTF8&amp;hq=&amp;hnear=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E4%BB%8A%E6%B3%89%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%98%E2%88%92%EF%BC%95%EF%BC%95&amp;t=m&amp;ll=33.583235,130.401471&amp;spn=0.005363,0.00912&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E4%BB%8A%E6%B3%891%E2%80%9018%E2%80%9055&amp;aq=&amp;sll=33.587596,130.402898&amp;sspn=0.004773,0.010568&amp;brcurrent=3,0x3541918368d41305:0x23eba85ed0633748,0&amp;dirflg=w&amp;ie=UTF8&amp;hq=&amp;hnear=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E4%BB%8A%E6%B3%89%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%98%E2%88%92%EF%BC%95%EF%BC%95&amp;t=m&amp;ll=33.583235,130.401471&amp;spn=0.005363,0.00912&amp;z=16&amp;iwloc=A" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+<?php } ?>
+
+			</td>
+		  </tr>
+		</table>
+	  </div><!--table-baseEND-->
+
+		<div class="aiu-link-block">
+			<a target="_blank" href="http://www.aiu.co.jp/travel/studyabroad/index.htm?p=oA425H01">
+				海外行くのに保険は大丈夫ですか？<br/>
+				<img src="/office/btn_hoken.jpg" /><br/>
+				<p style="font-size:9pt;">AIU保険会社のサイトへジャンプします</p>
+			</a>
+		</div>
+		&nbsp;<br/>
+		<div class="cpp-link-block">
+			<a target="_blank" href="http://www.jpcashpassport.jp/cpp/lp/mcgin.html?amid=843">
+				<img src="/office/btn_cpp.jpg" /><br/>
+				お金の新しい持って行き方お教えします
+			</a>
+		</div>
+		&nbsp;<br/>
+
+
+<!-- *********************** ページ下のセミナー一覧 start ************************ -->
+	<h3 class="osusume_seminar_title_list">おススメの無料ワーキングホリデー（ワーホリ）セミナー情報</h3>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '';
+            $number_to_display = '6';
+			display_horizontal_calendar($country_to_display,$number_to_display);            
+      ?>
+	<span class="bottom_osusume_seminar">★★★　留学・ワーホリの無料セミナー連日開催中！！　気になるセミナーをクリック！！　★★★</span>
+	  <div class="advbox03">
+      
+<?php
+	// 101
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 84, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+</div>
+
+<!-- *********************** ページ下のセミナー一覧 end ************************ -->
+
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

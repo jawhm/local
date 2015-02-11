@@ -1,0 +1,72 @@
+﻿<?php
+require_once 'include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='帰国後のサポート';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）帰国後の不安はありますか。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/return-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'ワーホリ帰国後のサポート';
+
+$header_obj->display_header();
+
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs(); ?>
+	  <h2 class="sec-title">ワーキング・ホリデー帰国者アンケートにご協力お願いします！</h2>
+	  <p class="text01">一般社団法人日本ワーキング・ホリデー協会ではワーキングホリデー経験者の方にアンケート調査を行っております。<br />
+	アンケートの結果は、今後ワーキング・ホリデー協定の締結や協定見直し等に役立てさせて頂きます。<br/>皆さまのご協力をお願い致します。</p>
+	  <p class="text01"><b>【 アンケート一覧 】</b><br/>
+		　<A Href="https://jp.surveymonkey.com/s/G2CJRWR" Target="_blank">・帰国者向け　体験談アンケート</a><br/>
+		　<A Href="https://jp.surveymonkey.com/s/WW9YH6T" Target="_blank">・仕事に関するアンケート</a><br/>
+		　<A Href="https://jp.surveymonkey.com/s/J8ZBH7K" Target="_blank">・学校・英語に関するアンケート</a><br/>
+		　<A Href="https://jp.surveymonkey.com/s/GQ368KS" Target="_blank">・憧れる＆住みたい都市アンケート</a></p>
+
+	  <h2 class="sec-title">帰国後の就活を支援しています。</h2>
+	  <p class="text01">当協会では、ワーキングホリデーから帰国された方を中心に、様々な情報提供をしております。。<br/>
+				海外での体験を活かせる求人情報を随時提供や職業紹介など、帰国後の就職にご活用頂いております。</p>
+	  <p class="text01"><b>【 ワーキングホリデー後の就職について 】</b><br/>
+		　⇒ <A Href="http://www.jawhm.or.jp/shusyoku.html" Target="_blank">別ページにて詳しくご紹介致します。</a></p>
+	  <p class="text01"><b>【 帰国者サポートの情報 】</b><br/>
+		　⇒ <A Href="http://www.jawhm.or.jp/ja/4898" Target="_blank">勤労青少年の国際交流を活用したキャリア形成支援事業について</a><br/>
+		　⇒ <A Href="http://www.jawhm.or.jp/ja/4986" Target="_blank">厚生労働省事業「グローバルエース」就職活動セミナーのご案内</a></p>
+	  <p class="text01"><b>【 帰国者向けセミナー 】</b><br/>
+		　日本ワーキングホリデー協会では、帰国者の方を対象としたセミナーも開催しております。<br/>
+		　セミナーの日程や詳細は<A Href="http://www.jawhm.or.jp/kouenseminar.php" Target="_blank"><font color="red">こちら</font></a>からご確認ください。</p>
+	  <p class="text01"><b>【 求人・求職情報サイト 】</b><br/>
+		　「ワーホリお仕事掲示板　Job Board」では来日外国人の方向けの求人だけでなく、日本人ワーキングホリデー・留学経験者向けの求人も公開しております。外国語を使える人材として、ワーキングホリデー・留学経験者の方は是非ご活用下さい。</p>
+		<Div Align="center"><A Href="http://japanworkingholiday.org/jobboard/" Target="_blank"><Img Src="http://www.jawhm.or.jp/ad/www/images/9bf73c78f824f99d966aca4dc7760fdc.gif"></a></Div><br/>
+
+	  <h2 class="sec-title">帰国者を対象としたイベント</h2>
+	  <table class="return-event">
+	    <tr>
+		  <th>交流会イベント</th>
+		  <td>交流会（Working Holiday Cultural Exchange Party）です。
+		  ワーキング・ホリデー体験帰国者とワーキング・ホリデーで来日中の外国人青年、渡航希望者の交流を目的としたパーティーです。</td>
+		  <td><br /></td>
+		</tr>
+	  </table>
+	  </div>
+	  <div class="advbox03">
+<?php
+	// 104
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 98, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+  </div>
+</div>
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

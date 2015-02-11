@@ -1,0 +1,95 @@
+<?php
+require_once 'include/header.php';
+require_once 'include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='デンマーク　ワーキングホリデービザ';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）や留学などの海外生活でよるある質問をまとめました。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/qanda-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'デンマークワーキングホリデーのよくある質問';
+
+$header_obj->display_header();
+include('calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('qa'); ?>
+	  <h2 class="sec-title">デンマーク　留学・ワーキングホリデー</h2>
+	  <table class="qatable-aus">
+	    <tr>
+		  <th><img src="images/mflag09.gif" alt="" /><br />デンマーク</th>
+		  <td>ワーキングホリデー協定国別に、よくあるご質問にお答えしています。</td>
+		</tr>
+	  </table>
+      <p>&nbsp;</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'デンマーク';
+            $number_to_display = '6';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <h2 class="sec-title">よくある質問と回答</h2>
+      <p>&nbsp;</p>
+	  <div class="qa-abox-country">
+	    <h3 class="q-title">Ｑ１. デンマーク語ができませんがデンマークワーキングホリデーは行けるのですか？</h3>
+		<p class="text01">デンマーク語ができないという理由でワーキングホリデービザが許可されないことはありません。　申請書類は英語で提出する為日本ワーキングホリデー協会でも英語での申請をお手伝いしております。
+
+			渡航時期で人気があるのは6～8月です。冬は長くしかも夜も長いので日本人には精神的にやられるかもしれません。
+			デンマークワーキングホリデービザの申請は出発予定日の２～３ヶ月前に申請しなければいけません。早すぎても受理されませんし、遅すぎても航空券を買いなおすことになります。十分に気をつけてください。</p>
+	  </div>
+	     <div class="qa-abox-country">
+	    <h3 class="q-title">Ｑ２.現地へ行ってからしなければいけない手続き。</h3>
+		<p class="text01m30">在留届を提出してください。そしてCPRナンバーを取得してください。住民登録すると個人番号（CPRナンバー）が割り振られ、保険カードがもらえます。<br />
+				医療費が無料になり、IDとしても使えます。銀行口座開設時、図書館カード作成時、バスの定期券発行時、デンマーク人と同じサービスが受けられます。</p>
+	  </div>
+	      <div class="qa-abox-country">
+	    <h3 class="q-title">Ｑ３.デンマークワーキングホリデーで注意すること</h3>
+		<p class="text01m30">ワーキングホリデービザでの滞在はシェンゲン協定の定めるビザ免除規定の期間（６ヶ月内９０日間）を含みます。シェンゲン協定加盟国外で6ヶ月過ごさなければ、デンマークも含むシェンゲン条約加盟国の再入国はできません。　シェンゲン協定加盟国に6カ月入国できないのでデンマークワーキングホリデー終了後にシェンゲン協定国へのヨーロッパ旅行はできません。</p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ４.デンマーク語ができなくても仕事できますか？</h3>
+		<p class="text01m30">デンマークでは2カ国語が使われていておもしろいです。ほとんどの人がきれいな英語が話せます。。<br />
+公共のアナウンス、看板などはすべてデンマーク語のみです。仕事もデンマーク語ができた方が有利です。最低限英語は出来た方がいいでしょう。</p>
+		<div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+	  
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'デンマーク';
+            $number_to_display = '6';
+            $start_display_from = '6'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <div class="advbox03">
+<?php
+	// 131
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 108, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+</div>
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

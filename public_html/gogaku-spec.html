@@ -1,0 +1,156 @@
+<?php
+require_once 'include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='語学講座';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/gogaku-spec-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '日本ワーキングホリデー協会の語学講座';
+
+$header_obj->display_header();
+
+include('calendar_module/mod_event_horizontal.php');
+?>
+
+<style>
+.tokuchou	{
+	font-size:12pt;
+	font-wight:bold;
+}
+.setumei	{
+	font-size:10pt;
+	margin:5px 0 30px 25px;
+}
+
+</style>
+
+
+
+
+	<div id="maincontent">
+	<?php echo $header_obj->breadcrumbs(); ?>
+	
+	
+	
+	<h2 class="sec-title">日本ワーキング・ホリデー協会　語学講座について</h2>
+		&nbsp;<br/>
+		<p class="text01b50">
+			日本ワーキング・ホリデー協会では、ワーキングホリデー（ワーホリ）で海外に渡航予定の皆様に向けて語学講座を定期的に開催しております。
+			日本で出来る英語の勉強の仕方や、現地で使える英会話レッスンなど様々な種類の講座をご用意しております。
+			ご興味のある方は是非ご参加下さいませ。
+		</p>
+
+	 <h3 class="h3-01">出発前の英語体験レッスン</h3>
+		<p class="text01">
+			現在、日本の子ども英会話教室で英語の先生をしているイギリス人の先生による出発前の英語の体験レッスン。
+			少人数制なので、アットホームな雰囲気で英語に触れることができます。<br/>
+		</p>
+		
+			<ul class="list-disc">
+			<li>自己紹介</li>
+			<li>海外に興味を持ったきっかけ</li>
+			<li>興味がある国、出発時期、現地でやりたい事</li>
+			<li>ホームステイでのシュミレーション会話</li>
+				<li>学校で会った友人とのやり取り</li>
+			<li>その他リクエストがございましたら、トークのテーマに取り上げさせて頂きます。</li>
+			</ul>
+			
+		<p class="text01">
+			どれもワーキングホリデー（ワーホリ）で海外に渡航してから使う実践的な英会話となります。<br/>
+		</p>
+		
+		<p class="text01">
+			講師は日本語も対応できますので、英語に自信がない方でも安心してご参加頂けます。<br/>
+			発言したいけれど英語でなんと言ったらいいかわからない、そんな時は英語での表現の仕方を伝授させて頂きます。<br/>
+			わからないことがあればどんどん質問して下さい。<br/>
+		</p>
+
+		<p class="text01b20">
+			※現在、東京会場のみの開催<br/>
+		</p>
+		
+<?php 
+            //settings for the calendar module display
+            $country_to_display = '出発前の英語体験レッスン';
+            $number_to_display = '';
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+ ?>
+		 		&nbsp;<br/>
+		<h3 class="h3-01">英語の有効的な勉強方法セミナー(日本ワーキングホリデー協会メンバー限定)</h3>
+
+		<p class="text01">
+			ワーキングホリデー（ワーホリ）で海外に渡航する準備期間に、やっておきたい英語の勉強方法についての講座です。<br/>
+			講師はカナダ・オーストラリアにワーキングホリデー（ワーホリ）で２年半ほど滞在経験のあるワーキングホリデー協会カウンセラーです。<br/>
+		</p>
+		<p class="text01">
+			ワーキングホリデー（ワーホリ）体験談も交えながら、具体的な勉強方法を皆様にお話します。<br/>
+			少人数制なので、海外に興味のある方同士交流することもできます。<br/>
+		</p>
+		<p class="text01b20">
+			※現在、名古屋会場のみの開催<br/>
+			※日本ワーキングホリデー協会メンバー様限定のセミナーとなっております。事前にメンバー登録をお願い致します。<br/>
+		</p>
+		<? include('./step/memline.php'); ?>
+		&nbsp;<br/>
+<?php 
+            //settings for the calendar module display
+            $country_to_display = '英語の有効的な勉強方法';
+            $number_to_display = '2';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+ ?>
+			&nbsp;<br/>
+			<h3 class="h3-01">語学学校スタッフによる体験レッスン</h3>
+
+		<p class="text01">
+			海外の語学学校の授業を、ワーキングホリデー（ワーホリ）渡航前に体験してみませんか？<br/>
+			語学学校スタッフの方を日本にお呼びして、不定期に体験レッスンを開催しております。<br/>
+		</p>
+		
+			<ul class="list-disc">
+			<li>「英語が伸びる単語カードの作り方」講座</li>
+			<li>カナダでスグに使える英語の体験レッスン</li>
+			<li>留学前に日本で出来る英語の上達法</li>
+			<li>英語発音クラス体験</li>
+			</ul>
+		
+		<p class="text01">
+			語学力の向上はもちろん、実際の授業の雰囲気、講師の語学学校についてなどもこの講座で知る事ができます。<br/>
+			ワーキングホリデー（ワーホリ）でどの語学学校に行くか迷っている方も必見です。<br/>
+		</p>
+	
+		&nbsp;<br/>
+		
+<?php 
+            //settings for the calendar module display
+            $country_to_display = 'inforum';
+            $number_to_display = '2';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+ ?>
+<?php 
+            //settings for the calendar module display
+            $country_to_display = '留学前に日本で出来る英語の上達法';
+            $number_to_display = '2';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+ ?>
+
+		&nbsp;<br/>
+
+    </div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<?php
+//require_once 'include/header.php';
+//$redirection='/event/map/mob.php?p=okinawa';
+
+require_once '../../include/header.php';
+require_once '../../include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+$header_obj->mobileredirect=$redirection;
+$header_obj->title_page='沖縄オフィスのご案内';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）協会の沖縄オフィスのご案内です。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法を発信しています。';
+$header_obj->keywords_page='沖縄,オフィス,ワーキングホリデー,ワーホリ,日本ワーキングホリデー協会,ワーホリ協会,留学';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="/images/mainimg/access-mainimg.gif" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '日本ワーキング・ホリデー協会沖縄オフィスへのアクセス';
+
+$header_obj->display_header();
+include('../../calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('access'); ?>
+	  <h2 class="sec-title">アクセス</h2>
+
+	  <div class="table-base" style="margin-bottom:20px;">
+	    <h3 class="table-base-title" style="font-size:18pt;" id="tokyo-office">沖縄オフィス</h3>
+	    <table>
+		  <tr>
+		    <th>住所</th>
+			<td>
+			沖縄ワーホリセミナーは沖縄オフィスで開催。<br/>（手作り革製品のお店「e-sa」の店内です）<br/>
+			沖縄県浦添市宮城2-39-5花水木ビル1F
+			</td>
+		  </tr>
+		  <tr>
+		    <th>沖縄セミナー会場地図<img src="../../images/office/okinawa/gaiken.jpg" style="padding:10px;"　alt="沖縄オフィス 外見写真"></th>
+			<td>
+<?php if($header_obj->mobilepage) { ?>
+	<iframe width="85%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.au/maps?hl=ja&amp;q=%E6%B5%A6%E6%B7%BB%E5%B8%82%E5%AE%AE%E5%9F%8E%EF%BC%92%EF%BC%8D%EF%BC%93%EF%BC%99%EF%BC%8D%EF%BC%95%E8%8A%B1%E6%B0%B4%E6%9C%A8%E3%83%93%E3%83%AB%EF%BC%91F&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%97%A5%E6%9C%AC,+%E6%B2%96%E7%B8%84%E7%9C%8C%E6%B5%A6%E6%B7%BB%E5%B8%82%E5%AE%AE%E5%9F%8E%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%93%EF%BC%99%E2%88%92%EF%BC%95+%E8%8A%B1%E6%B0%B4%E6%9C%A8%E3%83%93%E3%83%AB&amp;ll=26.249514,127.701899&amp;spn=0.009757,0.021007&amp;t=m&amp;z=14&amp;output=embed&iwloc=B"></iframe><br /><small><a href="https://maps.google.com.au/maps?hl=ja&amp;q=%E6%B5%A6%E6%B7%BB%E5%B8%82%E5%AE%AE%E5%9F%8E%EF%BC%92%EF%BC%8D%EF%BC%93%EF%BC%99%EF%BC%8D%EF%BC%95%E8%8A%B1%E6%B0%B4%E6%9C%A8%E3%83%93%E3%83%AB%EF%BC%91F&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%97%A5%E6%9C%AC,+%E6%B2%96%E7%B8%84%E7%9C%8C%E6%B5%A6%E6%B7%BB%E5%B8%82%E5%AE%AE%E5%9F%8E%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%93%EF%BC%99%E2%88%92%EF%BC%95+%E8%8A%B1%E6%B0%B4%E6%9C%A8%E3%83%93%E3%83%AB&amp;ll=26.249514,127.701899&amp;spn=0.009757,0.021007&amp;t=m&amp;z=14&amp;source=embed" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+<?php } else {	?>
+	<iframe width="450" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.au/maps?hl=ja&amp;q=%E6%B5%A6%E6%B7%BB%E5%B8%82%E5%AE%AE%E5%9F%8E%EF%BC%92%EF%BC%8D%EF%BC%93%EF%BC%99%EF%BC%8D%EF%BC%95%E8%8A%B1%E6%B0%B4%E6%9C%A8%E3%83%93%E3%83%AB%EF%BC%91F&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%97%A5%E6%9C%AC,+%E6%B2%96%E7%B8%84%E7%9C%8C%E6%B5%A6%E6%B7%BB%E5%B8%82%E5%AE%AE%E5%9F%8E%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%93%EF%BC%99%E2%88%92%EF%BC%95+%E8%8A%B1%E6%B0%B4%E6%9C%A8%E3%83%93%E3%83%AB&amp;ll=26.249514,127.701899&amp;spn=0.009757,0.021007&amp;t=m&amp;z=14&amp;output=embed&iwloc=B"></iframe><br /><small><a href="https://maps.google.com.au/maps?hl=ja&amp;q=%E6%B5%A6%E6%B7%BB%E5%B8%82%E5%AE%AE%E5%9F%8E%EF%BC%92%EF%BC%8D%EF%BC%93%EF%BC%99%EF%BC%8D%EF%BC%95%E8%8A%B1%E6%B0%B4%E6%9C%A8%E3%83%93%E3%83%AB%EF%BC%91F&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%97%A5%E6%9C%AC,+%E6%B2%96%E7%B8%84%E7%9C%8C%E6%B5%A6%E6%B7%BB%E5%B8%82%E5%AE%AE%E5%9F%8E%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%93%EF%BC%99%E2%88%92%EF%BC%95+%E8%8A%B1%E6%B0%B4%E6%9C%A8%E3%83%93%E3%83%AB&amp;ll=26.249514,127.701899&amp;spn=0.009757,0.021007&amp;t=m&amp;z=14&amp;source=embed" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+<?php } ?>
+			</td>
+		  </tr>
+		  <tr>
+		    <th>沖縄オフィスのアクセス</th>
+			<td>日本ワーキング・ホリデー協会　沖縄オフィスへのアクセス<br/>
+				*駐車場はございませんので、沖縄ワーホリセミナーには公共交通機関をご利用下さい。			
+			</td>
+		  </tr>
+		  <tr>
+		    <th>沖縄オフィスの連絡先</th>
+			<td>TEL：<a href="03-6304-5858">03-6304-5858</a>　（沖縄セミナーのご予約は東京オフィスよりご案内いたします。）<br/>
+				沖縄ワーホリセミナー当日の連絡先：098-927-5388　<br/>
+				沖縄セミナーに関するご相談は ( info@jawhm.or.jp ) までお願い致します。<br/>（メンバー様優先）</td>
+		  </tr>
+		  <tr>
+		    <th>営業時間</th>
+			<td>
+			月曜日定休日<br/>
+			<a href="http://www.jawhm.or.jp/seminar/seminar.php?place_name=okinawa">★火曜日はワーキングホリデー無料セミナーを開催しております。ご予約はこちら。</a>	<br/>		
+			※沖縄オフィスでカウンセリングをご希望の方はお電話にてご予約をお願いします。<br/>
+			</td>
+		  </tr>
+		  <tr>
+		    <th>スケジュール</th>
+			<td>
+				沖縄のワーホリセミナーは東京のように毎日開催することはできませんが、沖縄ワーホリセミナーの特徴は沖縄の若者に向けて語りかけることです！
+				 東京セミナーの場合、全国からセミナーに参加される方が多いですが、沖縄ワーホリセミナーは沖縄の若者を対象としています。
+				沖縄セミナーは沖縄のリズムで少人数で進行しますので、気取らず気軽に参加できますよ。
+			</td>
+		  </tr>
+	  	<tr>
+		    <th>セミナー内容</th>
+			<td>
+
+			日本ワーキングホリデー協会　沖縄オフィスでは、毎週火曜日にワーキングホリデー、留学初心者セミナーを開催しております。
+			ワーキングホリデー沖縄セミナーではワーキングホリデーのビザの取得条件、セカンドワーホリ取得条件、 
+			ワーキングホリデービザで出来ること、ワーキングホリデーでしてはいけないこと。
+			ワーキングホリデーに必要なもの、ワーキングホリデービザが取得できる各国の特徴など、
+			沖縄に住んでいて英語やワーキングホリデーに興味はあるけど何から始めていいのか分からない方はぜひ沖縄セミナーにご参加下さい！
+
+
+			</td>
+		  </tr>
+	  	<tr>
+		    <th>ご来店について</th>
+			<td>
+
+				お仕事などで沖縄での毎週火曜日ワーホリセミナーに<br/>
+				ご参加できないお客様は下記までご連絡下さい。<br/>
+				<br/>
+				＊セミナー以外のご来店についてはご予約制になります。<br/>
+				tel:098-927-5388/e-mail:e-sa@live.jp　担当：松井<br/>
+
+			</td>
+		  </tr>
+	  	<tr>
+		    <th>沖縄スタッフ自己紹介<br/><img src="../../images/office/okinawa/tennai1.jpg" style="padding:10px;" alt="沖縄オフィス　店内写真"></th>
+			<td>
+
+				沖縄を飛び出しオーストラリアで波乗りしながらワーホリ旅人、<br/>
+				前の仕事はホテルマンとして接客人、<br/>
+				今は沖縄県浦添に移転し<br/>
+				日本ワーキングホリデー協会沖縄オフィスとして<br/>沖縄ワーホリセミナーを担当。<br/>
+				<br/>
+				沖縄の若者にワーキングホリデー情報を発信しつつ、<br/>のんびり革製品を手づくりしてます。<br/>
+				いつでも「い～さ～」と沖縄らしくのんびり人生やってる沖縄人です！！<br/>
+				沖縄ワーホリセミナーでおあいましょう！ <br/>
+
+
+			</td>
+		  </tr>
+	  	<tr>
+		    <th class="th-end">沖縄スタッフから</th>
+			<td class="td-end">
+				オーストラリアでのワーホリ経験を活かして「日本ワーキングホリデー協会」と提携し、
+				沖縄で沖縄人による沖縄の若者にむけたワーキングホリデーセミナーを開催します！
+				まずワーキングホリデーの制度をもっと沖縄の若者にも知ってもらいたい。 私の体験談も話しつつ、ワーキングホリデー向けの語学学校探し、アルバイトやシェアハウスの見つけ方等を紹介しつつ、なんでもご質問にお答え致します。 お友達も御誘いのうえご参加ください。
+				いいことばかり話しません。ワーキングホリデー中の失敗談やこうすればよかったなど、 ワーキングホリデー経験者によるワーキングホリデーセミナーです！
+
+				沖縄の人にもっとワーキングホリデーを！ワーキングホリデーに対する認知度をアップするとともに、 沖縄の若者と一緒に沖縄を盛り上げていきたいと思います。
+				日本ワーキングホリデー協会東京オフィス　新宿本店と連携しながら沖縄にワーキングホリデー最新情報をお届けいたします。<br/>
+				<a href="/blog/okinawablog/" target="_blank"><img src="../../images/office/blog_off.gif" style="padding:10px;" alt="ワーキングホリデー協会スタッフブログはこちら"></a><br/>
+
+			</td>
+		  </tr>
+		</table>
+	  </div><!--table-baseEND-->
+<!--
+      <?php if($header_obj->mobilepage)
+      		{ ?>
+			<iframe width="90%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93+%E6%97%A5%E6%9C%AC%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%9B%E3%83%AA%E3%83%87%E3%83%BC%E5%8D%94%E4%BC%9A&amp;aq=1&amp;oq=%E6%97%A5%E6%9C%AC%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0&amp;sll=34.728949,138.455511&amp;sspn=35.987723,86.044922&amp;brcurrent=3,0x60188cd14ca8d159:0x98dab29c15d4a656,0&amp;ie=UTF8&amp;hq=%E6%97%A5%E6%9C%AC%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%9B%E3%83%AA%E3%83%87%E3%83%BC%E5%8D%94%E4%BC%9A&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93&amp;t=m&amp;ll=35.693184,139.699037&amp;spn=0.006295,0.006295&amp;output=embed&iwloc=B"></iframe><br /><small><a href="https://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93+%E6%97%A5%E6%9C%AC%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%9B%E3%83%AA%E3%83%87%E3%83%BC%E5%8D%94%E4%BC%9A&amp;aq=1&amp;oq=%E6%97%A5%E6%9C%AC%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0&amp;sll=34.728949,138.455511&amp;sspn=35.987723,86.044922&amp;brcurrent=3,0x60188cd14ca8d159:0x98dab29c15d4a656,0&amp;ie=UTF8&amp;hq=%E6%97%A5%E6%9C%AC%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%9B%E3%83%AA%E3%83%87%E3%83%BC%E5%8D%94%E4%BC%9A&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93&amp;t=m&amp;ll=35.693184,139.699037&amp;spn=0.006295,0.006295" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>	
+          <br /><small><a href="http://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF1-3-3&amp;mrt=loc&amp;sll=35.692777,139.699024&amp;sspn=0.001686,0.001985&amp;gl=jp&amp;brcurrent=3,0x60188cd14ca8d159:0x98dab29c15d4a656,0&amp;ttype=dep&amp;date=10%2F12%2F27&amp;time=14:33&amp;noexp=0&amp;noal=0&amp;sort=time&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93&amp;start=0&amp;ll=35.693169,139.698801&amp;spn=0.017427,0.028281&amp;z=15&amp;iwloc=A" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+
+        <?php     
+            }
+            else
+            {?>
+     	      
+ 			<iframe style="height:500px; width:660px; overflow:hidden; border:none; margin:0;" src="http://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF1-3-3&amp;mrt=loc&amp;sll=35.692777,139.699024&amp;sspn=0.001686,0.001985&amp;gl=jp&amp;brcurrent=3,0x60188cd14ca8d159:0x98dab29c15d4a656,0&amp;ttype=dep&amp;date=10%2F12%2F27&amp;time=14:33&amp;noexp=0&amp;noal=0&amp;sort=time&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93&amp;start=0&amp;ll=35.693169,139.698801&amp;spn=0.017427,0.028281&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="http://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF1-3-3&amp;mrt=loc&amp;sll=35.692777,139.699024&amp;sspn=0.001686,0.001985&amp;gl=jp&amp;brcurrent=3,0x60188cd14ca8d159:0x98dab29c15d4a656,0&amp;ttype=dep&amp;date=10%2F12%2F27&amp;time=14:33&amp;noexp=0&amp;noal=0&amp;sort=time&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93&amp;start=0&amp;ll=35.693169,139.698801&amp;spn=0.017427,0.028281&amp;z=15&amp;iwloc=A" target="_blank" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+-->      
+<?php } ?>
+
+		<div class="aiu-link-block">
+			<a target="_blank" href="http://www.aiu.co.jp/travel/studyabroad/index.htm?p=oA41F201">
+				海外行くのに保険は大丈夫ですか？<br/>
+				<img src="/office/btn_hoken.jpg" /><br/>
+				<p style="font-size:9pt;">AIU保険会社のサイトへジャンプします</p>
+			</a>
+		</div>
+		&nbsp;<br/>
+		<div class="cpp-link-block">
+			<a target="_blank" href="http://www.jpcashpassport.jp/cpp/lp/mcgin.html?amid=846">
+				<img src="/office/btn_cpp.jpg" /><br/>
+				お金の新しい持って行き方お教えします
+			</a>
+		</div>
+		&nbsp;<br/>
+
+<!-- *********************** ページ下のセミナー一覧 start ************************ -->
+	<h3 class="osusume_seminar_title_list">ワーキングホリデーセミナー情報</h3>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '';
+            $number_to_display = '6';
+			display_horizontal_calendar($country_to_display,$number_to_display);            
+      ?>
+	<span class="bottom_osusume_seminar">★★★　留学・ワーホリの無料セミナー連日開催中！！　気になるセミナーをクリック！！　★★★</span>
+	  <div class="advbox03">
+      
+<?php
+	// 101
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 84, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+</div>
+
+<!-- *********************** ページ下のセミナー一覧 end ************************ -->
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

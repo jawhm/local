@@ -1,0 +1,58 @@
+#menu {
+  width:100%;
+  padding:0;
+  margin-top:-45px;
+  list-style-type: none;
+}
+#menu li {
+  width:20%;
+  float:left;
+  padding:0;
+  margin:0;
+  text-align:center;
+}
+#menu li a {
+  width:auto;
+  color:#fff;
+  font-size:13px;
+  font-weight:bold;
+  text-shadow:0 -1px 0px #8cc409,0 1px 0px #8cc409;
+  padding:18px 0;
+  text-decoration:none;
+  display:block;
+  background:#666;
+  background-image: -moz-linear-gradient(top, #a7dd16 0%, #9dd411 50%, #8cc409 50%, #9dd411 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a7dd16), color-stop(0.50, #9dd411), color-stop(0.50, #8cc409), color-stop(1, #9dd411));
+  border-left:1px solid #73a400;
+  box-shadow: 1px 0px 0px rgba(225,225,225,0.3) inset,
+			 -1px 0px 0px rgba(225,225,225,0.3) inset,
+			  0px 1px 1px rgba(0,0,0,0.1) inset,
+			  0px -1px 1px rgba(0,0,0,0.3) inset,
+			  0px 1px 1px #8fc608;
+}
+#menu li:first-child a{
+  border-left:0px;
+  border-radius:5px 0 0 5px;
+  border-left:0;
+  box-shadow:-1px 0px 0px rgba(225,225,225,0.3) inset,
+			  0px 1px 1px rgba(0,0,0,0.1) inset,
+			  0px -1px 1px rgba(0,0,0,0.3) inset,
+			  0px 1px 1px #8fc608;
+}
+#menu li:last-child a{
+  border-radius:0 5px 5px 0;
+  box-shadow: 1px 0px 0px rgba(225,225,225,0.3) inset,
+			  0px 1px 1px rgba(0,0,0,0.1) inset,
+			  0px -1px 1px rgba(0,0,0,0.3) inset,
+			  0px 1px 1px #8fc608;
+}
+#menu li a:hover {
+  background:#555;
+  background-image: -moz-linear-gradient(top, #dbfc11 0%, #bbe50d 50%, #95c909 50%, #bbe50d 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #dbfc11), color-stop(0.50, #bbe50d), color-stop(0.50, #95c909), color-stop(1, #bbe50d));
+  box-shadow: 1px 0px 0px rgba(225,225,225,0) inset,
+			 -1px 0px 0px rgba(225,225,225,0) inset,
+			  0px 1px 1px rgba(0,0,0,0.1) inset,
+			  0px -1px 1px rgba(0,0,0,0.3) inset,
+			  0px 1px 0px #8fc608;
+}

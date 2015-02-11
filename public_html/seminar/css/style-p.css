@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+.area-btn-seminar {
+	width: 670px;
+	margin: 10px auto;
+}
+
+#btn-seminar-inquiry-1 {
+	border: 1px solid #2470BF;
+	padding: 18px 0;
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	background: #58A6F7;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#58A6F7), to(#2470BF));
+	background: -webkit-linear-gradient(#58A6F7, #2470BF);
+	background: -moz-linear-gradient(#58A6F7, #2470BF);
+	background: -ms-linear-gradient(#58A6F7, #2470BF);
+	background: -o-linear-gradient(#58A6F7, #2470BF);
+	background: linear-gradient(#58A6F7, #2470BF);
+	-pie-background: linear-gradient(#58A6F7, #2470BF);
+
+	behavior: url("http://www.jawhm.or.jp/js/PIE.htc");
+}
+
+#span-attention-1 {
+	/*font-size: 12px;
+	font-weight: bold;*/
+}
+
+#btn-seminar-inquiry-2 {
+	display: block;
+	border: 1px solid #81B602;
+	padding: 8px 0;
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+	text-decoration: none;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	background: #A0D800;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#A0D800), to(#81B602));
+	background: -webkit-linear-gradient(#A0D800, #81B602);
+	background: -moz-linear-gradient(#A0D800, #81B602);
+	background: -ms-linear-gradient(#A0D800, #81B602);
+	background: -o-linear-gradient(#A0D800, #81B602);
+	background: linear-gradient(#A0D800, #81B602);
+	-pie-background: linear-gradient(#A0D800, #81B602);
+
+	behavior: url("http://www.jawhm.or.jp/js/PIE.htc");
+}
+
+#span-attention-2 {
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+
+#area-seminar-inquiry-form {
+	display: none;
+}
+
+#area-seminar-inquiry-form {
+	padding: 10px;
+	background-color: #FFFCCA;
+}
+
+#area-seminar-inquiry-form label {
+	font-weight: bold;
+
+}
+
+#area-seminar-inquiry-form .mark-required {
+	font-weight: bold;
+	font-size: 12px;
+	color: #ff0000;
+}
+
+#area-seminar-inquiry-form .attention-text {
+	font-size: 12px;
+}
+
+#area-seminar-inquiry-form #area-textarea {
+	width: 600px;
+	height: 200px;
+	margin-bottom: 0;
+}
+
+#area-seminar-inquiry-form #btn-submit {
+	font-size: 14px;
+	font-weight: bold;
+	padding: 8px;
+	display: block;
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#area-seminar-inquiry-form #area-form-message {
+	font-weight: bold;
+	color: #ff0000;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.success-message {
+	width: 90%;
+	margin: 15px auto;
+}
+
+.success-message p {
+	font-size: 13px;
+	margin-bottom: 1em;
+}
+
+.success-message .success-message-title {
+	color: #ff0000;
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 1.5em;
+}
+
+.success-message .link-back-top {
+	text-align: center;
+}
+
+.success-message .btn-back-top-sp {
+	display: none;
+}
+
+

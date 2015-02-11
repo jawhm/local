@@ -1,0 +1,61 @@
+<?php
+require_once '../../include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->title_page='日本ワーキング・ホリデー協会';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。';
+$header_obj->keywords_page='オーストラリア,ニュージーランド,カナダ,カナダ,韓国,フランス,ドイツ,イギリス,アイルランド,デンマーク,台湾,香港,ビザ,取得,方法,申請,手続き,渡航,外務省,厚生労働省,最新,ニュース,大使館';
+$header_obj->add_js_files='<script type="text/javascript" src="/js/linkboxes.js"></script>
+<script type="text/javascript" src="/js/jquery.corner.js"></script>
+<script type="text/javascript">
+$(function () {
+	$("#div_video").corner();
+	fnc_get_title();
+});
+</script>';
+$header_obj->add_style='<style>
+body{
+	color: #000000;
+	background-color: #00004A;
+	background-image: url(../images/body-bg2.jpg);
+	background-repeat: repeat-x;
+}
+a:link{ color: white; }
+a:visited{ color: white; }
+</style>';
+
+$header_obj->no_standard_template=true;
+$header_obj->pcmobile_type=true;
+$header_obj->display_header();
+
+?>
+	<div style="margin: 17px 0 0 50px;">
+		<img src="../../images/h1-logo.jpg" alt="一般社団法人日本ワーキング・ホリデー協会" width="410" height="33" />
+	</div>
+
+	<div id="div_video" style="margin: 40px 0 0 20px; text-align:center;">
+		<div id="title" style="color:white; font-size:14pt; font-weight:bold; margin-bottom:10px;"></div>
+		<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="720" height="444" id="utv562968">
+			<param name="flashvars" value="autoplay=false&amp;brand=embed&amp;cid=7765095&amp;locale=ja_JP&amp;v3=1"/>
+			<param name="allowfullscreen" value="true"/>
+			<param name="allowscriptaccess" value="always"/>
+			<param name="movie" value="http://www.ustream.tv/flash/viewer.swf"/>
+			<embed flashvars="autoplay=false&amp;brand=embed&amp;cid=7765095&amp;locale=ja_JP&amp;v3=1" width="720" height="444" allowfullscreen="true" allowscriptaccess="always" id="utv562968" name="utv_n_982430" src="http://www.ustream.tv/flash/viewer.swf" type="application/x-shockwave-flash" />
+		</object>
+	</div>
+
+	<div style="height:20px;">&nbsp;</div>
+	<p style="color:white; font-size:10pt; text-align:right; margin-right:20px; margin-top:20px;">
+		Copyrihgt (C) JAPAN Association for Working Holiday Makers All right reserved.
+	</p>
+
+<script>
+function fnc_get_title()	{
+	$('#title').load("http://www.jawhm.or.jp/semi/semi_title.php");
+	setTimeout('fnc_get_title();', 10000);
+}
+</script>
+
+</body>
+</html>

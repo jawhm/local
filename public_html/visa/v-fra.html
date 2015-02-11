@@ -1,0 +1,281 @@
+﻿<?php
+require_once '../include/header.php';
+require_once '../include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->title_page='フランスビザ情報';
+$header_obj->description_page='フランスのビザ。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../images/mainimg/visa-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'ワーキングホリデー協定国（フランス） | ワーホリビザ情報';
+
+$header_obj->display_header();
+
+include('../calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+       <?php echo $header_obj->breadcrumbs('country'); ?>
+	  <div class="visa-nav">
+	    <p>/<a href="v-aus.html">オーストラリア</a>/<a href="v-nz.html">ニュージーランド</a>/<a href="v-can.html">カナダ</a>/<a href="v-kor.html">韓国</a>/<a href="v-fra.html">フランス</a>/<a href="v-deu.html">ドイツ</a>/<a href="v-uk.html">イギリス</a>/<a href="v-ire.html">アイルランド</a>/<a href="v-dnk.html">デンマーク</a>/<a href="v-ywn.html">台湾</a>/<a href="v-hkg.html">香港</a>/</p>
+	  </div>
+	  <img src="../images/bflag05.gif" alt="" />
+
+	<p class="text01">
+	<span class="centered-btn"><a class="visa-btn country-info" href="../country/france" title="フランス国情報へ">フランス国情報へ</a></span>
+	<b>フランスのワーキングホリデービザの取得方法についてご案内します。</b></p>
+
+<!--
+	  <div class="advbox04">
+-->
+<?php
+
+/************************
+
+	// 043
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 49, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 044
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 50, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 045
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 51, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 046
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 52, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 047
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 53, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+*********************/
+
+?>
+<!--
+	  </div>
+-->
+
+	  <h2 class="sec-title">ビザ取得までのステップチャート</h2>
+	  <h3 class="h3-01">2014年度 ワーキングホリデービザ (2014年1月1日から同年12月31日の間に入国予定の方)</h3>
+	  <p class="text01">ワーキングホリデー・ビザとは、フランスと日本の若者たちが、自由な時間を利用して、お互いの国の文化や生活習慣に触れる良い機会を与えるため、また滞在費用を補うために就労を許可するものです。</p>
+	  &nbsp;<br/>
+	  <img src="../images/visa-france-flow.gif" alt="" />
+	  
+      	  <p class="bg-yellow"> <a href="http://www.ambafrance-jp.org/-Japonais-" target="_blank">フランス大使館 領事部 ワーキング・ホリデービザ係</a> <br />
+〒106-8514　東京都港区南麻布4-11-44 </p>
+
+	  <h3 class="h3-01">外務省ＨＰで基本情報を確認しよう</h3>
+		    <ul class="list-visabasic">
+			  <a href="http://www.mofa.go.jp/mofaj/area/france/data.html" target="_blank">基本情報</a>
+			  <a href="http://www2.anzen.mofa.go.jp/info/pcinfectionspothazardinfo.asp?id=170" target="_blank">安全情報</a>
+			  <a href="http://www.mofa.go.jp/mofaj/annai/zaigai/list/europe/france.html" target="_blank">在外公館</a>
+			</ul>
+            <br/>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'フランス';
+            $number_to_display = '2';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+
+		<center>
+		<p><font color="orangered">ビザの申請、ひとりでできますか？</font></p>
+		<a href="/mem/#meritt"><img src="images/memline3_off.gif"></a></center>
+
+	  <h2 class="sec-title">ビザについて</h2>
+
+	  <h3 class="h3-01">ビザを取得するための条件</h3>
+	  <ul class="list-disc">
+	  <li>申請時に満18歳以上30歳以下であること</li>
+	  <li>フランスを知るための渡航で、なおかつ仕事に就く意思があること</li>
+	  <li>フランスへワーキングホリデービザを過去に取得していないこと</li>
+	  <li>子ども同伴ではないこと</li>
+	  </ul>
+
+
+	  <h3 class="h3-01">ワーキング・ホリデービザの特徴</h3>
+	  <ul class="list-disc">
+     <li>ワーキングホリデービザの有効期限</li>
+    　　　- フランスに入国した日から1年。入国する日付はビザ申請時に決まっていること<br/>
+    　　　- このビザはフランス本土の各県においてのみ有効（海外県・海外領土は除く）<br/>
+<br/>
+    <li>ワーキングホリデービザ所持者は、滞在中にその滞在期間の延長や身分の変更は受けられません</li>
+
+    <li>ビザの発給は1回限りですので、十分にご注意ください。</li>
+	フランス滞在中もしくは出発前にパスポートを紛失、盗難しても再発給されません<br/>
+<br/>
+    <li>仕事が見つかった方は、速やかに所在県の労働管理局（Direction régionale des Entreprises, de la Concurrence, de la Consommation, du Travail et de l’Emploi/ DIRECCTE）で、一時労働許可証（Autorisation Provisoire de Travail）を取得してください。この許可証は職種を問わず、契約書の期間に応じて、即時発行されます</li>	  </ul>
+
+
+<div class="beige-box">
+フランスのワーキングホリデービザ申請にあたり<br/>
+<strong>「海外旅行保険加入証明書」</strong>が必要です。必ず保険に加入してください。<br/>
+なお、クレジットカードに付帯される保険は対象外です。ご注意ください。<br/>
+&nbsp;<br/>
+
+<?php
+  //<!--/* OpenX Local Mode Tag v2.8.8 */-->
+
+  // The MAX_PATH below should point to the base of your OpenX installation
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 129, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+		<br/><span style="font-size:8pt;">AIU保険会社のサイトへジャンプします</span>
+</div>
+            <br/>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'フランス';
+            $number_to_display = '2';
+            $start_display_from = '2'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+		<center>
+		<p><font color="orangered">ビザの申請、ひとりでできますか？</font></p>
+		<a href="/mem/#meritt"><img src="images/memline5_off.gif"></a></center>
+
+	  <h2 class="sec-title">ビザ申請方法</h2>
+	  <h3 class="h3-01">申請方法</h3>
+	  <ul class="list-disc">
+	  <li>本人申請のみ。受付時間は月曜日から金曜日の午前9時から11時半まで（日本の祝祭日を除く）。</li>
+	  <li>郵送による申請はできません。</li>
+	  <li><a href="http://www.ambafrance-jp.org/spip.php?article3843" target="_blank">申請者はフランス大使館ホームページから必ず予約を入れてください。</a></li>
+	  </ul>
+      
+      <h3 class="h3-01">重要事項</h3>
+	  <ul class="list-disc">
+	  <li>コピーサイズはA4に限ります。</li>
+	  <li>ファクスや電子メールによる書類提出はできません。</li>
+	  <li>申請審査期間は現在1カ月程度かかります。</li>
+	  <li>追加書類を要請する場合があります。</li>
+      <li>すべての必要書類がそろっていてもビザが発給されない場合があります。</li>
+      <li>申請はフランス入国日の3カ月前からできます。遅くとも渡航4週間前までに申請してください。</li>
+      <li>申請書は英語またはフランス語で記入して下さい。日本語では記入しないで下さい。</li>
+	  </ul>
+	  
+	  <h3 class="h3-01">ビザの受領</h3>
+	  <ul class="list-disc">
+	  <li>月曜日から金曜日の午前9時から11時30分の間においてビザの受取が可能です。申請時にお渡しした申請証明書を必ず持参してください</li>
+	  <li>申請時に氏名・住所を明記し、600円分の切手を貼った封筒を提出された場合（パスポート1件につき封筒1通）、ビザを貼付したパスポートを書留で返送可能です。再度来館いただく必要がないよう、当館ではこの方法を推奨します。書留以外の送付方法（速達、配達証明など）につきましては、郵便局でご確認の上封筒を準備してください</li>
+
+	</ul>
+	  	  
+      
+      <h3 class="h3-01">申請に必要な書類</h3>
+	<ul class="list-disc">
+	  <p class="text01"><a href="http://www.ambafrance-jp.org/spip.php?article4285" target="_blank">必要書類はこちらをご覧ください。</a></p>
+	<b>注意　申請書類の準備には細心の注意を払ってください。</b><br/>
+	下記の事項に不備・不足がある場合は、審査手続きに1～2カ月の遅れが生じ、申請却下となる場合もあります。<br/>
+	<br/>
+		<li>申請書上のフランス滞在中の住所欄（申請書24項または25項）を必ず記入すること。滞在中の最終的な住所ではなくても、フランス到着時の住所を記載してください</li>
+		<li>《健康である》ことが明確な健康診断証明書を提示すること</li>
+	</ul>
+
+      <h3 class="h3-01">申請者への重要なお知らせ</h3>
+	  <p class="text01">申請動機作文は必ずしもフランス語に訳す必要はありません。<br/>
+	ただしフランス語の修得は、フランスになじむためはもちろん、コミュニケーションや仕事探しの上でも大いに役立ちます。<br/>
+	出発前に語学力の向上をめざす方は、教育機関の利用もご検討ください。
+	</p>
+	
+
+
+	&nbsp;<br/>
+	&nbsp;<br/>
+	<p class="text01">
+	【注意】<br/>
+	ここに記載のある情報は法改正等により予告なく変更することもあります。<br/>
+	また、このページの内容は各国大使館・領事館等より情報を収集し細心の注意を払って作成しておりますが、<br/>
+	正確なものであることを保証するものではありません。<br/>
+	ビザ取得の際は、必ず各国大使館・領事館等の情報をご自身でもご確認ください。
+	</p>
+     <br />
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'フランス';
+            $number_to_display = '2';
+            $start_display_from = '4'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+      <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+
+		<center>
+		<p><font color="orangered">ビザの申請、ひとりでできますか？</font></p>
+		<a href="/mem/#meritt"><img src="images/memline4_off.gif"></a></center>
+<br />
+
+      
+	  <div class="visa-nav">
+	    <p>/<a href="v-aus.html">オーストラリア</a>/<a href="v-nz.html">ニュージーランド</a>/<a href="v-can.html">カナダ</a>/<a href="v-kor.html">韓国</a>/<a href="v-fra.html">フランス</a>/<a href="v-deu.html">ドイツ</a>/<a href="v-uk.html">イギリス</a>/<a href="v-ire.html">アイルランド</a>/<a href="v-dnk.html">デンマーク</a>/<a href="v-ywn.html">台湾</a>/<a href="v-hkg.html">香港</a>/</p>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

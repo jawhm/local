@@ -1,0 +1,436 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*/////////////////////////////////////////
+ブログランキング登録フォーム
+//////////////////////////////////////////*/
+/*フォーム共通*/
+#currentStep td {
+	width: 270px;
+	text-align: center;
+	}
+#stepDetail td {
+	width: 270px;
+	vertical-align: top;
+	padding: 10px 10px 0 1em;
+	text-indent: -1em;
+	font-size: 1.2em;
+	}
+#stepDetail td span {
+	color: #F00;
+	}
+.stepBox {
+	background: url(/assets/img/blog/sprite_step.jpg) no-repeat left top;
+	width: 870px;
+	height: 0;
+	padding-top: 74px;
+	overflow: hidden;
+	}
+
+/*入力画面*/
+.entrytable .txtNote {
+	font-size: 0.9em;
+	}
+.btnSubmit {
+	display: block;
+	width:150px;
+	height:30px;
+	margin:18px auto 30px;
+	font-size:11pt;
+	font-weight:bold;
+	cursor: pointer;
+	}
+
+/*確認画面*/
+.confirmtable {
+	width: 860px;
+	font-size: 120%;
+	}
+.confirmtable th,
+.confirmtable td {
+	border: 1px solid navy;
+	padding: 10px;
+	}
+.confirmtable th {
+	background-color: #A7FFFF;
+	}
+#btnArea {
+	width: 320px;
+	overflow: hidden;
+	text-align: center;
+	margin: 0 auto;
+	}
+#btnArea .btnSubmit {
+	display: inline;
+	margin-right: 5px;
+	}
+#stepBox2 {
+	background-position: 0 -75px;
+	}
+
+/*完了画面*/
+#stepBox3 {
+	background-position: 0 -150px;
+	}
+.txtcomplate {
+	border: 1px solid #3270D7;
+	width: 450px;
+	margin: 30px auto 0;
+	padding: 10px;
+	font-size: 130%;
+	}
+.btnLogin {
+	text-align: center;
+	margin: 30px 0 50px;
+	}
+
+
+/*/////////////////////////////////////////
+ブログ詳細情報
+//////////////////////////////////////////*/
+#profArea {
+	width: 680px;
+	overflow: hidden;
+	padding-top: 20px;
+	font-size: 120%;
+	}
+#profArea #imagesProf {
+	float: left;
+	width: 170px;
+	}
+#profArea #imagesProf p {
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	color: #333;
+	font-size: 110%;
+	}
+#profArea #imagesProf img {
+	width: 170px;
+	border: 1px solid #CCC;
+	}
+#profArea #detailProf {
+	float: right;
+	width: 480px;
+	}
+#profArea #detailProf table {
+	width: 100%;
+	}
+#profArea #detailProf table th,
+#profArea #detailProf table td {
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	padding: 10px;
+	}
+#profArea #detailProf table th {
+	background-color: #A7FFFF;
+	}
+
+
+.opacity a:hover img,
+.myPage a:hover img,
+#btnConfirm:hover,
+.btnBack:hover,
+.btnRegister:hover,
+#header_right a img:hover {
+	filter:alpha(opacity=70);  /* IE7以下用 */
+	-ms-filter: "alpha(opacity=70)"; /* IE8用 */
+	-moz-opacity:0.7; /* Firefox 1.5未満, Netscape用 */
+	-khtml-opacity: 0.7;  /* Safari 1.x, 他khtmlに対応したブラウザ用  */
+	opacity: 0.7; /* Firefox 1.5以上, Opera, Safari用 */
+	}
+
+
+/*/////////////////////////////////////////
+ユーザー管理画面
+//////////////////////////////////////////*/
+/*===マイページ共通===*/
+#header {overflow: hidden;}
+#header_right {
+	float: right;
+	width: 250px;
+	margin-top: 20px;
+	}
+.myPage {padding-bottom: 100px;}
+.myPage section {display: block;}
+/*トップバナー*/
+#header h2 {
+	width: 970px;
+	height: 100px;
+	margin: 8px 0 10px;
+	}
+#topBnr {margin: 0; display: inline;}
+#header nav {display: block; width: 858px; margin: 0 auto 40px; overflow: hidden; padding:0;}
+#header nav  ul {width: 858px; margin: 0 auto; overflow: hidden; display: block;}
+#header nav  ul li {diplay: inline; float: left;}
+#header nav  ul li a {
+	display: block;
+	background: url(/assets/img/mypage/sprite_navi.jpg) no-repeat left top;
+	width: 286px;
+	height: 0;
+	padding-top: 55px;
+	overflow: hidden;
+	}
+	
+/*ナビ*/
+#header nav  ul li#nav1 a:hover,
+#header nav  ul li#nav1 a.active {
+	background-position: 0 -55px;
+	}
+#header nav  ul li#nav2 a {
+	background-position: -286px 0;
+	}
+#header nav  ul li#nav2 a:hover,
+#header nav  ul li#nav2 a.active {
+	background-position: -286px -55px;
+	}
+#header nav  ul li#nav3 a {
+	background-position: -572px 0;
+	}
+#header nav  ul li#nav3 a:hover,
+#header nav  ul li#nav3 a.active {
+	background-position: -572px -55px;
+	}
+
+/*枠*/
+.myPage #maincontentwide {
+	width: 860px;
+	margin: 0 auto;
+	padding: 0;
+	float: none;
+	font-size: 14px;
+	}
+
+/*パン屑*/
+#breadCrumb {
+	background-color: #E8E8E8;
+	width: 840px;
+	overflow: hidden;
+	padding: 5px 10px;
+	margin-bottom: 30px;
+	font-size: 86%;
+	}
+#breadCrumb  ul {}
+#breadCrumb ul li {
+	float: left;
+	display: inline;
+	}
+
+/*h3*/
+.myPage h3 {
+	background: url(/assets/img/mypage/bg_h3_w860.gif) no-repeat left top;
+	width: 840px;
+	height: 25px;
+	color: #000033;
+	font-weight: bold;
+	padding: 6px 0 0 20px;
+	margin-bottom: 10px;
+	}
+
+/*マイページのテーブル*/
+.mypageTable,
+.mypageTable2 {width: 100%; margin-bottom: 30px;}
+.mypageTable th,
+.mypageTable td,
+.mypageTable2 th,
+.mypageTable2 td {
+	border: 1px solid #AAAAAA;
+	vertical-align: middle;
+	padding: 10px;
+	}
+.mypageTable th {
+	background-color: #D9ECF9;
+	text-align: center;
+	color: #2779AA;
+	width: 25%;
+	}
+.mypageTable td {
+	padding-left: 20px;
+	width: 75%;
+	}
+
+/*===マイページ　トップ===*/
+.mypageTable .situation {
+	color: #000033;
+	font-weight: bold;
+	font-size: 129%;
+}
+.mypageTable .reason {
+	margin-bottom: 20px;
+	}
+.mypageTable #shareTable th {
+	background-color: #FFF4EA !important;
+	color: #000;
+	}
+.mypageTable #shareTable p {
+	font-size: 100% !important;
+	}
+#rankingTable {width: 100%;}
+#rankingTable a {color: #0000A5;}
+#rankingTable th {background-color: #F1F1F1; font-weight: normal;}
+#rankingTable th,
+#rankingTable td {
+	border: 1px solid #AAAAAA;
+	text-align: center;
+	padding: 5px;
+	}
+
+/*===情報編集===*/
+form#editForm {
+    color: #333333;
+    font-size: 1em;
+}
+form#editForm legend {
+    padding-left: 0;
+}
+form#editForm legend, form#editForm label {
+    color: #333333;
+}
+form#editForm fieldset {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url("/assets/img/cmxform-fieldset.gif") repeat-x scroll left bottom #F8FDEF;
+    border-color: #C9DCA6 -moz-use-text-color -moz-use-text-color;
+    border-image: none;
+    border-right: medium none;
+    border-style: solid none none;
+    border-width: 1px medium medium;
+}
+form#editForm fieldset fieldset {
+    background: none repeat scroll 0 0 transparent;
+}
+form.cmxform fieldset p, form.cmxform fieldset fieldset {
+    background: url("/assets/img/cmxform-divider.gif") repeat-x scroll left bottom transparent;
+    padding: 5px 10px 7px;
+}
+form#editForm label.error, label.error {
+    color: red;
+    font-style: italic;
+}
+div.error {
+    display: none;
+}
+input {
+    border: 1px solid black;
+}
+input.checkbox {
+    border: medium none;
+}
+input:focus {
+    border: 1px dotted black !important;
+}
+input.error {
+    border: 1px dotted red !important;
+}
+form.cmxform .gray * {
+    color: gray;
+}
+
+.myPage input {
+	height: 23px;
+	border: 1px solid #AAAAAA;
+	vertical-align: bottom;
+	}
+.red {color: #FF0000;}
+.font14 {font-size: 14px;}
+.font12 {font-size: 12px;}
+.black {color: #000;}
+.mgb5 {margin-bottom: 5px;}
+.mgb30 {margin-bottom: 30px;}
+.mgr10 {margin-right: 10px;}
+.mgt10 {margin-top: 10px;}
+.redTxt {
+	color: #FF0000;
+	font-size: 86%;
+	}
+form .w400 {
+	width: 400px;
+	}
+form .w300 {
+	width: 300px;
+	}
+form .w200 {
+	width: 200px;
+	}
+form .w100 {
+	width: 100px;
+	}
+form .w210 {
+	width: 210px;
+	}
+form .w80 {
+	width: 80px;
+	}
+form .w50 {
+	width: 50px;
+	}
+.notes1 {font-size: 86%; margin-left: 5px;}
+.notes2 {font-size: 86%;}
+.rowImg {
+	width: 255px !important;
+	background-color: #EFEFEF;
+	text-align: center;
+	vertical-align: top !important;
+	}
+.mypageTable2 th {
+	background-color: #D9ECF9;
+	text-align: center;
+	color: #2779AA;
+	width: 25%;
+	}
+.mypageTable2 textarea {
+	border: 1px solid #AAAAAA;
+	width: 300px;
+	}
+.mypageTable2 select {
+	border: 1px solid #AAAAAA;
+	}
+.mypageTable2 .link {
+	color: #000091;
+	}
+label.radioLabel {
+	padding: 0 5px;
+	}
+.catBox {
+	width: 376px;
+	overflow: hidden;
+	margin-bottom: 5px;
+	}
+.catBox .left {
+	float: left;
+	width: 225px;
+	}
+.catBox .right {
+	float: right;
+	width: 151px;
+	}
+#btnConfirm {
+	background: url(/assets/img/mypage/btn_confirm.gif) no-repeat left top;
+	display: block;
+	width: 200px;
+	height: 0;
+	padding-top: 50px;
+	overflow: hidden;
+	margin:0 auto;
+	cursor: pointer;
+	}
+#btnArea2 {
+	width: 445px;
+	overflow: hidden;
+	margin: 0 auto;
+	}
+.btnBack,
+.btnRegister {
+	display: block;
+	width: 200px;
+	height: 0;
+	padding-top: 50px;
+	overflow: hidden;
+	margin:0 auto;
+	cursor: pointer;
+	}
+.btnBack {background: url(/assets/img/mypage/btn_back.gif) no-repeat left top; float: left;}
+.btnRegister {background: url(/assets/img/mypage/btn_register.gif) no-repeat left top; float:right;}
+.compTxt {font-size: 14px; text-align: center;}

@@ -1,0 +1,75 @@
+﻿<?php
+require_once 'include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='外国人ワーキング・ホリデー青年';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）ビザで来日された方向けの情報を発信しています。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/attention-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '外国人ワーキング・ホリデー青年　（海外からのワーキングホリデー）';
+
+$header_obj->display_header();
+
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs(); ?>
+	  <h2 class="sec-title">ワーキング・ホリデービザで来日中の外国人青年の方へ</h2>
+	  <h3 class="h3-01">To everyone in Japan on Working Holiday Visas</h3>
+	  <p class="text01">The Japan Association for Working Holiday Makers provides guidance, advice, information, and a job referral service to people visiting Japan on Working Holiday Visas.<br />
+	    Our offices are located in convenient central locations, and are friendly, relaxed places where working holiday makers are welcome to pop in to receive useful advice and information about life in Japan, and sometimes just encouragement and reassurance.<br /></p>
+	  <p class="text01">当協会はワーキング・ホリデーを利用して日本に来る各国の青年に、日本での生活について役立つアドバイスや情報、無料職業紹介、そして日本人との交流の機会を提供しています。当協会は都心の便利な場所に立地しており、気楽に立寄れる開放的なオフィスです。困ったことなどがありましたらカウンセラーに相談しに来てください。きっと勇気付けられることでしょう。</p>
+
+	  <h2 class="sec-title">来日中の外国人青年の雇用について</h2>
+	  <h3 class="h3-01">Information on how to employ working holiday makers in Japan</h3>
+	  <p class="text01">一般社団法人日本ワーキング・ホリデー協会では日本に来日する外国人ワーキングホリデーメイカ―のサポートも行っております。
+			日本語が分からないけど日本で生活するワーキングホリデー参加国から来られた方をサポートします。
+			背景文化や年齢も違うため多くのサポートが必要です。
+			その為、学生、社会人、企業からのボランティアやサポートは欠かせなくなっています。
+			ボランティアは随時募集しています。</p>
+
+	  <h2 class="sec-title">職業紹介の手順</h2>
+	  <h3 class="h3-01">How the Job Referral Service Works</h3>
+	  <h4>求人情報の掲載について</h4>
+	  <p style="margin-left:20px;">
+		来日中の外国人に対する求人募集は、当協会が運営する<a target="_blank" href="http://japanworkingholiday.org/jobboard/">JobBoard（お仕事掲示板）</a>にてご案内しております。<br/>
+		&nbsp;<br/>
+		こちらの掲示板のご利用は、無料です。<br/>
+		求人募集の際は、是非、<a target="_blank" href="http://japanworkingholiday.org/jobboard/">JobBoard（お仕事掲示板）</a>をご利用ください。<br/>
+		&nbsp;<br/>
+		なお、<a href="jobboard.html">ご利用方法など、詳しい情報は、こちら</a>をご確認ください。<br/>
+	</p>
+	  <p style="margin-left:20px; margin-top:20px;">
+		<a href="/eng/">Do you want a Job?<br/> Let's Check it!!</a>
+	</p>
+
+   
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>                  
+
+<div class="advbox03">
+<?php
+	// 106
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 116, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+</div>	 
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

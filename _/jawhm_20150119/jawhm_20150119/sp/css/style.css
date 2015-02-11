@@ -1,0 +1,324 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { line-height:1.5; font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
+img { width:100%; }
+a { text-decoration:none; }
+.center { text-align:center; }
+.pad10 { padding:0 10px; }
+.mgb10 { margin-bottom:10px; }
+.mgb15 { margin-bottom:15px; }
+.mgb20 { margin-bottom:20px; }
+
+/*********************************************
+header
+*********************************************/
+header {
+	padding: 20px 10px 10px 10px;
+	border-bottom:8px solid #0c3387;
+	overflow:hidden;
+}
+
+header h1 {
+	background:url(../images/logo.png) no-repeat left top;
+	background-size:112px 35px;
+	height:0; width:112px;
+	padding-top:35px; overflow:hidden;
+	float:left;
+ }
+
+header a.login {
+	display:block;
+	border-radius:5px;
+	border:2px solid #b7d1dd;
+	background:#e7eff3;
+	box-shadow:#d8d8d8 2px 2px 2px;
+	-moz-box-shadow:#d8d8d8 2px 2px 2px;
+	-webkit-box-shadow:#d8d8d8 2px 2px 2px;
+	padding:10px 5px;
+	width:80px;
+	float:right
+}
+header a.login span {
+	display:block;
+	background:url(../images/login.png) no-repeat left top;
+	background-size:82px 13px;
+	width:82px; height:0;
+	padding-top:13px;
+	overflow:hidden;
+}
+
+div.headBtn a {
+	display:block;
+	background: #fff;
+	background: -moz-linear-gradient(top, #fff 0%, #ececec 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #ececec));
+	background: -webkit-linear-gradient(top, #fff 0%, #ececec 100%);
+	background: -o-linear-gradient(top, #fff 0%, #ececec 100%);
+	background: -ms-linear-gradient(top, #fff 0%, #ececec 100%);
+	padding:10px;
+	border-bottom:1px solid #c5c5c5;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	width:50%;
+}
+div.headBtn { overflow:hidden; }
+div.headBtn a.left{
+	float:left;
+	border-right:1px solid #c5c5c5;
+}
+div.headBtn a.right {
+	float:right;
+}
+div.headBtn a.left span {
+	display:block;
+	background:url(../images/btn_yoyaku.png) no-repeat left top;
+	background-size:132px 27px;
+	width:132px;
+	height:0;
+	padding-top:27px;
+	overflow:hidden;
+	margin:0 auto;
+}
+div.headBtn a.right span {
+	display:block;
+	background:url(../images/btn_member.png) no-repeat left top;
+	background-size:132px 27px;
+	width:132px;
+	height:0;
+	padding-top:27px;
+	overflow:hidden;
+	margin:0 auto;
+}
+
+/*スライドを使う場合はこっちの設定で使ってください*/
+.keyvisual {
+	margin:10px 0 40px 0;
+	padding:0 10px;
+}
+
+.smlBanner {
+    width: 300px;
+    margin: 0 auto;
+}
+
+/*********************************************
+topContents
+*********************************************/
+.topContents .seminar {
+	margin:5px 0 15px 0;
+	padding:0 10px;
+}
+.topContents .seminar .semBtn {
+	display:block;
+	border-radius:5px;
+	padding:10px;
+	background:#0c3387;
+	color:#fff;
+	text-align:center;
+}
+.topContents .seminar .semBtn span {
+	background:url(../images/img_arrow01.png) no-repeat right center;
+	background-size:19px 8px;
+	padding-right:30px;
+	font-size:12px;
+}
+.topContents .mainBtn {
+	padding-left:7px;
+	margin:20px 0;
+}
+.topContents .mainBtn ul {
+	overflow:hidden;
+	width:303px;
+	margin:0 auto;
+}
+.topContents .mainBtn a {
+	display:block;
+	float:left;
+}
+.topContents .mainBtn a img {
+	width:147px; height:100px;
+}
+
+.topContents .wp {
+    margin : 10px;
+    border: 1px dashed gray;
+    padding: 10px;
+}
+
+.topContents .wp p a {
+    text-decoration: underline;
+    font-size: 75%;
+}
+
+
+/*********************************************
+blgList
+*********************************************/
+.blgList{
+	padding-top: 10px;
+}
+.blgList h2 {
+	border-radius:5px 5px 0 0;
+	background: #4144b7;
+	background: -moz-linear-gradient(top, #4144b7 0%, #393c9f 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4144b7), color-stop(100%, #393c9f));
+	background: -webkit-linear-gradient(top, #4144b7 0%, #393c9f 100%);
+	background: -o-linear-gradient(top, #4144b7 0%, #393c9f 100%);
+	background: -ms-linear-gradient(top, #4144b7 0%, #393c9f 100%);
+	color:#fff; font-size:12px;
+	padding:8px 10px;
+	margin-left:5px;
+	width:56%;
+}
+.blgList h2 span {
+	background:url(../images/icon_news.png) no-repeat right center;
+	background-size:14px 13px;
+	padding-right: 22px;
+}
+
+.blgList .article {
+	border-top:solid 1px #393c9f;
+	border-bottom:solid 1px #393c9f;
+	padding:13px 10px 8px 10px;
+	margin-top:-1px;
+	overflow:hidden;
+}
+
+.blgList .article .left { float:left; margin-right:8px; }
+.blgList .article .right { float:right; width:63%}
+.blgList .article .left img {
+	width:96px; height:48px;
+}
+.blgList .article .left p {
+	font-size:12px; color:#a0a0a0;
+	margin-bottom:3px;
+}
+.blgList .article .right p {
+	padding-top:15px;
+	font-size:11px;
+	color:#a0a0a0;
+}
+.blgList .article .right .title {
+	display:block;
+	color:#3a3da3;
+	font-weight:bold;
+	text-decoration:underline;
+	margin-bottom:3px;
+}
+.blgList .article .right a.moreBtn {
+	display:block;
+	background-color:#0168b7;
+	color:#fff;
+	font-size:10px;
+	padding:2px; margin:3px;
+	float:right;
+}
+.btnPink {
+	border-radius:5px;
+	background-color:#ff7b8f;
+	color:#fff;	padding:15px 10px;
+	font-size:12px;
+	display:block; text-align:center;
+	margin:20px 0;
+}
+.btnPink span {
+	background:url(../images/img_arrow02.png) no-repeat right center;
+	background-size:8px 12px;
+	padding-right:15px;
+}
+
+/*********************************************
+menuBox
+*********************************************/
+.menuBox {
+	padding:0 10px;
+	margin-bottom:20px;
+}
+.menuBox h2 {
+	border-radius:5px 5px 0 0;
+	background: #4144b7;
+	background: -moz-linear-gradient(top, #4144b7 0%, #393c9f 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4144b7), color-stop(100%, #393c9f));
+	background: -webkit-linear-gradient(top, #4144b7 0%, #393c9f 100%);
+	background: -o-linear-gradient(top, #4144b7 0%, #393c9f 100%);
+	background: -ms-linear-gradient(top, #4144b7 0%, #393c9f 100%);
+	color:#fff; font-size:12px;
+	padding:8px 10px;
+}
+.menuBox h2 span { padding-left:20px; }
+.menu1 h2 span {
+	background:url(../images/icon_about.png) no-repeat left center;
+	background-size:14px 13px;
+	display:block;
+}
+.menu2 h2 span {
+	background:url(../images/icon_use.png) no-repeat left top;
+	background-size:16px 16px;
+	display:block; padding-top:2px;
+}
+.menu3 h2 span {
+	background:url(../images/icon_visa.png) no-repeat left center;
+	background-size:15px 16px;
+	display:block; padding-top:3px;
+}
+.menu4 h2 span {
+	background:url(../images/icon_info.png) no-repeat left center;
+	background-size:16px 14px;
+	display:block; padding-top:3px;
+}
+.menu5 h2 span {
+	background:url(../images/icon_aboutmenu.png) no-repeat left center;
+	background-size:16px 14px;
+	display:block; padding-top:3px;
+}
+.menuBox div a {
+	display:block;
+	background: #fff;
+	background: -moz-linear-gradient(top, #fff 0%, #ececec 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #ececec));
+	background: -webkit-linear-gradient(top, #fff 0%, #ececec 100%);
+	background: -o-linear-gradient(top, #fff 0%, #ececec 100%);
+	background: -ms-linear-gradient(top, #fff 0%, #ececec 100%);
+	padding:13px;	color:#0c3387;
+	font-size:12px;
+}
+.menuBox div a span {
+	display:block;
+	background:url(../images/img_arrow03.png) no-repeat right center;
+	background-size:8px 12px;
+}
+.menuBox .visaMenu {
+	overflow:hidden;
+	margin:0 auto 5px auto;
+	width:285px;
+}
+.menuBox .visaMenu li {
+	float:left;
+}
+.menuBox .visaMenu li a {
+	display:block;
+	margin-right:5px;
+}
+.menuBox .visaMenu li a img {
+	width:90px; height:64px;
+}
+.banArea .cashBtn { width:214px; height:121px; display:block; margin:0 auto;}
+
+/*********************************************
+footer
+*********************************************/
+footer .center a { font-size:12px; text-decoration:underline; }
+footer .inBox {
+	background-color:#353794;
+	font-size:8px;
+	color:#fff; text-align:center;
+	padding:15px;
+	margin-top:10px;
+}
+footer .inBox img {
+	display:block;
+	margin:0 auto;
+	width:278px; height:35px;
+}

@@ -1,0 +1,109 @@
+<?php
+require_once 'include/header.php';
+require_once 'include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='ニュージーランド　ワーキングホリデービザ';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）や留学などの海外生活でよるある質問をまとめました。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/qanda-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'ニュージーランドワーキングホリデーのよくある質問';
+
+$header_obj->display_header();
+include('calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('qa'); ?>
+	  <h2 class="sec-title">ニュージーランド　留学・ワーキングホリデー</h2>
+
+	  <table class="qatable-aus">
+	    <tr>
+		  <th><img src="images/mflag02.gif" alt="" /><br />ニュージーランド</th>
+		  <td>ワーキングホリデー協定国別に、よくあるご質問にお答えしています。</td>
+		</tr>
+	  </table>
+      <p>&nbsp;</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'ニュージーランド';
+            $number_to_display = '6';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+
+	  <h2 class="sec-title">よくある質問と回答</h2>
+      <p>&nbsp;</p>
+	  <div class="qa-abox-country">
+	    <h3 class="q-title">Ｑ１.ニュージーランドワーキングホリデービザ申請をしたいけど英語がわかりません。</h3>
+		<p class="text01">ニュージーランド移民局のホームページから<a href="http://www.immigration.govt.nz/">http://www.immigration.govt.nz/</a>申請してください　英語がわからなくても自分でする場合は失敗したらすぐに専門家に任せるようにしてください。　どうにもならなくなってからお問い合わせを受ける事がありますがもうビザがとれない場合もあります。特にニュージーランドはインターネットで申請できる手軽さからご自身でやってみようという方は多いようですがその分、連絡が来ない、失敗しましたという連絡が本当に多いです。　
+最初から日本ワーキングホリデー協会でビザの申請をお手伝いすることも出来ますので遠慮せずに頼ってください。　ビザは相手国の法律に基づいて審査していただくもので大変慎重に進める必要があります。　偽りの申請はや質問事項に間違った返答を記したままビザを取得すると現地で滞在中にビザのキャンセル、強制送還となっても仕方がありません。</p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ２.ビザを取るマニュアルはありませんか？</h3>
+		<p class="text01m30">ニュージーランド移民局のホームページに申請方法が載っています。政府が作成したものに沿って申請してください。　英語だからわからないということであれば最初からご自身で申請をしない方がいいでしょう。　911テロ以降世界中の国でビザに対しては厳しくなっています。　お近くの留学会社や日本ワーキングホリデー協会でビザの取得をしてください</p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ３.オーストラリアのワーキング・ホリデービザも一緒に取得していいですか？<br />
+</h3>
+		<p class="text01m30">オーストラリアワーキングホリデービザを一緒に申請してオーストラリアにワーキングホリデーに行ったあとにニュージーランドに行く方もいらっしゃいます。　オーストラリアもニュージーランドのビザも一度ビザを取得してしまうと再申請できません。　発給日から１２ヶ月間の有効期限があるので、注意してその期間内に渡航して下さいね。<br />
+<br />
+ワーキングホリデービザは発給された日から1年以内に入国してその入国から1年がワーキングホリデー滞在期間になります。</p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ４.航空券はどこで買えばいいですか？</h3>
+		<p class="text01m30">ニュージーランドワーキングホリデーでニュージーランドに入国は片道航空券でも入国できます。出国できる航空券の費用と滞在費用として30万円以上の資金証明を持って行ってください。</p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ５.IRDナンバーって必要ですか？</h3>
+		<p class="text01m30">IRDナンバーとは、Inland Revenue Department（日本の国税局にあたる）機関で管理されている納税者番号です。ニュージーランドでバイトや仕事をする場合に必ず必要となりますので、ＩＲＤナンバーは、郵便局で手続きし取得してください。下記のInland RevenueのＷｅｂサイト 　 <br />
+          <a href="http://www.ird.govt.nz/resources/file/eb8fd241e249ec1/ir595.pdf">http://www.ird.govt.nz/resources/file/eb8fd241e249ec1/ir595.pdf</a><br />
+からも申請用紙(IRD number application-individual IR595)がダウンロードでき、<br />
+パスポートと語学学校の学生証や入学許可証・雇用証明書で身元確認を行い、郵便局にある封筒で送付します。約３週間で申請時に記載した住所に届けられます。</p>
+	  </div>
+	    <div class="qa-abox-country">
+		<h3 class="q-title">Ｑ６.ニュージーランドでの学生ビザ、永住権、働くビザには延長できますか？</h3>
+		<p class="text01m30"><a href="http://www.nzembassy.com/japan">ニュージーランド大使館のホームページ　http://www.nzembassy.com/japan</a>
+で案内されていますのでご参照下さい。また個別の相談は政府公認ビザカウンセラーに相談されることをお勧め致します。</p>
+	  </div>
+		<div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+	  
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'ニュージーランド';
+            $number_to_display = '6';
+            $start_display_from = '6'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <div class="advbox03">
+<?php
+	// 123
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 101, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

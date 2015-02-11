@@ -1,0 +1,87 @@
+<?php
+	//全画面を遷移ＯＫとする
+	$ok_gmn = array('index_p.php','menu.php',
+					//個別カウンセリング
+					'kbtcounseling_top.php',	//仮
+					'kbtcounseling_trk_top.php','kbtcounseling_trk_selectstaff.php','kbtcounseling_trk_selectdate.php','kbtcounseling_trk_selectjknkbn.php',
+					'kbtcounseling_trk_serch.php','kbtcounseling_trk_new0.php','kbtcounseling_trk_new1.php','kbtcounseling_trk_new2.php',
+					'kbtcounseling_trk_kari.php','kbtcounseling_trk_kari_new0.php','kbtcounseling_trk_kari_new1.php','kbtcounseling_trk_kari_new2.php',
+					'kbtcounseling_trk_kari_serch.php','kbtcounseling_trk_kari_serch_kkn0.php','kbtcounseling_trk_kari_serch_kkn1.php',
+					'kbtcounseling_trk_serch_kkn0.php','kbtcounseling_trk_serch_kkn1.php',
+					'kbtcounseling_trk_kari_serch.php','kbtcounseling_trk_change_counselor.php',
+					//英会話教室
+					'english_sc_top.php',
+					//メール処理
+					'mail_top.php',
+					
+					//クラス予約
+					'classyyk_top.php','classyyk_tnpchg.php','classyyk_trk0.php','classyyk_trk1.php','classyyk_trk2.php',
+					'classyyk_kkt0.php','classyyk_kkt1.php','classyyk_kkt2.php',
+					//貸しスタジオ
+					'studioyyk_top.php','studioyyk_tnpchg.php','studioyyk_trk0.php','studioyyk_trk1.php','studioyyk_trk2.php',
+					'studioyyk_kkt0.php','studioyyk_kkt1.php','studioyyk_kkt2.php',
+					//会員情報
+					'kaiin_top.php',
+					'kaiin_trk0.php','kaiin_trk1.php','kaiin_trk2.php',
+					'kaiin_kkn0.php','kaiin_kkn1.php',
+					'kaiin_ksn0.php','kaiin_ksn1.php','kaiin_ksn2.php',
+					'kaiin_del1.php','kaiin_del2.php',
+					'kaiin_img_del1.php','kaiin_img_del2.php','kaiin_img_ksn1.php','kaiin_img_ksn2.php',
+					//予約確認
+					'yoyaku_kkn_top.php',
+					'yoyaku_kkn_kbtcounseling_top.php','yoyaku_kkn_kbtcounseling_menu.php','yoyaku_kkn_kbtcounseling_kkn.php','yoyaku_kkn_kbtcounseling_can1.php','yoyaku_kkn_kbtcounseling_can2.php',
+					'yoyaku_kkn_yoyakuno_top.php','yoyaku_kkn_yoyakuno_info.php',
+					
+					//スケジュール
+					'sc_top.php',
+					//個別カウンセリング
+					'sc_kbt_trk_top.php','sc_kbt_trk_selectdate.php','sc_kbt_trk_all.php','sc_kbt_trk_all_res.php','sc_kbt_trk_ninzu.php','sc_kbt_trk_ninzu_res.php',
+					
+					
+					//クラス受付
+					'schedule_class_trk_top.php','schedule_class_trk_res.php','schedule_class_kkn_top.php',
+					//店舗出勤
+					'schedule_tenpo_trk_top.php','schedule_tenpo_trk_res.php','schedule_tenpo_kkn_top.php',
+					//その他
+					'sonota_top.php',
+					//その他（連絡事項更新）
+					'sonota_ren_top.php','sonota_ren_trk.php',
+					//その他（パスワード更新）
+					'sonota_pw_top.php','sonota_pw_ksn.php',
+					//管理画面
+					'kanri_top.php',
+					//管理画面（オフィス）
+					'kanri_office_top.php','kanri_office_trk0.php','kanri_office_trk1.php','kanri_office_trk2.php',
+					'kanri_office_ksn0.php','kanri_office_ksn1.php','kanri_office_ksn2.php',
+					'kanri_office_del1.php','kanri_office_del2.php',
+					//管理画面（カレンダー）
+					'kanri_calendar_top.php','kanri_calendar_list.php','kanri_calendar_trk0.php','kanri_calendar_trk2.php',
+					//管理画面（営業時間）
+					'kanri_eigyojkn_top.php','kanri_eigyojkn_select.php',
+					'kanri_eigyojkn_trk0.php','kanri_eigyojkn_trk1.php','kanri_eigyojkn_trk2.php',
+					'kanri_eigyojkn_ksn0.php','kanri_eigyojkn_ksn1.php','kanri_eigyojkn_ksn2.php',
+					'kanri_eigyojkn_del1.php','kanri_eigyojkn_del2.php',
+					'kanri_eigyojknkbt_trk0.php','kanri_eigyojknkbt_trk1.php','kanri_eigyojknkbt_trk2.php',
+					'kanri_eigyojknkbt_ksn0.php','kanri_eigyojknkbt_ksn1.php','kanri_eigyojknkbt_ksn2.php',
+					'kanri_eigyojknkbt_del1.php','kanri_eigyojknkbt_del2.php',
+					//管理画面（スタッフ）
+					'kanri_staff_top.php','kanri_staff_select.php',
+					'kanri_staff_trk0.php','kanri_staff_trk1.php','kanri_staff_trk2.php',
+					'kanri_staff_ksn0.php','kanri_staff_ksn1.php','kanri_staff_ksn2.php',
+					'kanri_staff_del1.php','kanri_staff_del2.php',
+					//管理画面（クラス）
+					'kanri_class_top.php','kanri_class_select.php',
+					'kanri_class_trk0.php','kanri_class_trk1.php','kanri_class_trk2.php',
+					'kanri_class_ksn0.php','kanri_class_ksn1.php','kanri_class_ksn2.php',
+					'kanri_class_del1.php','kanri_class_del2.php',
+					//管理画面（クラス時間割）
+					'kanri_classtime_top.php','kanri_classtime_select.php','kanri_classtime_select_2.php',
+					'kanri_classtime_trk0.php','kanri_classtime_trk1.php','kanri_classtime_trk2.php',
+					'kanri_classtime_ksn0.php','kanri_classtime_ksn1.php','kanri_classtime_ksn2.php',
+					'kanri_classtime_del1.php','kanri_classtime_del2.php',
+					//管理画面（管理情報）
+					'kanri_info_top.php',
+					//管理画面（ログ参照）
+					'kanri_log_top.php'
+					);
+?>

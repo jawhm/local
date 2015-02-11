@@ -1,0 +1,35 @@
+<?php
+require_once('include/header-footer.php');
+
+$new_obj = new HeaderFooter();
+$new_obj->title_page = 'Tokyo Head Office';
+
+$new_obj->display_header();
+?>
+	    <div class="top-sec01">
+	    	<h2 class="title">Tokyo Head Office</h2>
+		
+			<div class="page-content03">
+                <table class="acc-link">
+                    <tr>
+                    <th>Address</th><td>507 Shinagawa station Bldg,<br/>1-3-3 Nishishinjuku, Shinjuku-ku,<br/> Tokyo 160-0023 JAPAN</td>
+                    </tr>
+                    <tr>
+                    <th>Telephone</th><td>+81-(0)3-6304-5858 </td>
+                    </tr>
+                    <tr>
+                    <th>Fax</th><td>+81-(0)3-6745-1562</td>
+                    </tr>
+                    <tr>
+                    <th>Hours</th><td>Mon-Fri, OPEN 10:00 - CLOSE 18:00</td>
+                    </tr>
+                    <tr>
+                    <th class="th-end">Closest Stations</th><td class="td-end">Shinjuku station (5 minutes on foot from Shinjuku Station. )</td>
+                    </tr>
+                </table>
+                    
+                <iframe width="660" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=&amp;daddr=35.693174,+139.699031&amp;geocode=&amp;hl=en&amp;mra=prev&amp;ttype=dep&amp;date=01%2F11%2F11&amp;time=4:24pm&amp;noexp=0&amp;noal=0&amp;sort=time&amp;sll=35.692768,139.699123&amp;sspn=0.001621,0.002143&amp;ie=UTF8&amp;start=0&amp;ll=35.693169,139.699059&amp;spn=0.008713,0.014141&amp;z=16&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=d&amp;source=embed&amp;saddr=&amp;daddr=35.693174,+139.699031&amp;geocode=&amp;hl=en&amp;mra=prev&amp;ttype=dep&amp;date=01%2F11%2F11&amp;time=4:24pm&amp;noexp=0&amp;noal=0&amp;sort=time&amp;sll=35.692768,139.699123&amp;sspn=0.001621,0.002143&amp;ie=UTF8&amp;start=0&amp;ll=35.693169,139.699059&amp;spn=0.008713,0.014141&amp;z=16" style="color:#0000FF;text-align:left">View Larger Map</a></small>			
+			</div>
+		</div>
+    
+<?php $new_obj->display_footer(); ?>

@@ -1,0 +1,31 @@
+h2.sec-title {
+  padding-left: 40px;
+  min-height: 50px;
+  display: table;
+}
+h2.sec-title em {
+  font-style: normal;
+  vertical-align: middle;
+  display: table-cell;
+  min-height: 50px;
+  width: 100%;
+}
+h2.sec-title span {
+  background: url(/sp/accordion/icon_acd_h2.png) no-repeat left top;
+  background-size: 20px 40px;
+}
+h2.sec-title span.open {
+  background-position: left bottom;
+}
+td.nittei_span p {
+  display: inline-block;
+  font-size: 11px;
+  margin-right: 5px;
+}
+td.nittei_span span {
+  background: url(/sp/accordion/icon_acd_td.png) no-repeat left top;
+  background-size: 21px 42px;
+}
+td.nittei_span span.open {
+  background-position: left bottom;
+}

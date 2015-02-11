@@ -1,0 +1,4 @@
+ErrorDocument 403 /qr/err/403.html
+ErrorDocument 404 /qr/err/404.html
+
+AddType application/x-httpd-php .htm .html

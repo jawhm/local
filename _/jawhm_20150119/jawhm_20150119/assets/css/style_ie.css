@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+
+table.table_list td a{
+	width:auto;
+	float:left;	
+}
+
+table.table_list td .starttime {
+	width:auto;
+	float:left;	
+}
+.square_color{
+	width:5px;
+	float:left;
+}
+
+div.title_line {
+	float:left;
+	max-width:600px;
+}
+span.title_style{
+	white-space:pre;
+}
+.c_btn {
+	float:left;
+	width: 115px;
+	text-align: right;
+}
+
+span.list_flag {
+	display:inline-block;
+	height:23px;
+	vertical-align:middle;
+}
+
+span.broadcast, span.no_broadcast {
+	position:absolute;
+	float:right;
+	margin-left:75px;
+	vertical-align:top;
+}
+.open_only {
+	padding-left: 40px;
+}
+
+
+.c_img{
+	display: block;
+	font-size: 9pt;
+	font-weight: bold;
+	color: orange;
+	cursor: pointer;
+	padding-left:40px;
+}
+
+.data_table td span.date_number,
+.data_table td span.date_saturday,
+.data_table td span.date_sunday,
+.data_table td span.chosen_day
+{
+}	

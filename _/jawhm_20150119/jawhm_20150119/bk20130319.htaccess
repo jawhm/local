@@ -1,0 +1,17 @@
+ErrorDocument 403 /err/403.html
+ErrorDocument 404 /err/404.html
+
+AddType application/x-httpd-php .php .html .htm
+Redirect permanent /i/ http://i.jawhm.or.jp/
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(jawhm\.or.jp)(:80)?
+RewriteRule ^(.*) http://www.jawhm.or.jp/$1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$ http://www.jawhm.or.jp/$1 [R=301,L]
+
+Redirect permanent /seminar.html http://192.168.11.95:8085/seminar/seminar
+
+Redirect permanent /mem/register.php https://www.jawhm.or.jp/mem2/register.php
+

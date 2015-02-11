@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+ul#menu-country{
+	list-style:none;
+}
+ul#menu-country li.menu-visa a:link,
+ul#menu-country li.menu-visa a:visited{
+	display: block;
+	height: 35px;
+	width: 220px;
+	margin-bottom:4px;
+}
+
+a#aus-visa {
+	background:url('images/countries.gif') left top;	
+}
+a:hover#aus-visa {
+	background:url('images/countries.gif') 220px top;	
+}
+
+a#nz-visa {
+	background:url('images/countries.gif') left -35px;	
+}
+a:hover#nz-visa {
+	background:url('images/countries.gif') 220px -35px;	
+}
+
+a#can-visa {
+	background:url('images/countries.gif') left -70px;	
+}
+a:hover#can-visa {
+	background:url('images/countries.gif') 220px -70px;	
+}
+
+a#kor-visa {
+	background:url('images/countries.gif') left -105px;	
+}
+a:hover#kor-visa {
+	background:url('images/countries.gif') 220px -105px;	
+}
+
+a#fra-visa {
+	background:url('images/countries.gif') left -140px;	
+}
+a:hover#fra-visa {
+	background:url('images/countries.gif') 220px -140px;	
+}
+
+a#deu-visa {
+	background:url('images/countries.gif') left -175px;	
+}
+a:hover#deu-visa {
+	background:url('images/countries.gif') 220px -175px;	
+}
+
+a#uk-visa {
+	background:url('images/countries.gif') left -210px;	
+}
+a:hover#uk-visa {
+	background:url('images/countries.gif') 220px -210px;	
+}
+
+a#ire-visa {
+	background:url('images/countries.gif') left -245px;	
+}
+a:hover#ire-visa {
+	background:url('images/countries.gif') 220px -245px;	
+}
+
+a#dnk-visa {
+	background:url('images/countries.gif') left -280px;	
+}
+a:hover#dnk-visa {
+	background:url('images/countries.gif') 220px -280px;	
+}
+
+a#ywn-visa {
+	background:url('images/countries.gif') left -315px;	
+}
+a:hover#ywn-visa {
+	background:url('images/countries.gif') 220px -315px;	
+}
+
+a#hkg-visa {
+	background:url('images/countries.gif') left -350px;	
+}
+a:hover#hkg-visa {
+	background:url('images/countries.gif') 220px -350px;	
+}

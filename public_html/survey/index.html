@@ -1,0 +1,33 @@
+<?php
+require_once '../include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->title_page='日本ワーキングホリデー協会　アンケート一覧';
+$header_obj->description_page='日本ワーキングホリデー協会が実施しているアンケートの一覧です。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../images/mainimg/top-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '日本ワーキングホリデー協会　アンケート一覧';
+
+$header_obj->display_header();
+
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs(); ?>
+	  <h2 class="sec-title">「学校紹介特集」への参加学校募集</h2>
+	  <div id="sitemapbox">
+
+		<p class="text01">各種アンケートのリンク集</p>
+		<p class="text01"><a href="../survey/seminar/" target="_blank">リンク</a></p>
+
+	  </div>
+	  </div>
+	  
+	</div>
+  
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

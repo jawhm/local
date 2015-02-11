@@ -1,0 +1,233 @@
+﻿<?php
+require_once 'include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='来日中の外国人青年の雇用について';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）制度を利用して来日されている方々向けのお仕事情報をご案内しております。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->add_style = '<style>
+a.steps	{
+	color:	red;
+	font-size: 16pt;
+	text-decoration: none;
+	border-bottom: 2px dotted navy;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+}
+</style>
+';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/top-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'ワーキングホリデーで来日中の外国人青年の雇用について';
+
+$header_obj->display_header();
+
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs(); ?>
+		<h2 class="sec-title">求人情報の掲載について</h2>
+
+		<div style="margin-left:20px;">
+		&nbsp;<br/>
+			
+<div style="text-align:center;"><a href="http://japanworkingholiday.org/jobboard/" target="_blank"><img src="images/jobboardbanner.gif" alt="" /></a>
+</div>
+		<p>
+		&nbsp;<br/>
+
+				日本ワーキング・ホリデー協会では日本に来日する外国人ワーキングホリデーメイカ―のサポートも行っております。<br/>
+				日本語が分からないけど 日本で生活する外国人の通訳、住居紹介、日本語習得、日本独特の文化理解など個人個人、ワーキングホリデー参加国から来られた方をサポートします。<br/>
+				この一環として、<b><a target="_blank" href="http://japanworkingholiday.org/jobboard/">来日中外国人の方への求人を随時募集しております。</a></b><br/>
+				&nbsp;<br/>
+				従来、この手続きは指定の募集用紙にご記入の上、当協会にお送りいただき、協会オフィスにお越しいただいた方に閲覧いただく形で行っておりましたが、
+				この度、求人掲載・閲覧・応募までをインターネット上で行えるシステム（<a target="_blank" href="http://japanworkingholiday.org/jobboard/">JobBoard</a>）を導入いたしました。<br/>
+				&nbsp;<br/>
+				来日中の外国人の方をお探しの場合は、求人情報を是非ご掲載いただけますようお願い申し上げます。<br/>
+			</p>
+			&nbsp;<br/>
+			<p>
+				なお、求人情報掲載に際し、利用料金等は一切かかりません。<br/>
+				また、以下の利用規約を遵守願います。<br/>
+			</p>
+			&nbsp;<br/>
+			<div style="padding:10px 10px 10px 10px; border:1px dotted navy;">
+				<p>
+					【JobBoard（求人掲示板）利用規約】
+				</p>
+				<table style="font-size:10pt; margin-left:10px; margin-top:0px;">
+					<tr>
+						<td style="vertical-align:top;">１．</td>
+						<td>
+							投稿者は、掲載内容についての一切の責任をお持ちください。<br/>
+							掲載内容の変更・修正が必要な場合は必ず掲載者が行い、その情報掲載が不要となった場合は、すみやかに削除をお願いします。<br/>
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align:top;">２．</td>
+						<td>
+							代理人による投稿及び、コンピュータプログラムなどによる自動投稿は禁止します。<br/>
+							また、同一内容を投稿する場合は、以前の掲載を一度削除された上で、再度の投稿をお願いします。<br/>
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align:top;">３．</td>
+						<td>
+							このサービスは、ワーキングホリデーの活性化の為に提供するものであるため、以下の様な掲載は禁止します。<br/>
+							　・　公序良俗に反する内容<br/>
+							　・　アダルト関係、ネットワークビジネス関係の内容<br/>
+							　・　求職者に一方的に不利益な内容<br/>
+							　・　その他、当協会が不当と判断する内容<br/>
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align:top;">４．</td>
+						<td>
+							掲載内容については当協会の管理下WEBサイトの他、<a target="_blank" href="http://japanworkingholiday.org/jobboard/widgets/">Site Widgets機能</a>により
+							当協会の管理外のWEBサイトにも掲載される可能性があります。<br/>
+							また、掲載内容の表示位置、順位、方法などについては投稿者が指定することは出来ません。
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align:top;">５．</td>
+						<td>
+							当協会は求人情報に関する掲示板を運営するのみであり、実際の面談、採用に関する手続き等の斡旋、代行等は行いません。<br/>
+							求職者との連絡、雇用に関する手続き等は、投稿者又は投稿者に準ずる者の責任において実施してください。
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align:top;">６．</td>
+						<td>
+							当協会は、当協会の判断により掲載停止及び削除する権利を有します。<br/>
+							また、この掲示板の全部又は一部の機能を適宜変更・廃止できるものとします。<br/>
+							これらの事象により投稿者など、全ての利用者に生じた損害は、理由のいかんを問わず、一切の責任を負わないものとします。<br/>
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align:top;">７．</td>
+						<td>
+							この利用規約は、当協会の判断により事前の予告なく追加・変更・削除できるものとします。<br/>
+							また、この利用規約は日本語で作成され、日本語のみによって解釈されるものとします。<br/>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+
+		<h2 class="sec-title">来日中の外国人青年の雇用について</h2>
+
+		<div style="margin-left:20px;">
+			<p>
+				来日中の外国人の雇用に関しては、以下の点に注意する必要があります。<br/>
+				&nbsp;<br/>
+				　・　求職者は日本国内において仕事をすることが可能で、有効な在留資格を持っていますか？(※１）<br/>
+				　・　仕事の内容・期間は、求職者の在留資格に沿ったものですか？（※２）<br/>
+			</p>
+			&nbsp;<br/>
+			<p>
+				また、雇用した場合には、いくつかの手続きが必要となります。<br/>
+				詳しくは、お近くのハローワーク（公共職業安定所）にお問い合わせください。<br/>
+			</p>
+
+			<table style="font-size:8pt; margin-top:16px;">
+				<tr>
+					<td style="vertical-align:top;white-space:nowrap;">※１</td>
+					<td>
+						採用決定前に外国人登録証明等の書類の提示を求めることは、公正採用選考の観点から適切ではありません。
+						採用選考の段階では、外国人求人者が適法に就労できる在留資格を持っているかどうかの確認は、求職者本人に口頭で確認するようにしてください。
+					</td>
+				</tr>
+				<tr>
+					<td style="vertical-align:top;white-space:nowrap;">※２</td>
+					<td>
+						ワーキングホリデー制度は各協定国双方の青少年に相手国の文化及び生活様式を理解することを目的とした制度であり、
+						その間の<u>旅行資金を補うために付随的に働く事が認められています。</u><br/>
+						また、<u>風俗営業又は風俗関連営業が営まれる営業所では働くことができません。</u><br/>
+					</td>
+				</tr>
+
+			</table>
+
+		</div>
+
+		<h2 class="sec-title">掲載手順について</h2>
+		<div style="margin-left:20px;">
+			<p>
+				当協会の<a target="_blank" href="http://japanworkingholiday.org/jobboard/">JobBoard（求人掲示板）</a>のご利用は無料です。<br/>
+				&nbsp;<br/>
+				以下の手順で求人情報の投稿をお願いいたします。<br/>
+			</p>
+
+			<p>
+
+			</p>
+
+			<table style="font-size:10pt; margin-top:18px; width:100%;">
+				<tr>
+					<td style="width:30px; vertical-align:top;">
+						<img src="images/jobboard/1.png" alt="" />
+					</td>
+					<td style="vertical-align:top;">
+						<a target="_blank" href="http://japanworkingholiday.org/jobboard/">JobBoard</a>のWEBサイトを表示し、
+						右上の <img src="images/jobboard/postbutton.jpg" alt="" /> をクリックします。<br/>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:30px; vertical-align:top;">
+						<img src="images/jobboard/2.png" alt="" /><br/>
+					</td>
+					<td style="vertical-align:top;">
+						次の通り、求人内容を入力します。<br/>
+						なお、ご入力頂いた内容は、求職者が直接閲覧しますので<br/>
+						「英語のみ」又は「英語・日本語での兼記」でお願いいたします。<br/>
+						&nbsp;<br/>
+						<img src="images/jobboard/desc1.jpg" alt="" /><br/>
+						<img src="images/jobboard/desc2.jpg" alt="" />
+					</td>
+				</tr>
+				<tr>
+					<td style="width:30px; vertical-align:top;">
+						<img src="images/jobboard/3.png" alt="" /><br/>
+					</td>
+					<td style="vertical-align:top;">
+						ご入力頂きましたら、<img src="images/jobboard/verifybutton.jpg" alt="" /> をクリックしてください。確認画面が表示されます。<br/>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:30px; vertical-align:top;">
+						<img src="images/jobboard/4.png" alt="" /><br/>
+					</td>
+					<td style="vertical-align:top;">
+						確認画面で、入力内容を確認して、<img src="images/jobboard/publishbutton.jpg" alt="" /> をクリックすると掲載が開始されます。<br/>
+						&nbsp;<br/>
+						なお、<u>初めて投稿頂いた場合は、次のようなメッセージが表示されます。（この状態では掲載されておりません。）</u><br/>
+						<u>当協会で、掲載内容を確認させて頂きますので、しばらくお待ちください。</u><br/>
+						こちらでの確認作業の後（通常１～２営業日）に掲載を開始いたします。<br/>
+						<img src="images/jobboard/warnning.jpg" alt="" / width="600">
+					</td>
+				</tr>
+			</table>
+
+            &nbsp;<br/>
+            &nbsp;<br/>
+            <div style="text-align:center;"><a href="http://japanworkingholiday.org/jobboard/" target="_blank"><img src="images/jobboardbanner.gif"></a>
+            </div>
+            &nbsp;<br/>
+            &nbsp;<br/>
+
+		</div>
+
+	</div>
+
+
+  </div>
+  </div>
+
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

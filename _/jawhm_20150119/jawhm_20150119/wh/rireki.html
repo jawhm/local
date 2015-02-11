@@ -1,0 +1,185 @@
+﻿<?php
+require_once '../include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='英文履歴書の作り方';
+$header_obj->description_page='ワーキングホリデー(ワ―ホリ)で働く際に必要な英文履歴書の書き方・作り方を具体的な項目や注意点も踏まえてご説明します。さらにレジュメやCV、カバーレターなどの種類についてもご紹介します。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../images/mainimg/top-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '英文履歴書の作り方 | 日本ワーキング・ホリデー協会';
+
+$header_obj->keywords_page ='ワーキングホリデー,ワ―ホリ,履歴書,英文,レジュメ';
+
+$header_obj->display_header();
+include('calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs(''); ?>
+
+	<div class="step_box">
+		<div class="step_box1">
+			<div class="step_div"><a href="/ryugaku/ryugaku_eng.html" class="step_menu"><img src="../images/label_big_01.jpg"><br/>大学留学に必要な英語力</a></div>
+			<div class="step_div"><a href="/ryugaku/ryugaku_hiyou.html" class="step_menu"><img src="../images/label_big_02.jpg"><br/>語学留学費用</a></div>
+			<div class="step_div"><a href="/ryugaku/usa_univ.html" class="step_menu"><img src="../images/label_big_03.jpg"><br/>アメリカ留学</a></div>
+			<div class="step_div"><a href="/ryugaku/aus_univ.html" class="step_menu"><img src="../images/label_big_01.jpg"><br/>オーストラリア留学</a></div>
+			<div class="step_div"><a href="/ryugaku/can_lang.html" class="step_menu"><img src="../images/label_big_04.jpg"><br/>カナダ留学</a></div>
+			<div class="step_div"><a href="/ryugaku/eng_univ.html" class="step_menu"><img src="../images/label_big_03.jpg"><br/>イギリス留学</a></div>
+			<div class="step_div"><a href="/ryugaku/ryugaku_jawhm.html" class="step_menu"><img src="../images/label_big_02.jpg"><br/>ワーホリ協会のサポート</a></div>
+		</div>
+	</div>
+		<div style="clear:both; height:10px;">&nbsp;</div>
+	<div class="step_title">
+		ワーホリの履歴書に関する基本項目
+	</div>
+	  <p class="text01">
+	    ワ―ホリの期間中、お仕事を探す時に必要になるのが英文履歴書です。<br/>
+	    日本の履歴書と海外の履歴書は、全くの別物なので、知っておくべきことがたくさんあります。<br/>
+		滞在中働くため必要になってくる英文履歴書の基本項目は、以下の通りになります。<br/>
+	</p>
+	<h2 id="st1" class="sec-title">履歴書に関する基本項目</h2>
+	<p class="text01 block01">
+	<b>
+	名前（NAME）<br/>
+	住所（ADDRESS）<br/>
+	電話番号（TELEPHONE）<br/>
+	E-mailアドレス（E-MAIL）<br/>
+	</b>
+	･･･ポイントとしては、それ以外の出身地や性別、年齢などは不要な点です。これは後述の個人情報の欄で書きましょう。
+	</p>
+
+	<p class="text01 block01">
+	<b>
+	志望動機・職種（OBJECTIVE）<br/>
+	</b>
+	･･･ここには志望する動機や職種の他に、自分を雇うとどんなメリットがあるか等も記入すると良いでしょう。<br/>
+	経験や技能を具体的に書く事でよりアピールする事が出来ます。
+	</p>
+	<p class="text01 block01">
+	<b>
+	学歴（Education）<br/>
+	職歴（Experience）<br/>
+	</b>
+	･･･それぞれ学校の名前、学科、専攻などと、社名、ポジションなどを書きます。<br/>
+	何をしてきたかを伝わりやすく書く事がポイントです。<br/>
+	数字などを使うと強調することが出来ます。<br/>
+	両方とも新しいものから古いものへという順番で書いていきましょう。<br/>
+	</p>
+		
+	<p class="text01 block01">
+	<b>
+	技能（Skills）<br/>
+	資格（Qualifications）<br/>
+	</b>
+	･･･応募する職種に関係あるものを記入します。<br/>
+	</p>
+
+	<p class="text01 block01">
+	<b>
+	個人情報（PERSONAL　INFORMATION）<br/>
+	</b>
+	･･･ここでは生年月日や出身地、趣味など個人的な情報を書きます。<br/>
+	新卒者などはここで社会活動や部長をやっていた等のアピールでスペースを埋めても良いでしょう。<br/>
+	</p>
+
+	<p class="text01 block01">
+	<b>
+	カバーレター<br/>
+	</b>
+	･･･これは履歴書とは別に用意し、履歴書に添えて提出する手紙の事です。<br/>
+	このカバーレターで履歴書では伝わりにくい人間面や積極性を伝え、いかに企業に合った人材かをアピールします。<br/>
+	カバーレターも基本形式は履歴書同様にA4用紙に1枚程度でまとめます。<br/>
+	内容は住所と日付、宛名、書きだし、本文、結び、署名という順番で書いていきます。<br/>
+	書きだしでは、履歴書を送った経緯、本文では特に強調したい履歴書の内容をアピール、結びでは読んでくれたことへの感謝と面接の依頼、連絡先を書くと良いでしょう。<br/>
+	</p>
+
+	<div class="top-move"><p><a href="#header">▲ページのＴＯＰへ</a></p></div>
+
+		</p>
+
+	<h2 id="st1" class="sec-title">ワーホリに役立つ履歴書の書き方</h2>
+	<p class="text01">
+		では次に、先程ご説明した基本事項を具体的にどのように書いていくかをご説明します。<br/>
+		しかし基本事項を書いていく前に、英文履歴書の特徴などについて知っておく必要があるので、まずはそちらをご紹介します。<br/>
+	<p class="text01">
+		特徴として英文履歴書は日本と違って決まった形式は存在しません。自由に書いて良いのです。<br/>
+		しかし、多くの履歴書の中から自分の履歴書に目を通してもらう為に、見やすく、要点のまとまった履歴書に仕上げなければなりません。<br/>
+		この２点が重要なポイントです。<br/>
+		そしてその特徴の為に、２種類の履歴書が海外には存在しています。<br/>
+	</p>
+	<p class="text01">
+		ここから具体的な書き方の説明になります。<br/>
+		２種類の履歴書の内、一つをレジュメ（resume）、もう一つをCV (Curriculum Vitae) と言います。<br/>
+		レジュメとは自分の今までの実績を記したもので、A4用紙１枚程度にまとめます。<br/>
+		CVは自分がどのような性格で、どのような趣味があるかなど自らの人間性をA4用紙２枚程度にまとめます。<br/>
+		どちらにも経歴、資格・特殊技能などはまとめて載せる必要があり、どちらの履歴書を書くかはワ―ホリ先によります。<br/>
+		アメリカであればレジュメ、ヨーロッパであればCVで作成しましょう。<br/>
+		<br/>
+		また、パソコンの基本技能を有している事を知らせる為にも英文履歴書はワープロで作成することが必須です。<br/>
+		フォントは見やすい字体を心掛け、上下左右の空白もバランス良く目立つようにしましょう。<br/>
+		文章作成能力のアピールにも繋がります。<br/>
+		初めて書くという方や英語に自信の無い方は、書く前に和文履歴書を一度書いてみて、それを英訳してみても良いでしょう。<br/>
+	</p>
+
+	<p class="text01">
+		さて、レジュメの書き方には３種類あり、時系列に職歴等を記すクロノジカル・レジュメ、専門知識や技能などをメインに記すファンクショナルナル・レジュメ、先の２つを合わせた内容のクロノ-ファンクショナル・レジュメがあります。<br/>
+		一般的で無難と言われているのがクロノジカル・レジュメであり、転職が多かったり、ブランクのある場合はファンクショナル・レジュメが有効でしょう。<br/>
+		クロノ-ファンクショナル・レジュメは経歴も技能もある場合に有効な書き方です。<br/>
+		自分にあった書き方で企業にアピール出来る履歴書を作成しましょう。<br/>
+	</p>
+
+	<p class="text01">
+		レジュメ・CVを書いたら、最後にスペルチェッカーを使うか他人に見てもらい、絶対にスペルミスはしないようにすることが大事です。<br/>
+		そして、チェックしてもらう事でより良い履歴書にしてきましょう。<br/>
+		<br/>
+		当協会では、現地で役立つ履歴書の書き方も指導しています。気軽にお問い合わせください！<br/>
+	</p>
+
+	<center>
+	<p class="center"><a href="/mem/#meritt"><img src="../visa/images/memline5_off.gif"></a></p>
+	</center>
+
+<div class="top-move"><p><a href="#header">▲ページのＴＯＰへ</a></p></div>
+
+	<div class="step_box">
+		<div class="step_box1">
+			<div class="step_div"><a href="/ryugaku/ryugaku_eng.html" class="step_menu"><img src="../images/label_big_01.jpg"><br/>大学留学に必要な英語力</a></div>
+			<div class="step_div"><a href="/ryugaku/ryugaku_hiyou.html" class="step_menu"><img src="../images/label_big_02.jpg"><br/>語学留学費用</a></div>
+			<div class="step_div"><a href="/ryugaku/usa_univ.html" class="step_menu"><img src="../images/label_big_03.jpg"><br/>アメリカ留学</a></div>
+			<div class="step_div"><a href="/ryugaku/aus_univ.html" class="step_menu"><img src="../images/label_big_01.jpg"><br/>オーストラリア留学</a></div>
+			<div class="step_div"><a href="/ryugaku/can_lang.html" class="step_menu"><img src="../images/label_big_04.jpg"><br/>カナダ留学</a></div>
+			<div class="step_div"><a href="/ryugaku/eng_univ.html" class="step_menu"><img src="../images/label_big_03.jpg"><br/>イギリス留学</a></div>
+			<div class="step_div"><a href="/ryugaku/ryugaku_jawhm.html" class="step_menu"><img src="../images/label_big_02.jpg"><br/>ワーホリ協会のサポート</a></div>
+		</div>
+	</div>
+
+<? include('./step/memline.php'); ?>
+	<div class="step_box">
+
+	</div>
+	<div style="clear:both; height:10px;">&nbsp;</div>
+
+	  <div class="advbox03">
+<?php
+	// 111
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 86, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

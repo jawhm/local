@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>イベントカレンダー | 日本ワーキング・ホリデー協会</title>
+
+<meta name="keywords" content="オーストラリア,ニュージーランド,カナダ,カナダ,韓国,フランス,ドイツ,イギリス,アイルランド,デンマーク,台湾,香港,ビザ,取得,方法,申請,手続き,渡航,外務省,厚生労働省,最新,ニュース,大使館" />
+
+<meta name="description" content="イベントカレンダー：オーストラリア・ニュージーランド・カナダを初めとしたワーキングホリデー協定国の最新のビザ取得方法や渡航情報などを発信しています。" />
+
+<meta name="author" content="Japan Association for Working Holiday Makers" />
+<meta name="copyright" content="Japan Association for Working Holiday Makers" />
+<link rev="made" href="mailto:info@jawhm.or.jp" />
+<link rel="Top" href="index.html" type="text/html" title="ホームページ(最初のページ)" />
+<link rel="Index" href="index3.html" type="text/html" title="索引ページ" />
+<link rel="Contents" href="content.html" type="text/html" title="目次ページ" />
+<link rel="Search" href="search.html" type="text/html" title="検索できるページ" />
+<link rel="Glossary" href="glossar.html" type="text/html" title="用語解説ページ" />
+<link rel="Help" href="file://///Landisk-a14f96/smithsonian/80.ワーキングホリデー協会/Info/help.html" type="text/html" title="ヘルプページ" />
+<link rel="First" href="sample01.html" type="text/html" title="最初の文書へ " />
+<link rel="Prev" href="sample02.html" type="text/html" title="前の文書へ" />
+<link rel="Next" href="sample04.html" type="text/html" title="次の文書へ" />
+<link rel="Last" href="sample05.html" type="text/html" title="最後の文書へ" />
+<link rel="Up" href="index2.html" type="text/html" title="一つ上の階層へ" />
+<link rel="Copyright" href="copyrig.html" type="text/html" title="著作権についてのページへ" />
+<link rel="Author" href="mailto:info@jawhm.or.jp " title="E-mail address" />
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/headhootg-nav.css" rel="stylesheet" type="text/css" />
+<link href="css/contents.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+
+	/* see if anything is previously checked and reflect that in the view*/
+	$(".checklist input:checked").parent().addClass("selected");
+	
+	/* handle the user selections */
+	$(".checklist .checkbox-select").click(
+		function(event) {
+			event.preventDefault();
+			$(this).parent().addClass("selected");
+			$(this).parent().find(":checkbox").attr("checked","checked");
+		}
+	);
+	
+	$(".checklist .checkbox-deselect").click(
+		function(event) {
+			event.preventDefault();
+			$(this).parent().removeClass("selected");
+			$(this).parent().find(":checkbox").removeAttr("checked");
+		}
+	);
+
+});
+</script>
+
+<style type="text/css">
+
+body 	{	font: 12px/1.3 "Lucida Grande","Lucida","Arial",Sans-serif;	}
+form 	{	margin: 0 0 30px 0;	}
+legend 	{	font-size: 17px;	}
+fieldset {	border: 0;		}
+.checklist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.checklist li {
+	float: left;
+	margin-right: 10px;
+	background: url(images/checkboxbg.gif) no-repeat 0 0;
+	width: 105px;
+	height: 150px;
+	position: relative;
+	font: normal 11px/1.3 "Lucida Grande","Lucida","Arial",Sans-serif;
+}
+.checklist li.selected {	background-position: -105px 0;	}
+.checklist li.selected .checkbox-select {	display: none;	}
+.checkbox-select {
+	display: block;
+	float: left;
+	position: absolute;
+	top: 118px;
+	left: 10px;
+	width: 85px;
+	height: 23px;
+	background: url(images/select.gif) no-repeat 0 0;
+	text-indent: -9999px;
+}
+.checklist li input {	display: none;	}
+a.checkbox-deselect {
+	display: none;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	position: absolute;
+	top: 120px;
+	right: 10px;
+	font-size:10pt;
+}
+.checklist li.selected a.checkbox-deselect {	display: block;	}
+.checklist li label {
+	display: block;
+	text-align: center;
+	padding: 8px;
+}
+.sendit a{
+	display: block;
+	float: left;
+	top: 118px;
+	left: 10px;
+	width: 115px;
+	height: 34px;
+	border: 0;
+	cursor: pointer;
+	background: url(images/sendit.gif) no-repeat 0 0;
+	text-indent: -9999px;
+	margin: 20px 0;
+}
+</style>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20563699-1']);
+  _gaq.push(['_setDomainName', '.jawhm.or.jp']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<div id="header">
+    <h1><a href="index.html"><img src="images/h1-logo.jpg" alt="一般社団法人日本ワーキング・ホリデー協会" width="410" height="33" /></a></h1>
+	<div id="utility-nav">
+	<ul>
+	  <li class="u-nav01"><a href="japanese">日本語</a></li>
+	  <li class="u-nav02"><a href="english">英語</a></li>
+	  <li class="u-nav03"><a href="mobile">携帯</a></li>
+	</ul>
+	</div>
+  <img id="top-mainimg" src="images/event-mainimg.jpg" alt="" width="970" height="170" />  </div>
+  <div id="contentsbox"><img id="bgtop" src="images/contents-bgtop.gif" alt="" />
+  <div id="contents">
+    <div id="global-nav">
+	  <div class="g-n-sec01">
+	  <ul id="memberlogin">
+	    <li class="ml01"><a href="index.html">メンバーログイン</a></li>
+		<li class="ml02"><a href="index.html">メンバー登録はこちら</a></li>
+	  </ul>
+	  </div>
+	  <div class="g-n-sec02">
+	  <ul id="g-n-main01">
+	    <li class="gnm01"><a href="system.html">ワーキング・ホリデー制度について</a></li>
+		<li class="gnm02"><a href="start.html">はじめてのワーキング・ホリデー</a></li>
+		<li class="gnm03"><a href="visa/visa_top.html">ワーキング・ホリデー協定国</a></li>
+		<li class="gnm04"><a href="event.html">イベントカレンダー</a></li>
+		<li class="gnm05"><a href="recruit/index.html">求人・求職情報サイト</a></li>
+		<li class="gnm06"><a href="return.html">帰国者の方へ</a></li>
+		<li class="gnm07"><a href="qa.html">Ｑ＆Ａ</a></li>
+		<li class="gnm08"><a href="info.html">お役立ち情報</a></li>
+		<li class="gnm09"><a href="trans.html">翻訳サービス</a></li>
+		<li class="gnm10"><a href="gogaku-spec.html">語学講座</a></li>
+	    <li class="gnm11"><a href="school.html">語学学校</a></li>
+		<li class="gnm12"><a href="support.html">サポート機関</a></li>
+		<li class="gnm13"><a href="service.html">サービス</a></li>
+		<li class="gnm14"><a href="company.html">企業会員一覧</a></li>
+	    <li class="gnm15"><a href="attention.html">外国人ワーキングホリデー青年</a></li>
+	  </ul>
+	  <ul id="g-n-main02">
+	    <li class="gnm16"><a href="about.html">ワーキング・ホリデー協会について</a></li>
+		<li class="gnm17"><a href="access.html">アクセス</a></li>
+		<li class="gnm18"><a href="mem-com.html">企業会員について</a></li>
+		<li class="gnm19"><a href="adv.html">広告掲載のご案内</a></li>
+		<li class="gnm20"><a href="privacy.html">個人情報の取り扱い</a></li>
+		<li class="gnm21"><a href="about.html#deal">特定商取引に関する表記</a></li>
+		<li class="gnm22"><a href="sitemap.html">サイトマップ</a></li>
+	  </ul>
+	  </div>
+	</div>
+	<div id="maincontent">
+	  <p id="topicpath"><a href="index.html">トップ</a>　> イベントカレンダー </p>
+
+
+<input type="checkbox" name="111">111
+<input type="checkbox" name="111">111
+<input type="checkbox" name="111">111
+
+
+	<form action="">
+		<fieldset>
+			<legend>Choose some stuff...</legend>
+			<ul class="checklist">
+				<li>
+					<input name="jqdemo" value="value1" type="checkbox" id="choice_a"/>
+					<label for="choice_a">３月２日<br/>東京<br/>なんとかセミナー</label>
+					<a class="checkbox-select" href="#">aaSelect</a>
+					<a class="checkbox-deselect" href="#">取消　</a>
+				</li>
+				<li>
+					<input name="jqdemo" value="value2" type="checkbox" id="choice_b"/>
+					<label for="choice_b">Here's the 2nd selection</label>
+					<a class="checkbox-select" href="#">Select</a>
+					<a class="checkbox-deselect" href="#">取消　</a>
+				</li>
+				<li>
+					<input name="jqdemo" value="value3" type="checkbox" id="choice_c"/>
+					<label for="choice_c">Here's the 3rd selection</label>
+					<a class="checkbox-select" href="#">Select</a>
+					<a class="checkbox-deselect" href="#">取消　</a>
+				</li>
+				<li>
+					<input name="jqdemo" value="value4" type="checkbox" id="choice_d"/>
+					<label for="choice_d">Here's the 4th selection</label>
+					<a class="checkbox-select" href="#">Select</a>
+					<a class="checkbox-deselect" href="#">取消　</a>
+				</li>
+			</ul>
+			<div style="clear: both;"></div>
+			<button class="sendit" type="submit" name="submitbutton" title="Submit the form"><a /></button>
+		</fieldset>
+	</form>
+
+
+
+	  <h2 class="sec-title">イベントカレンダー</h2>
+
+<table>
+<tr><td>
+	<table border="0" cellspacing="1" cellpadding="1" bgcolor="#CCCCCC" style="font-size: 12pt; color: #666666;">
+	<tr>
+	<td align="center" colspan="7" bgcolor="#EEEEEE" height="18" style="color: #666666;">2011年2月</td></tr>
+	<tr>
+	<td align="center" width="40" height="18" bgcolor="#FF3300" style="color: #FFFFFF;">日</td>
+	<td align="center" width="40" bgcolor="#C7D8ED" style="color: #666666;">月</td>
+	<td align="center" width="40" bgcolor="#C7D8ED" style="color: #666666;">火</td>
+	<td align="center" width="40" bgcolor="#C7D8ED" style="color: #666666;">水</td>
+	<td align="center" width="40" bgcolor="#C7D8ED" style="color: #666666;">木</td>
+	<td align="center" width="40" bgcolor="#C7D8ED" style="color: #666666;">金</td>
+	<td align="center" width="40" bgcolor="#A6C0E1" style="color: #666666;">土</td>
+	</tr>
+	<tr>
+	<td align="center" height="18" bgcolor="#FFCC99" style="color: #666666;">　</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">　</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">1</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">2</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">3</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">4</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">5</td>
+	</tr>
+	<tr>
+	<td align="center" height="18" bgcolor="#FFCC99" style="color: #666666;">6</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">7</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">8</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">9</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">10</td>
+	<td align="center" bgcolor="#FFCC99" style="color: #666666;">11</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">12</td>
+	</tr>
+	<tr>
+	<td align="center" height="18" bgcolor="#FFCC99" style="color: #666666;">13</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">14</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;"><a href="#20110215"><img src="images/sa01.jpg">15</a></td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">16</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">17</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">18</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">19</td>
+	</tr>
+	<tr>
+	<td align="center" height="18" bgcolor="#FFCC99" style="color: #666666;">20</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">21</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;"><a href="#20110222"><img src="images/sa01.jpg">22</a></td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">23</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">24</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">25</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;"><a href="#20110226"><img src="images/sa01.jpg"></a><a href="#20110226s"><img src="images/sa02.jpg">26</a></td>
+	</tr>
+	<tr>
+	<td align="center" height="18" bgcolor="#FFCC99" style="color: #666666;">27</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">28</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">　</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">　</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">　</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">　</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">　</td>
+	</tr>
+	<tr>
+	<td bgcolor="#FFFFFF" height="18">&nbsp;</td>
+	<td bgcolor="#FFFFFF">&nbsp;</td>
+	<td bgcolor="#FFFFFF">&nbsp;</td>
+	<td bgcolor="#FFFFFF">&nbsp;</td>
+	<td bgcolor="#FFFFFF">&nbsp;</td>
+	<td bgcolor="#FFFFFF">&nbsp;</td>
+	<td bgcolor="#FFFFFF">&nbsp;</td>
+	</tr>
+	</table>
+</td>
+<td width="10px">&nbsp;</td>
+<td>
+
+	<table border="0" cellspacing="1" cellpadding="1" bgcolor="#CCCCCC" style="font-size: 12pt; color: #666666;">
+	<tr>
+	<td align="center" colspan="7" bgcolor="#EEEEEE" height="18" style="color: #666666;">2011年3月</td></tr>
+	<tr>
+	<td align="center" width="40" height="18" bgcolor="#FF3300" style="color: #FFFFFF;">日</td>
+	<td align="center" width="40" bgcolor="#C7D8ED" style="color: #666666;">月</td>
+	<td align="center" width="40" bgcolor="#C7D8ED" style="color: #666666;">火</td>
+	<td align="center" width="40" bgcolor="#C7D8ED" style="color: #666666;">水</td>
+	<td align="center" width="40" bgcolor="#C7D8ED" style="color: #666666;">木</td>
+	<td align="center" width="40" bgcolor="#C7D8ED" style="color: #666666;">金</td>
+	<td align="center" width="40" bgcolor="#A6C0E1" style="color: #666666;">土</td>
+	</tr>
+	<tr>
+	<td align="center" height="18" bgcolor="#FFCC99" style="color: #666666;">　</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">　</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">1</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;"><a href="#20110302"><img src="images/sa01.jpg">2</a></td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">3</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">4</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;"><a href="#20110305"><img src="images/sa01.jpg">5</a></td>
+	</tr>
+	<tr>
+	<td align="center" height="18" bgcolor="#FFCC99" style="color: #666666;">6</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">7</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">8</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">9</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;"><a href="#20110310"><img src="images/sa01.jpg">10</a></td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">11</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;"><a href="#20110312"><img src="images/sa03.jpg">12</a></td>
+	</tr>
+	<tr>
+	<td align="center" height="18" bgcolor="#FFCC99" style="color: #666666;">13</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">14</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">15</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">16</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">17</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">18</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;"><a href="#20110319"><img src="images/sa01.jpg">19</a></td>
+	</tr>
+	<tr>
+	<td align="center" height="18" bgcolor="#FFCC99" style="color: #666666;">20</td>
+	<td align="center" bgcolor="#FFCC99" style="color: #666666;"><a href="#20110321"><img src="images/sa02.jpg">21</a></td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">22</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">23</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">24</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">25</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;"><a href="#20110326"><img src="images/sa01.jpg">26</a></td>
+	</tr>
+	<tr>
+	<td align="center" height="18" bgcolor="#FFCC99" style="color: #666666;">27</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">28</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">29</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">30</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">31</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">　</td>
+	<td align="center" bgcolor="#FFFFFF" style="color: #666666;">　</td>
+	</tr>
+	<tr>
+	<td bgcolor="#FFFFFF" height="18">&nbsp;</td>
+	<td bgcolor="#FFFFFF">&nbsp;</td>
+	<td bgcolor="#FFFFFF">&nbsp;</td>
+	<td bgcolor="#FFFFFF">&nbsp;</td>
+	<td bgcolor="#FFFFFF">&nbsp;</td>
+	<td bgcolor="#FFFFFF">&nbsp;</td>
+	<td bgcolor="#FFFFFF">&nbsp;</td>
+	</tr>
+	</table>
+</td>
+<td width="10px">&nbsp;</td>
+</tr>
+</table>
+
+<span style="font-size:12pt;">
+<a href="#tokyo-semi"><img src="images/arrow0303.gif"> 東京セミナー</a>　　
+<a href="#sendai-semi"><img src="images/arrow0306.gif"> 仙台セミナー</a>　　
+<a href="#fukuoka-semi"><img src="images/arrow0307.gif"> 福岡セミナー</a>　　
+</span>
+
+<div style="border: 2px dotted navy; margin: 10px 0 10px 0; padding: 5px 10px 5px 10px; font-size:12pt;">
+セミナーのご予約及びご質問は<br/>
+お名前・電話番号を明記の上、 toiawase@jawhm.or.jp　にメールをお願いいたします。<br/>
+</div>
+
+	<h2 class="sec-title">セミナーのご案内</h2>
+
+	<div style="padding-left:30px;">
+		<p>ワーキングホリデーセミナーではワーキングホリデーのビザの取得方法</p>
+		<p>ワーキングホリデービザで出来ること</p>
+		<p>ワーキングホリデーに必要なもの</p>
+		<p>各国の特徴</p>
+		<p>ワーキングホリデー最近の傾向</p>
+
+		<p>ワーキングホリデーに興味はあるけど何から始めていいのか分からない方</p>
+		<p>各セミナーには質疑応答時間もありますので</p>
+		<p>遠慮されずに積極的に質問してくださいね。</p>
+		<p>現地でのアルバイトやシェアハウスの見つけ方等</p>
+		<p>なんでもご質問にお答え致します</p>
+
+		<p>お友達も御誘いのうえご参加くださいませ</p>
+	</div>
+
+	<div style="border: 2px dotted navy; margin: 20px 0 10px 0; padding: 5px 10px 5px 10px; font-size:12pt;">
+		セミナーには、どなたでもご参加できます。（無料です。）
+	</div>
+
+	<h2 class="sec-title" id="tokyo-semi">東京セミナー</h2>
+	<p>セミナーのご予約は、お名前・電話番号を明記の上、 toiawase@jawhm.or.jp までご連絡下さい。</p>
+
+	<div style="border: 2px solid springgreen; font-size:11pt; margin:10px 0 10px 0; padding: 10px 5px 10px 5px;">
+		東京セミナー開催場所<br/>
+		　　東京都新宿区西新宿1-3-3<br/>
+		　　新宿駅西口B16から1分<br/>
+		<span style="font-size:9pt;">
+		　　<a href="#tokyo-semi" onclick="window.open('./event/tokyo-map.html', '', 'width=600,height=550'); return false;">地図を表示する</a>（別ウィンドウで開きます。ポップアップブロッカーを解除してください。）<br/>
+		</spna>
+	</div>
+
+	<div style="padding-left:30px;">
+		<h2 id="20110215" class="20110215">
+		<div style="width:620px; margin:7px 0 0 -15px; padding-left:15px; font-size:11pt; color:navy; border-left:3px solid red; border-bottom:1px solid red;">
+			2月15日（火）16：00～　
+		</div>
+		</h2>
+		<p>カナダ　ワーキングホリデー</p>
+		<p>第一部：体験者の話</p>
+		<p>第二部：質疑応答</p>
+
+		<h2 id="20110222" class="20110222">
+		<div style="width:620px; margin:7px 0 0 -15px; padding-left:15px; font-size:11pt; color:navy; border-left:3px solid red; border-bottom:1px solid red;">
+			2月22日（火）15：00～17：00　
+		</div>
+		</h2>
+		<p>第一部：オーストラリアワーキングホリデー</p>
+		<p>第二部：海外から先生が来ます。「国際人になるための講座」</p>
+
+		<h2 id="20110226" class="20110226">
+		<div style="width:620px; margin:7px 0 0 -15px; padding-left:15px; font-size:11pt; color:navy; border-left:3px solid red; border-bottom:1px solid red;">
+			2月26日（土）
+		</div>
+		</h2>
+		<p>第一部　14：00　カナダワーキングホリデーセミナー</p>
+		<p>第二部　15：00　カナダでできること</p>
+
+		<h2 id="20110302" class="20110302">
+		<div style="width:620px; margin:7px 0 0 -15px; padding-left:15px; font-size:11pt; color:navy; border-left:3px solid red; border-bottom:1px solid red;">
+			3月2日（水）
+		</div>
+		</h2>
+		<p>第一部　15：00　オーストラリアワーキングホリデーセミナー</p>
+		<p>第二部　16：00　オーストラリアで２回ワーホリビザが取れる(２ｎｄビザセミナー）</p>
+		<p>第三部　17：00　「海外でツアーガイドになろう」 パースで実際にお仕事されている方が来ます</p>
+
+		<h2 id="20110305" class="20110305">
+		<div style="width:620px; margin:7px 0 0 -15px; padding-left:15px; font-size:11pt; color:navy; border-left:3px solid red; border-bottom:1px solid red;">
+			3月5日（土）
+		</div>
+		</h2>
+		<p>第一部　14：00　ワーキングホリデーセミナー英語圏</p>
+		<p>第二部　15：00　英語を使って児童英語教師になる方法</p>
+
+		<h2 id="20110310" class="20110310">
+		<div style="width:620px; margin:7px 0 0 -15px; padding-left:15px; font-size:11pt; color:navy; border-left:3px solid red; border-bottom:1px solid red;">
+			3月10日（木）
+		</div>
+		</h2>
+		<p>第一部　16：00　ワーキングホリデーセミナー英語圏</p>
+		<p>第二部　17：00　ワーキングホリデー体験者の話</p>
+
+		<h2 id="20110319" class="20110319">
+		<div style="width:620px; margin:7px 0 0 -15px; padding-left:15px; font-size:11pt; color:navy; border-left:3px solid red; border-bottom:1px solid red;">
+			3月19日（土）
+		</div>
+		</h2>
+		<p>第一部　14：00　オーストラリアワーキングホリデーセミナー</p>
+		<p>第二部　15：00　2年のワーキングホリデー　オーストラリア</p>
+
+		<h2 id="20110326" class="20110326">
+		<div style="width:620px; margin:7px 0 0 -15px; padding-left:15px; font-size:11pt; color:navy; border-left:3px solid red; border-bottom:1px solid red;">
+			3月26日（土）
+		</div>
+		</h2>
+		<p>第一部　14：00　カナダワーキングホリデーセミナー</p>
+		<p>第二部　15：00　カナダでなりたい自分を探そう。</p>
+	</div>
+
+	<h2 class="sec-title" id="sendai-semi">仙台セミナー</h2>
+	<p>セミナーのご予約は、お名前・電話番号を明記の上、 toiawase@jawhm.or.jp までご連絡下さい。</p>
+
+	<div style="border: 2px solid springgreen; font-size:11pt; margin:10px 0 10px 0; padding: 10px 5px 10px 5px;">
+		仙台セミナー開催場所<br/>
+		　　青葉区中央市民センター<br/>
+		　　仙台市青葉区一番町２－１－４<br/>
+		　　仙台駅から徒歩５分程度です<br/>
+		<span style="font-size:9pt;">
+		　　<a href="#sendai-semi" onclick="window.open('./event/sendai-map.html', '', 'width=600,height=550'); return false;">地図を表示する</a>（別ウィンドウで開きます。ポップアップブロッカーを解除してください。）<br/>
+		</spna>
+	</div>
+
+	<div style="padding-left:30px;">
+		<h2 id="20110226s" class="20110226s">
+		<div style="width:620px; margin:7px 0 0 -15px; padding-left:15px; font-size:11pt; color:navy; border-left:3px solid red; border-bottom:1px solid red;">
+			2月26日（土）　14：00～17：00
+		</div>
+		</h2>
+		<p>第一部　14：00　ワーキングホリデーセミナー　11カ国</p>
+		<p>第二部　15：00　ワーキングホリデー体験者の話</p>
+		<p>第三部　16：00　質問タイム</p>
+
+		<h2 id="20110321" class="20110321">
+		<div style="width:620px; margin:7px 0 0 -15px; padding-left:15px; font-size:11pt; color:navy; border-left:3px solid red; border-bottom:1px solid red;">
+			3月21日（月）（祝日） 14：00～17：00
+		</div>
+		</h2>
+		<p>第一部　14：00　ワーキングホリデーセミナー　11カ国</p>
+		<p>第二部　15：00　ワーキングホリデー体験者の話</p>
+		<p>第三部　16：00　質問タイム</p>
+
+	</div>
+
+	<h2 class="sec-title" id="fukuoka-semi">福岡セミナー</h2>
+	<p>セミナーのご予約は、お名前・電話番号を明記の上、 toiawase@jawhm.or.jp までご連絡下さい。</p>
+
+	<div style="border: 2px solid springgreen; font-size:11pt; margin:10px 0 10px 0; padding: 10px 5px 10px 5px;">
+		福岡セミナー開催場所<br/>
+		　　CafeBar Manly　マンリーカフェ　　<a href="http://www.hotpepper.jp/strJ000761870/" target="_blank">http://www.hotpepper.jp/strJ000761870/</a><br/>
+		　　カフェ内にて開催します。<br/>
+		　　福岡県福岡市中央区今泉1‐18‐55<br/>
+		<span style="font-size:9pt;">
+		　　<a href="#fukuoka-semi" onclick="window.open('./event/fukuoka-map.html', '', 'width=600,height=600'); return false;">地図を表示する</a>（別ウィンドウで開きます。ポップアップブロッカーを解除してください。）<br/>
+		</spna>
+	</div>
+
+	<div style="padding-left:30px;">
+		<h2 id="20110312" class="20110312">
+		<div style="width:620px; margin:7px 0 0 -15px; padding-left:15px; font-size:11pt; color:navy; border-left:3px solid red; border-bottom:1px solid red;">
+			3月12日（土）　14：00～16：00
+		</div>
+		</h2>
+		<p>第一部　14：00　ワーキングホリデーセミナー英語圏</p>
+		<p>第二部　15：00　質問タイム</p>
+
+	</div>
+
+	<div style="height:30px;">&nbsp;</div>
+
+<div style="text-align:center;">
+	<img src="images/flag01.gif">
+	<img src="images/flag02.gif">
+	<img src="images/flag03.gif">
+	<img src="images/flag04.gif">
+	<img src="images/flag05.gif">
+	<img src="images/flag06.gif">
+	<img src="images/flag07.gif">
+	<img src="images/flag08.gif">
+	<img src="images/flag09.gif">
+	<img src="images/flag10.gif">
+	<img src="images/mflag11.gif" width="40" height="26">
+</div>
+
+	<div style="height:50px;">&nbsp;</div>
+
+	</div>
+
+
+	</div>
+  </div>
+  </div>
+  <div id="footer">
+    <div id="footer-box">
+	<img src="images/foot-co.gif" alt="" />
+	</div>
+  </div>
+</body>
+</html>

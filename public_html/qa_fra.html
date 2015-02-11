@@ -1,0 +1,102 @@
+<?php
+require_once 'include/header.php';
+require_once 'include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='フランス　ワーキングホリデービザ';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）や留学などの海外生活でよるある質問をまとめました。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/qanda-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'フランスワーキングホリデーのよくある質問';
+
+$header_obj->display_header();
+include('calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('qa'); ?>
+	  <h2 class="sec-title">フランス　ワーキングホリデー</h2>
+	  <table class="qatable-aus">
+	    <tr>
+		  <th><img src="images/mflag05.gif" alt="" /><br />フランス</th>
+		  <td>ワーキングホリデー協定国別に、よくあるご質問にお答えしています。</td>
+		</tr>
+	  </table>
+      <p>&nbsp;</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'フランス';
+            $number_to_display = '6';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <h2 class="sec-title">よくある質問と回答</h2>
+      <p>&nbsp;</p>
+	  <div class="qa-abox-country">
+	    <h3 class="q-title">Ｑ１.フランス語がわからなくてもフランスワーキングホリデーに行けますか？</h3>
+		<p class="text01">はい、可能です。　フランスワーキングホリデービザの申請はフランス語もしくは英語で申請ができます。　現地での生活はフランス語が全く分からなくても英語で出来ると思われがちですがあまり英語は使いません。英語ですと街の看板や新聞を見たときになんとなく単語の想像はつくのですが全くフランス語がわからない人には想像すら付かないので本当にまったく言葉がわからない国に行くことになります。<br />
+ビザの申請は応募順に審査しますが早く出しても内容によっては時間がかかったり面接の予約で呼ばれた時にいなかったりすると発給までに時間がかかります。<br />
+海外からも申請はできますがパスポートを持っての面接があるので帰国する必要があります。　学生ビザからワーキングホリデービザにする場合は学生ビザをキャンセルしてからフランスワーキングホリデービザを申請する必要があります。 </p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ２.本申請の時の健康診断の検査</h3>
+		<p class="text01m30">健康診断の検査の項目は問われていません。　持病があれば診断書を医師から取り寄せてください。一般的な内科検診で「異常なし」と書かれていればそれで十分です。</p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ３.今年行けなさそう。ワーキングホリデービザのキャンセルができます？</h3>
+		<p class="text01m30">フランスワーキングホリデービザ申請してその後１回目の許可レターのキャンセルについてはFAXで（０３－５７９８－６０９４）にて連絡してください。大使館によって受理されれば、また次回に新規で申請ができます。<br />
+しかしワーキングホリデービザを既に発給されており、パスポートにワーキングホリデービザが貼られたらキャンセルはできず、次回に新規での申請はできませんのでご注意ください。原則的には2011年に発給されたビザでは2011年にフランスに入国してください</p>
+	  </div>
+
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ４.ビザ申請時の注意！　必ず守ること！</h3>
+		<p class="text01m30">フランスワーキングホリデービザの申請は渡仏する年に申請してください。　フランス入国日の３カ月前からできます。　遅くとも３週間前までに申請してください。申請から返事までに２週間～３カ月かかります。機械ではなく人間が読んで審査していますので読みやすく丁寧な文章を心がけてください。　申請動機については素直にフランス文化を感じたいというようなことや食文化の勉強などを書いてください。ただ単に行ってみたいだけの人は観光ビザでの長期滞在にしましょう。　ワーキングホリデービザはもっとフランスを愛してる人に。　現地で働くレストランが決まっている人はワークビザを取得してください。　長期ビザ申請書にはワーキングホリデービザ以外の申請者も共通の事項なので24番は記入しません。　申請は東京の大使館のみで受け付けておりビザの受け取りは郵送でも対応しています。　パスポートは原本を提出する必要があるので、その間に海外旅行に行きたい人はその旨お伝えいただき対処してもらいましょう。<br />面接には必ず遅れないように！遅れた場合はまた再度予約してください。</p>
+	  </div>
+
+
+	    <div class="qa-abox-country">
+		<h3 class="q-title">Ｑ５.現地で銀行口座は開設できますか？</h3>
+		<p class="text01m30">はい、可能です。　現地での銀行口座開設は、仕事をするうえでお給料を振り込んでもらうために必要になります。　<br />
+もし部屋を借りてガス・電気の契約時には銀行口座開設時に貰えるRIBナンバーという口座証明が必要です。また日本からご両親が海外送金をする際にも現地の銀行口座が役に立ちますが、給料を現金でもらったりクレジットカードを利用したりすれば銀行口座は必要ないかもしれません。 </p>
+		<div class="top-move">
+
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+	  
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'フランス';
+            $number_to_display = '6';
+            $start_display_from = '6'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <div class="advbox03">
+<?php
+	// 126
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 104, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+</div>
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

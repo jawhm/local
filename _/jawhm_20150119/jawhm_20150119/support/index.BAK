@@ -1,0 +1,212 @@
+<?php
+require_once '../include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='震災サポートセミナー開催のご案内';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="topbanner.png" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '震災サポートセミナー開催のご案内';
+$header_obj->pcmobile_type = true;
+
+$header_obj->add_js_files = '<script type="text/javascript" src="/js/linkboxes.js"></script>';
+$header_obj->add_css_files = '<style>
+a.steps	{
+	color:	red;
+	font-size: 16pt;
+	text-decoration: none;
+	border-bottom: 2px dotted navy;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+}
+
+
+#maincontent .ireland-title {
+	font-size: 14px;
+	color: #000033;
+	background-image: url(images/ireland/title.gif);
+	background-repeat: no-repeat;
+	font-weight: bold;
+	height: 28px;
+	width: 660px;
+	padding-left: 20px;
+	padding-top: 6px;
+}
+
+#step11box {
+	width: 680px;
+	margin-left: 15px;
+	margin-bottom: 10px;
+	background-repeat: no-repeat;
+	padding-top: 5px;
+	padding-left: 20px;
+	clear: both;
+}
+
+</style>
+';
+
+$header_obj->display_header();
+
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs(); ?>
+
+
+	<div style="font-size:20pt; margin-left:30px; margin-top:60px;">
+		<strong>日本ワーキング・ホリデー協会<br/>
+		　　震災サポートセミナー開催のご案内</strong>
+	</div>
+
+	<div style="width:500px; margin-left:350px; font-size:10pt; margin-top:10px;">
+		<!--主催　：　日本ワーキング・ホリデー協会<br/>
+		後援　：　衆議院員災害対策特別委員長 坂本 剛二 先生　<br/>
+		　　　　　オーストラリア政府観光局<br/>
+		協力　：　AIU保険会社 ダイナインシュランス<br/>-->
+	</div>
+
+	<h2 class="sec-title">セミナー日程</h2>
+	<div id="step11box">
+		<table>
+			<tr>
+				<td style="width:80px;vertical-align:top;">
+					<p>日時</p>
+				</td>
+				<td>
+					<p><strong><big>2013年8月11日（日）　13：30 会場</big></strong></p>
+				</td>
+			</tr>
+			<tr><td>&nbsp;</td><td></td></tr>
+			<tr>
+				<td style="width:80px;vertical-align:top;">
+					<p>場所</p>
+				</td>
+				<td>
+					<p>
+					<a href="http://www.corasse.com/category/access"><strong><big>福島県福島市コラッセふくしま　会議室302<strong><big></a><br/>
+			</p>
+				</td>
+			</tr>
+			<tr><td>&nbsp;</td><td></td></tr>
+			<tr>
+				<td style="width:80px;vertical-align:top;">
+					<p>参加費</p>
+				</td>
+				<td>
+					<p>無料</p>
+				</td>
+			</tr>
+			<tr><td>&nbsp;</td><td></td></tr>
+		</table>
+	</div>
+
+						<p style="text-align:center"><a href="http://www.jawhm.or.jp/s/go/4544"><img  src="../images/ireland/yoyaku_on.gif" alt="" /></a></p>
+	<div style="height:30px;">&nbsp;</div>
+
+<h2 class="sec-title">概要</h2>
+	&nbsp;<br/>
+	<p style="margin-left: 15px;">
+2011/3/11に東日本大震災で被害を受けた東北３県（福島、宮城、岩手）の若者達に国際交流（ワーキングホリデー）をサポート致します。
+この大震災により実現の難しくなった海外体験を夢としていた若者達を対象に、ダイナインシュアランス様、ＡＩＵ様、日本ワーキング・ホリデー協会など支援会社、そして衆議院議員災害対策特別委員長の坂本剛二先生のご協力により『若者のスキルアップ』とし、ワーキング・ホリデー・留学のサポートを致します。<br/>
+　<br/>
+</p>
+
+<div style="border: 2px dotted #cccccc; font-size: 9pt; padding: 20px 15px 20px 15px;">
+<strong>当プログラム参加者に以下の支援を予定しております。</strong><br/>
+　<br/>
+・渡航準備サポート(カウンセリング、セミナーへの参加など)<br/>
+・ビザ申請料金
+・ホームステイ費用(１ヵ月分)<br/>
+・渡航サポート費用　                              など<br/>
+<br/>
+対象者の職業や年齢を考慮し、短期(１ヶ月～)または長期(半年以上)のプログラムをお選びいただきます。<br/>
+</div>
+
+　<br/>
+	<p style="margin-left: 15px;">また詳しい募集要項などはセミナーにてご案内させていただきます。</p><br/>
+	&nbsp;<br/>
+						<p style="text-align:center; margin-bottom:25px;"><a href="http://www.jawhm.or.jp/s/go/4544"><img  src="../images/ireland/yoyaku_on.gif" alt="" /></a></p>
+</p>
+<center><img src="photo02.jpg" width="30%">　<img src="photo01.jpg" width="30%">　<img src="photo03.jpg" width="30%"></center>
+
+	<div style="height:30px;">&nbsp;</div>
+
+
+	<h2 class="sec-title">セミナー内容</h2>
+	<div id="step11box">
+		<table>
+			<tr>
+				<td style="width:100px;vertical-align:top;"><p>
+<br/>
+					<b>13:30〜</b>
+				</p></td>
+				<td style="vertical-align:top;"><p>
+					<br/><b>開場</b><br/>
+				</p></td>
+			</tr>
+			<tr><td>&nbsp;</td><td></td></tr>
+			<tr>
+				<td style="width:25px;vertical-align:top;"><p>
+					<b>14:00〜</b>
+				</p></td>
+				<td style="vertical-align:top;"><p>
+					<b>坂本先生のお言葉「福島の復興に若者の力が必要な事、新しい事に挑戦する心構え」</b><br/>
+				</p></td>
+			</tr>
+			<tr><td>&nbsp;</td><td></td></tr>
+			<tr>
+				<td style="width:25px;vertical-align:top;"><p>
+					<b>14:15〜</b>
+				</p></td>
+				<td style="vertical-align:top;"><p>
+					<b>震災サポートセミナー 開始</b><br/>
+				</p></td>
+			</tr>
+			<tr><td>&nbsp;</td><td></td></tr>
+			<tr>
+				<td style="width:25px;vertical-align:top;"><p>
+					<b>15:30〜</b>
+				</p></td>
+				<td style="vertical-align:top;"><p>
+					<b>質疑応答<br/></b>
+				</p></td>
+			</tr>
+						<tr><td>&nbsp;</td><td></td></tr>
+						<tr>
+				<td style="width:25px;vertical-align:top;"><p>
+					<b>〜16:30</b>
+				</p></td>
+				<td style="vertical-align:top;"><p>
+					<b>閉場<br/></b>
+				</p></td>
+			</tr>
+	</table>
+</div>	
+<br/>
+<br/>
+						<p style="text-align:center"><a href="http://www.jawhm.or.jp/s/go/4544"><img  src="../images/ireland/yoyaku_on.gif" alt="" /></a></p><br/>
+	<div style="height:30px;">&nbsp;</div>
+
+<h2 class="sec-title">お問い合わせに関して</h2>
+	&nbsp;<br/>
+	<p style="margin-left: 15px;">
+	ご質問等、お問い合わせはこちらのメールアドレスまでご連絡下さいませ。<br/>
+<br/>
+	info@jawhm.or.jp<br/>
+<br/>	
+	【注意】お電話でのお問い合わせは受け付けておりませんのでご了承ください。<br/>
+	<div style="height:250px;">&nbsp;</div>
+
+</p>
+
+	</div>
+	</div>
+
+	</div>
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

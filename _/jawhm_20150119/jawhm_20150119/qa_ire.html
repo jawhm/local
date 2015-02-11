@@ -1,0 +1,163 @@
+<?php
+require_once 'include/header.php';
+require_once 'include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='アイルランド　ワーキングホリデービザ';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）や留学などの海外生活でよるある質問をまとめました。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/qanda-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'アイルランドワーキングホリデーのよくある質問';
+
+$header_obj->display_header();
+include('calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('qa'); ?>
+	  <h2 class="sec-title">アイルランド　ワーキングホリデー</h2>
+	  <table class="qatable-aus">
+	    <tr>
+		  <th><img src="images/mflag08.gif" alt="" /><br />アイルランド</th>
+		  <td>ワーキングホリデー協定国別に、よくあるご質問にお答えしています。</td>
+		</tr>
+	  </table>
+
+      <p>&nbsp;</p>
+
+	<center>
+		<?php
+		  //アイルランドギャラリーirelandgalley
+
+		  // The MAX_PATH below should point to the base of your OpenX installation
+		  define('MAX_PATH', '/var/www/html/ad');
+		  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+		    if (!isset($phpAds_context)) {
+		      $phpAds_context = array();
+		    }
+		    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+		    $phpAds_raw = view_local('', 135, 0, 0, '_blank', '', '0', $phpAds_context, '');
+		  }
+		  echo $phpAds_raw['html'];
+		?>
+
+	</center>
+
+
+      <p>&nbsp;</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'アイルランド';
+            $number_to_display = '6';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <h2 class="sec-title">よくある質問と回答</h2>
+      <p>&nbsp;</p>
+
+	  <div class="qa-abox-country">
+	    <h3 class="q-title">Ｑ１.アイルランドワーキングホリデービザはいつ申請すればいいでしょうか？</h3>
+		<p class="text01">「アイルランド・ワーキング・ホリデー・オーソリゼーション（許可証）」を取得する為には最終書類提出時に、航空券と海外ワーキングホリデー保険加入証明書を添えてアイルランドへの入国日を通達します。　日本ワーキングホリデー協会ではそのための保険の証明を発行しておりますので保険に加入される前に協会にご連絡ください。　アイルランドへの入国は、この許可証の発給日から12ヶ月以内で、入国から12ヶ月滞在することが可能です。</p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ２.アイルランド到着後にすること。</h3>
+		<p class="text01m30">アイルランドでは各種手続きにおいて、住所証明の提示が必要です。<br />
+一般的には、本人宛で住所が記載されている電気・ガス・電話等の請求書が必要です。フラットシェアなどの場合はこれらの書類を揃えることができませんが、以下の方法があります。<br />
+・ 現住所宛の該当する請求書とその請求書に記載されている人のレター<br />
+・	自分の名前と住所の書かれた銀行預金明細書<br />
+・	賃貸借契約書と大家さんのレター<br />
+・	ユースホステルなどの宿泊施設に滞在の場合は領収書と宿泊施設からのレター<br />
+なお各種手続き担当者によっては、証明書の指定をする場合がありますので、確認をしてください。 </p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ３.現地へ行ってからしなければいけない手続きについて教えてください。</h3>
+		<p class="text01m30">■外国人登録を必ず行ってください<br />
+アイルランドの空港に到着したら入国審査で、あなたのパスポートに1ヶ月または3ヶ月の滞在許可のスタンプが押されます。入国1か月以内にアイルランドの警察で外国人登録を行ってください。日本人のアイルランドワーキングホリデービザ取得者もこの届出を行わないと、アイルランドで90日以上の滞在ができません。<br />
+ダブリンに行く場合ですと出入国管理局・GNIB（Garda National Immigration Bureau)、<br />
+ダブリン以外に滞在の場合は、その地域の警察署本部（Garda）で手続きが行えます。www.garda.ie<br />
+＜必要書類＞<br />
+　・パスポート<br />
+　・住所証明（銀行預金の明細書など）<br />
+　・手数料　€150（クレジットカード又はBank Giro銀行振替払い）<br />
+手続き完了後、1週間以後にもう一度受け取りに行ってください。<br/>
+ダブリンで申請されるかたはすぐにパスポートに1年の滞在許可のスタンプが押され、Certificate of Registrationという外国人登録カードが即日発行されます。</p>
+
+<p class="text01m30">■住所証明<br />
+
+・	ホームステイ宛の請求書とその請求書に記載されてホームステイホストからの証明<br />
+・	自分の名前と住所の記載された銀行明細書<br />
+・	契約書等<br />
+・	契約した大家からの証明<br />
+・	ユースホステルなどに滞在の場合は領収書と宿泊施設からの証明<br />
+</p>
+
+<p class="text01m30">■PPSナンバー<br />
+アイルランドで仕事をする場合、Personal Public Serviceナンバーと呼ばれる社会保障番号のPPSが必要になります。　近くのDepartment of Social and Family Affairsで（社会福祉事務局）手続きを行ってください。www.welfare.ie<br />
+申請後2週間で郵送でPPSナンバーが送られてきます。<br/>
+手続きに必要な書類<br />
+　・パスポート<br />
+　・住所証明書<br />
+</p>
+
+<p class="text01m30">■税務当局（Revenue Commissioners）へ登録<br />
+仕事が決まったら、Revenue Commissionersに登録してください。　雇用主にPPSナンバーを提示し（http://www.revenue.ie/forms/form12a.pdf）「Form12A」の用紙に必要事項を記入して税務署に郵送してください。http://www.revenue.ie　<br />
+</p>
+
+<p class="text01m30">■在留届け<br />
+日本人が外国で3ヶ月以上滞在する場合、在アイルランド日本国大使館へ在留届けを提出しなければいけません。。<br />
+外務省ホームページからインターネットで登録できます。http://www.ezairyu.mofa.go.jp/ </p>
+	  </div>
+	     <div class="qa-abox-country">
+	    <h3 class="q-title">Ｑ４.銀行口座の開設！</h3>
+		<p class="text01m30">やはりアイルランドでもバイトをするのであれば銀行振り込みになるので銀行口座が必要です。銀行口座開設に必要な書類は・パスポート　・PPSナンバー、住所証明書が必要になりま。銀行によって必要な書類が変わってきますので詳細は現地の銀行でお聞きください。　<br />
+7営業日ほどで郵送で暗証番号が送られてきます。　銀行にてその暗証番号を入力して銀行カウンターでキャッシュカードが受け取れます。</p>
+	  </div>
+	      <div class="qa-abox-country">
+	    <h3 class="q-title">Ｑ５.アイルランドで仕事はすぐ見つかりますか？</h3>
+		<p class="text01m30">PIGSと呼ばれるアイルランドの不況を甘く見ていてはいけません。英語のできない外国人に仕事を与えて失業率を上げるようなことはしません。日本食レストランなどで探してみましょう。<br />
+アイルランドの雇用訓練機関FAS<a target="_blank" href="http://www.fas.ie/">www.fas.ie</a>も利用できます。<br />
+アイルランドの最低時給は€8.65です。そこから所得税と社会保険料が引かれます。</p>
+	  </div>
+	     
+
+		<div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+	  
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'アイルランド';
+            $number_to_display = '6';
+            $start_display_from = '6'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <div class="advbox03">
+<?php
+	// 129
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 107, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<?php
+//require_once 'include/header.php';
+//$redirection='/event/map/mob.php?p=osaka';
+
+require_once '../../include/header.php';
+require_once '../../include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+$header_obj->mobileredirect=$redirection;
+$header_obj->title_page='大阪オフィスのご案内';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）協会大阪オフィスのご案内です。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。';
+$header_obj->keywords_page='大阪,オフィス,海外,留学,ワーホリ,セミナー会場,ワーキングホリデー,ワーホリ,日本ワーキングホリデー協会';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="/images/mainimg/access-mainimg.gif" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '日本ワーキング・ホリデー協会大阪オフィスへのアクセス';
+
+$header_obj->display_header();
+include('../../calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('access'); ?>
+	  <h2 class="sec-title">大阪オフィスのご案内</h2>
+
+	  <div class="table-base" style="margin-bottom:20px;">
+	    <h3 class="table-base-title" style="font-size:18pt;" id="tokyo-office">大阪オフィス</h3>
+	    <table>
+		  <tr>
+		    <th>住所</th>
+			<td>大阪セミナー会場：大阪オフィスにて開催されます。<br/>
+				〒530-0001 大阪市北区梅田1-11-4-500　大阪駅前第4ビル5階 19-1号室</td>
+		  </tr>
+		  <tr>
+		    <th>セミナー会場地図<img src="../../images/office/osaka/gaiken.jpg" style="padding:10px;" alt="ワーキングホリデー協会大阪オフィス　オフィスビル外見写真"></th>
+			<td>
+<?php if($header_obj->mobilepage) { ?>
+	<iframe width="85%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B01-11-4-500%E3%80%80%E5%A4%A7%E9%98%AA%E9%A7%85%E5%89%8D%E7%AC%AC4%E3%83%93%E3%83%AB5%E9%9A%8E+19-1%E5%8F%B7%E5%AE%A4&amp;aq=&amp;sll=35.673343,139.710388&amp;sspn=0.273878,0.676346&amp;brcurrent=3,0x6000e692f6c597ad:0x229707b075452dc5,0&amp;ie=UTF8&amp;hq=&amp;hnear=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B0%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%94+%E5%A4%A7%E9%98%AA%E9%A7%85%E5%89%8D%E7%AC%AC%EF%BC%94%E3%83%93%E3%83%AB&amp;ll=34.699897,135.498827&amp;spn=0.008662,0.021136&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B01-11-4-500%E3%80%80%E5%A4%A7%E9%98%AA%E9%A7%85%E5%89%8D%E7%AC%AC4%E3%83%93%E3%83%AB5%E9%9A%8E+19-1%E5%8F%B7%E5%AE%A4&amp;aq=&amp;sll=35.673343,139.710388&amp;sspn=0.273878,0.676346&amp;brcurrent=3,0x6000e692f6c597ad:0x229707b075452dc5,0&amp;ie=UTF8&amp;hq=&amp;hnear=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B0%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%94+%E5%A4%A7%E9%98%AA%E9%A7%85%E5%89%8D%E7%AC%AC%EF%BC%94%E3%83%93%E3%83%AB&amp;ll=34.699897,135.498827&amp;spn=0.008662,0.021136&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>			</td>
+<?php } else {	?>
+	<iframe width="450" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B01-11-4-500%E3%80%80%E5%A4%A7%E9%98%AA%E9%A7%85%E5%89%8D%E7%AC%AC4%E3%83%93%E3%83%AB5%E9%9A%8E+19-1%E5%8F%B7%E5%AE%A4&amp;aq=&amp;sll=35.673343,139.710388&amp;sspn=0.273878,0.676346&amp;brcurrent=3,0x6000e692f6c597ad:0x229707b075452dc5,0&amp;ie=UTF8&amp;hq=&amp;hnear=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B0%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%94+%E5%A4%A7%E9%98%AA%E9%A7%85%E5%89%8D%E7%AC%AC%EF%BC%94%E3%83%93%E3%83%AB&amp;ll=34.699897,135.498827&amp;spn=0.008662,0.021136&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B01-11-4-500%E3%80%80%E5%A4%A7%E9%98%AA%E9%A7%85%E5%89%8D%E7%AC%AC4%E3%83%93%E3%83%AB5%E9%9A%8E+19-1%E5%8F%B7%E5%AE%A4&amp;aq=&amp;sll=35.673343,139.710388&amp;sspn=0.273878,0.676346&amp;brcurrent=3,0x6000e692f6c597ad:0x229707b075452dc5,0&amp;ie=UTF8&amp;hq=&amp;hnear=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B0%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%91%E2%88%92%EF%BC%94+%E5%A4%A7%E9%98%AA%E9%A7%85%E5%89%8D%E7%AC%AC%EF%BC%94%E3%83%93%E3%83%AB&amp;ll=34.699897,135.498827&amp;spn=0.008662,0.021136&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>			</td>
+<?php } ?>
+		  </tr>
+		  <tr>
+		    <th>最寄り駅</th>
+			<td>
+				日本ワーキングホリデー協会大阪オフィスが入居している大阪駅前第4ビルは、JR大阪駅、梅田駅から地下街を通りたどり着くことができます。
+				雨の日でも傘いらずです！<br/><br/>
+
+				○　JR大阪駅より徒歩5分　⇒　<u><a href="http://www.jawhm.or.jp/blog/osakablog/item/370" target="_blank">詳細はこちらから</a></u><br/>
+				大阪丸ビル・大阪ヒルトン方面へ南方面へ歩くと大阪駅前第４ビルが見えます。<br/>
+				○　地下鉄（徒歩5分）⇒　<u><a href="http://www.jawhm.or.jp/blog/osakablog/item/366" target="_blank">詳細はこちらから</a></u><br/>
+				御堂筋線梅田駅、四ツ橋線西梅田駅、谷町線東梅田駅、大阪丸ビル・ヒルトン大阪方面へ<br/>
+				○　JR東西線　北新地駅より大阪駅前ビルへ連結　⇒　<u><a href="http://www.jawhm.or.jp/blog/osakablog/item/368" target="_blank">詳細はこちらから</a></u><br/>
+				○　阪急電車梅田駅より　大阪丸ビル・ヒルトン大阪方面へ徒歩８分　⇒　<u><a href="http://www.jawhm.or.jp/blog/osakablog/item/355" target="_blank">詳細はこちらから</a></u><br/>
+				○　長距離バス　ハービス大阪駅より　ヒルトン大阪方面へ徒歩5分<br/><br/>
+
+				【初めて大阪へお越しのお客様へ】<br/>
+				大阪の地下街は大変広く複雑で、大阪にお住まいの方でも道に迷うことが多いです。
+				はじめてお越しのお客様は、大阪駅/梅田駅から地上に出てで歩かれたほうがわかりやすいと思います↓<br/>
+				大阪駅から「ヒルトンホテル大阪」方向へ向かい→「大阪第４ビル」まで歩いて数分です。<br/>
+<?php if($header_obj->mobilepage) { ?>
+	<iframe width="85%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=d&amp;source=s_d&amp;saddr=%E3%80%92530-0001+%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B0%EF%BC%93%E4%B8%81%E7%9B%AE+(%E5%A4%A7%E9%98%AA%E9%A7%85%E3%83%BB%EF%BC%AA%EF%BC%B2%EF%BC%8F%E6%9D%B1%E6%B5%B7%E9%81%93%E6%9C%AC%E7%B7%9A)&amp;daddr=%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B01-11-4-500%E3%80%80%E5%A4%A7%E9%98%AA%E9%A7%85%E5%89%8D%E7%AC%AC4%E3%83%93%E3%83%AB5%E9%9A%8E+19-1%E5%8F%B7%E5%AE%A4&amp;hl=ja&amp;geocode=FVWCEQIdQX0TCCFixyoSerwRWQ%3BFXl6EQIdS4wTCCkJ-VIi7eYAYDGBMpvL0fJ9sA&amp;aq=&amp;sll=34.700391,135.495497&amp;sspn=0.004331,0.010568&amp;gl=jp&amp;dirflg=w&amp;brcurrent=3,0x6000e68d5065c7f1:0xa408b25440cd6ea1,0&amp;mra=ls&amp;ie=UTF8&amp;ll=34.700395,135.495501&amp;spn=0.002599,0.003818&amp;t=m&amp;output=embed&amp;z=14"></iframe><br /><small><a href="https://maps.google.co.jp/maps?f=d&amp;source=embed&amp;saddr=%E3%80%92530-0001+%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B0%EF%BC%93%E4%B8%81%E7%9B%AE+(%E5%A4%A7%E9%98%AA%E9%A7%85%E3%83%BB%EF%BC%AA%EF%BC%B2%EF%BC%8F%E6%9D%B1%E6%B5%B7%E9%81%93%E6%9C%AC%E7%B7%9A)&amp;daddr=%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B01-11-4-500%E3%80%80%E5%A4%A7%E9%98%AA%E9%A7%85%E5%89%8D%E7%AC%AC4%E3%83%93%E3%83%AB5%E9%9A%8E+19-1%E5%8F%B7%E5%AE%A4&amp;hl=ja&amp;geocode=FVWCEQIdQX0TCCFixyoSerwRWQ%3BFXl6EQIdS4wTCCkJ-VIi7eYAYDGBMpvL0fJ9sA&amp;aq=&amp;sll=34.700391,135.495497&amp;sspn=0.004331,0.010568&amp;gl=jp&amp;dirflg=w&amp;brcurrent=3,0x6000e68d5065c7f1:0xa408b25440cd6ea1,0&amp;mra=ls&amp;ie=UTF8&amp;ll=34.700395,135.495501&amp;spn=0.002599,0.003818&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>				<br/><br/>
+<?php } else {	?>
+	<iframe width="450" height="220" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=d&amp;source=s_d&amp;saddr=%E3%80%92530-0001+%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B0%EF%BC%93%E4%B8%81%E7%9B%AE+(%E5%A4%A7%E9%98%AA%E9%A7%85%E3%83%BB%EF%BC%AA%EF%BC%B2%EF%BC%8F%E6%9D%B1%E6%B5%B7%E9%81%93%E6%9C%AC%E7%B7%9A)&amp;daddr=%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B01-11-4-500%E3%80%80%E5%A4%A7%E9%98%AA%E9%A7%85%E5%89%8D%E7%AC%AC4%E3%83%93%E3%83%AB5%E9%9A%8E+19-1%E5%8F%B7%E5%AE%A4&amp;hl=ja&amp;geocode=FVWCEQIdQX0TCCFixyoSerwRWQ%3BFXl6EQIdS4wTCCkJ-VIi7eYAYDGBMpvL0fJ9sA&amp;aq=&amp;sll=34.700391,135.495497&amp;sspn=0.004331,0.010568&amp;gl=jp&amp;dirflg=w&amp;brcurrent=3,0x6000e68d5065c7f1:0xa408b25440cd6ea1,0&amp;mra=ls&amp;ie=UTF8&amp;ll=34.700395,135.495501&amp;spn=0.002599,0.003818&amp;t=m&amp;output=embed&amp;z=14"></iframe><br /><small><a href="https://maps.google.co.jp/maps?f=d&amp;source=embed&amp;saddr=%E3%80%92530-0001+%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B0%EF%BC%93%E4%B8%81%E7%9B%AE+(%E5%A4%A7%E9%98%AA%E9%A7%85%E3%83%BB%EF%BC%AA%EF%BC%B2%EF%BC%8F%E6%9D%B1%E6%B5%B7%E9%81%93%E6%9C%AC%E7%B7%9A)&amp;daddr=%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A2%85%E7%94%B01-11-4-500%E3%80%80%E5%A4%A7%E9%98%AA%E9%A7%85%E5%89%8D%E7%AC%AC4%E3%83%93%E3%83%AB5%E9%9A%8E+19-1%E5%8F%B7%E5%AE%A4&amp;hl=ja&amp;geocode=FVWCEQIdQX0TCCFixyoSerwRWQ%3BFXl6EQIdS4wTCCkJ-VIi7eYAYDGBMpvL0fJ9sA&amp;aq=&amp;sll=34.700391,135.495497&amp;sspn=0.004331,0.010568&amp;gl=jp&amp;dirflg=w&amp;brcurrent=3,0x6000e68d5065c7f1:0xa408b25440cd6ea1,0&amp;mra=ls&amp;ie=UTF8&amp;ll=34.700395,135.495501&amp;spn=0.002599,0.003818&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>				<br/><br/>
+<?php } ?>
+				【大阪の周辺情報】<br/>
+				大阪オフィスのビルは地下で大阪駅と連結してることから、コンビニやドラッグストア、飲食店が立ち並んでいます。
+				安くてうまい居酒屋から、外人さん達が通う和食料理まで、すべて地下街を通り抜けていくことができます。
+				大阪セミナーの後に友達と待ち合わせるには絶好の場所です。
+
+
+
+</td>
+		  </tr>
+		  <tr>
+		    <th>連絡先</th>
+			<td>TEL：<a tel="06-6346-3774">06-6346-3774</a><br/>FAX:03-6745-1562<br/>
+			渡航先情報・ビザ申請のご相談はメール ( info@jawhm.or.jp ) にてお願い致します。（メンバー様優先）</td>
+		  </tr>
+
+		  <tr>
+		    <th>営業時間</th>
+			<td>OPEN 11:00 - CLOSE 19:00（水曜定休日）<br/>
+			大阪オフィスは、土日、祝日も営業しております。<br />
+			※ご注意　個別でのカウンセリングをご希望の場合は、事前にご予約をお願い致します。<br/>
+			</td>
+		  </tr>
+
+	  	<tr>
+		    <th>スケジュール</th>
+			<td>
+				大学生/専門学校の生徒様の利用者が多い大阪オフィスは、地元大阪を含め、三重県,滋賀県,京都,神戸,奈良県,和歌山県などからセミナーへ参加していただいております。<br/>
+				特に京都から最新情報を求めて大阪にご来店されるお客様が多く、大阪でのショッピングの合間にワーキングホリデーセミナーに参加して頂いております。
+				週末を利用したカウンセリングやワーキングホリデーセミナーも人気です！大阪での楽しい1日を過ごす予定があれば、大阪オフィスにも是非お立ち寄りください。
+			</td>
+		</tr>
+	  	<tr>
+		    <th>大阪オフィスの雰囲気<img src="../../images/office/osaka/tennai1.jpg" style="padding:10px;"　alt="ワーキングホリデー協会大阪オフィス　店内写真"></th>
+			<td>
+				6月21日よりオフィスを第４ビルへと移転し、より多くのお客様をお迎えできるようになりました。<br/>
+				店内には膨大な情報量と海外留学経験がギュと詰まっており、大型スクリーンで東京オフィスと連携しさまざまなセミナーを大阪店内で体験していただくことが可能です。
+				<br/>
+				はじめてご来店頂いたお客様でも、お帰りの際にはフレンドリーに話し合えることが多く、
+				大阪オフィスはお客様とともに存在することを実感できます。<br/>
+				大阪オフィス主催のイベントには日本に帰国されたワーホリ経験者の方々にたくさん参加していただいており、
+				情報交換の場にもなっています。<br/><br/>
+				一人でセミナーに参加されてもいつの間にか仲間ができている大阪オフィスへ是非一度お越しください！<br/>
+				<a href="/blog/osakablog/" target="_blank"><img src="../../images/office/blog_off.gif" style="padding:10px;" alt="ワーキングホリデー協会スタッフブログはこちら"></a><br/>
+
+			</td>
+		  </tr>
+
+		  <tr>
+		    <th>大阪オフィスから<img src="../../images/office/osaka/tennai2.jpg" style="padding:10px;" alt="ワーキングホリデー協会大阪オフィス　店内写真"></th>
+			<td>
+				【インターン生のよーこさん】 <br/>
+				はじめまして、大阪オフィスでインターンをしているよーこです！ <br/>
+				大阪オフィスには大阪のリズムが合って関西以外の県から来られた方は、はじめびっくりするかもしれません。
+				でも大丈夫です、すぐに溶け込めます♪ <br/> <br/>大阪オフィスの丁寧で決断力のあるスタッフの皆様は
+				しっかりと話を聞いてくれて、無理をしない留学を進めてくれます。そばで一緒にヒヤリングをしていてホッと安心します。
+				女性スタッフも多いので、女性でも気を使わずに何でも聞くことができますよ。
+
+			</td>
+		  </tr>
+		</table>
+	  </div>
+<!--table-baseEND-->
+
+		<div class="aiu-link-block">
+			<a target="_blank" href="http://www.aiu.co.jp/travel/studyabroad/index.htm?p=oA425G01">
+				海外行くのに保険は大丈夫ですか？<br/>
+				<img src="/office/btn_hoken.jpg" /><br/>
+				<p style="font-size:9pt;">AIU保険会社のサイトへジャンプします</p>
+			</a>
+		</div>
+		&nbsp;<br/>
+		<div class="cpp-link-block">
+			<a target="_blank" href="http://www.jpcashpassport.jp/cpp/lp/mcgin.html?amid=844">
+				<img src="/office/btn_cpp.jpg" /><br/>
+				お金の新しい持って行き方お教えします
+			</a>
+		</div>
+		&nbsp;<br/>
+
+<!-- *********************** ページ下のセミナー一覧 start ************************ -->
+	<h3 class="osusume_seminar_title_list">おススメの無料セミナー情報</h3>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '';
+            $number_to_display = '6';
+			display_horizontal_calendar($country_to_display,$number_to_display);            
+      ?>
+	<span class="bottom_osusume_seminar">★★★　留学・ワーホリの無料セミナー連日開催中！！　気になるセミナーをクリック！！　★★★</span>
+	  <div class="advbox03">
+      
+<?php
+	// 101
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 84, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+</div>
+
+<!-- *********************** ページ下のセミナー一覧 end ************************ -->
+
+
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

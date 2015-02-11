@@ -1,0 +1,297 @@
+<?php
+require_once 'include/header.php';
+require_once 'include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='ワーキングホリデー協会活用ガイド';
+$header_obj->description_page='日本ワーキングホリデー（ワーホリ）協会ではワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->add_style = '<style>
+div.tooltip {
+	width: 320px;
+	position: absolute;
+	left: -9999px;
+	background: #EEE;
+	padding: 6px;
+	border: 1px solid #AAA;
+}
+div.tooltip p{
+	color: white;
+	background: navy;
+	padding: 10px 15px;
+}
+.step-title	{
+	padding-left	: 20px;
+	font-size	: 12pt;
+	font-weight	: bold;
+}
+.step-msg	{
+	padding-left	: 15px;
+	font-size	: 9pt;
+
+}
+</style>
+';
+
+$header_obj->add_js_files = '<script type="text/javascript">
+$(function () {
+	$(".step-box-katsuyou").corner();
+	$("#step1-info").corner("Bevel");
+});
+</script>
+';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../images/mainimg/katsuyou.png" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '日本ワーキングホリデー協会活用ガイド　（有意義なワーホリ生活を送るために）';
+
+$header_obj->display_header();
+
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs(); ?>
+
+	<h2 class="sec-title">日本ワーキング・ホリデー協会　活用ガイド</h2>
+	<div style="padding-left:30px;">
+		<p>
+		&nbsp;<br/>
+			日本ワーキング・ホリデー協会があなたのワーホリ成功をフルサポート！！<br/>
+			当協会のサポートメニューの上手な活用方法をご案内します。<br/>
+		</p>
+		&nbsp;<br/>
+		<p>
+			ワーホリ制度の概要はわかったのだけれど、何から準備をすればよいかわからない。<br/>
+			そんな声にお応えして、当協会のサポートを上手に活用頂くためのポイントをご案内します。<br/>
+		</p>
+	</div>
+
+	<div class="main-box-katsuyou">
+		<div id="step1" class="step-box-katsuyou">
+			<table>
+				<tr>
+					<td class="img-katsuyou">
+						<img src="/images/katsuyou_step1.gif">
+					</td>
+					<td class="step-title" style="padding: 20px 0px 0px 15px;">
+						情報収集中の方 ☆ はじめての方<br/>
+						まずは、初心者向けセミナーへどうぞ<br/>
+						&nbsp;<br/>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td class="img-katsuyou">
+							<img src="/images/katsuyou_step1_image.jpg" alt="" />
+					</td>
+					<td class="step-msg">
+					<p class="text01">
+						ワーキングホリデーって何？どんなことが出来るの？予算は？
+						初めての海外だけどワーホリで大丈夫？帰国してからの就職先が心配...
+						質問や心配な事がたくさんあると思います。<br/>
+						&nbsp;<br/>
+						まずは、何でも聞ける<b>ワーホリ＆留学無料セミナー</b>に是非お越しください。
+						セミナーの参加者は８割以上の方が、お１人での参加です。
+						どうぞお気軽にご参加ください。<br/>
+					</p>
+						<div style="margin-top:10px; text-align:center;">
+							<a href="/seminar.html"><img src="/images/katsuyou_seminar_off.gif" alt="" /></a>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div id="step1-info">
+				【　セミナー開催エリア外の方はコチラ　】<br/>
+				<a href="/mem/register.php">メンバー登録</a>をしていただきますと、東京・大阪で開催している各種セミナーをオンラインで視聴できます。<br/>
+				また、出発前、到着後、３年間にわたり様々なサポートが受けられます。<br/>
+				● メンバー登録には 5,000円(３年間有効）かかります。<br/>
+			</div>
+		</div>
+
+		<div class="arrow-down"><img src="images/arrow00.gif" alt="" /></div>
+
+		<div id="step2" class="step-box-katsuyou">
+			<table>
+				<tr>
+					<td class="img-katsuyou">
+						<img src="/images/katsuyou_step2.gif" alt="" />
+					</td>
+					<td class="step-title" style="padding: 20px 0px 0px 15px;">
+						疑問・不安を解消したい ☆ 計画を具体的にしたい方<br/>
+						メンバー登録後、個別カウンセリングへ<br/>
+												&nbsp;<br/>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td class="img-katsuyou">
+							<img src="/images/katsuyou_step2_image.jpg" alt="" />
+					</td>
+					<td class="step-msg">
+						<p class="text01">
+						当協会では、<b>ワーホリ成功</b>のためのメンバーサポート制度をご用意しています。<br/>
+						当協会のメンバーにご登録（登録料5,000円、３年間有効）頂けると、個別相談をはじめビザ取得のお手伝い、出発前の準備、到着後のサポートまで、フルにサポートさせていただきます。<br/>
+						</p>
+						<div style="margin-top:10px; text-align:center;">
+							<a href="/mem/register.php"><img src="/images/katsuyou_mem_off.gif" alt="" /></a>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="arrow-down"><img src="images/arrow00.gif" title="" alt="" /></div>
+
+		<div id="step3" class="step-box-katsuyou">
+			<table>
+				<tr>
+					<td class="img-katsuyou">
+						<img src="/images/katsuyou_step3.gif" alt="" />
+					</td>
+					<td class="step-title" style="padding: 20px 0px 0px 15px;">
+						メンバー登録後は、帰国後の事も考えた、<br/>
+						実り多いワーホリ計画を個別カウンセリングで相談しましょう<br/>
+												&nbsp;<br/>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td class="img-katsuyou">
+							<img src="/images/katsuyou_step3_image.jpg" alt="" />
+					</td>
+					<td class="step-msg">
+					<p class="text01">
+						ワーキングホリデーや留学の方法、滞在先での過ごし方などは人それぞれです。
+						そこで、<b>帰国後に差がつく実り多いワーホリ体験</b>をするためには、計画と目標を明確にすることが、まず必要なことです。<br/>
+						当協会では、カウンセリング（個別相談）を通じて、一人一人に最適なプラン作りを支援することが最も重要と考え、
+						ワーキングホリデーや留学を成功させる為に、カウンセリングは最も重要なサービスと考えておりますので、
+						何度でもご自身で納得するまで相談してください。<br/>
+						</p>
+						<div style="margin-top:10px; text-align:center;">
+							<a href="/mem/register.php"><img src="/images/katsuyou_coun_off.gif" alt="" /></a>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="arrow-down"><img src="images/arrow00.gif" title="" alt="" /></div>
+
+		<div id="step4" class="step-box-katsuyou">
+			<table>
+				<tr>
+					<td class="img-katsuyou">
+						<img src="/images/katsuyou_step4.gif" alt="" />
+					</td>
+					<td class="step-title" style="padding: 20px 0px 0px 15px;">
+						英語での書類作成、提出物、申請方法をサポート<br/>
+						ワーキングホリデービザの申請と取得<br/>
+												&nbsp;<br/>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td class="img-katsuyou">
+							<img src="/images/katsuyou_step4_image.jpg" alt="" />
+					</td>
+					<td class="step-msg" style="padding: 0px 0px 0px 20px;">
+					<p class="text01">
+						ビザの申請には語学力が求められます。各国のワーキングホリデービザを取得する為に必要な書類のご案内や、その書き方などをご説明しております。<br/>
+						<b>ワーキングホリデービザは１国で１回しか取得することのできない貴重なビザ</b>ですので、間違いの無いように手続きしましょう。
+						また、１国で１回しか取れない貴重なビザだからこそ、本当にワーキングホリデービザを利用して渡航するのが適切なのか
+						などの説明・相談もしております。ワーキングホリデービザを有効活用できる方法をご相談ください。<br/>
+						</p>
+						<div style="color:red;">
+							（ビザ取得についてはサポートであり、代行申請ではありません。<br/>
+							ビザの発給は各国大使館・領事館等の判断によるものであり、当協会はビザ取得の確約、保障などは一切行えません。
+							また、お客様の状況によりサポートを御断りする場合も御座います。）
+						</div>
+						<div style="margin-top:10px; text-align:center;">
+							<a href="/mem/register.php"><img src="/images/katsuyou_visa_off.gif" alt="" /></a>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="arrow-down"><img src="images/arrow00.gif" title="" alt="" /></div>
+
+		<div id="step5" class="step-box-katsuyou">
+			<table>
+				<tr>
+					<td class="img-katsuyou">
+						<img src="/images/katsuyou_step5.gif" alt="" />
+					</td>
+					<td class="step-title" style="padding: 20px 0px 0px 15px;">
+						ビザが取得できたら、出発に向けての準備を。<br/>
+						現地到着後もしっかりサポートします。<br/>
+												&nbsp;<br/>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td class="img-katsuyou" style="padding: 30px -10px 0px 10px;">
+							<img src="/images/katsuyou_step5_image.jpg" alt="" />
+					</td>
+					<td class="step-msg">
+					<p class="text01">
+						　・　格安航空券のご案内<br/>
+						　・　宿泊先等のご案内と手配<br/>
+						　・　各種学校のご案内と手配<br/>
+						　・　ワーキングホリデー・留学仲間との情報交換会<br/>
+						　・　外国人ワーキングホリデーとの交流会<br/>
+						　・　２カ国目のワーキングホリデービザ相談<br/>
+						　・　現地オフィスによる現地情報・学校情報の提供<br/>
+						　・　世界各地のサポートオフィスの利用<br/>
+					</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+
+	<div style="text-align:center; margin-top:40px;">
+		<a href="/mem/register.php"><img src="/images/katsuyou_start_off.gif" alt="" /></a>
+	</div>
+
+	<div style="height:30px;">&nbsp;</div>
+
+<div style="height:30px;">&nbsp;</div>
+
+<div style="text-align:center;">
+	<img src="images/flag01.gif" alt="" />
+	<img src="images/flag03.gif" alt="" />
+	<img src="images/flag09.gif" alt="" />
+	<img src="images/flag05.gif" alt="" />
+	<img src="images/flag06.gif" alt="" />
+	<img src="images/mflag11.gif" alt=""  width="40" height="26" />
+	<img src="images/flag08.gif" alt="" />
+	<img src="images/flag04.gif" alt="" />
+	<img src="images/flag02.gif" alt="" />
+	<img src="images/flag10.gif" alt="" />
+	<img src="images/flag07.gif" alt="" />
+</div>
+
+	<div style="height:50px;">&nbsp;</div>
+
+<?php $links_obj->display_links(); ?>
+
+	<!-- </div> -->
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>
+

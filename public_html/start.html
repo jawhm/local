@@ -1,0 +1,195 @@
+﻿<?php
+require_once 'include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='はじめてのワーキング・ホリデー ';
+$header_obj->description_page='初めてワーキングホリデー（ワーホリ）や留学に行く方向けに準備・手続きの手順をご案内しています。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->add_style = '<style>
+    a.steps	{
+        color:	red;
+        font-size: 16pt;
+        text-decoration: none;
+        border-bottom: 2px dotted navy;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+    }
+    </style>
+    ';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/step1-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'はじめてのワーキングホリデー';
+
+$header_obj->display_header();
+include('calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs(); ?>
+			<center>
+			<a href="/seminar">
+			<img style="margin: 5px auto -10px auto;" src="/images/seminar_b_off.png">
+			</a>		
+			</center>
+
+        <h2 class="sec-title">はじめてのワーキング・ホリデー</h2>
+        <div id="step00box">
+            <div class="step00box01">
+                <a href="step1.html" class="steps"><img src="images/step-one.jpg" alt="" title="" /> STEP1 －　ワーキングホリデーとは<img src="images/go.jpg" alt="" /></a>
+                <div class="step00list">
+                  <ul>
+                    <li>1-1　<a href="step1.html#st1-1">ワーキングホリデーとは</a></li>
+                    <li>1-2　<a href="step1.html#st1-2">日本での外国人ワーキングホリデー</a></li>
+                    <li>1-3　<a href="step1.html#st1-3">ワーキングホリデーを活用しよう。人生もワーホリも一度だから</a></li>
+                    <li>1-4　<a href="step1.html#st1-3">まずは目的を決めよう。国を決めるのはその次だぁ！</a></li>
+                  </ul>
+                </div>
+            </div>
+            <div class="step00box01">
+              <a href="step2.html" class="steps"><img src="images/step-one.jpg" alt="" title="" /> STEP2　－　目標を立てよう<img src="images/go.jpg" alt="" /></a>
+              <div class="step00list">
+              <ul>
+                <li>2-1　<a href="step2.html#st2-1">目標の作り方</a></li>
+                <li>2-2　<a href="step2.html#st2-2">中高と6年も英語を勉強したのに...</a></li>
+                <li>2-3　<a href="step2.html#st2-3">2カ国目のワーキングホリデー</a></li>
+                <li>2-4　<a href="step2.html#st2-4">ワーキングホリデーの年齢</a></li>
+                <li>2-5　<a href="step2.html#st2-5">ワーキングホリデーのパスポート</a></li>
+                <li>2-6　<a href="step2.html#st2-6">夫婦でワーキングホリデー</a></li>
+                <li>2-7　<a href="step2.html#st2-7">ワーキングホリデーの費用</a></li>
+              </ul>
+              </div>
+            </div>
+            <div class="step00box01">
+              <a href="step3.html" class="steps"><img src="images/step-one.jpg" alt="" title="" /> STEP3　－　行き先は決まりましたか？<img src="images/go.jpg" alt="" /></a>
+              <div class="step00list">
+                  <ul>
+                    <li>3-1 　<a href="step3.html#st3-1">オーストラリア</a></li>
+                    <li>3-2 　<a href="step3.html#st3-2">ニュージーランド</a></li>
+                    <li>3-3 　<a href="step3.html#st3-3">カナダ</a></li>
+                    <li>3-4 　<a href="step3.html#st3-4">韓国</a></li>
+                    <li>3-5 　<a href="step3.html#st3-5">フランス</a></li>
+                    <li>3-6 　<a href="step3.html#st3-6">ドイツ</a></li>
+                    <li>3-7 　<a href="step3.html#st3-7">イギリス</a></li>
+                    <li>3-8 　<a href="step3.html#st3-8">アイルランド</a></li>
+                    <li>3-9 　<a href="step3.html#st3-9">デンマーク</a></li>
+                    <li>3-10　<a href="step3.html#st3-10">台湾</a></li>
+                    <li>3-11　<a href="step3.html#st3-11">香港</a></li>
+                    <li>3-12　<a href="step4.html#st3-12">滞在中のお金が心配な方に</a></li>
+                    <li>3-13　<a href="step4.html#st3-13">どれだけお金を準備すればいいの？</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="step00box01">
+              <a href="step4.html" class="steps"><img src="images/step-one.jpg" alt="" title="" /> STEP4 －　渡航先が決まったら準備に入りましょう<img src="images/go.jpg" alt="" /></a>
+              <div class="step00list">
+              <ul>
+                <li>4-1 　<a href="step4.html#st4-1">パスポートは持ってる？</a></li>
+                <li>4-2 　<a href="step4.html#st4-2">ワーキングホリデービザ取得！　は自分でしない方がいい</a></li>
+                <li>4-3 　<a href="step4.html#st4-3">航空券を手配しよう</a></li>
+                <li>4-4 　<a href="step4.html#st4-4">海外ワーキングホリデー保険、海外留学生保険に入るべし</a></li>
+                <li>4-5 　<a href="step4.html#st4-5">語学学校とホームステイと空港送迎を手配しておこう</a></li>
+                <li>4-6 　<a href="step4.html#st4-6">クレジットカードを作っておこう！</a></li>
+                <li>4-7 　<a href="step4.html#st4-7">キャッシュパスポートを作っておこう</a></li>
+                <li>4-8 　<a href="step4.html#st4-8">歯科検診はレントゲンも！</a></li>
+                <li>4-9 　<a href="step4.html#st4-9">公的手続き（海外転出届、国民年金・国民健康保険等、水道、電気、郵便）</a></li>
+                <li>4-10　<a href="step4.html#st4-10">国際免許証</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="step00box01">
+              <a href="step5.html" class="steps"><img src="images/step-one.jpg" alt="" title="" /> STEP5 －　まもなく出発ですね<img src="images/go.jpg" alt="" /></a>
+              <div class="step00list">
+              <ul>
+                <li>5-1　<a href="step5.html#st5-1">持ち物チェックリスト！！</a></li>
+                <li>5-2　<a href="step5.html#st5-2">ＦＡＣＥＢＯＯＫを開設しよう！</a></li>
+                <li>5-3　<a href="step5.html#st5-3">大事なお金の持っていきかた</a></li>
+                <li>5-4　<a href="step5.html#st5-4">海外旅行保険確認！</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="step00box01">
+              <a href="step6.html" class="steps"><img src="images/step-one.jpg" alt="" title="" /> STEP6 －　渡航中の留意点<img src="images/go.jpg" alt="" /></a>
+              <div class="step00list">
+              <ul>
+                <li>6-1　<a href="step6.html#st6-1">滞在中に気を付ける事</a></li>
+                <li>6-2　<a href="step6.html#st4-2">到着したらすぐにすること</a></li>
+                <li>6-3　<a href="step6.html#st6-3">銀行口座は開設しよう</a></li>
+                <li>6-4　<a href="step6.html#st6-4">病気になって心細くなったら</a></li>
+                <li>6-5　<a href="step6.html#st6-5">日本大使館と日本領事館</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="step00box01">
+              <a href="step7.html" class="steps"><img src="images/step-one.jpg" alt="" title="" /> STEP7 －　帰国してからすること<img src="images/go.jpg" alt="" /></a>
+              <div class="step00list">
+              <ul>
+                <li>7-1　<a href="step7.html#st7-1">帰国する前に</a></li>
+                <li>7-2　<a href="step7.html#st7-2">帰国したら</a></li>
+                <li>7-3　<a href="step7.html#st7-3">帰国後の就職</a></li>
+                <li>7-4　<a href="step7.html#st7-4">帰国後セミナー＆パーティー</a></li>
+                <li>7-5　<a href="step7.html#st7-5">アンケートやボランティアにご協力ください</a></li>
+                <li>7-6　<a href="step7.html#st7-6">ボランティア募集</a></li>
+                <li>7-7　<a href="step7.html#st7-7">学生ボランティアも大募集しています！</a></li>
+                </ul>
+              </div>
+            </div>
+            
+	</div>
+     <div style="float:left;">
+          <p>&nbsp;</p>
+          <h3 class="osusume_seminar_title_list">おススメの無料セミナー情報</h3>
+          <?php 
+                //settings for the calendar module display
+                $country_to_display = '';
+                $number_to_display = '6';
+                display_horizontal_calendar($country_to_display,$number_to_display);            
+          ?>
+        <span class="bottom_osusume_seminar">★★★　留学・ワーホリの無料セミナー連日開催中！！　気になるセミナーをクリック！！　★★★</span>
+	</div>
+	  <div class="advbox03">
+<?php
+	// 102
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 85, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+
+<?php
+  //102-2
+
+  // The MAX_PATH below should point to the base of your OpenX installation
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 120, 0, 0, '_blank', '', '0', $phpAds_context, '');
+    $phpAds_context[] = array('!=' => 'bannerid:'.$phpAds_raw['bannerid']);
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+
+	</div>
+	<div style="margin:20px 0 0 0;">&nbsp;</div>
+
+  </div>
+  </div>
+
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

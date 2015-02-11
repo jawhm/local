@@ -1,0 +1,151 @@
+@charset "utf-8";
+/* CLOCK */
+.clock{
+	position:relative;
+	width:68px;
+	height:68px;
+	float:left;
+	margin-left:10px;
+}
+.clock > canvas, .clock > img{
+	position:absolute;
+}
+/* */
+
+/** weather **/
+.weather {
+	clear:right;
+	margin-top:5px;
+	margin-bottom:10px;
+	margin-right:auto;
+	margin-right:auto;
+	width:auto;
+}
+.city1, .city2 {
+	float:left;
+	position:relative;
+	padding-left:10px;
+	padding-bottom:10px;
+	margin-bottom:20px;
+}
+.city1 {padding-right:40px;}
+
+.icon-weather {
+	float:left; 
+	padding-top:10px;
+}
+.weather-detail {
+	float:left;
+	margin-left:5px;
+	padding-top:10px;
+}
+
+#weathercopyright img {
+	width:80px;	
+}
+
+/** Info **/
+.info-country {
+	margin-top:-20px;
+	margin-bottom:10px;
+	position:relative;
+	width:100%;
+}
+.info-list, .country-preview {
+	color:#555555;
+}
+
+.info-list p, .country-preview p {
+	font-size:11px;
+}
+.country-name{
+	position: absolute;
+	text-transform: uppercase;
+	font-size: 16pt;
+	line-height: 25px;
+	float: right;
+	right:10px;
+}
+.map {
+	position:absolute;
+	float:right;
+	text-align:right;
+	right:0;
+}
+.map object, .map iframe {
+	border:none;
+	width:200px;
+	overflow:hidden;
+	/*margin-left:50px;*/
+}
+
+.clock iframe {
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	width:74px;
+	height:74px;
+}
+a#close{
+	position: absolute;
+	display: block;
+	float:right;
+	bottom:10px;
+	right:10px;
+	border:1px solid #999;
+	color:#999;
+	text-decoration: none;
+	padding:0 3px; 
+	z-index:100;
+}
+a#close:hover{
+	border-color: #555;
+	color:#555;
+}
+a:link#country-page-link, a:link#visa-page-link,
+a:visited#country-page-link, a:visited#visa-page-link {
+	color:#555;
+	padding-right: 10px;
+}
+a:hover#country-page-link, a:hover#visa-page-link {
+	color:#999;
+}
+a:link#country-page-link, a:visited#country-page-link{
+	background: url(/css/images/info.png) no-repeat left center;
+	padding-left: 20px;
+}
+a:link#visa-page-link, a:visited#visa-page-link{
+	background: url(/css/images/visa-16x16.png) no-repeat left center;
+	padding-left: 20px;
+}
+#tools {
+	clear: left;
+}
+#zoomout{
+  position:absolute;
+  display:none;
+  float:left;
+  top:5px;
+  left:5px;
+  width: 16px;
+  height: 16px;
+  background: url(img/zoomout.png) no-repeat left top;
+  text-indent: -10000px;
+  z-index:50;
+}
+#chart {
+	max-width:100%;
+	height:460px\9; /* IE 8 and below */
+}
+#chart path {
+    cursor: url(img/zoomin.png), url("zoomin---.cur"), help;
+}
+#chart.country-view path{
+	cursor: auto;
+}
+#chart circle {
+    cursor: pointer;
+}
+#chart path[fill="#fbd843"] {
+    cursor: pointer;
+}

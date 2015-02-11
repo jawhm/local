@@ -1,0 +1,22 @@
+ID : tora
+pass : 303pittst
+
+http://jawhm.localhost/mailsystem/mem/login.php
+ID : plate
+pass : platePlate
+
+Zend
+/usr/share/php
+
+ssh
+jawhm.pa.platetec.com
+user: ec2-user
+ssh key => plate.ppk
+
+
+server phpmyadmin
+http://pma.pa.platetec.com/
+plate / platePlate
+
+user: jawhm
+pass: AUv6zyJjaRhUUEfh

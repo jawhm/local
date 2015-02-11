@@ -1,0 +1,193 @@
+<?php
+//require_once 'include/header.php';
+//$redirection='/event/map/mob.php?p=nagoya';
+
+require_once '../../include/header.php';
+require_once '../../include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+$header_obj->mobileredirect=$redirection;
+$header_obj->title_page='名古屋オフィスのご案内';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）協会名古屋オフィスのご案内です。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。';
+$header_obj->keywords_page='名古屋,オフィス,海外,留学,ワーホリ,セミナー会場,ワーキングホリデー,ワーホリ,日本ワーキングホリデー協会';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="/images/nagoyatop.png" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '日本ワーキング・ホリデー協会名古屋オフィスへのアクセス';
+
+$header_obj->display_header();
+include('../../calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('access'); ?>
+	  <h2 class="sec-title">名古屋オフィスのご案内</h2>
+
+	  <div class="table-base" style="margin-bottom:20px;">
+	    <h3 class="table-base-title" style="font-size:18pt;" id="tokyo-office">名古屋オフィス</h3>
+	    <table>
+		  <tr>
+		    <th>住所</th>
+			<td>名古屋セミナー会場：名古屋オフィスにて開催されます。<br/>
+				〒450-0002 名古屋市中村区名駅2-45-19　桑山ビル８階Ａ号室</td>
+		  </tr>
+		  <tr>
+		    <th>セミナー会場地図<img src="../../images/office/nagoya/gaiken.jpg" style="padding:10px;" alt="ワーキングホリデー協会名古屋オフィス　オフィスビル外見写真"></th>
+			<td>
+<?php if($header_obj->mobilepage) { ?>
+	<iframe width="85%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%852-45-19&amp;aq=&amp;sll=35.17351540482467,136.88285641372204&amp;sspn=0.007656,0.016512&amp;g=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%852-45-19&amp;brcurrent=3,0x600376c283641057:0x5341f06f138bcbc1,0&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%85%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%94%EF%BC%95%E2%88%92%EF%BC%91%EF%BC%99&amp;ll=35.17351540482467,136.88285641372204&amp;spn=0.001905,0.004128&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a target="_new" href="https://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%852-45-19&amp;aq=&amp;sll=35.17351540482467,136.88285641372204&amp;sspn=0.007656,0.016512&amp;g=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%852-45-19&amp;brcurrent=3,0x600376c283641057:0x5341f06f138bcbc1,0&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%85%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%94%EF%BC%95%E2%88%92%EF%BC%91%EF%BC%99&amp;ll=35.17351540482467,136.88285641372204&amp;spn=0.001905,0.004128&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+<?php } else {	?>
+	<iframe width="450" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%852-45-19&amp;aq=&amp;sll=35.17351540482467,136.88285641372204&amp;sspn=0.007656,0.016512&amp;g=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%852-45-19&amp;brcurrent=3,0x600376c283641057:0x5341f06f138bcbc1,0&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%85%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%94%EF%BC%95%E2%88%92%EF%BC%91%EF%BC%99&amp;ll=35.17351540482467,136.88285641372204&amp;spn=0.001905,0.004128&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a target="_new" href="https://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%852-45-19&amp;aq=&amp;sll=35.17351540482467,136.88285641372204&amp;sspn=0.007656,0.016512&amp;g=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%852-45-19&amp;brcurrent=3,0x600376c283641057:0x5341f06f138bcbc1,0&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%85%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%94%EF%BC%95%E2%88%92%EF%BC%91%EF%BC%99&amp;ll=35.17351540482467,136.88285641372204&amp;spn=0.001905,0.004128&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+<?php } ?>
+			</td>
+		  </tr>
+		  <tr>
+		    <th>最寄り駅</th>
+			<td>
+				○　JR名古屋駅から徒歩５分<br />
+				桜通口から名駅通りを名古屋ルーセントタワー方向に進んでください。<br />
+				地下通路をご利用の場合は、１番または１０番出口がおすすめです。<br />
+				旧名古屋中央郵便局（現在は名駅一丁目計画（仮称）により再開発中）の向かい側です。<br />
+				より詳細なアクセス方法は<font color="red"><u><a href="http://www.jawhm.or.jp/blog/nagoyablog/item/155" target="_blank">こちら</a></u></font>から。<br/>
+<?php if($header_obj->mobilepage) { ?>
+	<iframe width="85%" height="320" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=d&amp;source=s_d&amp;saddr=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E9%A7%85&amp;daddr=%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;geocode=FYapGAId5aUoCCmVeOPH53YDYDEetu9BBVLKww%3BFYq0GAIde6ooCA&amp;aq=0&amp;oq=%E6%A1%91%E5%B1%B1%E3%83%93%E3%83%AB&amp;sll=35.171318,136.883404&amp;sspn=0.006385,0.012349&amp;gl=jp&amp;hl=ja&amp;dirflg=w&amp;brcurrent=3,0x600376e7c301a5fd:0xeb8c5cac0e56b623,0&amp;mra=dme&amp;mrsp=1&amp;sz=17&amp;ie=UTF8&amp;ll=35.171318,136.883404&amp;spn=0.006385,0.012349&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.jp/maps?f=d&amp;source=embed&amp;saddr=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E9%A7%85&amp;daddr=%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;geocode=FYapGAId5aUoCCmVeOPH53YDYDEetu9BBVLKww%3BFYq0GAIde6ooCA&amp;aq=0&amp;oq=%E6%A1%91%E5%B1%B1%E3%83%93%E3%83%AB&amp;sll=35.171318,136.883404&amp;sspn=0.006385,0.012349&amp;gl=jp&amp;hl=ja&amp;dirflg=w&amp;brcurrent=3,0x600376e7c301a5fd:0xeb8c5cac0e56b623,0&amp;mra=dme&amp;mrsp=1&amp;sz=17&amp;ie=UTF8&amp;ll=35.171318,136.883404&amp;spn=0.006385,0.012349&amp;t=m" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+<?php } else {	?>
+	<iframe width="450" height="320" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=d&amp;source=s_d&amp;saddr=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E9%A7%85&amp;daddr=%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;geocode=FYapGAId5aUoCCmVeOPH53YDYDEetu9BBVLKww%3BFYq0GAIde6ooCA&amp;aq=0&amp;oq=%E6%A1%91%E5%B1%B1%E3%83%93%E3%83%AB&amp;sll=35.171318,136.883404&amp;sspn=0.006385,0.012349&amp;gl=jp&amp;hl=ja&amp;dirflg=w&amp;brcurrent=3,0x600376e7c301a5fd:0xeb8c5cac0e56b623,0&amp;mra=dme&amp;mrsp=1&amp;sz=17&amp;ie=UTF8&amp;ll=35.171318,136.883404&amp;spn=0.006385,0.012349&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.jp/maps?f=d&amp;source=embed&amp;saddr=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E9%A7%85&amp;daddr=%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;geocode=FYapGAId5aUoCCmVeOPH53YDYDEetu9BBVLKww%3BFYq0GAIde6ooCA&amp;aq=0&amp;oq=%E6%A1%91%E5%B1%B1%E3%83%93%E3%83%AB&amp;sll=35.171318,136.883404&amp;sspn=0.006385,0.012349&amp;gl=jp&amp;hl=ja&amp;dirflg=w&amp;brcurrent=3,0x600376e7c301a5fd:0xeb8c5cac0e56b623,0&amp;mra=dme&amp;mrsp=1&amp;sz=17&amp;ie=UTF8&amp;ll=35.171318,136.883404&amp;spn=0.006385,0.012349&amp;t=m" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+<?php } ?>
+				<br/>&nbsp;<br/>
+				<img src="/images/office/nagoya/gaiken2.jpg">
+				<br/>
+				【名古屋駅からの地下通路】<br/>
+				名古屋オフィスのビルは、地下通路でお越しいただくことも可能です。<br/>
+				１番出口「松岡ビル」を目指してきてください。<br/>
+				<u><a href="http://www.jawhm.or.jp/blog/nagoyablog/item/507" target="_blank">より詳細なアクセス方法はこちらから。</a></u><br/>
+
+			</td>
+		  </tr>
+		  <tr>
+		    <th>連絡先</th>
+			<td>TEL：<a tel="052-462-1585">052-462-1585</a><br/>FAX:03-6745-1562<br/>
+			渡航先情報・ビザ申請のご相談はメール ( info@jawhm.or.jp ) にてお願い致します。（メンバー様優先）</td>
+		  </tr>
+
+		  <tr>
+		    <th>営業時間</th>
+			<td>OPEN 11:00 - CLOSE 19:00（水曜定休日）<br/>
+			名古屋オフィスは、土日、祝日も営業しております。<br />
+			※ご注意　個別でのカウンセリングをご希望の場合は、事前にご予約をお願い致します。<br/>
+			</td>
+		  </tr>
+
+<!--
+	  	<tr>
+		    <th>スケジュール</th>
+			<td>
+				大学生/専門学校の生徒様の利用者が多い名古屋オフィスは、地元名古屋を含め、三重県,滋賀県,京都,神戸,奈良県,和歌山県などからセミナーへ参加していただいております。<br/>
+				特に京都から最新情報を求めて名古屋にご来店されるお客様が多く、名古屋でのショッピングの合間にワーキングホリデーセミナーに参加して頂いております。
+				週末を利用したカウンセリングやワーキングホリデーセミナーも人気です！名古屋での楽しい1日を過ごす予定があれば、名古屋オフィスにも是非お立ち寄りください。
+			</td>
+		</tr>
+-->
+	  	<tr>
+		    <th>名古屋オフィスの雰囲気<img src="../../images/office/nagoya/tennai2.jpg" style="padding:10px;"　alt="ワーキングホリデー協会名古屋オフィス　店内写真"></th>
+			<td>
+				オフィスは青いカーペットが敷き詰められ、ゆったりとした店内です。<br/>
+				まだまだ新しいオフィスですが、店内には膨大な情報量と海外留学経験がギュと詰まっており、プロジェクターで東京オフィスと連携しさまざまなセミナーを名古屋店内で体験していただくことが可能です。
+				<br/>
+				はじめてご来店頂いたお客様でも、お帰りの際にはフレンドリーに話し合えることが多く、
+				名古屋オフィスはお客様とともに存在することを実感できます。<br/>
+				名古屋オフィス主催の「初めまして名古屋オフィスです」イベントには、新オフィスにも関わらず、これからご出発を予定された多くのお客様を初め、
+				日本に帰国されたワーホリ経験者の方々にたくさん参加していただいており、情報交換の場にもなっています。<br/><br/>
+				一人でセミナーに参加されてもいつの間にか仲間ができている名古屋オフィスへ是非一度お越しください！<br/>
+				<a href="/blog/nagoyablog/" target="_blank"><img src="../../images/office/blog_off.gif" style="padding:10px;" alt="ワーキングホリデー協会スタッフブログはこちら"></a><br/>
+
+			</td>
+		  </tr>
+<!--
+		  <tr>
+		    <th>名古屋オフィスから<img src="../../images/office/nagoya/tennai2.jpg" style="padding:10px;" alt="ワーキングホリデー協会名古屋オフィス　店内写真"></th>
+			<td>
+				【インターン生のよーこさん】 <br/>
+				はじめまして、名古屋オフィスでインターンをしているよーこです！ <br/>
+				名古屋オフィスには名古屋のリズムが合って関西以外の県から来られた方は、はじめびっくりするかもしれません。
+				でも大丈夫です、すぐに溶け込めます♪ <br/> <br/>名古屋オフィスの丁寧で決断力のあるスタッフの皆様は
+				しっかりと話を聞いてくれて、無理をしない留学を進めてくれます。そばで一緒にヒヤリングをしていてホッと安心します。
+				女性スタッフも多いので、女性でも気を使わずに何でも聞くことができますよ。
+			</td>
+-->
+		  </tr>
+		</table>
+	  </div>
+<!--table-baseEND-->
+<!--
+      <?php if($header_obj->mobilepage)
+      		{ ?>
+			<iframe width="90%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93+%E6%97%A5%E6%9C%AC%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%9B%E3%83%AA%E3%83%87%E3%83%BC%E5%8D%94%E4%BC%9A&amp;aq=1&amp;oq=%E6%97%A5%E6%9C%AC%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0&amp;sll=34.728949,138.455511&amp;sspn=35.987723,86.044922&amp;brcurrent=3,0x60188cd14ca8d159:0x98dab29c15d4a656,0&amp;ie=UTF8&amp;hq=%E6%97%A5%E6%9C%AC%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%9B%E3%83%AA%E3%83%87%E3%83%BC%E5%8D%94%E4%BC%9A&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93&amp;t=m&amp;ll=35.693184,139.699037&amp;spn=0.006295,0.006295&amp;output=embed&iwloc=B"></iframe><br /><small><a href="https://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93+%E6%97%A5%E6%9C%AC%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%9B%E3%83%AA%E3%83%87%E3%83%BC%E5%8D%94%E4%BC%9A&amp;aq=1&amp;oq=%E6%97%A5%E6%9C%AC%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0&amp;sll=34.728949,138.455511&amp;sspn=35.987723,86.044922&amp;brcurrent=3,0x60188cd14ca8d159:0x98dab29c15d4a656,0&amp;ie=UTF8&amp;hq=%E6%97%A5%E6%9C%AC%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%9B%E3%83%AA%E3%83%87%E3%83%BC%E5%8D%94%E4%BC%9A&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93&amp;t=m&amp;ll=35.693184,139.699037&amp;spn=0.006295,0.006295" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>	
+        <?php     
+            }
+            else
+            {?>
+     	      
+ 			<iframe style="height:500px; width:660px; overflow:hidden; border:none; margin:0;" src="http://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF1-3-3&amp;mrt=loc&amp;sll=35.692777,139.699024&amp;sspn=0.001686,0.001985&amp;gl=jp&amp;brcurrent=3,0x60188cd14ca8d159:0x98dab29c15d4a656,0&amp;ttype=dep&amp;date=10%2F12%2F27&amp;time=14:33&amp;noexp=0&amp;noal=0&amp;sort=time&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93&amp;start=0&amp;ll=35.693169,139.698801&amp;spn=0.017427,0.028281&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="http://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF1-3-3&amp;mrt=loc&amp;sll=35.692777,139.699024&amp;sspn=0.001686,0.001985&amp;gl=jp&amp;brcurrent=3,0x60188cd14ca8d159:0x98dab29c15d4a656,0&amp;ttype=dep&amp;date=10%2F12%2F27&amp;time=14:33&amp;noexp=0&amp;noal=0&amp;sort=time&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93&amp;start=0&amp;ll=35.693169,139.698801&amp;spn=0.017427,0.028281&amp;z=15&amp;iwloc=A" target="_blank" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+-->      
+<?php } ?>
+
+		<div class="aiu-link-block">
+			<a target="_blank" href="http://www.aiu.co.jp/travel/studyabroad/index.htm?p=oA425G01">
+				海外行くのに保険は大丈夫ですか？<br/>
+				<img src="/office/btn_hoken.jpg" /><br/>
+				<p style="font-size:9pt;">AIU保険会社のサイトへジャンプします</p>
+			</a>
+		</div>
+		&nbsp;<br/>
+		<div class="cpp-link-block">
+			<a target="_blank" href="http://www.jpcashpassport.jp/cpp/lp/mcgin.html?amid=847">
+				<img src="/office/btn_cpp.jpg" /><br/>
+				お金の新しい持って行き方お教えします
+			</a>
+		</div>
+		&nbsp;<br/>
+
+<!-- *********************** ページ下のセミナー一覧 start ************************ -->
+	<h3 class="osusume_seminar_title_list">おススメの無料セミナー情報</h3>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '';
+            $number_to_display = '6';
+			display_horizontal_calendar($country_to_display,$number_to_display);            
+      ?>
+	<span class="bottom_osusume_seminar">★★★　留学・ワーホリの無料セミナー連日開催中！！　気になるセミナーをクリック！！　★★★</span>
+	  <div class="advbox03">
+      
+<?php
+	// 101
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 84, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+</div>
+
+<!-- *********************** ページ下のセミナー一覧 end ************************ -->
+
+
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

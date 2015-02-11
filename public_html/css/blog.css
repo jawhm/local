@@ -1,0 +1,136 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*/////////////////////////////////////////
+ブログランキング登録フォーム
+//////////////////////////////////////////*/
+/*フォーム共通*/
+#currentStep td {
+	width: 270px;
+	text-align: center;
+	}
+#stepDetail td {
+	width: 270px;
+	vertical-align: top;
+	padding: 10px 10px 0 1em;
+	text-indent: -1em;
+	font-size: 1.2em;
+	}
+#stepDetail td span {
+	color: #F00;
+	}
+.stepBox {
+	background: url(../images/blog/sprite_step.jpg) no-repeat left top;
+	width: 870px;
+	height: 0;
+	padding-top: 74px;
+	overflow: hidden;
+	}
+
+/*入力画面*/
+.entrytable .txtNote {
+	font-size: 0.9em;
+	}
+.btnSubmit {
+	display: block;
+	width:150px;
+	height:30px;
+	margin:18px auto 30px;
+	font-size:11pt;
+	font-weight:bold;
+	cursor: pointer;
+	}
+
+/*確認画面*/
+.confirmtable {
+	width: 860px;
+	font-size: 120%;
+	}
+.confirmtable th,
+.confirmtable td {
+	border: 1px solid navy;
+	padding: 10px;
+	}
+.confirmtable th {
+	background-color: #A7FFFF;
+	}
+#btnArea {
+	width: 320px;
+	overflow: hidden;
+	text-align: center;
+	margin: 0 auto;
+	}
+#btnArea .btnSubmit {
+	display: inline;
+	margin-right: 5px;
+	}
+#stepBox2 {
+	background-position: 0 -75px;
+	}
+
+/*完了画面*/
+#stepBox3 {
+	background-position: 0 -150px;
+	}
+.txtcomplate {
+	border: 1px solid #3270D7;
+	width: 450px;
+	margin: 30px auto 0;
+	padding: 10px;
+	font-size: 130%;
+	}
+.btnLogin {
+	text-align: center;
+	margin: 30px 0 50px;
+	}
+
+
+/*/////////////////////////////////////////
+ブログ詳細情報
+//////////////////////////////////////////*/
+#profArea {
+	width: 680px;
+	overflow: hidden;
+	padding-top: 20px;
+	font-size: 120%;
+	}
+#profArea #imagesProf {
+	float: left;
+	width: 170px;
+	}
+#profArea #imagesProf p {
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	color: #333;
+	font-size: 110%;
+	}
+#profArea #imagesProf img {
+	width: 170px;
+	border: 1px solid #CCC;
+	}
+#profArea #detailProf {
+	float: right;
+	width: 480px;
+	}
+#profArea #detailProf table {
+	width: 100%;
+	}
+#profArea #detailProf table th,
+#profArea #detailProf table td {
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	padding: 10px;
+	}
+#profArea #detailProf table th {
+	background-color: #A7FFFF;
+	}
+
+
+.opacity a:hover img {
+	filter:alpha(opacity=70);  /* IE7以下用 */
+	-ms-filter: "alpha(opacity=70)"; /* IE8用 */
+	-moz-opacity:0.7; /* Firefox 1.5未満, Netscape用 */
+	-khtml-opacity: 0.7;  /* Safari 1.x, 他khtmlに対応したブラウザ用  */
+	opacity: 0.7; /* Firefox 1.5以上, Opera, Safari用 */
+	}

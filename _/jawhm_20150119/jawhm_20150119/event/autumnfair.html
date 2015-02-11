@@ -1,0 +1,91 @@
+<?php
+require_once '../include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->title_page='秋の留学・ワーキングホリデーフェア2011';
+$header_obj->description_page='よくある質問：オーストラリア・ニュージーランド・カナダを初めとしたワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。';
+$header_obj->pcmobile_type = true;
+
+$header_obj->add_style='
+<style>
+.panel{
+	position:relative;
+	background-color:orange;
+	filter: alpha(opacity=0);
+	  -moz-opacity:0;
+	  opacity:0;
+}
+</style>
+';
+$header_obj->add_js_files='<script>
+$(function () {
+	// イベント設定
+	var obj = document.getElementsByTagName("div");
+	for (idx=0; idx<obj.length; idx++)	{
+		if (obj[idx].className == "panel")	{
+			obj[idx].onmouseover = fncover;
+			obj[idx].onmouseout = fncout;
+			obj[idx].onclick = fncclick;
+		}
+	}
+
+});
+function fncover()	{
+	var id = this.getAttribute("id");
+	jQuery("#"+id).css({ opacity: "0.4" });
+}
+function fncout()	{
+	var id = this.getAttribute("id");
+	jQuery("#"+id).css({ opacity: "0" });
+}
+function fncclick()	{
+	var id = this.getAttribute("id");
+	alert(id);
+}
+</script>
+';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../images/mainimg/top-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '秋の留学・ワーキングホリデーフェア2011';
+
+$header_obj->display_header();
+
+?>
+
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs(); ?>
+		<h2 class="sec-title">秋の留学・ワーキングホリデーフェア2011</h2>
+		<p class="text01">
+		</p>
+		<p class="text01">
+		</p>
+
+<div align="center" style="height:390px;">
+			<img  src="../images/autumnfair/topimage.gif" />
+
+</div>
+
+		<div style="border: 2px dotted navy; font-size:10pt; margin: 10px 10px 10px 10px; padding: 10px 20px 10px 20px;">
+　本年、オーストラリアとの協定から始まったワーキングホリデー制度が30周年を迎え、
+日本人がワーキングホリデーを使って生活できる国は11カ国まで増えました。
+そんな節目の年に、日本ワーキング・ホリデー協会では秋の留学・ワーキングホリデーフェアを開催します。
+ワーキングホリデーって何？　どんなことが出来るの？　予算はどのくらいかかるの？
+聞きたい事や、心配な事もたくさんあると思います。何でも聞いてください。
+留学・ワーホリ経験有の協会スタッフを始め、ワーキングホリデー協定各国の様々な語学学校、政府観光局、保険会社等、
+様々なプロフェッショナルをお呼びしてお話をして頂く予定です。
+皆様が留学・ワーキングホリデーを考えるきっかけとして、また、より一層素晴らしい留学・ワーキング
+ホリデーにする為に、是非この機会にフェアにご参加下さい！
+		</div>
+		<br /><br />
+
+</div>
+</div>
+</div>
+
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+		
+</body>
+</html>

@@ -1,0 +1,6 @@
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+
+AddType application/x-httpd-php .htm .html
+

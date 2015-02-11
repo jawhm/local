@@ -1,0 +1,245 @@
+@charset "UTF-8";
+
+.area-btn-seminar {
+	width: 98%;
+	margin: 10px auto;
+}
+
+#btn-seminar-inquiry-1 {
+	display: block;
+	border: 1px solid #2470BF;
+	padding: 18px 0;
+	text-align: center;
+	color: #fff;
+	text-decoration: none;
+	margin-bottom: 5px;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	background: #58A6F7;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#58A6F7), to(#2470BF));
+	background: -webkit-linear-gradient(#58A6F7, #2470BF);
+	background: -moz-linear-gradient(#58A6F7, #2470BF);
+	background: -ms-linear-gradient(#58A6F7, #2470BF);
+	background: -o-linear-gradient(#58A6F7, #2470BF);
+	background: linear-gradient(#58A6F7, #2470BF);
+	-pie-background: linear-gradient(#58A6F7, #2470BF);
+
+	behavior: url("http://www.jawhm.or.jp/js/PIE.htc");
+
+	text-shadow: none;
+}
+
+#btn-seminar-inquiry-2 {
+	display: block;
+	border: 1px solid #81B602;
+	padding: 8px 0;
+	text-align: center;
+	color: #fff;
+	text-decoration: none;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	background: #A0D800;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#A0D800), to(#81B602));
+	background: -webkit-linear-gradient(#A0D800, #81B602);
+	background: -moz-linear-gradient(#A0D800, #81B602);
+	background: -ms-linear-gradient(#A0D800, #81B602);
+	background: -o-linear-gradient(#A0D800, #81B602);
+	background: linear-gradient(#A0D800, #81B602);
+	-pie-background: linear-gradient(#A0D800, #81B602);
+
+	behavior: url("http://www.jawhm.or.jp/js/PIE.htc");
+
+	text-shadow: none;
+}
+
+.seminar-inquiry-title {
+	width: 80%;
+	margin: 10px auto 5px;
+	padding: 3px 0;
+	text-align: center;
+	color: #fff;
+
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+
+	border: 1px solid #23276A;
+
+	background: #292C7C;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#292C7C), to(#23276A));
+	background: -webkit-linear-gradient(#292C7C, #23276A);
+	background: -moz-linear-gradient(#292C7C, #23276A);
+	background: -ms-linear-gradient(#292C7C, #23276A);
+	background: -o-linear-gradient(#292C7C, #23276A);
+	background: linear-gradient(#292C7C, #23276A);
+	-pie-background: linear-gradient(#292C7C, #23276A);
+	behavior: url("http://www.jawhm.or.jp/js/PIE.htc");
+
+	/*text-shadow: none;*/
+}
+
+
+
+#span-attention-2 {
+	font-size: 12px;
+	text-decoration: underline;
+}
+
+#span-attention-1 {
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+#area-seminar-inquiry-form {
+	padding: 10px;
+}
+
+#area-seminar-inquiry-form .mark-required {
+	font-weight: bold;
+	font-size: 12px;
+	color: #ff0000;
+}
+
+#area-seminar-inquiry-form .attention-text {
+	font-size: 12px;
+}
+
+#area-seminar-inquiry-form #area-textarea {
+	width: 90%;
+	height: 150px;
+}
+
+#area-seminar-inquiry-form #btn-submit {
+	font-size: 14px;
+	font-weight: bold;
+	padding: 8px;
+	display: block;
+	width: 90%;
+	margin: 0 auto 10px;
+	text-align: center;
+}
+
+#area-seminar-inquiry-form #btn-back {
+	font-size: 14px;
+	font-weight: bold;
+	padding: 8px;
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#area-seminar-inquiry-form #area-form-message {
+	font-weight: bold;
+	font-size: 13px;
+	color: #ff0000;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+#area-seminar-inquiry-form #your-name,
+#area-seminar-inquiry-form #your-email {
+	padding: 5px 0;
+	width: 70%;
+}
+
+.success-message {
+	margin-top: 10px;
+}
+
+.success-message p {
+	font-size: 13px;
+	margin-bottom: 1em;
+}
+
+.success-message .success-message-title {
+	color: #ff0000;
+	font-size: 15px;
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 1.5em;
+}
+
+.success-message .link-back-top {
+	display: none;
+}
+
+.success-message .btn-back-top-sp {
+	margin-top: 2em;
+}
+
+
+.btn-form-reserve {
+	display: block;
+	border: 1px solid #FF8409;
+	padding: 18px 0;
+	text-align: center;
+	color: #fff;
+	text-decoration: none;
+
+	margin: 20px auto 5px;
+	width: 80%;
+	font-size: 16px;
+	font-weight: bold;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	background: #FFAC59;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FFAC59), to(#FF8409));
+	background: -webkit-linear-gradient(#FFAC59, #FF8409);
+	background: -moz-linear-gradient(#FFAC59, #FF8409);
+	background: -ms-linear-gradient(#FFAC59, #FF8409);
+	background: -o-linear-gradient(#FFAC59, #FF8409);
+	background: linear-gradient(#FFAC59, #FF8409);
+	-pie-background: linear-gradient(#FFAC59, #FF8409);
+
+	behavior: url("http://www.jawhm.or.jp/js/PIE.htc");
+
+	text-shadow: none;
+}
+
+
+.btn-form-back {
+	display: block;
+	border: 1px solid #C9C9C9;
+	padding: 18px 0;
+	text-align: center;
+	text-decoration: none;
+
+	margin: 0 auto 10px;
+	width: 60%;
+	font-size: 16px;
+	font-weight: bold;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	background: #EEEEEE;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#EEEEEE), to(#C9C9C9));
+	background: -webkit-linear-gradient(#EEEEEE, #C9C9C9);
+	background: -moz-linear-gradient(#EEEEEE, #C9C9C9);
+	background: -ms-linear-gradient(#EEEEEE, #C9C9C9);
+	background: -o-linear-gradient(#EEEEEE, #C9C9C9);
+	background: linear-gradient(#EEEEEE, #C9C9C9);
+	-pie-background: linear-gradient(#EEEEEE, #C9C9C9);
+
+	behavior: url("http://www.jawhm.or.jp/js/PIE.htc");
+
+	text-shadow: none;
+}
+
+
+

@@ -1,0 +1,270 @@
+﻿<?php
+require_once '../include/header.php';
+require_once '../include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->title_page='韓国ビザ情報';
+$header_obj->description_page='韓国のビザ。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../images/mainimg/visa-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'ワーキングホリデー協定国（韓国） | ワーホリビザ情報';
+
+$header_obj->display_header();
+
+include('../calendar_module/mod_event_horizontal.php');
+
+?>
+	<div id="maincontent">
+       <?php echo $header_obj->breadcrumbs('country'); ?>
+	  <div class="visa-nav">
+	    <p>/<a href="v-aus.html">オーストラリア</a>/<a href="v-nz.html">ニュージーランド</a>/<a href="v-can.html">カナダ</a>/<a href="v-kor.html">韓国</a>/<a href="v-fra.html">フランス</a>/<a href="v-deu.html">ドイツ</a>/<a href="v-uk.html">イギリス</a>/<a href="v-ire.html">アイルランド</a>/<a href="v-dnk.html">デンマーク</a>/<a href="v-ywn.html">台湾</a>/<a href="v-hkg.html">香港</a>/</p>
+	  </div>
+	  <img src="../images/bflag04.gif" alt="" />
+	<p class="text01">
+	<span class="centered-btn"><a class="visa-btn country-info" href="../country/southkorea" title="韓国国情報へ">韓国国情報へ</a></span>
+	<b>韓国のワーキングホリデービザの取得方法についてご案内します。</b></p>
+
+<!--
+  	  <div class="advbox04">
+-->
+<?php
+
+/************************
+
+	// 091
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 44, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 092
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 45, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 093
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 46, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 094
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 47, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+	// 095
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 48, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+
+**********************/
+
+?>
+<!--
+	  </div>
+-->
+
+	  <h2 class="sec-title">ビザ取得までのステップチャート</h2>
+	  <h3 class="h3-01">申請可能年齢　18～30歳</h3>
+<!--
+	  <h3 class="h3-01">参加可能年齢　18～30歳（30歳の誕生日をむかえる前に入国が必要）</h3>
+-->
+	  <p class="text01">申請書は日本語、英語、韓国語のいずれかで記入できます。</p>
+	  <img src="../images/visa-korea-flow.gif" alt="" />
+	  <br />
+
+	<p class="bg-yellow"> <a href="http://jpn-tokyo.mofat.go.kr/languages/as/jpn-tokyo/concular/visa/index.jsp" target="_blank">韓国大使館 領事部</a> <br />
+〒106-0047　東京都港区南麻布1-7-32　TEL 03-3455-2601～4：FAX 03-3455-2018 </p>
+	  <p class="text01"> 東京以外の公館は<a href="#kor-koukan" target="_self">こちら&gt;&gt;</a> </p>
+	  <h3 class="h3-01">外務省ＨＰで基本情報を確認しよう</h3>
+		    <ul class="list-visabasic">
+			  <a href="http://www.mofa.go.jp/mofaj/area/korea/data.html" target="_blank">基本情報</a>
+			  <a href="http://www2.anzen.mofa.go.jp/info/pcinfectionspothazardinfo.asp?id=3" target="_blank">安全情報</a>
+			  <a href="http://www.mofa.go.jp/mofaj/annai/zaigai/list/asia/korea.html" target="_blank">在外公館</a>
+			</ul>
+			<p class="text01">※渡航時、在外公館リストはプリントアウトして持って行こう</p>
+
+            <br/>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '韓国';
+            $number_to_display = '2';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+		<center>
+		<p><font color="orangered">ビザの申請、ひとりでできますか？</font></p>
+		<a href="/mem/#meritt"><img src="images/memline3_off.gif"></a></center>
+
+	  <h2 class="sec-title">ビザについて</h2>
+	  <h3 class="h3-01">ビザの発給要件</h3>
+	  <ul class="list-number">
+	  <li>日本の国籍を有しており、18歳以上30歳以下の扶養家族を同伴しない方。<br />※但し,各領事館ごとに年齢制限などの違いがあります。詳細は直接お問合せ下さい。</li>
+	  <li>韓国滞在の主目的は休暇で、就労は滞在中の資金を補うための付随的なものであること。</li>
+	  <li>滞在予定期間の生活を維持するための相当な資金を所持していること。</li>
+	  </ul>
+      <br /><br/>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '韓国';
+            $number_to_display = '2';
+            $start_display_from = '2'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	 <h3 class="h3-01">関連事項</h3>
+	  <ul class="list-disc">
+	  <li>入国後、観光でなく就業にだけ専念してはいけません。</li>
+	  <li>入国後、90日以上滞在する場合、直轄出入国管理事務所にて外国人登録をしなければなりません。</li>
+	  <li>協定の趣旨に反する業種及び同国の法令により一定の資格要件を具備しなければならない職種には就業できません。</li>
+	  <li>会話指導活動をする場合には大学卒以上の学歴を有する方、また、これと同等以上の学歴を有していることが必要です。<br />この場合「滞留資格外活動許可」は必要ありません。</li>
+	  </ul>
+	  	  
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+		<center>
+		<p><font color="orangered">ビザの申請、ひとりでできますか？</font></p>
+		<a href="/mem/#meritt"><img src="images/memline5_off.gif"></a></center>
+
+	  <h2 class="sec-title">申請方法</h2>
+	  <h3 class="h3-01">申請に必要な書類　（東京で申込む場合）</h3>
+	  <ul class="list-disc">
+	  <li>ビザ申請書（一般の申請書使用、日本語・英語・韓国語のいずれかで記入）※在日韓国大使館のホームページからダウンロードが出来ます。<br />http://jpn-tokyo.mofat.go.kr/languages/as/jpn-tokyo/images/res/visakorean.pdf</li>
+	  <li>パスポート（残存期間3ヶ月以上あること）</li>
+	  <li>カラー写真1枚（3.5cm×4.5cm、3ヶ月以内に撮影したもの）</li>
+	  <li>旅行日程及び活動計画書（様式なし、英語・韓国語のいずれかで月単位で記入）</li>
+	  <li>往復航空券のコピー</li>
+	  <li>最終学校の卒業証明書または在学証明書（英語・日本語いずれか）</li>
+	  <li>一定期間（3ヶ月）在留できる金銭所持の立証書類または残高証明書（米ドル2,500ﾄﾞﾙ以上あるいは30万円以上）</li>
+	  </ul>
+	  <h3 class="h3-01">注意事項</h3>
+	  <ul class="list-disc">
+	  <li>駐日本国各領事館にて受付をしています。（下表参照）</li>
+	  <li>各総領事館によって提出書類が異なる場合があるので、ビザ申請前に管轄領事館にお問い合わせて下さい。</li>
+	  <li>申請は無料です。</li>
+	  <li>代理申請および郵送による申請はできません。</li>
+	  <li>書類の不備がない場合、申請した翌日に発給されます。</li>
+	  <li>管轄領事館への申請を原則としますが、他の領事館へ申請するときは事前に問い合わせてみてください。</li>
+	  <li>ワーキング・ホリデービザは発給日から一年間有効、ならびに韓国に入国した日から一年間滞在できます。</li>
+	  <li>ワーキング・ホリデービザは一人につき一生に一回しか取得できません。</li>
+	  <li>滞在期間内での再入国は自由です。ただし、その場合には再入国許可の申請が必要となります。 </li>
+	  <li>滞在期間中、アルバイトに期間の制限はありません。</li>
+	  <li>滞在期間中、語学研修の期間の制限はありません。</li>
+	  </ul>
+	  						
+	  <h3 id="kor-koukan" class="h3-01">ビザ申請窓口のある韓国大使館及び領事館</h3>
+	  <p class="text01">業務時間 9:00-12:00、13:30-17:00 窓口受付は直接お問合せください。<br />休館日　日本の祝祭日および韓国の祝日（3/1、7/7、8/15、10/3）</p>
+	  <table class="table-korea">
+	  <tr>
+	  <th>公 館</th><th>代表電話</th><th>住所</th><th>管轄地域</th>
+	  </tr>
+	  <tr>
+	  <td>韓国大使館<br />領事部</td><td>TEL 03-3455-2601～4<br />FAX 03-3455-2018</td><td>〒106-0047<br />東京都港区<br />南麻布1-7-32</td><td>東京、千葉、山梨、<br />埼玉、栃木、群馬、茨城</td>
+	  </tr>
+	  <tr>
+	  <td>札幌<br />韓国総領事館</td><td>TEL 011-218-0288<br />FAX 011-218-8158</td><td>〒064-0823<br />北海道札幌市中央区<br />北二条西12丁目1-4</td><td>北海道</td>
+	  </tr>
+	  <tr>
+	  <td>仙台<br />韓国総領事館</td><td>TEL 022-221-2751～3<br />FAX 022-221-2754</td><td>〒980-0011<br />宮城県仙台市<br />青葉区上杉1-4-3 </td><td>青森、秋田、岩手、<br />山形、福島、宮城</td>
+	  </tr>
+	  <tr>
+	  <td>横浜<br />韓国総領事館</td><td>TEL 045-621-4531～3<br />FAX 045-624-2963</td><td>〒231-0862<br />神奈川県横浜市<br />中区山手町118 </td><td>神奈川、静岡</td>
+	  </tr>
+	  <tr>
+	  <td>新潟<br />韓国総領事館</td><td>TEL 025-250-5555<br />FAX 025-250-5506</td><td>〒951-8131<br />新潟県新潟市<br />万代島5-1<br />万代島ビル8F</td><td>長野、新潟、<br />富山、石川</td>
+	  </tr>
+	  <tr>
+	  <td>名古屋<br />韓国総領事館 </td><td>TEL 052-586-9221<br />FAX 052-586-9286</td><td>〒450-0003<br />愛知県名古屋市<br />中村区名駅南1-19-12 </td><td>愛知、三重、<br />福井、岐阜</td>
+	  </tr>
+	  <tr>
+	  <td>大阪<br />韓国総領事館</td><td>TEL 06-6213-1401～5<br />FAX 06-6213-0151</td><td>〒542-0086<br />大阪府大阪市中央区<br />西心斎橋2-3-4</td><td>大阪、京都、滋賀、<br />奈良、和歌山</td>
+	  </tr>
+	  <tr>
+	  <td>神戸<br />国総領事館</td><td>TEL 078-221-4853～5<br />FAX 078-261-3465 </td><td>〒650-0004<br />兵庫県神戸市中央区<br />中山手通2-21-5</td><td>兵庫、鳥取、岡山、<br />香川、徳島</td>
+	  </tr>
+	  <tr>
+	  <td>広島<br />韓国総領事館</td><td>TEL 082-543-5018～9<br />FAX 082-244-1116</td><td>〒730-0036<br />広島県広島市<br />中区袋町5-28<br />和光広島ビル 4F</td><td>島根、広島、山口、<br />愛媛、高知</td>
+	  </tr>
+	  <tr>
+	  <td>福岡<br />韓国総領事館</td><td>TEL 092-771-0461～2<br />FAX 092-771-0464</td><td>〒810-0065<br />福岡県福岡市<br />中央区地行浜1-1-3 </td><td>福岡、佐賀、長崎、<br />大分、熊本、宮崎、<br />鹿児島、沖縄</td>
+	  </tr>
+	  </table>	  
+	  
+	&nbsp;<br/>
+	&nbsp;<br/>
+	<p class="text01">
+	【注意】<br/>
+	ここに記載のある情報は法改正等により予告なく変更することもあります。<br/>
+	また、このページの内容は各国大使館・領事館等より情報を収集し細心の注意を払って作成しておりますが、<br/>
+	正確なものであることを保証するものではありません。<br/>
+	ビザ取得の際は、必ず各国大使館・領事館等の情報をご自身でもご確認ください。
+	</p>
+    <br/>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '韓国';
+            $number_to_display = '2';
+            $start_display_from = '4'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+
+		<center>
+		<p><font color="orangered">ビザの申請、ひとりでできますか？</font></p>
+		<a href="/mem/#meritt"><img src="images/memline3_off.gif"></a></center>
+<br />
+      
+	  <div class="visa-nav">
+	    <p>/<a href="v-aus.html">オーストラリア</a>/<a href="v-nz.html">ニュージーランド</a>/<a href="v-can.html">カナダ</a>/<a href="v-kor.html">韓国</a>/<a href="v-fra.html">フランス</a>/<a href="v-deu.html">ドイツ</a>/<a href="v-uk.html">イギリス</a>/<a href="v-ire.html">アイルランド</a>/<a href="v-dnk.html">デンマーク</a>/<a href="v-ywn.html">台湾</a>/<a href="v-hkg.html">香港</a>/</p>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

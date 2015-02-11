@@ -1,0 +1,182 @@
+<?php
+require_once ('../country_info/class-country.php');
+
+$country = new Country('HK');
+
+require_once '../../include/header.php';
+require_once '../../include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->title_page='香港情報';
+$header_obj->description_page='香港のビザ。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../../images/mainimg/HK-countrypage.png" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '香港 | ワーホリで行ける国（ワーキングホリデー協定国）';
+
+//add javascript for country info
+$header_obj->add_js_files='
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<!--[if IE]><script type="text/javascript" src="/country/country_info/js/excanvas.js"></script><![endif]-->
+<script type="text/javascript" src="/country/country_info/js/coolclock.js"></script>
+<script type="text/javascript" src="/country/country_info/js/moreskins.js"></script>
+<script type="text/javascript">
+
+//cities list
+var city_list = { isoCode : "'.$country->countryIsoCode.'", cities: ["hongkong", "kowloon"]};
+
+//MAP
+google.load("visualization", "1", {"packages": ["geomap"]});
+google.setOnLoadCallback(drawMap);
+
+
+//DrawMap and load all cities details
+function drawMap() {
+	
+	//map settings
+	var options = {};
+	options["region"] ="'.$country->countryIsoCode.'";
+	options["colors"] = [0xFF8747, 0xFFB581, 0xc06000];
+	options["dataMode"] = "markers";
+	options["width"] = "100%";
+	
+	//map display
+	var data = google.visualization.arrayToDataTable([
+	  ["", "ちょっと待ってね"],
+	  ["", "none"]
+	]);
+
+	var geomap = new google.visualization.GeoMap(document.getElementById("chart_'.$country->countryIsoCode.'"));
+	geomap.draw(data, options);
+
+	//loading citydata
+	$(".loading").html("Loading...<img src=\""+location.protocol + "//" + location.host + "/seminar/bigLoader.gif\" />");
+
+	//SEND DATA and collect result
+	$.ajax({
+		type: "POST",
+		url: location.protocol + "//" + location.host + "/country/country_info/load_cities.php",
+		dataType:"json",
+		data:  city_list,
+		cache:false,
+		success: function(cities){
+			//alert(cities[1].offset[0]);
+			//alert(cities);
+			
+			$(".loading").html("");
+			
+			//draw cities on the map
+			//------------------------
+			var data = google.visualization.arrayToDataTable([
+			  ["町", "人口"],
+			  [cities[1].nameJP, cities[1].population]
+			]);
+			
+			var geomap = new google.visualization.GeoMap(document.getElementById("chart_'.$country->countryIsoCode.'"));
+			geomap.draw(data, options);	
+			
+			//insert data in document html
+			//-----------------------------
+
+			//City1
+			$(".city1 .icon-weather").html(cities[1].icon);
+			$(".city1 .weather-detail").html("<strong>"+ cities[1].nameJP +" "+ cities[1].temperature +"</strong><br /><small>"+ cities[1].date +"<br /></small>"+cities[1].description);
+			$(".city1 div.clock").html("<!--[if lte IE 8 ]><iframe src=\"/country/country_info/clock.php?&amp;cityoffset="+ cities[1].offset[0] +"\" scrolling=\"no\" frameborder=\"0\"></iframe><![endif]--><canvas id=\"city1-time\" class=\"CoolClock:jawhm:38::"+ cities[1].offset[0] +" clock\"></canvas>");
+			
+			//City2
+			$(".city2 .icon-weather").html(cities[2].icon);
+			$(".city2 .weather-detail").html("<strong>"+ cities[2].nameJP +" "+ cities[2].temperature +"</strong><br /><small>"+ cities[2].date +"<br /></small>"+cities[2].description);
+			$(".city2 div.clock").html("<!--[if lte IE 8 ]><iframe src=\"/country/country_info/clock.php?&amp;cityoffset="+ cities[2].offset[0] +"\" scrolling=\"no\" frameborder=\"0\"></iframe><![endif]--><canvas id=\"city2-time\" class=\"CoolClock:jawhm:38::"+ cities[2].offset[0] +" clock\"></canvas>");
+			
+			//load clock
+			CoolClock.findAndCreateClocks();
+			
+
+		},
+		error:function(){
+			//alert("通信エラーが発生しました。");
+			$(".loading").html("");
+		}
+	});
+}
+</script>';
+
+$header_obj->add_css_files='<link rel="stylesheet" href="../country_info/style.css" type="text/css" />';
+
+$header_obj->display_header();
+
+include('../../calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+       <?php echo $header_obj->breadcrumbs('country'); ?>
+	  <div class="visa-nav">
+	    <p>/<a href="../australia">オーストラリア</a>/<a href="../newzealand">ニュージーランド</a>/<a href="../canada">カナダ</a>/<a href="../southkorea">韓国</a>/<a href="../france">フランス</a>/<a href="../germany">ドイツ</a>/<a href="../unitedkingdom">イギリス</a>/<a href="../ireland">アイルランド</a>/<a href="../denmark">デンマーク</a>/<a href="../taiwan">台湾</a>/<a href="./">香港</a>/</p>
+	  </div>
+	<p class="country-name-img"><img src="../../images/bflag11.gif" alt="" /></p>
+    <div id="chart_<?php echo $country->countryIsoCode; ?>"></div>
+    <div class="info-list">
+        <table border="0" width="100%">
+        	<tr>
+            	<td><strong>首都</strong></td><td><p><?php echo $country->countryCapital; ?></p></td>
+                <td><strong>言語</strong></td><td><p><?php echo $country->countryLanguages; ?></p></td>
+            </tr>
+            <tr>
+            	<td><strong>人口</strong></td><td><p><?php echo  $country->countryPopulation; ?></p></td>
+				<td><strong>エリア</strong></td><td><p><?php echo  $country->countryArea; ?></p></td>            	
+            </tr>
+            <tr>
+            	<td colspan="4">
+            		<span style="float:right;"><?php echo  $country->currency_chart();?></span>
+	            	<strong>通貨</strong><p><?php echo  $country->countryCurrencyName; ?></p><br />
+	            	<strong>為替レート</strong><p><?php echo  $country->exchangeRate;?></p>
+            	</td>
+            </tr>
+        </table>
+        
+        <p><br /></p>
+    </div>
+    
+    <div class="weather">
+    	<div class="loading"></div>
+        <div class="city1">
+            <span class="icon-weather"></span>
+            <span class="weather-detail"></span>
+            <div class="clock"></div>
+        </div>
+        <div class="city2">
+            <span class="icon-weather"></span>
+            <span class="weather-detail"></span>
+            <div class="clock"></div>
+        </div>
+    </div>
+    <p class="text01">
+	香港人が自分たちで言うようにうるさいくらい良くしゃべる。飲茶文化を発展させたように外食文化が発展しており、家で料理をしないという家庭で驚いてはいけないキッチンがない家もある。　フリーポートとして日本企業も多く進出しておりそのビル群の夜景は100万ドルの夜景と呼ばれている。　都市部の若者文化は日本と類似しておりウェスタナイズされている。　マンゴーデザート店やドリアンが食べられるように熱帯地方の気候はトロピカルな食べ物が多く、ちょっと田舎方面に出向くとヤシの木やうっそうと茂った草木に都市部では感じられない香港が見える。　大陸中国には電車を利用し陸路で行ける。税関もあるが毎日買い物や仕事で行き来する人もいるほど行き易い。　発展し続ける香港と、今まさに建設ラッシュの中国を見比べるとそのギャップや貧困の差には感じることも多いだろう。　観光都市、アジアの流通ハブとして経済が発展している姿は日本の未来形かもしれない。　古くから中東やインドからの移民、イギリスの植民地時代と移民が多く、いろいろな人種がビジネスを通して英語を使っている。　ビジネスでは英語は出来て当たり前で香港を楽しむためには広東語も勉強しよう。
+	</p>
+	<div class="centered-btn"><a class="visa-btn" href="../../visa/v-hkg.html" title="香港のワーキングホリデー（ワーホリ）ビザ情報へ">香港のワーキングホリデー（ワーホリ）ビザ情報へ</a></div>
+    <div class="seminar-listing-title-red">▼▼▼まずは無料セミナーへ！ワーキングホリデー＆留学の無料セミナーはこちら！▼▼▼</div>
+	 <?php 
+			//settings for the calendar module display
+            $country_to_display = '香港';
+            $number_to_display = '2';
+            
+			display_horizontal_calendar($country_to_display,$number_to_display); 
+      ?>
+
+    <div style="position:relative;text-align:center;">
+      <a href="/seminar/seminar"><img src="/images/canausseminar.gif" title="ワーキングホリデー＆留学無料セミナー毎日開催中！"/></a>
+      <p style="text-align:right;padding-right:20px;"><a href="/seminar/seminar" title="無料セミナー">＞＞＞  無料セミナー情報をもっと見る</a></p>
+    </div> 
+    <div class="top-move"><p><a href="#header">▲ページのＴＯＰへ</a></p></div>  
+	<?php $country->datasource(); ?>    
+	  
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+﻿<?php
+require_once 'include/header.php';
+require_once 'include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='STEP6 渡航中の留意点';
+$header_obj->description_page='初めてワーキングホリデー（ワーホリ）や留学に行く方向けに準備・手続きの手順をご案内しています。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/step1-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'はじめてのワーキングホリデー Step6 渡航中の留意点';
+
+$header_obj->display_header();
+include('calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('start'); ?>
+	<div class="step_box">
+		<div class="step_box1">
+			<div class="step_div"><a href="step1.html" class="step_menu"><img src="images/label_big_01.jpg" alt="" /><br/>STEP1<br/>ワーホリとは</a></div>
+			<div class="step_div"><a href="step2.html" class="step_menu"><img src="images/label_big_02.jpg" alt="" /><br/>STEP2<br/>目標を決める</a></div>
+			<div class="step_div"><a href="step3.html" class="step_menu"><img src="images/label_big_03.jpg" alt="" /><br/>STEP3<br/>行き先は？</a></div>
+			<div class="step_div"><a href="step4.html" class="step_menu"><img src="images/label_big_04.jpg" alt="" /><br/>STEP4<br/>準備をしよう</a></div>
+			<div class="step_div"><a href="step5.html" class="step_menu"><img src="images/label_big_05.jpg" alt="" /><br/>STEP5<br/>出発前１ヶ月</a></div>
+			<div class="step_div"><a href="step6.html" class="step_menu"><img src="images/label_big_02.jpg" alt="" /><br/>STEP6<br/>渡航中の事</a></div>
+			<div class="step_div"><a href="step7.html" class="step_menu"><img src="images/label_big_01.jpg" alt="" /><br/>STEP7<br/>帰国したら</a></div>
+		</div>
+	</div>
+	<div style="clear:both; height:10px;">&nbsp;</div>
+
+	<div class="step_title">
+		渡航中の手続きと留意点
+	</div>
+	  <p class="text01">ここでは渡航時の各種手続きから渡航中の留意点を説明していきます。</p>
+	  <table class="tableofcontents">
+	    <tr>
+		  <th>目次</th>
+		  <td>
+		    <ul>
+			  <li><a href="#st6-1">6-1　滞在中に気を付ける事</a></li>
+			  <li><a href="#st6-2">6-2　到着したらすぐにすること</a></li>
+			  <li><a href="#st6-3">6-3　銀行口座は開設しよう</a></li>
+			  <li><a href="#st6-4">6-4　病気になって心細くなったら</a></li>
+			  <li><a href="#st6-5">6-5　日本大使館と日本領事館</a></li>
+		    </ul>
+		  </td>
+		</tr>
+	  </table>
+
+	<h2 id="st6-1" class="sec-title">滞在中に気を付ける事</h2>
+	<p class="text01">
+	１年間のワーキングホリデーは本当にあっという間ですよ。　み～んな短かった～と言って帰ってきます。　２年でも帰国した人に逢うと、え？？もう２年たったの？と本当に時間の早さを感じられます。　帰国後に海外の体験をキャリアに結び付けるには目標をしっかりと忘れないこと。例えばＴＯＥIC900点が目標なら９００点を忘れずに毎日生活をしましょう。そしてなるべく多くの友達をつくり楽しむことです。　仕事情報も友達が多い人ほど学校の先生から聞いたり、友達に紹介さえたりしています。　一期一会を大事に親友を作ってください。
+	</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '';
+            $number_to_display = '2';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+
+	<div class="top-move"><p><a href="#header">▲ページのＴＯＰへ</a></p></div>
+<? include('./step/memline.php'); ?>
+
+	<h2 id="st6-2" class="sec-title">到着したらすぐにすること</h2>
+	<p class="text01">
+	在留届を提出しましょう。　海外で３カ月以上滞在する日本人に義務付けられているのが　「在留届」というものです。これは外務省に提出する書類なのですが現在はネットで申請できます。　到着して住所と連絡先電話番号を日本国外務省に届けておくのです。そうすると災害、テロ、病気などで日本国が日本人の安否確認をとる時に利用されます。　またパスポートを作成するときにも利用されるのでいざパスポートが盗まれたときに在留届を出していないと時間がかかります。　必ず在留届を提出してください。
+	</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '';
+            $number_to_display = '2';
+            $start_display_from = '2'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+
+	<div class="top-move"><p><a href="#header">▲ページのＴＯＰへ</a></p></div>
+<? include('./step/memline.php'); ?>
+
+	<h2 id="st6-3" class="sec-title">銀行口座は開設しよう</h2>
+	<p class="text01">
+	ワーキングホリデーとは特別な留学ビザだと思ってください。　海外で働くことのできる留学ビザですので現地で給料をもらうためには現地の銀行口座が必要になります。到着して１～３カ月以内でスト比較的簡単に作ることができます。　時間がたってからですと作るための書類が多くなったりと大変です。　また、持って行った現金を入れておくと安心ですのでワーキングホリデーで到着して１週間以内には海外銀行口座を作ってください。　日本で出発前に作ることはマネーロンダリング防止の観点から難しくなっています。現地に到着してからでも出来ますので安心してください。
+	</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '';
+            $number_to_display = '2';
+            $start_display_from = '4'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+
+	<div class="top-move"><p><a href="#header">▲ページのＴＯＰへ</a></p></div>
+<? include('./step/memline.php'); ?>
+
+	<h2 id="st6-4" class="sec-title">病気になって心細くなったら</h2>
+	<p class="text01">
+	海外では英文での診療証明書を印刷して診療してもらってください、事前に保険代理店に連絡が必要な場合もあります。　日本人渡航者が多い街では日本語が通じる病院や通訳がいる病院もあります。<br/>
+	海外で入院したら一人で本当にさみしいですよ。　そういう時はこちら日本ワーキングホリデー協会にお電話ください。
+	</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '';
+            $number_to_display = '2';
+            $start_display_from = '6'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+
+	<div class="top-move"><p><a href="#header">▲ページのＴＯＰへ</a></p></div>
+<? include('./step/memline.php'); ?>
+
+	<h2 id="st6-5" class="sec-title">日本大使館と日本領事館</h2>
+	<p class="text01">
+	日本公館と言われる大使館と領事館です。　通常はようがなくてどこにあるかもわからなくて帰国されると思います。<br/>
+	パスポートを無くした場合は必ず領事館もしくは大使館に赴いて再発行をします。　災害やテロに巻き込まれたりしたときにには日本公館が安否確認を取ってくれます。　日本にいるご家族も安心できます。
+	</p>
+	<p class="text01">
+	大使館や領事館では在外邦人の安全を守ってくれますので毎月邦人事故件数をとっていたり、犯罪に巻き込まれた時にも日本人の権利を守ってくれます。<br/>
+	何かあれば在外公館リストをみて近くの領事館もしくは大使館に連絡してください。<br/>
+	<a href="http://www.mofa.go.jp/mofaj/annai/zaigai/list/index.html" target="_blank">http://www.mofa.go.jp/mofaj/annai/zaigai/list/index.html</a>
+	</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '';
+            $number_to_display = '2';
+            $start_display_from = '8'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+
+	<div class="top-move"><p><a href="#header">▲ページのＴＯＰへ</a></p></div>
+
+	<div class="step_box">
+		<div class="step_box1">
+			<div class="step_div"><a href="step1.html" class="step_menu"><img src="images/label_big_01.jpg" alt="" /><br/>STEP1<br/>ワーホリとは</a></div>
+			<div class="step_div"><a href="step2.html" class="step_menu"><img src="images/label_big_02.jpg" alt="" /><br/>STEP2<br/>目標を決める</a></div>
+			<div class="step_div"><a href="step3.html" class="step_menu"><img src="images/label_big_03.jpg" alt="" /><br/>STEP3<br/>行き先は？</a></div>
+			<div class="step_div"><a href="step4.html" class="step_menu"><img src="images/label_big_04.jpg" alt="" /><br/>STEP4<br/>準備をしよう</a></div>
+			<div class="step_div"><a href="step5.html" class="step_menu"><img src="images/label_big_05.jpg" alt="" /><br/>STEP5<br/>出発前１ヶ月</a></div>
+			<div class="step_div"><a href="step6.html" class="step_menu"><img src="images/label_big_02.jpg" alt="" /><br/>STEP6<br/>渡航中の事</a></div>
+			<div class="step_div"><a href="step7.html" class="step_menu"><img src="images/label_big_01.jpg" alt="" /><br/>STEP7<br/>帰国したら</a></div>
+		</div>
+	</div>
+	<div style="clear:both; height:10px;">&nbsp;</div>
+
+	  <div class="advbox03">
+<?php
+	// 116
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 92, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

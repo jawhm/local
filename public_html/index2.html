@@ -1,0 +1,565 @@
+<?php
+
+$redirection='/m-index.php';
+
+// If access with SSL(443) , Redirect Non-SSL page.
+if( $_SERVER["SERVER_PORT"] == 443 ) {
+	header( "location:" . "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] );
+	exit;
+}
+
+require_once 'include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->frontpage=true;
+$header_obj->description_page='ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。ワーホリなら日本ワーキングホリデー協会';
+$header_obj->fncFacebookMeta_function= true;
+
+$header_obj->mobileredirect=$redirection;
+
+$header_obj->add_js_files = '<script src="/js/lightbox.js" type="text/javascript"></script>
+<script src="/js/fbwall/jquery.neosmart.fb.wall.js" type="text/javascript"></script>
+<script src="https://www.google.com/jsapi?key=ABQIAAAA1GaXyTxfx_EDrRX444NPQhQ3fj4XOcTTnvyZdGafpHojXl1fMRSD3wXKQgd9LOOX8nS2J9CjTLfu7A" type="text/javascript"></script>
+<script src="/js/top.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/jquery.timers.js"></script>
+';
+$header_obj->add_css_files='<link href="/css/country-menu.css" rel="stylesheet" type="text/css" />
+<link href="/js/fbwall/jquery.neosmart.fb.wall.css" rel="stylesheet" type="text/css"/>';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="/images/mainimg/top-mainimg.jpg" alt="" width="970" height="170" />
+<div style="position:absolute; top:157px; left:600px;">
+	<a href="/seminar"><img src="/images/menu/seminar_top_off.png" alt="" /></a>
+</div>';
+$header_obj->fncMenuHead_h1text = '日本ワーキング・ホリデー協会　皆さんのワーホリと留学を応援します';
+$header_obj->fncMenubar_msg = '<div style="background:navy; color:white; font-size:10pt; margin:0 5px 0 12px; padding:5px 8px 5px 8px;">
+                                協会からのお知らせ
+                                </div>
+                                <div style="border:1px #CCCCCC solid; margin:0 5px 0 12px; padding:10px 8px 10px 8px;">
+                                <p>　一般社団法人日本ワーキング・ホリデー協会は政府のワーキングホリデー（ワーホリ）ビザ制度の政策に呼応してワーキング・ホリデー制度振興と利用促進により国際交 流の振興を図っています。<br />
+                                相互理解の促進及び国際感覚豊かな勤労青少年の育成に資することを目的としています。</p>
+                                <p>　その為、ワーキングホリデー（ワーホリ）ビザ制度を利用する方のサポートを積極的に行いマルチカルチュアルな海外での生活を通じて国際相互理解、地球環境の保全、男女共同参画社会、人種・性別等による差別や偏見の根絶、思想・信教・ 表現の自由の尊重等の理解を促進し、豊かな人間性を滋養していきます。</p>
+                                <p>　また経験を生かした若者たちが帰国後に、よりよい未来を作ることができる国際人を育てていくと同時に、来日するワーキングホリデー（ワーホリ）外国人のサポートと来日外国人をもっと増やし日本の観光業の振興を目的に資するためのサポートを行っています。</p>
+                                <p>　なお、当協会と旧社団法人日本ワーキング・ホリデー協会は異なる団体となります。</p>
+                                </div>
+				<div style="margin:10px 5px 0 12px;">
+					<p><a href="support/"><img src="/images/sidebanner01.gif" alt="PickUp" /></a></p>
+					<p><a href="kyusyu.html"><img src="/images/sidebanner03.gif" alt="PickUp" /></a></p>
+				</div>
+				<div style="margin:10px 5px 0 50px;">
+<span id="ss_gmo_img_wrapper_130-66_image_ja">
+<a href="https://jp.globalsign.com/" target="_blank">
+<img alt="SSL　GMOグローバルサインのサイトシール" border="0" id="ss_img" src="//seal.globalsign.com/SiteSeal/images/gs_noscript_130-66_ja.gif">
+</a>
+</span>
+<script type="text/javascript" src="//seal.globalsign.com/SiteSeal/gmogs_image_130-66_ja.js" defer="defer"></script>
+				</div>
+';
+
+$header_obj->fncMenubar_advertisement=array(122,1,2,3,31);
+$header_obj->display_header();
+
+?>
+	<div id="maincontent">
+	<div id="top-main">
+	  <?php echo $header_obj->breadcrumbs(); ?>
+
+	    <div class="top-sec01">
+<!--
+		<div class="top-banner" style="margin-top:0px;">
+			<a href="autumnfair/index.php#tokyo-pickup" onclick="javascript: _gaq.push(['_trackPageview' , '/banner_big/']);"><img  src="images/topbanner/banner-big-nz_off.gif"></a>
+		</div>
+-->
+<!--
+		<div class="top-banner">
+			<a href="autumnfair/index.php" onclick="javascript: _gaq.push(['_trackPageview' , '/banner_big/']);"><img  src="images/topbanner/banner-big_off.gif"></a>
+		</div>
+-->
+
+			<div style="margin:0 0 0 0; height:94px;">
+<?php
+	// W01
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 22, 0, 0, '', '', '0', $phpAds_context, '');
+    $phpAds_context[] = array('!=' => 'bannerid:'.$phpAds_raw['bannerid']);
+  }
+  echo $phpAds_raw['html'];
+?>
+
+			</div>
+
+				<table style="margin:2px 0 0px -1px;">
+				<tr>
+				<td>
+<?php
+	// S01
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 24, 0, 0, '', '', '0', $phpAds_context, '');
+    $phpAds_context[] = array('!=' => 'bannerid:'.$phpAds_raw['bannerid']);
+  }
+  echo $phpAds_raw['html'];
+?>
+
+				</td>
+				<td>
+<?php
+	// S02
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 26, 0, 0, '', '', '0', $phpAds_context, '');
+    $phpAds_context[] = array('!=' => 'bannerid:'.$phpAds_raw['bannerid']);
+  }
+  echo $phpAds_raw['html'];
+?>
+				</td>
+				</tr>
+				<tr>
+				<td>
+<?php
+	// S03
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 27, 0, 0, '', '', '0', $phpAds_context, '');
+    $phpAds_context[] = array('!=' => 'bannerid:'.$phpAds_raw['bannerid']);
+  }
+  echo $phpAds_raw['html'];
+?>
+
+				</td>
+				<td>
+<?php
+	// S04
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 28, 0, 0, '', '', '0', $phpAds_context, '');
+    $phpAds_context[] = array('!=' => 'bannerid:'.$phpAds_raw['bannerid']);
+  }
+  echo $phpAds_raw['html'];
+?>
+				</td>
+				</tr>
+				</table>
+
+
+
+<div style="height:5px;">&nbsp;</div>
+
+	<div class="top-sec01" style="margin-top:-10px;">
+			<h2><img src="/images/top-sec-h2-02.gif" alt="PickUp" /></h2>
+
+				<div id="feed">
+					<div style="font-size:12pt; margin-left:100px;">
+						<img src="/images/ajax-loader.gif" width="20" height="20" alt="" />
+						&nbsp;お知らせを読み込み中...
+					</div>
+				</div>
+
+		<div class="top-pickup">
+			<p><img src="/images/arrow0306.gif" alt="PickUp" />　私たちはワーホリ生を応援しています。</p>
+			<p>当協会では、「私達はワーホリ生を応援しています」と題し、ワーキング・ホリデービザを利用して語学学校・専門学校等で勉強される方を応援します。</p>
+			<p>そこで、「学校紹介特集」を行うこととなりましたので、この企画に協賛頂ける教育機関を募集しています。<a href="/school/news.html">詳細はこちら</a>からご確認ください。</p>
+			<p></p>
+			<p><a href="/school.html">学校を探している方はこちら</a>からどうぞ。</p>
+			<p></p>
+			<p>また、ワーキングホリデー（ワーホリ）を利用して海外に行かれる方向けに、各種セミナーを開催しております。日程など詳しくは、<a href="/seminar">こちら</a></p>
+		</div>
+			<div class="top-pickup">
+				<p><img src="/images/arrow0307.gif" alt="PickUp" />　Facebook始めました</p>
+				<p>日本ワーキング・ホリデー協会公式の<a target="_blank" href="http://www.facebook.com/JapanWorkingHoliday?ref=ts">Facebookファンページ</a>が公開されました。</p>
+<div class="fb-root"></div>  <!-- ERROR w3c already exist -->
+<script type="text/javascript">(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="http://www.facebook.com/JapanWorkingHoliday?ref=ts" data-send="true" data-width="400" data-show-faces="true" data-font="arial"></div>
+
+			</div>
+<br/>
+<!--		<div class="advbox05"><p>001</p></div>
+		<div class="advbox06"><p>002</p></div>-->
+
+		<div style="text-align:right; font-size:9pt; margin:0 0 0 0; padding: 6px 10px 0 0;">
+			<a href="/ja/">過去のお知らせはこちらからどうぞ</a>
+		</div>
+
+
+			<div style="font-size:9pt; float:left; margin-top:10px; width:500px;">
+<?php
+	// D01
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 32, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+			</div>
+
+			<div style="font-size:9pt; float:left; margin-top:10px; width:500px;">
+<?php
+	// D02
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 33, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+			</div>
+
+			<div style="font-size:9pt; float:left; margin-top:10px; width:500px;">
+
+<?php
+  //D03
+
+  // The MAX_PATH below should point to the base of your OpenX installation
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 119, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+			</div>
+
+
+		</div><!--top-sec01END-->
+
+		<div class="advbox05" style="border:0px;">
+<?php
+	// 003
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 9, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+		</div>
+		<div class="advbox06" style="border:0px;">
+<?php
+	// 004
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 15, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+		</div>
+		<div class="advbox05" style="border:0px;">
+<?php
+	// 005
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 16, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+		</div>
+		<div class="advbox06" style="border:0px;">
+<?php
+	// 006
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 17, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+		</div>
+		<div class="advbox05" style="border:0px;">
+<?php
+	// 007
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 18, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+		</div>
+		<div class="advbox06" style="border:0px;">
+<?php
+	// 008
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 19, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+		</div>
+
+&nbsp;<br/>
+&nbsp;<br/>
+
+
+	  <h2 class="sec-title-top" style="margin-top:20px;">ワーホリ協会　公式Facebookページ</h2>
+
+<div class="fb-root1"></div> <!-- ERROR w3c already exist -->
+<script type="text/javascript">(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="http://www.facebook.com/JapanWorkingHoliday?ref=ts" data-send="true" data-width="400" data-show-faces="true" data-font="arial"></div>
+
+		<div class="top-entry01">
+			<div id="facebookwall" style="width:370px;"></div>
+		</div>
+
+
+		</div><!--top-sec01END-->
+	  </div><!--top-mainEND-->
+	  <div id="local-nav">
+	<br/>
+<?php
+  //tvbig
+
+  // The MAX_PATH below should point to the base of your OpenX installation
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 141, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+
+
+<?php
+	// A01
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 29, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+
+<!--
+		<div class="advbox00">
+			A01
+		</div>
+-->
+
+
+
+
+	  <h2 id="local-nav-title"><img src="/images/hotvisa.gif" alt="最新ビザ情報" width="220" height="31" /></h2>
+		<ul id="menu-country">
+		  <li> ■　<a href="/wh/australia/">オーストラリアのワーホリ情報</a></li>
+		  <li class="menu-visa"><a id="aus-visa" href="/visa/v-aus.html" onClick="javascript: _gaq.push(['_trackPageview' , '/link_toppage_AUS/']);"></a></li>
+		  <li>■　<a href="/wh/newzealand/">ニュージーランドのワーホリ情報</a></li>
+		  <li class="menu-visa"><a id="nz-visa" href="/visa/v-nz.html"  onclick="javascript: _gaq.push(['_trackPageview' , '/link_toppage_NZ/']);"></a></li>
+		  <li>■　<a href="/wh/canada/">カナダのワーホリ情報</a></li>
+		  <li class="menu-visa"><a id="can-visa" href="/visa/v-can.html" onClick="javascript: _gaq.push(['_trackPageview' , '/link_toppage_CAN/']);"></a></li>
+		  <li class="menu-visa"><a id="kor-visa" href="/visa/v-kor.html" onClick="javascript: _gaq.push(['_trackPageview' , '/link_toppage_KOR/']);"></a></li>
+		  <li class="menu-visa"><a id="fra-visa" href="/visa/v-fra.html" onClick="javascript: _gaq.push(['_trackPageview' , '/link_toppage_FRA/']);"></a></li>
+		  <li class="menu-visa"><a id="deu-visa" href="/visa/v-deu.html" onClick="javascript: _gaq.push(['_trackPageview' , '/link_toppage_DEU/']);"></a></li>
+		  <li>■　<a href="/wh/uk/">イギリスのワーホリ情報</a></li>
+		  <li class="menu-visa"><a id="uk-visa" href="/visa/v-uk.html"  onclick="javascript: _gaq.push(['_trackPageview' , '/link_toppage_UK/']);"></a></li>
+		  <li class="menu-visa"><a id="ire-visa" href="/visa/v-ire.html" onClick="javascript: _gaq.push(['_trackPageview' , '/link_toppage_IRE/']);"></a></li>
+		  <li class="menu-visa"><a id="dnk-visa" href="/visa/v-dnk.html" onClick="javascript: _gaq.push(['_trackPageview' , '/link_toppage_DNK/']);"></a></li>
+		  <li class="menu-visa"><a id="ywn-visa" href="/visa/v-ywn.html" onClick="javascript: _gaq.push(['_trackPageview' , '/link_toppage_YWN/']);"></a></li>
+		  <li class="menu-visa"><a id="hkg-visa" href="/visa/v-hkg.html" onClick="javascript: _gaq.push(['_trackPageview' , '/link_toppage_HKG/']);"></a></li>
+		  <li class="menu-visa"><a id="nor-visa" href="/visa/v-nor.html" onClick="javascript: _gaq.push(['_trackPageview' , '/link_toppage_NOR/']);"></a></li>
+		</ul>
+
+		<div class="right_side">
+			<div class="seminar_voice_box" id="seminar_voice_box">
+				<p class="seminar_voice_title"><img src="/images/seminar_voice.png">セミナー参加者の声</title>
+
+<?php
+
+	require_once "blog/seminar_voice.php";
+	$getitems = 25;		// 表示件数
+	$interval = 10000;	// インターバル（１秒＝１０００）
+	$jawhm = getRecentVoice($getitems);
+	$j_script = '';
+	$cnt = 0;
+	foreach($jawhm as $item)	{
+		echo '<div class=\'seminar_voice\' id=\'seminarvoice'.$item['itemid'].'\'>';
+		echo '<p><img src="/images/mail'.rand(1,7).'.png">&nbsp;'.htmlspecialchars (strip_tags($item['body'])).'</p>';
+		echo '</div>';
+		$cnt += $interval;
+		$j_script .= 'jQuery("#seminarvoice'.$item['itemid'].'").oneTime('.$cnt.',function(){';
+		$j_script .= 'fncSeminarVoice("seminarvoice'.$item['itemid'].'");';
+		$j_script .= '});';
+	}
+
+?>
+
+			</div>
+			<div class="seminar_voice_note">皆様にご好評頂いている無料の<br />留学・ワーホリセミナー（説明会）を開催中です。<br />是非、ご予約の上ご参加ください。</div>
+			<div class="seminar_voice_seminar"><a href="/seminar/seminar"><img src="/images/seminar_go.png">無料セミナー（説明会）を探す</a></div>
+		</div>
+
+<script type="text/javascript">
+function fncSeminarVoice(id)	{
+	jQuery('#'+id).animate({height: '0px'},{duration: 500,complete: function(){
+			var array = new Array();
+			for(var i = 0; i < 10; i++) {
+				array.push(String.fromCharCode('0'.charCodeAt() + i))
+			}
+			var str = '';
+			for(var i = 0; i < 50; i++) {
+				str += array[Math.floor(Math.random() * 10)]
+			}
+
+			msg = jQuery(this).find(':first-child').html();
+			divmsg = '';
+			divmsg = divmsg + '<div class="seminar_voice" id="' + str + '">';
+			divmsg = divmsg + '<p>' + msg + '</p>';
+			divmsg = divmsg + '</div>';
+			jQuery(this).hide();
+
+			jQuery('#seminar_voice_box').append(divmsg);
+
+			jQuery('#' + str).oneTime(<?php echo $interval*$getitems; ?> ,function() { fncSeminarVoice(jQuery(this).attr("id")); });
+
+		}
+	});
+}
+<?php echo $j_script; ?>
+</script>
+
+
+
+		<div class="advbox02" style="border:0px;">
+<?php
+	// 009
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 20, 0, 0, '', '', '0', $phpAds_context, '');
+    $phpAds_context[] = array('!=' => 'bannerid:'.$phpAds_raw['bannerid']);
+  }
+  echo $phpAds_raw['html'];
+?>
+		</div>
+		<div class="advbox02" style="border:0px;">
+<?php
+	// 010
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 21, 0, 0, '', '', '0', $phpAds_context, '');
+    $phpAds_context[] = array('!=' => 'bannerid:'.$phpAds_raw['bannerid']);
+  }
+  echo $phpAds_raw['html'];
+?>
+		</div>
+		
+		<div class="advbox02" style="border:0px; margin-bottom:30px;">
+			<a href="/blog/"><img src="/images/blog_banner_off.jpg" alt="" /></a>
+		</div>
+		
+
+		<div class="right_side">
+<!--
+			<div style="border: 2px solid lightpink; padding: 10px 10px 10px 10px; text-align:center; font-size:10pt;">
+				<img src="/images/mail_03_whi.gif" alt="" />メール会員募集中（無料）<br/>&nbsp;<br/>
+				登録は、reg@jawhm.or.jp に、<br/>
+				空メールを送信してください。<br/>
+					<img src="/images/qr-reg.gif" alt="" /><br/>
+					メール会員の詳細は<a href="./mail">こちら</a><br/>
+			</div>
+-->
+
+	<div style="margin-top:16px;"></div>
+            
+            <!--[if lte IE 8 ]
+                <iframe id="fb" src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FJapanWorkingHoliday&amp;width=220&amp;height=640&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true" scrolling="no" frameborder="0"></iframe>
+            [endif]-->
+            
+            <!--[if (gte IE 9) | !(IE) ]><!-->
+                <object id="fb" data="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FJapanWorkingHoliday&amp;width=220&amp;height=640&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true"></object>
+            <!--<![endif]-->
+
+        </div>
+
+	&nbsp;<br/>
+
+	<!-- twitterタイムライン -->
+	<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/JAWHM"  data-widget-id="325167067009515521">@JAWHM からのツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+	  </div><!--local-navEND-->
+
+
+	</div><!--maincontentEND-->
+  </div><!--contentsEND-->
+  </div><!--contentsboxEND-->
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<?php
+require_once 'include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->title_page='沖縄　留学＆ワーキングホリデー夏セミナー';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/okinawa/okinawaseminar.gif" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '沖縄　留学＆ワーキングホリデー夏セミナー';
+
+
+
+
+$header_obj->add_js_files = '<script type="text/javascript" src="js/linkboxes.js"></script>
+<script type="text/javascript" src="/js/jquery.blockUI.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-20563699-1"]);
+  _gaq.push(["_setDomainName", ".jawhm.or.jp"]);
+  _gaq.push(["_trackPageview"]);
+
+  (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-20563699-1"]);
+  _gaq.push(["_setDomainName", ".jawhm.or.jp"]);
+  _gaq.push(["_trackPageview"]);
+
+  (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+';
+$header_obj->add_css_files='
+<style>
+a.steps	{
+	color:	red;
+	font-size: 16pt;
+	text-decoration: none;
+	border-bottom: 2px dotted navy;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+}
+
+
+#maincontent .ireland-title {
+	font-size: 14px;
+	color: #333333;
+	background-image: url(images/ireland/title.gif);
+	background-repeat: no-repeat;
+	font-weight: bold;
+	margin-left: 11px;
+	padding-left: 20px;
+	padding-top: 3px;
+}
+
+#step11box {
+	margin-bottom: 10px;
+	background-repeat: no-repeat;
+	padding-top: 5px;
+	padding-left: 20px;
+	clear: both;
+}
+
+#tyo_btn {
+	font-weight: bold;
+	font-size: 14px;
+}
+</style>';
+
+
+$header_obj->display_header();
+
+
+	// イベント読み込み
+	$cal = array();
+
+	$tyo_ymd   = array();
+	$tyo_title = array();
+	$tyo_desc  = array();
+	$tyo_img   = array();
+	$tyo_btn   = array();
+	$tyo_id	   = array();
+	$tyo_msg   = array();
+
+	$osa_ymd   = array();
+	$osa_title = array();
+	$osa_desc  = array();
+	$osa_img   = array();
+	$osa_btn   = array();
+	$osa_id	   = array();
+	$osa_msg   = array();
+
+	try {
+		$ini = parse_ini_file('../bin/pdo_mail_list.ini', FALSE);
+		$db = new PDO($ini['dsn'], $ini['user'], $ini['password']);
+		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$db->query('SET CHARACTER SET utf8');
+//		$rs = $db->query('SELECT id, year(hiduke) as yy, month(hiduke) as mm, day(hiduke) as dd, title, memo, place, k_use, k_title1, k_desc1, k_stat FROM event_list WHERE k_use = 1 AND hiduke >= "'.date("Y/m/d",strtotime("-1 week")).'"  ORDER BY hiduke, id');
+		$rs = $db->query('SELECT id, year(hiduke) as yy, month(hiduke) as mm, day(hiduke) as dd, title, memo, place, k_use, k_title1, k_desc1, k_desc2, k_stat, free, pax, booking FROM event_list WHERE k_use = 1 ORDER BY hiduke, starttime, id');
+		$cnt = 0;
+		while($row = $rs->fetch(PDO::FETCH_ASSOC)){
+			$cnt++;
+			$year	= $row['yy'];
+			$month  = $row['mm'];
+			$day	= $row['dd'];
+			$aridx  = $row['id'];
+
+			if ($row['place'] == 'tokyo')	{
+				// 東京
+				$tyo_id[$aridx] = $row['id'];
+				$tyo_ymd[$aridx] = $year.substr('00'.$month,-2).substr('00'.$day,-2);
+				if ($row['free'] == 1)	{
+					if ($mem_id == '')	{
+						$tyo_title[$aridx]	= $row['k_title1'].'<div style="margin: 10px 0 10px 0; padding:5px 20px 5px 20px; border: 1px solid navy;">【こちらはメンバー様限定セミナーです】<br/>メンバー登録を行って頂くとご予約が可能となります。<a href="./mem">登録はこちらからどうぞ</a><br/>メンバーの方は、<a href="/member">ログイン</a>するとご予約が可能となります。</div>';
+					}else{
+						$tyo_title[$aridx] = $row['k_title1'];
+					}
+				}else{
+					$tyo_title[$aridx] = $row['k_title1'];
+				}
+				$tyo_desc[$aridx]  = $row['k_desc2'];
+				if ($row['k_stat'] == 1)	{
+					if ($row['booking'] >= $row['pax'])	{
+						$tyo_img[$aridx]   	= '<img src="images/semi_full.jpg">';
+					}else{
+						$tyo_img[$aridx]   	= '<img src="images/semi_now.jpg">';
+					}
+				}elseif ($row['k_stat'] == 2)	{
+					$tyo_img[$aridx]   	= '<img src="images/semi_full.jpg">';
+				}else{
+					if ($row['booking'] >= $row['pax'])	{
+						$tyo_img[$aridx]   	= '<img src="images/semi_full.jpg">';
+					}else{
+						if ($row['booking'] >= $row['pax'] / 3)	{
+							$tyo_img[$aridx]   	= '<img src="images/semi_now.jpg">';
+						}else{
+							$tyo_img[$aridx]	= '';
+						}
+					}
+				}
+				if ($row['free'] == 1)	{
+					if ($mem_id == '')	{
+						$tyo_btn[$aridx]	= '';
+					}else{
+						if ($row['k_stat'] == 2)	{
+							$tyo_btn[$aridx]	= '';
+						}else{
+							if ($row['booking'] >= $row['pax'])	{
+								$tyo_btn[$aridx]	= '<input class="button_yoyaku" type="button" value="キャンセル待ち" onclick="fnc_yoyaku(this);" title="[東京A]'.$row['k_title1'].'" uid="'.$row['id'].'">';
+							}else{
+								$tyo_btn[$aridx]	= '<input class="button_yoyaku" type="button" value="メンバー専用予約" onclick="fnc_yoyaku(this);" title="[東京A]'.$row['k_title1'].'" uid="'.$row['id'].'">';
+							}
+						}
+					}
+				}else{
+					if ($row['k_stat'] == 2)	{
+						$tyo_btn[$aridx]	= '';
+					}else{
+						if ($row['booking'] >= $row['pax'])	{
+							$tyo_btn[$aridx]	= '<input class="button_yoyaku" type="button" value="キャンセル待ち" onclick="fnc_yoyaku(this);" title="[東京A]'.$row['k_title1'].'" uid="'.$row['id'].'">';
+						}else{
+							$tyo_btn[$aridx]	= '<input class="button_yoyaku" type="button" value="　　ご予約はこちら　　" onclick="fnc_yoyaku(this);" title="[東京A]'.$row['k_title1'].'" uid="'.$row['id'].'">';
+						}
+					}
+				}
+
+				$msg = '';
+				$msg .= '<div style="font-size:11pt;">';
+				if ($tyo_ymd[$aridx] < date('Ymd'))	{
+					$msg .= '終了しました　<s>'.$tyo_title[$aridx].'</s>';
+				}else{
+					$msg .= $tyo_btn[$aridx].'&nbsp;&nbsp;'.$tyo_title[$aridx];
+				}
+				$msg .= '<table style="font-size:8pt;"><tr><td>'.$tyo_img[$aridx].'</td>';
+				$msg .= '<td><p>'.nl2br($tyo_desc[$aridx]).'</p></td></tr></table>';
+				$msg .= '</biv>';
+
+				$tyo_msg[$aridx]   = mb_ereg_replace('"', '', $msg);
+
+			}
+
+			if ($row['place'] == 'osaka')	{
+				// 大阪
+				$osa_id[$aridx] = $row['id'];
+				$osa_ymd[$aridx] = $year.substr('00'.$month,-2).substr('00'.$day,-2);
+				if ($row['free'] == 1)	{
+					if ($mem_id == '')	{
+						$osa_title[$aridx]	= $row['k_title1'].'<div style="margin: 10px 0 10px 0; padding:5px 20px 5px 20px; border: 1px solid navy;">【こちらはメンバー様限定セミナーです】<br/>メンバー登録を行って頂くとご予約が可能となります。<a href="./mem">登録はこちらからどうぞ</a><br/>メンバーの方は、<a href="/member">ログイン</a>するとご予約が可能となります。</div>';
+					}else{
+						$osa_title[$aridx] = $row['k_title1'];
+					}
+				}else{
+					$osa_title[$aridx] = $row['k_title1'];
+				}
+				$osa_desc[$aridx]  = $row['k_desc2'];
+				if ($row['k_stat'] == 1)	{
+					if ($row['booking'] >= $row['pax'])	{
+						$osa_img[$aridx]   	= '<img src="images/semi_full.jpg">';
+					}else{
+						$osa_img[$aridx]   	= '<img src="images/semi_now.jpg">';
+					}
+				}elseif ($row['k_stat'] == 2)	{
+					$osa_img[$aridx]   	= '<img src="images/semi_full.jpg">';
+				}else{
+					if ($row['booking'] >= $row['pax'])	{
+						$osa_img[$aridx]   	= '<img src="images/semi_full.jpg">';
+					}else{
+						if ($row['booking'] >= $row['pax'] / 3)	{
+							$osa_img[$aridx]   	= '<img src="images/semi_now.jpg">';
+						}else{
+							$osa_img[$aridx]	= '';
+						}
+					}
+				}
+				if ($row['free'] == 1)	{
+					if ($mem_id == '')	{
+						$osa_btn[$aridx]	= '';
+					}else{
+						if ($row['k_stat'] == 2)	{
+							$osa_btn[$aridx]	= '';
+						}else{
+							if ($row['booking'] >= $row['pax'])	{
+								$osa_btn[$aridx]	= '<input class="button_yoyaku" type="button" value="キャンセル待ち" onclick="fnc_yoyaku(this);" title="[大阪A]'.$row['k_title1'].'" uid="'.$row['id'].'">';
+							}else{
+								$osa_btn[$aridx]	= '<input class="button_yoyaku" type="button" value="メンバー専用予約" onclick="fnc_yoyaku(this);" title="[大阪A]'.$row['k_title1'].'" uid="'.$row['id'].'">';
+							}
+						}
+					}
+				}else{
+					if ($row['k_stat'] == 2)	{
+						$osa_btn[$aridx]	= '';
+					}else{
+						if ($row['booking'] >= $row['pax'])	{
+							$osa_btn[$aridx]	= '<input class="button_yoyaku" type="button" value="キャンセル待ち" onclick="fnc_yoyaku(this);" title="[大阪A]'.$row['k_title1'].'" uid="'.$row['id'].'">';
+						}else{
+							$osa_btn[$aridx]	= '<input class="button_yoyaku" type="button" value="　　大阪会場　　" onclick="fnc_yoyaku(this);" title="[大阪A]'.$row['k_title1'].'" uid="'.$row['id'].'">';
+						}
+					}
+				}
+
+				$msg = '';
+				$msg .= '<div style="font-size:11pt;">';
+				if ($osa_ymd[$aridx] < date('Ymd'))	{
+					$msg .= '終了しました　<s>'.$osa_title[$aridx].'</s>';
+				}else{
+					$msg .= $osa_btn[$aridx].'&nbsp;&nbsp;'.$osa_title[$aridx];
+				}
+				$msg .= '<table style="font-size:8pt;"><tr><td>'.$osa_img[$aridx].'</td>';
+				$msg .= '<td><p>'.nl2br($osa_desc[$aridx]).'</p></td></tr></table>';
+				$msg .= '</biv>';
+
+				$osa_msg[$aridx]   = mb_ereg_replace('"', '', $msg);
+
+			}
+
+		}
+	} catch (PDOException $e) {
+		die($e->getMessage());
+	}
+	
+	
+	
+?>
+
+
+	<div id="maincontent">
+       <?php echo $header_obj->breadcrumbs('none'); ?>
+<br/>
+
+<br/>
+	<div style="font-size:25pt; color: deepskyBlue; margin: 20px 0px 20px 35px;">
+		<strong>沖縄 留学＆ワーキングホリデー夏セミナー</strong>
+	</div>
+
+	<h2 class="sec-title">沖縄 留学＆ワーキングホリデー夏セミナー 日程</h2>
+
+	<div id="step11box">
+		<table>
+			<tr>
+				<td width="20%" style="vertical-align:top;">
+					<p>日時</p>
+				</td>
+				<td>
+					<p><b>2013年 7月 13日 (土)　13：00 ～ 17：00</b></p>
+				</td>
+			</tr>
+			<tr><td>&nbsp;</td><td></td></tr>
+			<tr>
+				<td width="20%" style="vertical-align:top;">
+					<p>場所</p>
+				</td>
+				<td>
+					<p><strong>沖縄産業支援センター 会議室小310号室</strong><br/>
+					〒901-0152 沖縄県那覇市字小禄1831番地1<br/>
+					<small><font color="red">※通常の沖縄セミナーと開催場所が異なりますのでご注意ください</small></font><br/>
+						&nbsp;<br/>
+						<strong>★アクセス★</strong><br/>
+						会場へはバス、モノレールをご利用ください。<br/>
+						また、お車でお越しの方は敷地内の駐車場もご利用頂けます。<br/>
+						<a href=http://www.okinawa-sangyoushien.co.jp/modules/tinyd01/index.php?id=4 target=_blank>アクセス方法の詳細はこちら</a><br/>
+					</p>
+				</td>
+			</tr>
+			<tr><td>&nbsp;</td><td></td></tr>
+			<tr>
+				<td width="20%" style="vertical-align:top;">
+					<p>参加費</p>
+				</td>
+				<td>
+					<p>無料</p>
+				</td>
+			</tr>
+			<tr><td>&nbsp;</td><td></td></tr>
+			<tr>
+				<td width="20%" style="vertical-align:top;">
+					<p>ご注意</p>
+				</td>
+				<td>
+					<p class="text01b20">
+						複数人でお越しの方は、ご予約時に人数のご報告をお願いいたします。<br/>
+						また、当日キャンセルはご遠慮くださいませ。<br/>
+
+					</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+			<div align="center">
+		<a href="http://www.jawhm.or.jp/s/go/3844"><img  src="images/ireland/yoyaku_on.gif"/></a>
+		</div>
+	&nbsp;<br/>
+	<h2 class="sec-title">沖縄 留学＆ワーキングホリデー夏セミナー 当日スケジュール</h2>
+	&nbsp;<br/>
+		<div id="step11box">
+	<h3><strong><font size="3pt">13:00～<br/><font color="#0066ff">① これで基本はばっちり！初心者向けセミナー</font></strong></font>（オーストラリア・カナダ）</h3><br/>
+	<p class="text01">
+
+	国の魅力・現地のこと丸分かりセミナー。<br/>
+	気になることNo.1のビザの内容や語学学校の必要性<br/>
+	失敗しない渡航準備・海外生活の為のお話。<br/>
+	</p>
+		<div style="height:40px;">&nbsp;</div>
+
+	<h3><strong><font size="3pt"><font color="#0066ff">② 現地の貴重な話が聞ける！語学学校セミナー</font></strong></font></h3><br/>
+	
+	<h3><strong><font size="3pt">14:00～ Navitas</strong></font>&nbsp;（オーストラリア）</h3><br/>
+	<center><img src="images/okinawa/20130713/navitas1.jpg">&nbsp;&nbsp;<img src="images/okinawa/20130713/navitas2.jpg">&nbsp;&nbsp;<img src="images/okinawa/20130713/navitas3.jpg"></center><br/>
+	<p class="text01">
+	Navitas Englishはオーストラリアに6キャンパスある語学学校。
+	帰国後の就職活動に有利な資格取得や仕事のためのオプションクラスが充実。
+	非常にレベルの高い授業を受けることができる基本英語のESLコースは人気の高いコースになっています。<br/>
+<br/>
+	質の高い授業の理由とは…？Navitasでは英語教師トレーニング専門機関「Australian TESOL Training Centre（ATTC）」を併設し、
+	常に講師指導、英語教育の研究を行っています。
+
+	また、講師の採用条件は、大学卒業＋ケンブリッジCELTAまたは同等以上の資格を保持。
+	採用後も、定期的なトレーニングの実施や校長またはシニア講師による授業審査、
+	Student Evaluation（学生評価表）を行うことにより、講師は常に緊張感とモチベーションを保ち、
+	質の高さを継続しています。<br/>
+<br/>
+
+	</p>
+	<div align="right"><a href="http://www.jawhm.or.jp/school/aus_navitas/"><p class="text01">≪この学校についてもっと詳しく知りたい方はこちら≫</p></a></div><br/>
+
+
+	</p>
+
+	<h3><strong><font size="3pt">14:30～ KGIC</strong></font>&nbsp;（カナダ）</h3> <br/>
+	<center><img src="images/okinawa/20130713/kgic1.jpg">&nbsp;&nbsp;<img src="images/okinawa/20130713/kgic2.jpg">&nbsp;&nbsp;<img src="images/okinawa/20130713/kgic3.jpg"></center><br/>
+	<p class="text01">
+	KGIC(King George International College)は語学学校と専門学校の両方を運営していて、仕事に強い留学プログラムを提供しています。
+	英語学習から進学、ビジネス、有給インターンシップと多彩なプログラムを開講し、
+	英語でのスキルアップ・キャリアアップ、留学したことで就職を有利にしたい人、
+	英語環境で仕事をしたい人に最適な学校です。<br/>
+	<br/>
+	「英語を身に付けたいけど、英語だけじゃ物足りない！」
+	「英語プラスαでの留学をしたい！」「専門留学をしたい！」
+	そんな人たちにもおススメのプログラムを提供していて、
+	英語以外の数多くの専門スキルを身に付けることもできます。
+	<br/>
+	英語を使い専門的な知識を身につけることにより、
+	自信をつけ、更なる英語力の向上ができれば、
+	帰国後の飛躍に大きく役に立てることができます。<br/>
+	</p>
+	<div align="right"><a href="http://www.jawhm.or.jp/school/can_kgic/"><p class="text01b">≪この学校についてもっと詳しく知りたい方はこちら≫</p></a></div><br/>
+	
+
+	<h3><strong><font size="3pt">15:00～<br/><font color="#0066ff">③ 質疑応答・交流フリータイム</font></strong></font></h3><br/>
+	<p class="text01b30">
+	セミナー後も当協会スタッフ、学校スタッフがおりますので、質疑応答や交流など自由にすることができます。<br/>
+	セミナーを聞いてわからなかったこと、不安なこと、プランのご相談、海外生活について…なんでもご質問ください。
+	同じ海外に興味のある参加者と一緒に、懇談形式でお話しましょう！<br/>
+	</p>
+
+
+
+		<div style="font-size:8pt; margin:20px 0 0 30px;">
+			【ご注意】セミナー内容の詳細については、一部変更になる可能性もあります。予めご了承ください。
+		</div>
+				<div style="height:20px;">&nbsp;</div>
+		</div>			
+		<div align="center">
+		<a href="http://www.jawhm.or.jp/s/go/3844"><img  src="images/ireland/yoyaku_on.gif" alt="" /></a></p>
+
+		<div style="height:40px;">&nbsp;</div>
+		</div>
+
+		
+	<h2 class="sec-title">ワーキング・ホリデー協会　沖縄オフィス</h2>
+	<div id="step11box">
+<p style="margin-left: 15px;">
+	オーストラリアでのワーホリ経験を活かして「日本ワーキングホリデー協会」と提携し、 
+	沖縄で沖縄人による沖縄の若者にむけたワーキングホリデーセミナーを開催しております。
+	まずワーキングホリデーの制度をもっと沖縄の若者にも知ってもらいたい。
+	 私の体験談も話しつつ、ワーキングホリデー向けの語学学校探し、アルバイトやシェアハウスの見つけ方等を紹介しつつ、
+	なんでもご質問にお答え致します。 お友達も御誘いのうえご参加ください。いいことばかり話しません。
+	ワーキングホリデー中の失敗談やこうすればよかったなど、 ワーキングホリデー経験者による沖縄県民のためのワーキングホリデーセミナーです！
+	 沖縄の人にもっとワーキングホリデーを！ワーキングホリデーに対する認知度をアップするとともに、 沖縄の若者と一緒に沖縄を盛り上げていきたいと思います。 
+	日本ワーキングホリデー協会東京オフィス　新宿本店と連携しながら沖縄にワーキングホリデー最新情報をお届けいたします。<br/>
+&nbsp;<br/>&nbsp;<br/>
+	<center><img src="images/okinawa/e-sa1.jpg">　　<img src="images/okinawa/e-sa2.jpg"></center>
+	<center>▲沖縄製手作り革製品のお店「e-sa」の店内です</center>
+	&nbsp;<br/>
+	<center><a href="/office/okinawa/" target="_blank"><img src="images/okinawa/office_off.gif" width="45%"></a>
+	&nbsp;&nbsp;<a href="/seminar/seminar" target="_blank"><img src="images/okinawa/seminar_off.gif" width="45%"></center></a>
+
+</p>
+	
+		<div style="height:30px;">&nbsp;</div>
+	
+
+	<div style="height:50px;">&nbsp;</div>
+
+
+	</div>
+	</div>
+    </div>
+ 
+
+
+			<br/>
+				<br/>
+				<br/>
+			</font>
+		</div>
+	</div>
+</div>
+
+
+</div>
+
+
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+</body>
+</html>

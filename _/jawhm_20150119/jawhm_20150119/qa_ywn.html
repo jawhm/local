@@ -1,0 +1,94 @@
+<?php
+require_once 'include/header.php';
+require_once 'include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='台湾　ワーキングホリデービザ';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）や留学などの海外生活でよるある質問をまとめました。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/qanda-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '台湾ワーキングホリデーのよくある質問';
+
+$header_obj->display_header();
+include('calendar_module/mod_event_horizontal.php');
+
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('qa'); ?>
+	  <h2 class="sec-title">台湾　ワーキングホリデー</h2>
+	  <table class="qatable-aus">
+	    <tr>
+		  <th><img src="images/mflag10.gif" alt="" /><br />台湾</th>
+		  <td>ワーキングホリデー協定国別に、よくあるご質問にお答えしています。</td>
+		</tr>
+	  </table>
+      <p>&nbsp;</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '台湾';
+            $number_to_display = '6';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <h2 class="sec-title">よくある質問と回答</h2>
+      <p>&nbsp;</p>
+	  <div class="qa-abox-country">
+	    <h3 class="q-title">Ｑ１.台湾ワーキングホリデービザ申請の注意</h3>
+		<p class="text01">申請は名前以外は日本語で書いても大丈夫です。　ホームステイやホテルなどの滞在先住所は書いてください。<br />
+海外ワーキングホリデー保険加入証明が必要です。日本ワーキングホリデー協会から証明書を発行しておりますので保険加入時にはご相談ください。
+</p>
+	  </div>
+
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ２.台湾ワーキング・ホリデー滞在での注意点は？</h3>
+		<p class="text01m30">台湾ワーキング・ホリデービザの期限内であれば日本に一時帰国や他国へ訪問し、またワイワンに戻ってくることも可能です。<br />
+台湾ワーキングホリデービザの滞在期間は最初は180日間です。最初の期限が来る15日前から近くの内政部人出国移民署のサービスステーションに更新手続きをすれば最大180の延長ができます。なので最高で360日間滞在が可能です。　仕事は同じ雇用主のもとで最高で3カ月です。
+<br /></p>
+</div>
+	     <div class="qa-abox-country">
+	      <div class="qa-abox-country">
+		<h3 class="q-title">Ｑ３.台湾で中国語が学べますか？</h3>
+		<p class="text01m30">中国は簡体字を使い、台湾や香港などは繁体字を使用しています。しゃべるのは台湾は中国本土との会話はできますが香港の広東語とは違ってきます。　台湾は本当に親日家でとても親切にしてくれます。　食事もおいしく、楽しく優しい雰囲気の中で中国語を勉強した方が挫折しなくて良いでしょう。</p>
+		<div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+	  
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '台湾';
+            $number_to_display = '6';
+            $start_display_from = '6'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <div class="advbox03">
+<?php
+	// 132
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 109, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+</div>
+</div>
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

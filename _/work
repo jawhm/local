@@ -1,0 +1,5 @@
+
+ALTER TABLE `mailtext` ADD `date_created` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `text5` ; 
+ALTER TABLE `mailtext` ADD `date_modified` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `date_created` ;
+
+ALTER TABLE `event_list` ADD `beginer` TINYINT( 1 ) NOT NULL DEFAULT '0'

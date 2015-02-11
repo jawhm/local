@@ -1,0 +1,65 @@
+﻿<?php
+require_once '../include/header.php';
+$header_obj = new Header();
+
+$header_obj->title_page='イベント情報';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->full_link_tag=true;
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../images/mainimg/event-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'イベント情報 | 日本ワーキング・ホリデー協会';
+
+$header_obj->display_header();
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('event'); ?>
+
+	  <h2 id="okinawa_semi" class="sec-title">沖縄セミナー</h2>
+
+<div style="font-size: 14pt; margin: 5px 0 10px 0;">
+	沖縄県中頭郡北谷町美浜15-69<br/>
+	カーニバルパーク・ミハマ内1F（北谷町美浜の観覧車下、１Ｆ）<br/><a href="http://eesa.ti-da.net/" target="_blank">ｅ－ｓａ（イーサ）</a>内にて開催します。<br/> 当日の連絡先：098-926-0667<br/>
+</div>
+      <?php if($header_obj->mobilepage)
+      		{ ?>
+            	<img src="../images/map-event.png" alt="" />
+                <br /><small><a href="http://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E6%B2%96%E7%B8%84%E7%9C%8C%E4%B8%AD%E9%A0%AD%E9%83%A1%E5%8C%97%E8%B0%B7%E7%94%BA%E7%BE%8E%E6%B5%9C15-69&amp;sll=36.5626,136.362305&amp;sspn=48.689797,76.728516&amp;brcurrent=3,0x34e5130512c88429:0x25bc432136efb8bd,0&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%B2%96%E7%B8%84%E7%9C%8C%E4%B8%AD%E9%A0%AD%E9%83%A1%E5%8C%97%E8%B0%B7%E7%94%BA%E7%BE%8E%E6%B5%9C%EF%BC%88%E5%AD%97%EF%BC%89+%EF%BC%91%EF%BC%95%E2%88%92%EF%BC%96%EF%BC%99&amp;ll=26.316825,127.757628&amp;spn=0.004616,0.006866&amp;z=17&amp;iwloc=A" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+        <?php     
+            }
+            else
+            {?>
+                <iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E6%B2%96%E7%B8%84%E7%9C%8C%E4%B8%AD%E9%A0%AD%E9%83%A1%E5%8C%97%E8%B0%B7%E7%94%BA%E7%BE%8E%E6%B5%9C15-69&amp;sll=36.5626,136.362305&amp;sspn=48.689797,76.728516&amp;brcurrent=3,0x34e5130512c88429:0x25bc432136efb8bd,0&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%B2%96%E7%B8%84%E7%9C%8C%E4%B8%AD%E9%A0%AD%E9%83%A1%E5%8C%97%E8%B0%B7%E7%94%BA%E7%BE%8E%E6%B5%9C%EF%BC%88%E5%AD%97%EF%BC%89+%EF%BC%91%EF%BC%95%E2%88%92%EF%BC%96%EF%BC%99&amp;ll=26.316825,127.757628&amp;spn=0.004616,0.006866&amp;z=17&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="http://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E6%B2%96%E7%B8%84%E7%9C%8C%E4%B8%AD%E9%A0%AD%E9%83%A1%E5%8C%97%E8%B0%B7%E7%94%BA%E7%BE%8E%E6%B5%9C15-69&amp;sll=36.5626,136.362305&amp;sspn=48.689797,76.728516&amp;brcurrent=3,0x34e5130512c88429:0x25bc432136efb8bd,0&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%B2%96%E7%B8%84%E7%9C%8C%E4%B8%AD%E9%A0%AD%E9%83%A1%E5%8C%97%E8%B0%B7%E7%94%BA%E7%BE%8E%E6%B5%9C%EF%BC%88%E5%AD%97%EF%BC%89+%EF%BC%91%EF%BC%95%E2%88%92%EF%BC%96%EF%BC%99&amp;ll=26.316825,127.757628&amp;spn=0.004616,0.006866&amp;z=17&amp;iwloc=A" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+		<?php
+            } ?>
+
+	<div style="height:30px;">&nbsp;</div>
+
+<div style="text-align:center;">
+	<img src="../images/flag01.gif">
+	<img src="../images/flag03.gif">
+	<img src="../images/flag09.gif">
+	<img src="../images/flag05.gif">
+	<img src="../images/flag06.gif">
+	<img src="../images/mflag11.gif" width="40" height="26">
+	<img src="../images/flag08.gif">
+	<img src="../images/flag04.gif">
+	<img src="../images/flag02.gif">
+	<img src="../images/flag10.gif">
+	<img src="../images/flag07.gif">
+</div>
+
+	<div style="height:50px;">&nbsp;</div>
+
+	</div>
+
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>
+

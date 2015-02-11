@@ -1,0 +1,239 @@
+@charset "utf-8";
+/* CSS Document */
+
+.info {
+	overflow:auto; 
+	height:300px;	
+}
+
+.mandatory, .titlebar{
+	padding:0 0 0 5px;
+	border:1px solid #F5CF5E;
+	display:block;
+	width:100%;
+	margin-bottom: 5px;
+	background-color:#FFEC95
+}
+.mandatory {
+	background:url(images/hissu.gif) #FFEC95 right no-repeat;
+}
+
+.title {
+	display:block;
+	margin-bottom: 5px;
+}
+
+.example {
+	color:grey;
+}
+
+.text-type {
+	color:#0425AA;	
+}
+
+.moreinfo {
+	width:28px;
+	height:30px;
+	float:right;
+	padding-right:10px;
+}
+.moreinfo span.ui-btn-inner {
+	padding:0;
+}
+
+.moretext {
+	background:#E5ECF2;
+	padding:5px;
+	
+}
+
+.div-form {
+	border-bottom:1px solid #E5E5E5;
+	padding-bottom:5px;	
+}
+
+.div-form-s4 {
+	border:1px solid navy;
+	padding: 0 10px 0 5px;;
+	background-color:white;
+}
+
+.ui-field-contain div.ui-slider-switch { 
+	width: 120px; 
+}
+
+div#choice-conbini .ui-controlgroup-controls {
+	
+	width:100%;
+}
+
+._field_error {
+ border: 1px dashed red;	
+}
+
+.mandatory_field_error, .mandatory_field_error_field_error{
+	padding:0 0 0 5px;
+	background:url(images/hissu.gif) #F9A6A2 right no-repeat;
+	border:1px solid red;
+	display:block;
+	width:100%;
+	margin-bottom: 5px;
+	color:white;
+}
+.msg_error {
+	color:red;
+}
+
+.listing-title {
+	display:block;
+	padding:2px 5px;
+	border-bottom: 1px solid #A2A2FF;
+	border-top: 1px solid #A2A2FF;
+	background-color:#E5ECF2;
+	font-weight:bold;
+	height:25px;
+	line-height:25px;
+}
+
+/*display input in line*/
+.part1, .part2 {
+	display:inline-block;
+	padding-right:5px;
+	width:130px;
+}
+
+#cb_logo{
+	background:url(images/creditcard_logo.gif);
+	height:35px;
+	width:280px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#conbini_logo{
+	background:url(images/convenience_logo.gif);
+	height:119px;
+	width:271px;
+	
+	margin-left:auto;
+	margin-right:auto;
+}
+#hurikomi_logo{
+	background:url(images/hurikomi_logo.gif);
+	height:78px;
+	width:193px;
+	
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.infolist{
+	border:1px dotted navy;
+	padding:5px;
+	margin-top:10px;
+}
+.infolist-conbini {
+	border:1px dotted navy;
+	padding:5px;
+	margin-top:10px;
+	background-color:white;
+}
+
+.label_infolist{
+	display:inline-block;
+	width:90px;
+}
+.text_infolist{
+	display:inline-block;
+	padding-left:15px;
+}
+/* button conbini */
+div#choice-conbini label:hover{
+	border:1px solid #9BDEFF;
+}
+
+div#choice-conbini input:checked + label {
+	border-color:#B4CDE5;	
+}
+
+label#label_lawson {
+	background:url(images/convenience_online_logo/logo_lawson.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#label_lawson {
+	background:url(images/convenience_online_logo/logo_lawson_over.gif);
+}
+
+label#lable_circleK {
+	background:url(images/convenience_online_logo/logo_circleK.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#lable_circleK {
+	background:url(images/convenience_online_logo/logo_circleK_over.gif);
+}
+
+label#label_threef {
+	background:url(images/convenience_online_logo/logo_threef.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#label_threef {
+	background:url(images/convenience_online_logo/logo_threef_over.gif);
+}
+
+label#label_dailyyamazaki {
+	background:url(images/convenience_online_logo/logo_dailyyamazaki.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#label_dailyyamazaki {
+	background:url(images/convenience_online_logo/logo_dailyyamazaki_over.gif);
+}
+
+label#label_familymart {
+	background:url(images/convenience_online_logo/logo_familymart.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#label_familymart {
+	background:url(images/convenience_online_logo/logo_familymart_over.gif);
+}
+
+label#label_ministop {
+	background:url(images/convenience_online_logo/logo_ministop.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#label_ministop {
+	background:url(images/convenience_online_logo/logo_ministop_over.gif);
+	width:70px;
+	height:70px;
+}
+
+input:checked + label#label_seicomart {
+	background:url(images/convenience_online_logo/logo_seicomart_over.gif);
+}
+label#label_seicomart {
+	background:url(images/convenience_online_logo/logo_seicomart.gif);
+	width:70px;
+	height:70px;
+}
+
+label#label_seven {
+	background:url(images/convenience_online_logo/logo_seven.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#label_seven {
+	background:url(images/convenience_online_logo/logo_seven_over.gif);
+}
+
+label#label_yamazakidaily {
+	background:url(images/convenience_online_logo/logo_yamazakidailysore.gif);
+	width:70px;
+	height:70px;
+}
+input:checked + label#label_yamazakidaily {
+	background:url(images/convenience_online_logo/logo_yamazakidailysore_over.gif);
+}

@@ -1,0 +1,194 @@
+<?php
+//require_once 'include/header.php';
+//$redirection='/event/map/mob.php?p=tokyo';
+
+require_once '../../include/header.php';
+require_once '../../include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+$header_obj->mobileredirect=$redirection;
+$header_obj->title_page='東京オフィス 新宿本店のご案内';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法を発信しています。ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。ワーホリなら日本ワーキングホリデー協会';
+$header_obj->keywords_page='新宿,オフィス,東京,海外,留学,ワーホリ,セミナー会場,日本ワーキングホリデー協会,ワーホリ協会';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="/images/mainimg/access-mainimg.gif" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '日本ワーキング・ホリデー協会東京オフィス新宿本店へは新宿駅から徒歩１分！初心者セミナーでは最新情報と正しい知識をみにつけることができます。';
+
+$header_obj->display_header();
+include('../../calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('access'); ?>
+	  <h2 class="sec-title">アクセス</h2>
+
+	  <div class="table-base" style="margin-bottom:20px;">
+	    <h3 class="table-base-title" style="font-size:18pt;" id="tokyo-office">東京オフィス　新宿本店</h3>
+	    <table>
+		  <tr>
+		    <th>住所</th>
+			<td>東京セミナー会場：東京オフィス新宿本店にて催行されます。<br/>
+				〒160-0023 東京都新宿区西新宿1-3-3 品川ステーションビル新宿5階507</td>
+		  </tr>
+		  <tr>
+		    <th>新宿オフィス周辺地図<img src="../../images/office/tokyo/gaiken.jpg" style="padding:10px;" alt="ワーキングホリデー東京オフィス　新宿本店　ビル外見写真"></th>
+			<td>
+<?php if($header_obj->mobilepage) { ?>
+	<iframe width="85%" height="200" style="overflow:hidden; border:none; margin:0;" src="http://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF1-3-3&amp;mrt=loc&amp;sll=35.692777,139.699024&amp;sspn=0.001686,0.001985&amp;gl=jp&amp;brcurrent=3,0x60188cd14ca8d159:0x98dab29c15d4a656,0&amp;ttype=dep&amp;date=10%2F12%2F27&amp;time=14:33&amp;noexp=0&amp;noal=0&amp;sort=time&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93&amp;start=0&amp;ll=35.693169,139.698801&amp;spn=0.017427,0.028281&amp;z=15&amp;iwloc=B&amp;output=embed"></iframe><br /><small><a href="http://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF1-3-3&amp;mrt=loc&amp;sll=35.692777,139.699024&amp;sspn=0.001686,0.001985&amp;gl=jp&amp;brcurrent=3,0x60188cd14ca8d159:0x98dab29c15d4a656,0&amp;ttype=dep&amp;date=10%2F12%2F27&amp;time=14:33&amp;noexp=0&amp;noal=0&amp;sort=time&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93&amp;start=0&amp;ll=35.693169,139.698801&amp;spn=0.017427,0.028281&amp;z=15&amp;iwloc=A" target="_blank" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+<?php } else {	?>
+	<iframe width="450" height="220" style="overflow:hidden; border:none; margin:0;" src="http://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF1-3-3&amp;mrt=loc&amp;sll=35.692777,139.699024&amp;sspn=0.001686,0.001985&amp;gl=jp&amp;brcurrent=3,0x60188cd14ca8d159:0x98dab29c15d4a656,0&amp;ttype=dep&amp;date=10%2F12%2F27&amp;time=14:33&amp;noexp=0&amp;noal=0&amp;sort=time&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93&amp;start=0&amp;ll=35.693169,139.698801&amp;spn=0.017427,0.028281&amp;z=15&amp;iwloc=B&amp;output=embed"></iframe><br /><small><a href="http://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF1-3-3&amp;mrt=loc&amp;sll=35.692777,139.699024&amp;sspn=0.001686,0.001985&amp;gl=jp&amp;brcurrent=3,0x60188cd14ca8d159:0x98dab29c15d4a656,0&amp;ttype=dep&amp;date=10%2F12%2F27&amp;time=14:33&amp;noexp=0&amp;noal=0&amp;sort=time&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93&amp;start=0&amp;ll=35.693169,139.698801&amp;spn=0.017427,0.028281&amp;z=15&amp;iwloc=A" target="_blank" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+<?php } ?>
+			</td>
+		  </tr>
+		  <tr>
+		    <th>アクセス方法</th>
+			<td>【JR新宿駅西口B16から徒歩1分！】<br/>
+			JR新宿西口のB16出口/大江戸線新宿西口駅を出てまっすぐ行くと「パチンコジャンボ新宿」がございます。ワーキングホリデー（ワーホリ）協会新宿オフィスは同ビル5階です。<br/>
+			道を渡った斜め向かいには「ユニクロ新宿西口店」があります。初めてのご来店で道に迷った時は新宿に到着後、駅員さんに「ユニクロ新宿西口店」
+			までの行き方をきいて、そこから斜め向かいの「パチンコジャンボ新宿」を見つけると簡単です。<br/>
+			<u><a href="http://www.jawhm.or.jp/blog/tokyoblog/item/496" target="_blank">より詳細なアクセス方法はこちらを参照下さい。</a></u><br/>
+			<img src="../../images/office/tokyo/gaiken2.jpg" style="padding:10px;" alt="ワーキングホリデー東京オフィス　新宿本店　ビル外見写真"><br/>
+
+			【初めて新宿にお越しの方へ】<br/>
+			新宿は、新宿駅西口、新宿駅東口、新宿駅南口と出口が大きく分かれています。新宿駅西口が最寄りですが、その他の出口にバスや電車が到着した場合、
+			西口へはあるいて移動することが可能です。その際の注意点として、新宿駅内を通過することはできません。（改札口を通り抜ける際に切符を買う必要があるため）
+			一度駅の外に出て、新宿駅周辺を回る形で西口まで移動してください。
+			西口に到着後は「ユニクロ新宿西口店」→斜め向かいの「パチンコジャンボ新宿」→同ビル5階→ワーキングホリデー協会新宿本店へご来店ください。<br/><br/>
+<?php if($header_obj->mobilepage) { ?>
+	<iframe width="85%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=d&amp;source=s_d&amp;saddr=%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;daddr=35.692563,139.6994045+to:%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;geocode=FWWbIAIdeaRTCA%3BFROgIAIdzKRTCClzrgYY14wYYDGV085PZ1a_FQ%3BFViiIAIdgaNTCA&amp;aq=1&amp;oq=%E6%96%B0%E5%AE%BF&amp;sll=35.692202,139.699997&amp;sspn=0.003167,0.006174&amp;gl=jp&amp;hl=ja&amp;dirflg=w&amp;brcurrent=3,0x60188cd0c4ab54db:0x88b27fc262fd658a,0&amp;mra=dvme&amp;mrsp=1&amp;sz=18&amp;via=1&amp;ie=UTF8&amp;t=m&amp;ll=35.692202,139.699997&amp;spn=0.003167,0.006174&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.jp/maps?f=d&amp;source=embed&amp;saddr=%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;daddr=35.692563,139.6994045+to:%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;geocode=FWWbIAIdeaRTCA%3BFROgIAIdzKRTCClzrgYY14wYYDGV085PZ1a_FQ%3BFViiIAIdgaNTCA&amp;aq=1&amp;oq=%E6%96%B0%E5%AE%BF&amp;sll=35.692202,139.699997&amp;sspn=0.003167,0.006174&amp;gl=jp&amp;hl=ja&amp;dirflg=w&amp;brcurrent=3,0x60188cd0c4ab54db:0x88b27fc262fd658a,0&amp;mra=dvme&amp;mrsp=1&amp;sz=18&amp;via=1&amp;ie=UTF8&amp;t=m&amp;ll=35.692202,139.699997&amp;spn=0.003167,0.006174" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+<?php } else {	?>
+	<iframe width="425" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?f=d&amp;source=s_d&amp;saddr=%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;daddr=35.692563,139.6994045+to:%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;geocode=FWWbIAIdeaRTCA%3BFROgIAIdzKRTCClzrgYY14wYYDGV085PZ1a_FQ%3BFViiIAIdgaNTCA&amp;aq=1&amp;oq=%E6%96%B0%E5%AE%BF&amp;sll=35.692202,139.699997&amp;sspn=0.003167,0.006174&amp;gl=jp&amp;hl=ja&amp;dirflg=w&amp;brcurrent=3,0x60188cd0c4ab54db:0x88b27fc262fd658a,0&amp;mra=dvme&amp;mrsp=1&amp;sz=18&amp;via=1&amp;ie=UTF8&amp;t=m&amp;ll=35.692202,139.699997&amp;spn=0.003167,0.006174&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.jp/maps?f=d&amp;source=embed&amp;saddr=%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;daddr=35.692563,139.6994045+to:%E6%8C%87%E5%AE%9A%E3%81%AE%E5%9C%B0%E7%82%B9&amp;geocode=FWWbIAIdeaRTCA%3BFROgIAIdzKRTCClzrgYY14wYYDGV085PZ1a_FQ%3BFViiIAIdgaNTCA&amp;aq=1&amp;oq=%E6%96%B0%E5%AE%BF&amp;sll=35.692202,139.699997&amp;sspn=0.003167,0.006174&amp;gl=jp&amp;hl=ja&amp;dirflg=w&amp;brcurrent=3,0x60188cd0c4ab54db:0x88b27fc262fd658a,0&amp;mra=dvme&amp;mrsp=1&amp;sz=18&amp;via=1&amp;ie=UTF8&amp;t=m&amp;ll=35.692202,139.699997&amp;spn=0.003167,0.006174" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+<?php } ?>
+
+			【新宿周辺の宿泊について】<br/>
+			新宿にはホテルやビジネスホテルがたくさんございますがご宿泊予定日の2日前には満室になることが多く、特に週末に宿泊される場合
+			には注意が必要です。（1週間前の予約をお勧めしております。）ワーキングホリデー（ワーホリ）協会新宿本店のワーキングホリデー（ワーホリ）セミナーには、東京観光も兼ねてお越しいただく方も多いです。<BR/>
+			新宿は初めてでちょっと不安。。。というお客様にはスタッフお勧めの新宿周辺のホテルをご紹介します。メールにてお問い合わせください。
+			（宿泊のご予約はお客様ご自身にてお願いします。）			
+			</td>
+		  </tr>
+		  <tr>
+		    <th>連絡先</th>
+			<td>TEL：03-6304-5858<br/>
+			FAX:03-6745-1562<br/>
+			<a href="http://www.jawhm.or.jp/ja/5274"><small>※お電話でのビザ情報や渡航に関するご質問・ご相談は受け付けておりません。</small></a><br/>
+			渡航先情報・ビザ申請・その他のワーキングホリデー相談はメール ( info@jawhm.or.jp ) にてお願い致します。（メンバー様優先）</td>
+		  </tr>
+		  <tr>
+		    <th>営業時間</th>
+			<td>OPEN 11:00 - CLOSE 19:00<br/>
+			新宿のオフィスは土日、祝日も営業いたします！<br/>
+			※ご注意　個別でのカウンセリングをご希望の場合は、事前にご予約をお願い致します。<br/>
+			</td>
+		  </tr>
+	  	<tr>
+		    <th>スケジュール</th>
+			<td>新宿本店では、毎日様々な初心者向けワーキングホリデー（ワーホリ）セミナーを開催しております。<br/>
+				新宿本店は、東京にお住まいのお客様はもちろん、千葉県、埼玉県、横浜、栃木県、群馬県にお住まいのお客様にも気軽に参加
+				していただけるよう時間帯や日程を考慮し、回数を増やして開催しております。
+			</td>
+		  </tr>
+<!--
+	  	<tr>
+		    <th>留学カウンセリング</th>
+			<td>
+			しっかりと英語を学びたいお客様向けの留学プランニングもお任せください。セミナー参加後にカウンセリングへご予約いただくことも可能です。<br/>
+			海外留学経験を持つカウンセラーがビザ取得方法や語学学校選び現地の生活安全情報までしっかりサポートいたします。
+			</td>
+		  </tr>
+-->
+	  <!--
+	  	<tr>
+		    <th>出張ワーホリセミナー</th>
+			<td>
+				大学/専門学校を対象に東京オフィス　新宿本店では学生向け出張ワーホリセミナーを催行いたします。<br/>
+				東京オフィス　新宿本店対応地区：<br/>青森県、岩手県、宮城県、秋田県、山形県、福島県、 北海道、島根県、 岡山県、広島県、 山口県、鳥取県<br/><br/>
+				ご相談は ( info@jawhm.or.jp )までお願い致します。法人担当がご回答させていただきます。
+				</td>
+		  </tr>
+-->
+<tr>
+		    <th>新宿本店の雰囲気<img src="../../images/office/tokyo/tennai1.jpg" style="padding:10px;"　alt="ワーキングホリデー東京オフィス　新宿本店　オフィス内写真"></th>
+			<td>新宿本店は白色で統一され今まで以上に開放感溢れる、新宿とは思えないくらいリラックスできる空間になりました。<br/>	
+			オフィス内には放送スタジオを設け最新ワーキングホリデー（ワーホリ）セミナー情報を各地へ配信しております。
+			新宿にオフィスを設けることで、ショッピングや学校の授業前、仕事帰りにご来店いただく方やお友達との待ち合わせ場所としてご利用いただくお客様も
+			目立つようになりました。<br/>新宿は各地からの交通の便もよく、長距離バスでご来店いただき→ワーキングホリデー（ワーホリ）セミナー参加→そのまま日帰りされる方や1泊して東京を観光して帰られる方も
+			多いです。新宿でワーキングホリデー（ワーホリ）セミナーが受けられる便利さを実感していただけます。
+			新宿オフィスは、これから海外へご出発される方と海外からお戻りになられた方々で毎日活気にあふれております！<br/>
+			<a href="/blog/tokyoblog/" target="_blank"><img src="../../images/office/blog_off.gif" style="padding:10px;" alt="ワーキングホリデー協会スタッフブログはこちら"></a><br/>
+			</td>
+		  </tr>
+
+		  <tr>
+		    <th>新宿本店から<img src="../../images/office/tokyo/tennai2.jpg" style="padding:10px;"　alt="ワーキングホリデー東京オフィス　新宿本店　オフィス内写真"></th>
+			<td>【インターン生「由紀ちゃん」からメッセージ】<br/>
+				新宿のオフィスにはほんとうにいろいろな方がご来店されます。わたしは以前シドニーでのワーキングホリデー（ワーホリ）生活経験があるのですが、
+				はじめは緊張しておろおろしているだけで、皆様の質問にしっかりと答えることができませんでした。
+				新宿スタッフの皆様にご迷惑をおかけしながら今では、ワーキングホリデー（ワーホリ）出発前準備セミナーを任されています！				
+				新宿にオフィスがあるという便利さと女性スタッフも多いので女の子一人でも安心して参加できますよ！<br/>
+				新宿にお越しの際には是非ご来店ください。土日、祝日も営業してます！ご来店時には私から声をかけますので、びっくりしないでくださいね。
+			</td>
+		  </tr>
+		</table>
+	  </div><!--table-baseEND-->
+
+		<div class="aiu-link-block">
+			<a target="_blank" href="http://www.aiu.co.jp/travel/studyabroad/index.htm?p=oA41F201">
+				海外行くのに保険は大丈夫ですか？<br/>
+				<img src="/office/btn_hoken.jpg" /><br/>
+				<p style="font-size:9pt;">AIU保険会社のサイトへジャンプします</p>
+			</a>
+		</div>
+		&nbsp;<br/>
+		<div class="cpp-link-block">
+			<a target="_blank" href="http://www.jpcashpassport.jp/cpp/lp/mcgin.html?amid=843">
+				<img src="/office/btn_cpp.jpg" /><br/>
+				お金の新しい持って行き方お教えします
+			</a>
+		</div>
+		&nbsp;<br/>
+
+
+<!-- *********************** ページ下のセミナー一覧 start ************************ -->
+	<h3 class="osusume_seminar_title_list">おススメの無料ワーキングホリデー（ワーホリ）セミナー情報</h3>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = '';
+            $number_to_display = '6';
+			display_horizontal_calendar($country_to_display,$number_to_display);            
+      ?>
+	<span class="bottom_osusume_seminar">★★★　留学・ワーホリの無料セミナー連日開催中！！　気になるセミナーをクリック！！　★★★</span>
+	  <div class="advbox03">
+      
+<?php
+	// 101
+  define('MAX_PATH', '/var/www/vhosts/jawhm.or.jp/httpdocs/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 84, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+</div>
+
+<!-- *********************** ページ下のセミナー一覧 end ************************ -->
+
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

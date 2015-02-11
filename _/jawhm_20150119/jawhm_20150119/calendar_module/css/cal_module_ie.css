@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/********************************************/
+/**********  MODULE VERTICAL ****************/
+/********************************************/
+
+.date {
+	position:relative;
+	width:45px;
+	border: 1px solid #e5e4e4;
+	/*display:inline;*/
+	float:left;  /** ++++ **/
+}
+
+div.event_info_vertical{
+	width:160px;
+	position:relative;
+	/*display:inline;*/
+	white-space:nowrap;
+	vertical-align:top;
+	padding:0 0 0 5px;
+}
+
+
+.time_event {
+	margin-bottom:2px;
+}
+
+div.vertical_title_event {
+	position:relative;
+	display:inline;
+	vertical-align:bottom;
+}
+
+/*list flag */
+div.module_flag_uk, div.module_flag_au, div.module_flag_nz, div.module_flag_fr, div.module_flag_dk, div.module_flag_de, div.module_flag_ca, div.module_flag_wd, div.module_flag_eu{
+	float:left;
+	position:relative;
+	width:16px;
+	height:16px;
+	margin-right:4px;
+	
+}
+div.module_flag_wd {
+	vertical-align:middle;
+	width : 32px;
+	height : 21px;
+	margin-top : -2px;
+}
+
+/* icon */
+div.vertical_icon_broadcast, div.vertical_icon_osusume, div.vertical_icon_new  {
+	position:relative;
+	margin-top:-47px;
+	float:right;
+	right:2px;
+	height:16px;
+	width:16px;
+	z-index:1;
+}
+
+.vertical_icon_new {
+	width:25px;
+}
+
+
+/********************************************/
+/**********  MODULE HORIZONTAL **************/
+/********************************************/
+
+.main_module_content{
+	padding:10px 0px 10px 5px;
+}
+
+.event {
+	float:left; /* + */
+	/*display:inline; /**/
+	height:55px;
+}
+
+.eventhover div {
+	vertical-align:top;
+}
+
+.eventhover {
+	background:url(images/corner.jpg) white bottom right no-repeat;
+	cursor:pointer;
+	border-right:2px solid #e5e4e4;
+	border-top:1px solid #f3f1f1;
+	border-bottom:2px solid #e5e4e4;
+	position:relative;
+	float:left; /* + */
+	/*display:inline;*/
+	width:320px;
+	height:55px;
+}
+
+.date_time {
+	padding-top:6px;
+	float:left; /*  +++ */
+	/*display:inline;*/
+	height:44px;
+	/*padding-top:5px;*/
+	/*background-color:red;
+	border:2px solid red;*/
+}
+
+.event_info {
+	/*display:inline;*/
+	float:left; /*  +++ */
+	
+	width:230px;
+	padding-left:5px;
+}
+
+.icon_broadcast, .icon_new, .icon_osusume {
+	position:absolute;
+	right:0px;
+}
+
+.icon_new {
+	width:25px;
+}

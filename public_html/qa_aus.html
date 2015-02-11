@@ -1,0 +1,143 @@
+<?php
+require_once 'include/header.php';
+require_once 'include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='オーストラリア　ワーキングホリデービザ';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）や留学などの海外生活でよるある質問をまとめました。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/qanda-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = 'オーストラリアワーキングホリデーのよくある質問';
+
+$header_obj->display_header();
+include('calendar_module/mod_event_horizontal.php');
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('qa'); ?>
+	  <h2 class="sec-title">オーストラリア　留学・ワーキングホリデー</h2>
+
+	  <table class="qatable-aus">
+	    <tr>
+		  <th><img src="images/mflag01.gif" alt="" /><br />オーストラリア</th>
+		  <td>ワーキングホリデー協定国別に、よくあるご質問にお答えしています。</td>
+		</tr>
+	  </table>
+      <p>&nbsp;</p>
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'オーストラリア';
+            $number_to_display = '6';
+            $start_display_from = ''; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <h2 class="sec-title">よくある質問と回答</h2>
+      <p>&nbsp;</p>
+	  <div class="qa-abox-country">
+	    <h3 class="q-title">Ｑ１.オーストラリアワーキングホリデービザの申請はどうすればよいですか？　ビザの申請が英語でわかりません。</h3>
+		<p class="text01">インターネットで申請を行わなくてはなりません。</p>
+		<p class="text01">■　オーストラリアワーキングホリデービザ申請に必要なもの</p>
+		<p class="text-ind01">1. 有効期限の6ヶ月以上あるパスポート<br />
+滞在予定期間を満たしていない場合は、ご自身の居住地を管轄するパスポートセンターに相談し、滞在予定期間を満たしたパスポートを取得してからeVisa 申請を行ってください。</p>
+        <p class="text-ind01">2. クレジットカード<br />
+オーストラリアワーキングホリデービザ申請料金はクレジットカード決済のみです。235豪ドルをカードで支払います。およそ1万8000円です。　Visa, MasterCard, American Express, Diners Club International, JCB, Bankcard が使用可能。ご両親名義のカードでも大丈夫です。</p>
+       <p>&nbsp;</p>
+
+       <p class="text01">■　オーストラリアワーキングホリデービザ申請</p>
+		<p class="text-ind01"> オーストラリア大使館ホームページhttp://www.dima.australia.or.jp/wh/から、ビザの申請をクリックして進んでください。<p>
+        <p class="text01m30">
+速い人は10分でビザが取得完了したメールが届きます。　不備があったり足りない資料を請求されると１か月たっても来ない人もいます。　ネットで真似して申請する人も多いですが、その後ビザ発給メールが来ないと日本ワーキングホリデー協会に問い合わせをされる方も非常に多いです。　ビザの申請を失敗してから問い合わせされる方にもサポートを行っていますが、時間とお金はかかります。　しかし国から滞在許可を貰うのがビザですので真似して取れるよという風説に惑わされず覚悟して申請を行ってください。
+
+</p>
+	  </div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ２.オーストラリアワーキングホリデーのセカンドワーキングホリデービザについて教えてください。</h3>
+		<p class="text01m30">2005年からファーストワーキングホリデービザの滞在中に、3ヵ月以上田舎で（〒によって指定されています。）の季節労働に従事した者に対して2年目のワーキング・ホリデービザを申請することができます。
+一度帰国してから3年後5年後にもう一度ワーキングホリデービザの申請をして渡航することもできますし、
+もしくはオーストラリアワーキングホリデービザの1年目が終わる前に2年目のワーキングホリデービザの申請をして延長をするようにそのままセカンドワーキングホリデービザで滞在することも出来ます。
+	  </p>
+		</div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ３.現地でワーキングホリデービザから他のビザで滞在を延長することは出来ますか？</h3>
+		<p class="text01m30">オーストラリアワーキングホリデービザ滞在中に他のビザに変更して滞在を延長することができます。　ワーキングホリデービザからですと学生ビザへの切り替えができます。学生ビザは学校に通う間プラスアルファ滞在が可能になり、学校に通うことが条件になります。専門学校など年間学費が3～40万円ほどのところもあるので時給が高いオーストラリアでは自分で働いて学費も生活費も稼ぐことも可能になるでしょう。
+
+<br />
+	    </p>
+		</div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ４.オーストラリアでワーキングホリデーは仕事がすぐ見つかりますか？</h3>
+		<p class="text01m30">オーストラリアですとシドニーではすぐに見つかります。<br />
+	    シドニーは最大の経済都市であり観光都市であるので、日本語で働く需要が高いです。
+現地サポートエージェントの掲示板やネット、日本語新聞では毎日200件以上の仕事がアップされます。毎日なので選ばなければ仕事があると言われるのがシドニーです。
+　また語学学校の先生の紹介やホームステイの友達の紹介という人づても大変多いので語学学校や職場ではなるべく多くの友達を作りましょう。
+</p>
+		</div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ５.ファームの仕事は大変ですか？</h3>
+		<p class="text01m30">クィーンズランド州のバンダバーグはファームの仕事で有名ですが、天候に左右されるのが農場の仕事になるのでその場に行ったからと言ってすぐに仕事に就けるわけではありません。　仕事自体には英語も必要ないように思われていますが、実際には世界各国から来たワーキングホリデーのヨーロッパ人のほうが英語でアピールしたりできるので仕事が多くもらえてるようです。　ファームタウンのバックパッカーズでの滞在やファーム隣接の小屋での滞在もあるのでたくましくなるでしょう　。1年で３，４毛作も出来て２６０％と言われる食糧率は人手が足りないのでこのようなワーキングホリデーを利用した制度ができています。
+<br>
+炎天下のなか地平線までトマトやブロッコリーを採るのは慣れるまでは体力との勝負です。日焼け対策はしっかりとしてください。　メロンやブロッコリーなど腰を曲げる仕事は結構辛いですよ。しかし時給が高いのでがんばれると思います。　女性は比較的　建屋の中の仕事が選ばれます。　日本の選果場のように集められたプラムの中から小さいのを選んだり缶詰を詰めたりという仕事です。
+仕事はいつでも情熱を注いで取り組んでください。
+</p>
+		</div>
+		<div class="qa-abox-country">
+		<h3 class="q-title">Ｑ６.1年間で、英語はどこまで上達しますか？</h3>
+		<p class="text01m30">まったくしゃべれない人が１年間で外資系に勤めるまでになった人もいます。　英語に限らず言語はまずはリスニングができないと相手が言ってることが分かりません。
+リスニングは実は聞くよりもしゃべる方が伸びます！！　最初の４カ月でどれだけ多く英語でしゃべるかがどれだけ早くリスニングが速くできるようになるかにつながります。<br/>
+次の４カ月で単語や文法をどんどん増やし、最後の４カ月でビジネスのレベルに英語力を持って行きます。
+１年でTOEIC８５０点や英語検定の最高峰ケンブリッジの英検に合格するワーキングホリデーもいます。
+
+<br/>
+オーストラリアは英語の訛りがあるから訛った英語になるのが不安とよく聞かれます。　しかし
+日本の義務教育で英語の勉強をした人はすでに強いジャパニーズイングリッシュの訛りが身についていて
+それをなくすことは１～３年では無理です。
+　オーストラリアだけでなくイギリス、スコットランド、アイルランド、カナダ、ニュージーランド、アメリカ、も訛りがありますがその聞きわけさえ３年の海外滞在では難しいでしょう。
+<br />
+逆に「あなたの英語はオーストラリア訛りね」って言われる日本人はいない　というほど難しいと思っていてください
+日本人はネイティブ発音を夢見ますが　いま世界ではインド英語も韓国訛り英語もビジネスで使われています。
+それがわからなければビジネスの場では使えません。それが世界英語です。
+
+<br />
+
+</p>
+		<div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+	  </div>
+	  
+      <?php 
+            //settings for the calendar module display
+            $country_to_display = 'オーストラリア';
+            $number_to_display = '6';
+            $start_display_from = '6'; //empty is begining
+            
+			display_horizontal_calendar($country_to_display,$number_to_display,$start_display_from);            
+      ?>
+	  <div class="advbox03">
+<?php
+	// 122
+  define('MAX_PATH', '/var/www/html/ad');
+  if (@include_once(MAX_PATH . '/www/delivery/alocal.php')) {
+    if (!isset($phpAds_context)) {
+      $phpAds_context = array();
+    }
+    // function view_local($what, $zoneid=0, $campaignid=0, $bannerid=0, $target='', $source='', $withtext='', $context='', $charset='')
+    $phpAds_raw = view_local('', 100, 0, 0, '', '', '0', $phpAds_context, '');
+  }
+  echo $phpAds_raw['html'];
+?>
+	  </div>
+
+<?php $links_obj->display_links(); ?>
+
+	</div>
+  </div>
+  </div>
+</div>
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

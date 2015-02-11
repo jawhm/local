@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>ゼウステスト</title>
+</head>
+
+<body>
+
+<hr/>
+
+<h1>ＺＥＵＳマニュアル決済</h1>
+<form method="post" action="https://linkpt.cardservice.co.jp/cgi-bin/order.cgi?orders" enctype="x-www.form-encoded" target="_blank">
+<input type="hidden" name="send" value="mail">
+<input type="hidden" name="clientip" value="2014000153">
+決済額：<input type="text" name="money" value="5000">
+<input type="hidden" name="custom" value="yes">
+<input type="hidden" name="usrtel" value="03-6304-5858">
+<input type="hidden" name="usrmail" value="masaki@tora-tora.net">
+<input type="hidden" name="usrname" value="">
+<input type="hidden" name="sendid" value="manual">
+<input type="hidden" name="sendpoint" value="manual">
+<input type="submit" value="決済ページへ">
+</form>
+
+
+<hr/>
+<h1>決済完了テスト</h1>
+<form method="post" action="http://www.jawhm.or.jp/mem/zeus.php" enctype="x-www.form-encoded" target="_blank">
+result :<input type="text" name="result" value="OK"><br/>
+clientip :<input type="text" name="clientip" value="2014000153"><br/>
+ordd :<input type="text" name="ordd" value="TEST-00000-00000"><br/>
+money :<input type="text" name="money" value="5000"><br/>
+telno :<input type="text" name="telno" value="03-1234-5678"><br/>
+email :<input type="text" name="email" value="test@mail.com"><br/>
+sendid :<input type="text" name="sendid" value="JW000001"><br/>
+sendpoint :<input type="text" name="sendpoint" value=""><br/>
+<input type="submit" value="完了テスト">
+</form>
+
+
+
+</body>
+</html>

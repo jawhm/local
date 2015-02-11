@@ -1,0 +1,324 @@
+﻿<?php
+require_once '../include/header.php';
+require_once '../include/links.php';
+
+$links_obj = new Links();
+$header_obj = new Header();
+
+$header_obj->title_page='オーストラリアの学校';
+$header_obj->description_page='オーストラリアの学校。ワーキングホリデー（ワーホリ）や留学で行ける各種語学学校のご案内です。ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../images/mainimg/school-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '留学・ワーキングホリデー　オーストラリアの学校';
+
+
+$header_obj->display_header();
+
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs('school'); ?>
+
+	  <h2 class="sec-title">オーストラリアの学校</h2>
+
+<?php
+
+$scdata = '';
+
+$scdata[] = '
+	<table class="shool-event">
+	<tr>
+		<th>
+			<a href="aus_selc/"><img src="aus_selc/p01.jpg" width="120"></a>
+		</th>
+		<td>
+			<a href="aus_selc/">シドニー・イングリッシュ・ランゲージ・センター(Sydney English Language Centre / SELC)</a><br/>
+		<font color="#333333">
+			セルクは1985年に創立したオーストラリアを代表する老舗の英語学校です。一般英語はもちろんのこと、多彩なコースと豊富なレベルをご用意しています。ワーホリの方向けには接客英語を勉強しながらコーヒー作りのプロを目指すバリスタコースがあります。何ヶ月も前から予約が一杯になる程の人気コースです！
+			またセルクでは、個々の学生たちに勉強法や生活アドバイスなどといったきめ細かいサポートにも定評があります。
+ 		</font>
+
+		</td>
+		<td  class="kuni">
+			<a href="aus.html"><img src="../images/flag01.gif"><br/>Australia</a>
+		</td>
+	</tr>
+	</table>
+';
+
+$scdata[] = '
+	<table class="shool-event">
+	<tr>
+		<th>
+			<a href="aus_browns/"><img src="aus_browns/p01.jpg" width="140"></a>
+		</th>
+		<td>
+			<a href="aus_browns/">ブラウンズ・イングリッシュ・ランゲージ・スクール（BROWNS English Language School / BROWNS）</a><br/>
+		<font color="#333333">
+			BROWNSはRichard BrownとNiesha BrownによるBROWNSファミリーによって経営されている家族経営のアットホームな語学学校です。
+			2003年にゴールドコーストに開校した学校は業務拡張に伴い、2009年には新たにブリスベンキャンパスをオープン。又、2010年にはゴールドコーストにキャンパスを購入し、現在両キャンパスで約500人の学生を受け入れています。
+			全豪2キャンパスにそれぞれ最新設備を導入しており、各キャンパスの全教室に46インチの液晶テレビとパソコンを導入するなど、授業もテクノロジーを使った内容で展開しています。
+			校内はEnglish Onlyとはなりますが、日本人スタッフが両キャンパスに常勤していますので、困ったことがありましたら日本語でのご相談も可能です。
+	 		</font>
+		</td>
+		<td  class="kuni">
+			<a href="aus.html"><img src="../images/flag01.gif"><br/>Australia</a>
+		</td>
+	</tr>
+	</table>
+';
+
+$scdata[] = '
+	<table class="shool-event">
+	<tr>
+		<th>
+			<a href="aus_ilsc/"><img src="aus_ilsc/p01.jpg" width="70"></a>
+		</th>
+		<td>
+			<a href="aus_ilsc/">アイエルエスシー（ILSC-AUSTRALIA / ILSC）</a><br/>
+		<font color="#333333">
+			ILSC-AUSTRALIA は、カナダ、バンクーバーに本社を持ち世界７都市にキャンパスを展開する大規模教育グループのオーストラリア校として国内にシドニー・ブリスベンの２校を構えています。全ての授業は選択制で、質の高い教師ときめ細かな学生サポートで、短期から長期までそれぞれに合った留学をアレンジすることが可能です。 
+  		</font>
+
+		</td>
+		<td  class="kuni">
+			<a href="aus.html"><img src="../images/flag01.gif"><br/>Australia</a>
+		</td>
+	</tr>
+	</table>
+';
+
+$scdata[] = '
+	<table class="shool-event">
+	<tr>
+		<th>
+			<a href="aus_viva/"><img src="aus_viva/p01.jpg" width="120"></a>
+		</th>
+		<td>
+			<a href="aus_viva/">ビバ・カレッジ（Viva College / Viva）</a><br/>
+		<font color="#333333">
+			質の高い授業およびケアーの行き届い学校として知られているブリスベンにあるViva Collegeは1993 年に留学生の為の英語コースを提供する学校としてスタートし、後にビジネスコースおよび英語教師訓 練コースを設置しました。人気のコースは会話集中コースのSmart Talk、苦手なスキルを伸ばし全体 的な英語レベルを向上させるFocus English、就職後に役立つビジネスコースです。中規模の学校だ から成せる、留学生それぞれが求めるサポートを提供しています。  
+		</font>
+		</td>
+		<td  class="kuni">
+			<a href="aus.html"><img src="../images/flag01.gif"><br/>Australia</a>
+		</td>
+	</tr>
+	</table>
+';
+
+
+$scdata[] = '
+	<table class="shool-event">
+	<tr>
+		<th>
+			<a href="aus_ilsc/"><img src="aus_holmes/p01.jpg" width="60px"></a>
+		</th>
+		<td>
+			<a href="aus_holmes/">ホルムズインスカレッジ（Holmes Colleges / Holmes）</a><br/>
+		<font color="#333333">
+		ホルムズインスカレッジは１９６３年の創立以来、優れたオーストラリアの教育を基準に一般英語コース、ビジネスコースを展開している世界的に評判の高い学校です。  
+	 	</font>
+
+		</td>
+		<td  class="kuni">
+			<a href="aus.html"><img src="../images/flag01.gif"><br/>Australia</a>
+		</td>
+	</tr>
+	</table>
+';
+
+
+
+$scdata[] = '
+	<table class="shool-event">
+	<tr>
+		<th>
+			<a href="aus_inforum/"><img src="aus_inforum/p01.jpg" width="130"></a>
+		</th>
+		<td>
+			<a href="aus_inforum/">インフォーラム・エデュケーション・オーストラリア（Inforum Education Australia / Inforum）</a><br/>
+		<font color="#333333">
+		世界中の語学学校が巨大化、チェーン校化する中、全校生徒120人以下、チェーン校無しのアットホームな質重視のブティック学校。 実際通った生徒たちのアンケートを基に受賞が決まる2010~11年日本ベストスクール賞で総合世界6位にランクインしその質の高さも実証済み。 サイモン校長のオフィスは勉強や日常生活の相談だけでなく、普通に話にに来る生徒たちでにぎわっている。校長の生徒に対する姿勢が全てのスタッフに反映し、どのスタッフも本当に生徒思いで、フレンドリー。 
+ 		</font>
+		</td>
+		<td  class="kuni">
+			<a href="aus.html"><img src="../images/flag01.gif"><br/>Australia</a>
+		</td>
+	</tr>
+	</table>
+';
+
+$scdata[] = '
+	<table class="shool-event">
+	<tr>
+		<th>
+			<a href="aus_lets/"><img src="aus_lets/p01.jpg"></a>
+		</th>
+		<td>
+			<a href="aus_lets/">レッツ　（ＬＥＴＳ）</a><br/>
+		<font color="#333333">
+			いわずと知れた初J-Shine海外認定校！講師、コース、卒業生の質の高さには定評があります。場所はタウンホール駅から徒歩２分の所にあります。学校の回りには、人気のあるカップケーキ屋さんやカフェなどがあり、放課後や休み時間などに友達とカフェで一息なんてことも出来ます。日本人のスタッフが常駐しているので、英語でも日本語でも気軽に相談出来ます。学校内でWiFiも利用出来ます。
+ 		</font>
+
+		</td>
+		<td  class="kuni">
+			<a href="aus.html"><img src="../images/flag01.gif"><br/>Australia</a>
+		</td>
+	</tr>
+	</table>
+';
+
+$scdata[] = '
+	<table class="shool-event">
+	<tr>
+		<th>
+			<a href="aus_stepone/"><img src="aus_stepone/p01.jpg" width="80"></a>
+		</th>
+		<td>
+			<a href="aus_stepone/">ステップワンカレッジ　（Ｓｔｅｐ　Ｏｎｅ　Ｃｏｌｌｅｇｅ）</a><br/>
+		<font color="#333333">
+			LETSの姉妹校であるStep One College！オーストラリアで唯一の政府認定のカランメソッドコースが受講出来るのはStep One Collegeだけ！タウンホール駅から徒歩２分。LETSと同じビルに併設されています。ビルの中には大きな図書館も併設されているので静かに勉強できる環境も整っています。
+ 		</font>
+
+		</td>
+		<td  class="kuni">
+			<a href="aus.html"><img src="../images/flag01.gif"><br/>Australia</a>
+		</td>
+	</tr>
+	</table>
+';
+
+$scdata[] = '
+	<table class="shool-event">
+	<tr>
+		<th>
+			<a href="aus_icqa/"><img src="aus_icqa/p01.jpg" width="80"></a>
+		</th>
+		<td>
+			<a href="aus_icqa/">インターナショナルカレッジオブクィーンズランドオーストラリア(International College of Queensland Australia / ICQA)</a><br/>
+		<font color="#333333">
+			インターナショナルカレッジオブクィーンズランドオーストラリア(ICQA)は１９９４年設立のNEAS認定の英語学校。以来、質の高い英語コースときめの細かいケアを提供し、世界中のさまざまな国から学生を受け入れてきた。ワーキングホリデーメーカー向けのプログラムとしては、現在まで１０００名以上の参加実績を誇るボランティアプログラムや、有給のホテルインターンシッププログラムなどを提供し好評を得ている。
+ 		</font>
+
+		</td>
+		<td  class="kuni">
+			<a href="aus.html"><img src="../images/flag01.gif"><br/>Australia</a>
+		</td>
+	</tr>
+	</table>
+';
+
+$scdata[] = '
+	<table class="shool-event">
+	<tr>
+		<th>
+			<a href="aus_ih/"><img src="aus_ih/p01.jpg" width="150"></a>
+		</th>
+		<td>
+			<a href="aus_ih/">インターナショナル・ハウス / シドニー校　（ih Sydney）</a><br/>
+		<font color="#333333">
+			インターナショナルハウスシドニーは、1953年設立以来の実績と50カ 国に及ぶ世界最大のネットワークを誇るインターナショナルハウスワールドオーガニゼーションのメンバー校に属する、シドニー校です。オーストラリア政府お よび、ケンブリッジ大学の認定を受けた英語教師育成訓練専門校でもあります。これまで、オーストラリアをはじめ世界各国に毎年たくさんの英語教師を送り出 すスクールして　世界中から注目されるようになりました。現在でも地元のオーストラリア人、ネイティブの学生が当校にて指導法を学ばれています。一般英語 コースの他に、少人数の進学クラス、ケンブリッジ英検コース、TESOL/CELTAコース（英語講師育成コース）や、日本語版、英語版の児童英語教授法コース、日本の小学校で英語を教えるJ-SHINEコースもご受講頂けます。
+		</font>
+
+ 		</font>
+
+		</td>
+		<td  class="kuni">
+			<a href="aus.html"><img src="../images/flag01.gif"><br/>Australia</a>
+		</td>
+	</tr>
+	</table>
+';
+
+$scdata[] = '
+	<table class="shool-event">
+	<tr>
+		<th>
+			<a href="aus_impact/"target="_top"><img src="aus_impact/p01.jpg" width="120"></a>
+		</th>
+		<td>
+			<a href="aus_impact/" target="_top">インパクト・イングリッシュ・カレッジ（Impact English College / Impact）</a><br/>
+		<font color="#333333">
+		「生徒のための英語学校」というポリシーを掲げているインパクト・イングリッシュ・カレッジは、生徒を最優先に考えた上での様々なサービスや施設、学習環境を提供しています。教師やスタッフは「留学生がもっとも効果的に英語力を上達できる方法」を念頭に指導にあたっており、校内はイングリッシュオンリーが徹底されているます。日本人スタッフが個別のカウンセリングで対応してくれるサポート体制も人気の理由です。
+ 		</font>
+
+		</td>
+		<td  class="kuni">
+			<a href="aus.html" target="_top"><img src="../images/flag01.gif"><br/>Australia</a>
+		</td>
+	</tr>
+	</table>
+';
+
+$scdata[] = '
+	<table class="shool-event">
+	<tr>
+		<th>
+			<a href="aus_navitas/"target="_top"><img src="aus_navitas/p01.jpg" width="120"></a>
+		</th>
+		<td>
+			<a href="aus_navitas/" target="_top">ナビタス・イングリッシュ（Navitas English / Navitas）</a><br/>
+		<font color="#333333">
+			Navitas Englishは、1981年創立のオーストラリアで最も歴史ある英語学校です。オーストラリアの主要都市にキャンパスがあり、転校も可能です。また国籍バランス、豊富な英語コース、講師の高い質、進学提携校数の多さ、学生サポートにも定評があります。放課後・週末には楽しいアクティビティも提供していて、勉強面でも生活面でも、生徒一人一人しっかりとケアをします。
+ 		</font>
+
+		</td>
+		<td  class="kuni">
+			<a href="aus.html" target="_top"><img src="../images/flag01.gif"><br/>Australia</a>
+		</td>
+	</tr>
+	</table>
+';
+
+	shuffle ($scdata);
+
+	foreach ($scdata as $showdata)	{
+		print $showdata;
+	}
+
+?>
+
+	  <h2 class="sec-title">各国の学校</h2>
+
+	  <div class="mcontent-country-box">
+	    <ul class="country-box-01">
+		  <li class="c-01"><a href="aus.html">オーストラリア</a></li>
+		  <li class="c-02"><a href="kor.html">韓国</a></li>
+		  <li class="c-03"><a href="uk.html">イギリス</a></li>
+		  <li class="c-04"><a href="ywn.html">台湾</a></li>
+		</ul>
+		<ul class="country-box-01">
+		  <li class="c-05"><a href="nz.html">ニュージーランド</a></li>
+		  <li class="c-06"><a href="fra.html">フランス</a></li>
+		  <li class="c-07"><a href="ire.html">アイルランド</a></li>
+		  <li class="c-08"><a href="hkg.html">香港</a></li>
+		</ul>
+		<ul class="country-box-02">
+		  <li class="c-09"><a href="can.html">カナダ</a></li>
+		  <li class="c-10"><a href="deu.html">ドイツ</a></li>
+		  <li class="c-11"><a href="dnk.html">デンマーク</a></li>
+		  <li class="c-12"><a href="worldwide.html">ワールドワイド</a></li>
+
+		</ul>
+	  </div>
+
+	  <div class="top-move">
+	    <p><a href="#header">▲ページのＴＯＰへ</a></p>
+      </div>
+
+<?php $links_obj->display_links(); ?>
+
+      <div class="advbox03">
+	    <p>108</p>
+	  </div>	  
+      <div class="advbox03">
+	    <p>109</p>
+	  </div>	  
+	</div>
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+@import "compass";
+
+//sidebar
+#sidebar{
+    .sidebar-title{
+        color: white;
+        text-align:center;
+        margin-top:40px;
+    }
+}
+
+#main-content{
+    .content-box-content{
+        .judge-param{
+            padding:0;            
+        }
+    }
+
+    .big-header{
+        height:150px;
+
+        .header-form{
+            padding: 50px 0 0 15px;
+
+            .header-item{
+                float:left;
+                margin-right:20px;
+            }
+        }
+    }
+
+    td{
+        .text-input{
+            padding: 6px;
+            font-size: 13px;
+            background: #fff url('/assets/img/bg-form-field.gif') top left repeat-x;
+            border: 1px solid #d5d5d5;
+            color: #333;            
+        }
+    }
+}

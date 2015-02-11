@@ -1,0 +1,46 @@
+<?php
+require_once 'include/header.php';
+
+$header_obj = new Header();
+
+$header_obj->fncFacebookMeta_function=true;
+
+$header_obj->title_page='メンバー登録';
+$header_obj->description_page='ワーキングホリデー（ワーホリ）協定国の最新のビザ取得方法や渡航情報などを発信しています。また、ワーキングホリデー（ワーホリ）をされる方向けの各種無料セミナーを開催しています。オーストラリア、ニュージーランド、カナダ、韓国、フランス、ドイツ、イギリス、アイルランド、デンマーク、台湾、香港でワーキングホリデー（ワーホリ）ビザの取得が可能です。ワーキングホリデー（ワーホリ）ビザ以外に学生ビザでの留学などもお手伝い可能です。';
+
+$geader_obj->add_js_files = '<script type="text/javascript" src="/js/linkboxes.js"></script>';
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="images/mainimg/top-mainimg.jpg" alt="" width="970" height="170" />';
+$header_obj->fncMenuHead_h1text = '一般社団法人 日本ワーキング・ホリデー協会';
+
+$header_obj->display_header();
+
+?>
+	<div id="maincontent">
+	  <?php echo $header_obj->breadcrumbs(); ?>
+	  <h2 class="sec-title">帰国者登録情報</h2>
+	  <ul class="list-number">
+	  <li>国別ガイダンス（国によりウェブ中継あり）</li>
+	  <li>個人カウンセリング★ビザ申請サポート含む（一部の国を除く）</li>
+	  <li>マイページからのQ＆A</li>
+	  <li>専用ブログ使用</li>
+	  <li>サロン利用</li>
+	  <li>語学学校紹介</li>
+	  <li>語学講座</li>
+	  <li>JAWHMカード（VISA カー</li>
+	  <li>グローバルマネー（前払い式 VISAカード）</li>
+	  <li>ユースホステル会員証発行</li>
+	  <li>帰国後就職サポート</li>
+	  <li>来日外国人ワーキング・ホリデー青年との交流会</li>
+	  <li>メンバー特典一覧</li>
+	  </ul>
+	  <h3 class="h3-01"> 1. 国別ガイダンス（国によりウェブ中継あり） </h3>
+	
+	</div>
+	
+  </div>
+  </div>
+
+<?php fncMenuFooter($header_obj->footer_type); ?>
+
+</body>
+</html>
