@@ -25,9 +25,11 @@ switch ($data_param) {
                                     success: function(msg){
                                             jQuery("#processing").hide();
                                             jQuery("#res_mailtemp_edit").html(msg);
-                                            fncShow(\'div_mailtemp_edit\', 650, 600);
-                                            jQuery(".blockPage").css({"width":"800px", "left":"515px"});
-                                            jQuery("#edit_text5").trigger("change");
+                                            fncShow(\'div_mailtemp_edit\', 800, 600);
+                                            if (fl_trigger==true){
+                                                jQuery("#edit_text5").trigger("change");
+                                                fl_trigger = false;
+                                            }
                                     },
                                     error:function(){
                                             jQuery("#processing").hide();
@@ -54,64 +56,80 @@ switch ($data_param) {
                                 });
 			}
                         
-                        function fncLoad(obj){
-                            var area = jQuery(obj).val();
-                            jQuery.ajax({
-                                type: "POST",
-                                url: "' . $url_base . 'data/mailtempsign/load",
-                                data: "area=" + area,
-                                success: function(msg){
-                                    res = jQuery.parseJSON(msg);
-                                    if (res.msg == "EMPTY"){
-                                        jQuery("#edit_keycd").val("create");
-                                        jQuery("#form_mailtemp_edit").find("input[type=text], textarea").val("");
-                                        jQuery("#edit_text1").focus();
-                                    }else{
-                                        jQuery("#edit_keycd").val(res.msg.id);
-                                        jQuery("#edit_text1").val(res.msg.text1);
-                                        jQuery("#edit_text3").val(res.msg.text3);
-                                        jQuery("#edit_text4").val(res.msg.text4);
-                                    }
-                                }
-                            });
+                        var cur_area = "";
+                        function fncSelect(obj){
+                            cur_area = jQuery(obj).val();
                         }
                         
+                        function fncLoad(obj){
+                            var cnfm = true;
+                            var area = jQuery(obj).val();
+                            if (fl_trigger != true){
+                                cnfm = confirm("所属エリアを変更すると\n編集内容が破棄されますがよろしいですか?");
+                            }
+                            //
+                            if (cnfm == true){
+                                jQuery.ajax({
+                                    type: "POST",
+                                    url: "' . $url_base . 'data/mailtempsign/load",
+                                    data: "area=" + area,
+                                    success: function(msg){
+                                        res = jQuery.parseJSON(msg);
+                                        if (res.msg == "EMPTY"){
+                                            jQuery("#edit_keycd").val("create");
+                                            jQuery("#form_mailtemp_edit").find("input[type=text], textarea").val("");
+                                            jQuery("#edit_text1").focus();
+                                        }else{
+                                            jQuery("#edit_keycd").val(res.msg.id);
+                                            jQuery("#edit_text1").val(res.msg.text1);
+                                            jQuery("#edit_text3").val(res.msg.text3);
+                                            jQuery("#edit_text4").val(res.msg.text4);
+                                        }
+                                    }
+                                });
+                            }else{
+                                jQuery("#edit_text5").val(cur_area);
+                            }
+                        }
+
 			// 入力チェック
                         function fncPost(formname){
-                            jQuery("#" + formname).validate({
-                                rules: {
-                                    edit_text1: "required",
-                                    edit_text3: "required",
-                                },
-                                messages: {
-                                    edit_text1: "署名テンプレート名を入力してください",
-                                    edit_text3: "署名を入力してください",
-                                },
-                                submitHandler: function(){
+                            //jQuery("#" + formname).validate({
+                                //rules: {
+                                //    edit_text1: "required",
+                                //    edit_text3: "required",
+                                //},
+                                //messages: {
+                                //    edit_text1: "署名テンプレート名を入力してください",
+                                //    edit_text3: "署名を入力してください",
+                                //},
+                                //submitHandler: function(){
                                     document.getElementById("mailtempsubmit").value = "Wait";
                                     document.getElementById("mailtempsubmit").disabled = true;
                                     jQuery("#processing").show();
                                     jQuery.ajax({
-                                            type: "POST",
-                                            url: "' . $url_base . 'data/mailtempsign/edit",
-                                            data: jQuery("#" + formname).serialize(),
-                                            success: function(msg){
-                                                    jQuery("#processing").hide();
-                                                    res = eval(msg);
-                                                    alert(res[0].msg);
-                                                    if (res[0].result == \'OK\')	{
-                                                            jQuery.unblockUI();
-                                                            window.location.reload();
-                                                    }
-                                            },
-                                            error:function(){
-                                                    jQuery("#processing").hide();
-                                                    alert("通信エラーが発生しました。");
+                                        type: "POST",
+                                        url: "' . $url_base . 'data/mailtempsign/edit",
+                                        data: jQuery("#" + formname).serialize(),
+                                        success: function(msg){
+                                            jQuery("#processing").hide();
+                                            res = eval(msg);
+                                            alert(res[0].msg);
+                                            if (res[0].result == \'OK\')	{
+                                                    jQuery.unblockUI();
+                                                    window.location.reload();
                                             }
+                                            //
+                                            fl_trigger = true;
+                                        },
+                                        error:function(){
+                                                jQuery("#processing").hide();
+                                                alert("通信エラーが発生しました。");
+                                        }
                                     });
-                                    return false;
-                                }
-                            });
+                                    //return false;
+                                //}
+                            //});
 			}
                         
                         // テストメール送信
@@ -235,14 +253,14 @@ switch ($data_param) {
                     <input type="hidden" id="edit_keycd" name="edit_keycd" value="' . $cur_keycd . '">
                     <table style="font-size:10pt;">
                         <tr>
+                            <td class="label">所属エリア</td>
+                            <td class="infield">' . dropdown_list('edit_text5', $cur_text5, $list_area, array('onchange' => 'fncLoad(this)', 'onclick' => 'fncSelect(this)')) . '</td>
+                            <td>設定するエリアを選択してください</td>
+                        </tr>
+                        <tr>
                             <td class="label" width="120">署名テンプレート名</td>
                             <td class="infield" width="500">' . field_text('edit_text1', 50, $cur_text1) . '</td>
                             <td>テンプレート名を入力してください</td>
-                        </tr>
-                        <tr>
-                            <td class="label">所属エリア</td>
-                            <td class="infield">' . dropdown_list('edit_text5', $cur_text5, $list_area, array('onchange' => 'fncLoad(this)')) . '</td>
-                            <td>設定するエリアを選択してください</td>
                         </tr>
                         <tr>
                             <td class="label">署名</td>

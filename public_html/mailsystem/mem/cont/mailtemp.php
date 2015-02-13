@@ -25,8 +25,7 @@ switch ($data_param) {
                                 success: function(msg){
                                     jQuery("#processing").hide();
                                     jQuery("#res_mailtemp_edit").html(msg);
-                                    fncShow(\'div_mailtemp_edit\', 650, 600);
-                                    jQuery(".blockPage").css({"width":"950px", "left":"450px"});
+                                    fncShow(\'div_mailtemp_edit\', 950, 600);
                                 },
                                 error:function(){
                                     jQuery("#processing").hide();
@@ -55,42 +54,42 @@ switch ($data_param) {
                         
 			// 入力チェック
 			function fncPost(formname){
-                            jQuery("#" + formname).validate({
-                                rules: {
-                                    edit_text1: "required",
-                                    edit_text2: "required",
-                                    edit_text3: "required",
-                                },
-                                messages: {
-                                    edit_text1: "テンプレート名を入力してください",
-                                    edit_text2: "メールの件名を入力してください",
-                                    edit_text3: "メールの本文を入力してください",
-                                },
-                                submitHandler: function(){
+                            //jQuery("#" + formname).validate({
+                                //rules: {
+                                //    edit_text1: "required",
+                                //    edit_text2: "required",
+                                //    edit_text3: "required",
+                                //},
+                                //messages: {
+                                //    edit_text1: "テンプレート名を入力してください",
+                                //    edit_text2: "メールの件名を入力してください",
+                                //    edit_text3: "メールの本文を入力してください",
+                                //},
+                                //submitHandler: function(){
                                     document.getElementById("mailtempsubmit").value = "Wait";
                                     document.getElementById("mailtempsubmit").disabled = true;
                                     jQuery("#processing").show();
                                     jQuery.ajax({
-                                            type: "POST",
-                                            url: "' . $url_base . 'data/mailtemp/edit",
-                                            data: jQuery("#" + formname).serialize(),
-                                            success: function(msg){
-                                                    jQuery("#processing").hide();
-                                                    res = eval(msg);
-                                                    alert(res[0].msg);
-                                                    if (res[0].result == \'OK\')	{
-                                                            jQuery.unblockUI();
-                                                            window.location.reload();
-                                                    }
-                                            },
-                                            error:function(){
-                                                    jQuery("#processing").hide();
-                                                    alert("通信エラーが発生しました。");
-                                            }
+                                        type: "POST",
+                                        url: "' . $url_base . 'data/mailtemp/edit",
+                                        data: jQuery("#" + formname).serialize(),
+                                        success: function(msg){
+                                                jQuery("#processing").hide();
+                                                res = eval(msg);
+                                                alert(res[0].msg);
+                                                if (res[0].result == \'OK\')	{
+                                                        jQuery.unblockUI();
+                                                        window.location.reload();
+                                                }
+                                        },
+                                        error:function(){
+                                                jQuery("#processing").hide();
+                                                alert("通信エラーが発生しました。");
+                                        }
                                     });
                                     return false;
-                                }
-                            });
+                                //}
+                            //});
 			}
 
                         // テストメール送信
