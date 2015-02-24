@@ -54,42 +54,55 @@ switch ($data_param) {
                         
 			// 入力チェック
 			function fncPost(formname){
-                            //jQuery("#" + formname).validate({
-                                //rules: {
-                                //    edit_text1: "required",
-                                //    edit_text2: "required",
-                                //    edit_text3: "required",
-                                //},
-                                //messages: {
-                                //    edit_text1: "テンプレート名を入力してください",
-                                //    edit_text2: "メールの件名を入力してください",
-                                //    edit_text3: "メールの本文を入力してください",
-                                //},
-                                //submitHandler: function(){
-                                    document.getElementById("mailtempsubmit").value = "Wait";
-                                    document.getElementById("mailtempsubmit").disabled = true;
-                                    jQuery("#processing").show();
-                                    jQuery.ajax({
-                                        type: "POST",
-                                        url: "' . $url_base . 'data/mailtemp/edit",
-                                        data: jQuery("#" + formname).serialize(),
-                                        success: function(msg){
-                                                jQuery("#processing").hide();
-                                                res = eval(msg);
-                                                alert(res[0].msg);
-                                                if (res[0].result == \'OK\')	{
-                                                        jQuery.unblockUI();
-                                                        window.location.reload();
-                                                }
-                                        },
-                                        error:function(){
-                                                jQuery("#processing").hide();
-                                                alert("通信エラーが発生しました。");
+                            jQuery("#" + formname).validate({
+                                rules: {
+                                    edit_text1: "required",
+                                    edit_text2: "required",
+                                    edit_text3: "required",
+                                },
+                                messages: {
+                                    edit_text1: "テンプレート名を入力してください",
+                                    edit_text2: "メールの件名を入力してください",
+                                    edit_text3: "メールの本文を入力してください",
+                                },
+                                submitHandler: function(){
+                                    var num_same_title = 0;
+                                    if(jQuery("#original_temp_name").text() != "none" && jQuery("#edit_text1").val() == jQuery("#original_temp_name").text()){
+                                        num_same_title = -1;
+                                    }
+                                    jQuery(".title").each(function(){
+                                        if(jQuery("#edit_text1").val() == jQuery(this).text()){
+                                            num_same_title++;
                                         }
                                     });
-                                    return false;
-                                //}
-                            //});
+                                    if(num_same_title > 0){
+                                        alert("そのテンプレート名は既に使用されています");
+                                    }else{
+                                        document.getElementById("mailtempsubmit").value = "Wait";
+                                        document.getElementById("mailtempsubmit").disabled = true;
+                                        jQuery("#processing").show();
+                                        jQuery.ajax({
+                                            type: "POST",
+                                            url: "' . $url_base . 'data/mailtemp/edit",
+                                            data: jQuery("#" + formname).serialize(),
+                                            success: function(msg){
+                                                    jQuery("#processing").hide();
+                                                    res = eval(msg);
+                                                    alert(res[0].msg);
+                                                    if (res[0].result == \'OK\')	{
+                                                            jQuery.unblockUI();
+                                                            window.location.reload();
+                                                    }
+                                            },
+                                            error:function(){
+                                                    jQuery("#processing").hide();
+                                                    alert("通信エラーが発生しました。");
+                                            }
+                                        });
+                                        return false;
+                                    }
+                                }
+                            });
 			}
 
                         // テストメール送信
@@ -142,8 +155,8 @@ switch ($data_param) {
             $idx = 0;
             $table_mail_temp_data = '<table class="list-data"><tr>'
                     . '<th>No.</th>'
-                    . '<th>タイトル</th>'
-                    . '<th>件名</th>'
+                    . '<th>テンプレート名</th>'
+                    . '<th>メールの件名</th>'
                     . '<th>更新日時</th>'
                     . '<th>編集</th>'
                     . '</tr>';
@@ -151,7 +164,7 @@ switch ($data_param) {
                 $idx++;
                 $table_mail_temp_data .= '<tr>';
                 $table_mail_temp_data .= '<td>' . $idx . '</td>';
-                $table_mail_temp_data .= '<td>' . $row['text1'] . '</td>';
+                $table_mail_temp_data .= '<td class="title">' . $row['text1'] . '</td>';
                 $table_mail_temp_data .= '<td>' . $row['text2'] . '</td>';
                 $table_mail_temp_data .= '<td>' . $row['date_modified'] . '</td>';
                 $table_mail_temp_data .= '<td align="center"><a href="javascript:void(0)" onclick="fnctempShow(' . $row['id'] . ');">編集</a></td>';
@@ -205,12 +218,16 @@ switch ($data_param) {
                 die($e->getMessage());
             }
         }
-
+        $original_title = $cur_text1;
+        if($original_title == null){
+            $original_title = 'none';
+        }
         $msg = '
             <div id="div_mailtemp_edit" style="display:none; margin:10px 20px 10px 20px; font-size:10pt; cursor:default;">
                 <div style="margin:0 0 10px 0; font-size:10pt; font-weight:bold;">' . $title . '</dib>
                 <form id="form_mailtemp_edit">
                     <input type="hidden" name="edit_keycd" value="' . $cur_keycd . '">
+                    <p style="display:none" id="original_temp_name">'.$original_title.'</p>
                     <table style="font-size:10pt;">
                         <tr>
                             <td class="label" width="120">テンプレート名</td>
@@ -230,11 +247,11 @@ switch ($data_param) {
                             <td>
                             メールの本文を入力してください。<br/>
                             次のような代名詞を設定することができます<br/>
-                            {{subscriber_name}}:予約者の名前<br/>
-                            {{seminar_date}}セミナーの関係日時<br/>
-                            {{seminar_title}}セミナー名<br/>
-                            {{seminar_id}}セミナーID<br/>
-                            {{booking_num}}予約番号
+                            <input class="define" readonly value="{{subscriber_name}}"/>予約者の名前<br/>
+                            <input class="define" readonly value="{{seminar_date}}"/>セミナーの開催日時<br/>
+                            <input class="define" readonly value="{{seminar_title}}"/>セミナー名<br/>
+                            <input class="define" readonly value="{{seminar_id}}"/>セミナーID<br/>
+                            <input class="define" readonly value="{{booking_num}}"/>予約番号
                             </td>
                         </tr>
                         <tr>
@@ -345,7 +362,39 @@ switch ($data_param) {
             die($e->getMessage());
         }
 
+        //
+        $stt2 = $db->prepare('SELECT '
+                . ' ev.id AS seminar_id , namae AS subscriber_name,  hiduke AS seminar_date, year(hiduke) as y, month(hiduke) as m, day(hiduke) as d, date_format(hiduke,\'%w\') as yobi, t_title1 AS seminar_title, et.id AS booking_num '
+                . ' FROM event_list ev '
+                . ' JOIN entrylist et ON ev.id = seminarid '
+                . ' LIMIT 1 ');
+        $stt2->execute();
+        $data_s = array();
+        
+        while ($row = $stt2->fetch(PDO::FETCH_ASSOC)) {
+            $data_s = array(
+                'subscriber_name' => $row['subscriber_name'],
+                'seminar_id' => $row['seminar_id'],
+                'seminar_date' => $row['seminar_date'],
+                'seminar_title' => $row['seminar_title'],
+                'booking_num' => $row['booking_num'],
+            );
+        }
+        //test
+        while ($row = $stt2->fetch(PDO::FETCH_ASSOC)) {
+            $data_s = array(
+                'subscriber_name' => "予約者名",
+                'seminar_id' => "セミナーID",
+                'seminar_date' => "開催日",
+                'seminar_title' => "セミナー名",
+                'booking_num' => "予約番号",
+            );
+        }
+
         require_once '../../lib/TemplateFile.php';
+        
+        $mail_body = new TemplateFile($mail_body, $data_s);
+        
         $data = array(
             'body' => $mail_body,
             'sign' => $mail_sign

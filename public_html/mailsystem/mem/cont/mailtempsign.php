@@ -30,6 +30,14 @@ switch ($data_param) {
                                                 jQuery("#edit_text5").trigger("change");
                                                 fl_trigger = false;
                                             }
+                                            //
+                                            if (isNaN(keycd)) {
+                                                jQuery("#edit_text5").attr("disabled", false);
+                                            }else{
+                                                var area = jQuery("#edit_text5 option:selected").text();
+                                                jQuery("#edit_text5").css("display", "none");
+                                                jQuery("#edit_text5").parent().append("<p>"+area+"</p>");
+                                            }
                                     },
                                     error:function(){
                                             jQuery("#processing").hide();
@@ -187,6 +195,7 @@ switch ($data_param) {
                     . '<th>更新日時</th>'
                     . '<th>編集</th>'
                     . '</tr>';
+            //var_dump(item_alias('area', $row['text5']));
             while ($row = $stt->fetch(PDO::FETCH_ASSOC)) {
                 $idx++;
                 $table_mail_temp_data .= '<tr>';
@@ -353,6 +362,7 @@ switch ($data_param) {
         $email = fnc_getpost('email');
         $tempid = fnc_getpost('tempid');
         $signid = fnc_getpost('signid');
+        $subject = '';
         $mail_body = '';
         $mail_sign = '';
 
@@ -362,6 +372,7 @@ switch ($data_param) {
             $stt->execute();
             while ($row = $stt->fetch(PDO::FETCH_ASSOC)) {
                 $mail_body = $row['text3'];
+                $subject = $row['text2'];
             }
         } catch (PDOException $e) {
             die($e->getMessage());
@@ -376,8 +387,30 @@ switch ($data_param) {
         } catch (PDOException $e) {
             die($e->getMessage());
         }
-
+        
+        //
+        $stt2 = $db->prepare('SELECT '
+                . ' ev.id AS seminar_id , namae AS subscriber_name,  hiduke AS seminar_date, year(hiduke) as y, month(hiduke) as m, day(hiduke) as d, date_format(hiduke,\'%w\') as yobi, t_title1 AS seminar_title, et.id AS booking_num '
+                . ' FROM event_list ev '
+                . ' JOIN entrylist et ON (ev.id = seminarid) '
+                . ' LIMIT 1 ');
+        $stt2->execute();
+        
+        $data_s = array();
+        while ($row = $stt2->fetch(PDO::FETCH_ASSOC)) {
+            $data_s = array(
+                'subscriber_name' => $row['subscriber_name'],
+                'seminar_id' => $row['seminar_id'],
+                'seminar_date' => $row['seminar_date'],
+                'seminar_title' => $row['seminar_title'],
+                'booking_num' => $row['booking_num'],
+            );
+        }
+        
         require_once '../../lib/TemplateFile.php';
+        
+        $mail_body = new TemplateFile($mail_body, $data_s);
+        
         $data = array(
             'body' => $mail_body,
             'sign' => $mail_sign
@@ -385,7 +418,7 @@ switch ($data_param) {
         
         $mail_content = new TemplateFile('../tpl/testemail.tpl', $data);
         
-        $subject = "テストメール送信";
+        $subject = $mail_body->getSubject($subject);
         $from = mb_encode_mimeheader(mb_convert_encoding("日本ワーキングホリデー協会", "JIS")) . "<sodan@jawhm.or.jp>";
         //
         if (mb_send_mail($email, $subject, $mail_content, "From:" . $from)){

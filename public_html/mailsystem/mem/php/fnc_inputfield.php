@@ -4,7 +4,7 @@
 function field_text($fld_name, $fld_size, $fld_value) {
     // テキスト
     $res = '';
-    $res .= '<input id="' . $fld_name . '" type="text" name="' . $fld_name . '" size="' . $fld_size . '" value="' . $fld_value . '" required="no">';
+    $res .= '<input id="' . $fld_name . '" type="text" name="' . $fld_name . '" size="' . $fld_size . '" value="' . $fld_value . '">';
     $res .= '';
     return $res;
 }

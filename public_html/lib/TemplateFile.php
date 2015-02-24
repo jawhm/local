@@ -40,6 +40,11 @@ class TemplateFile {
             return $this->file;
         }
     }
+    
+    public function getSubject($subject){
+        $template_pairs = strtr($subject, $this->getReplacementPairs());
+        return preg_replace('{{.*}}', '', $template_pairs);;
+    }
 
     public function __toString() {
         $template_pairs = strtr($this->getTemplateText(), $this->getReplacementPairs());
