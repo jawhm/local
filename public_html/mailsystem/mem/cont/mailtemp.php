@@ -164,8 +164,8 @@ switch ($data_param) {
                 $idx++;
                 $table_mail_temp_data .= '<tr>';
                 $table_mail_temp_data .= '<td>' . $idx . '</td>';
-                $table_mail_temp_data .= '<td class="title">' . $row['text1'] . '</td>';
-                $table_mail_temp_data .= '<td>' . $row['text2'] . '</td>';
+                $table_mail_temp_data .= '<td class="title">' . stripslashes($row['text1']) . '</td>';
+                $table_mail_temp_data .= '<td>' . stripslashes($row['text2']) . '</td>';
                 $table_mail_temp_data .= '<td>' . $row['date_modified'] . '</td>';
                 $table_mail_temp_data .= '<td align="center"><a href="javascript:void(0)" onclick="fnctempShow(' . $row['id'] . ');">編集</a></td>';
                 $table_mail_temp_data .= '</tr>';
@@ -209,10 +209,10 @@ switch ($data_param) {
                 $idx = 0;
                 while ($row = $stt->fetch(PDO::FETCH_ASSOC)) {
                     $idx++;
-                    $cur_text1 = $row['text1'];     // テンプレート名
-                    $cur_text2 = $row['text2'];     // メールの件名
-                    $cur_text3 = $row['text3'];     // メールの本文
-                    $cur_text4 = $row['text4'];     // 備考・メモ
+                    $cur_text1 = stripslashes($row['text1']);     // テンプレート名
+                    $cur_text2 = stripslashes($row['text2']);     // メールの件名
+                    $cur_text3 = stripslashes($row['text3']);     // メールの本文
+                    $cur_text4 = stripslashes($row['text4']);     // 備考・メモ
                 }
             } catch (PDOException $e) {
                 die($e->getMessage());
@@ -428,10 +428,10 @@ switch ($data_param) {
     case "edit":
 
         $edit_keycd = fnc_getpost('edit_keycd');
-        $edit_text1 = fnc_getpost('edit_text1');
-        $edit_text2 = fnc_getpost('edit_text2');
-        $edit_text3 = fnc_getpost('edit_text3');
-        $edit_text4 = fnc_getpost('edit_text4');
+        $edit_text1 = addslashes(fnc_getpost('edit_text1'));
+        $edit_text2 = addslashes(fnc_getpost('edit_text2'));
+        $edit_text3 = addslashes(fnc_getpost('edit_text3'));
+        $edit_text4 = addslashes(fnc_getpost('edit_text4'));
 
         if (is_string($edit_keycd) && $edit_keycd == 'create') {
 

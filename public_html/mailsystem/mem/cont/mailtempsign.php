@@ -201,7 +201,7 @@ switch ($data_param) {
                 $table_mail_temp_data .= '<tr>';
                 $table_mail_temp_data .= '<td align="center">' . $idx . '</td>';
                 $table_mail_temp_data .= '<td>' . item_alias('area', $row['text5']) . '</td>';
-                $table_mail_temp_data .= '<td>' . $row['text1'] . '</td>';
+                $table_mail_temp_data .= '<td>' . stripslashes($row['text1']) . '</td>';
                 $table_mail_temp_data .= '<td align="center">' . $row['date_modified'] . '</td>';
                 $table_mail_temp_data .= '<td align="center"><a href="javascript:void(0)" data-mid="' . $row['id'] . '" onclick="fnctempShow(this);">編集</a></td>';
                 $table_mail_temp_data .= '</tr>';
@@ -245,10 +245,10 @@ switch ($data_param) {
                 $idx = 0;
                 while ($row = $stt->fetch(PDO::FETCH_ASSOC)) {
                     $idx++;
-                    $cur_text1 = $row['text1'];     // 署名テンプレート名
+                    $cur_text1 = stripslashes($row['text1']);     // 署名テンプレート名
                     $cur_text5 = $row['text5'];     // 所属エリア
-                    $cur_text3 = $row['text3'];     // 署名
-                    $cur_text4 = $row['text4'];     // 備考・メモ
+                    $cur_text3 = stripslashes($row['text3']);     // 署名
+                    $cur_text4 = stripslashes($row['text4']);     // 備考・メモ
                 }
             } catch (PDOException $e) {
                 die($e->getMessage());
@@ -475,10 +475,10 @@ switch ($data_param) {
     case "edit":
 
         $edit_keycd = fnc_getpost('edit_keycd');
-        $edit_text1 = fnc_getpost('edit_text1');
-        $edit_text5 = fnc_getpost('edit_text5');
-        $edit_text3 = fnc_getpost('edit_text3');
-        $edit_text4 = fnc_getpost('edit_text4');
+        $edit_text1 = addslashes(fnc_getpost('edit_text1'));
+        $edit_text5 = addslashes(fnc_getpost('edit_text5'));
+        $edit_text3 = addslashes(fnc_getpost('edit_text3'));
+        $edit_text4 = addslashes(fnc_getpost('edit_text4'));
 
         if (is_string($edit_keycd) && $edit_keycd == 'create') {
 
