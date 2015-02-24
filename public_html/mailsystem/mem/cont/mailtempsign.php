@@ -195,7 +195,7 @@ switch ($data_param) {
                     . '<th>更新日時</th>'
                     . '<th>編集</th>'
                     . '</tr>';
-            //var_dump(item_alias('area', $row['text5']));
+            
             while ($row = $stt->fetch(PDO::FETCH_ASSOC)) {
                 $idx++;
                 $table_mail_temp_data .= '<tr>';
@@ -246,7 +246,7 @@ switch ($data_param) {
                 while ($row = $stt->fetch(PDO::FETCH_ASSOC)) {
                     $idx++;
                     $cur_text1 = stripslashes($row['text1']);     // 署名テンプレート名
-                    $cur_text5 = $row['text5'];     // 所属エリア
+                    $cur_text5 = stripslashes($row['text5']);     // 所属エリア
                     $cur_text3 = stripslashes($row['text3']);     // 署名
                     $cur_text4 = stripslashes($row['text4']);     // 備考・メモ
                 }
@@ -254,7 +254,7 @@ switch ($data_param) {
                 die($e->getMessage());
             }
         }
-
+        
         $msg = '
             <div id="div_mailtemp_edit" style="display:none; margin:10px 20px 10px 20px; font-size:10pt; cursor:default;">
                 <div style="margin:0 0 10px 0; font-size:10pt; font-weight:bold;">' . $title . '</dib>
@@ -453,10 +453,10 @@ switch ($data_param) {
             $msg = array();
             while ($row = $stt->fetch(PDO::FETCH_ASSOC)) {
                 $msg['id'] = $row['id'];
-                $msg['text1'] = $row['text1'];
-                $msg['text5'] = $row['text5'];
-                $msg['text3'] = $row['text3'];
-                $msg['text4'] = $row['text4'];
+                $msg['text1'] = stripslashes($row['text1']);
+                $msg['text5'] = stripslashes($row['text5']);
+                $msg['text3'] = stripslashes($row['text3']);
+                $msg['text4'] = stripslashes($row['text4']);
             }
 
             if ($msg != NULL) {

@@ -166,7 +166,7 @@ switch ($data_param) {
                 $table_mail_temp_data .= '<td>' . $idx . '</td>';
                 $table_mail_temp_data .= '<td class="title">' . stripslashes($row['text1']) . '</td>';
                 $table_mail_temp_data .= '<td>' . stripslashes($row['text2']) . '</td>';
-                $table_mail_temp_data .= '<td>' . $row['date_modified'] . '</td>';
+                $table_mail_temp_data .= '<td align="center">' . $row['date_modified'] . '</td>';
                 $table_mail_temp_data .= '<td align="center"><a href="javascript:void(0)" onclick="fnctempShow(' . $row['id'] . ');">編集</a></td>';
                 $table_mail_temp_data .= '</tr>';
             }
