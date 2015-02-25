@@ -411,11 +411,11 @@ if (date('H') == 20) {
                 $stt = $db->prepare('SELECT * FROM mailtext WHERE keycd = "mail_temp" AND id = "' . $cur_type . '"');
                 $stt->execute();
                 while ($row = $stt->fetch(PDO::FETCH_ASSOC)) {
-                    $cur_text1 = $row['text1']; // template name
-                    $cur_text2 = $row['text2']; // mail title
-                    $cur_text3 = $row['text3']; // mail template information
-                    $cur_text4 = $row['text4']; // comment
-                    $cur_text5 = $row['text5']; // mail_sign, place
+                    $cur_text1 = stripslashes($row['text1']); // template name
+                    $cur_text2 = stripslashes($row['text2']); // mail title
+                    $cur_text3 = stripslashes($row['text3']); // mail template information
+                    $cur_text4 = stripslashes($row['text4']); // comment
+                    $cur_text5 = stripslashes($row['text5']); // mail_sign, place
                 }
 
                 // get mail template signs belong to type (place = text5)
@@ -427,11 +427,11 @@ if (date('H') == 20) {
 
                 while ($row4 = $stt4->fetch(PDO::FETCH_ASSOC)) {
                     $cur_sign_id = $row4['id']; // title
-                    $cur_sign_text1 = $row4['text1']; // title
-                    $cur_sign_text2 = $row4['text2']; // not use
-                    $cur_sign_text3 = $row4['text3']; // sign_information
-                    $cur_sign_text4 = $row4['text4']; // comment
-                    $cur_sign_text5 = $row4['text5']; // mail_sign, place
+                    $cur_sign_text1 = stripslashes($row4['text1']); // title
+                    $cur_sign_text2 = stripslashes($row4['text2']); // not use
+                    $cur_sign_text3 = stripslashes($row4['text3']); // sign_information
+                    $cur_sign_text4 = stripslashes($row4['text4']); // comment
+                    $cur_sign_text5 = stripslashes($row4['text5']); // mail_sign, place
                 }
 
                 if (isset($cur_sign_id)) {
@@ -448,11 +448,11 @@ if (date('H') == 20) {
 
                     while ($row4 = $stt4->fetch(PDO::FETCH_ASSOC)) {
                         $cur_sign_id = $row4['id']; // title
-                        $cur_sign_text1 = $row4['text1']; // title
-                        $cur_sign_text2 = $row4['text2']; // not use
-                        $cur_sign_text3 = $row4['text3']; // sign_information
-                        $cur_sign_text4 = $row4['text4']; // comment
-                        $cur_sign_text5 = $row4['text5']; // mail_sign, place
+                        $cur_sign_text1 = stripslashes($row4['text1']); // title
+                        $cur_sign_text2 = stripslashes($row4['text2']); // not use
+                        $cur_sign_text3 = stripslashes($row4['text3']); // sign_information
+                        $cur_sign_text4 = stripslashes($row4['text4']); // comment
+                        $cur_sign_text5 = stripslashes($row4['text5']); // mail_sign, place
                     }
                 }
 
@@ -561,11 +561,11 @@ if (date('H') == 12) {
             $stt = $db->prepare('SELECT * FROM mailtext WHERE keycd = "auto_seminar_kesseki"');
             $stt->execute();
             while ($row = $stt->fetch(PDO::FETCH_ASSOC)) {
-                $cur_text1 = $row['text1'];
-                $cur_text2 = $row['text2'];
-                $cur_text3 = $row['text3'];
-                $cur_text4 = $row['text4'];
-                $cur_text5 = $row['text5'];
+                $cur_text1 = stripslashes($row['text1']);
+                $cur_text2 = stripslashes($row['text2']);
+                $cur_text3 = stripslashes($row['text3']);
+                $cur_text4 = stripslashes($row['text4']);
+                $cur_text5 = stripslashes($row['text5']);
             }
 
             // 該当者抽出
@@ -627,11 +627,11 @@ if (date('H') == 12) {
                 $stt = $db->prepare('SELECT * FROM mailtext WHERE keycd = "mail_temp" AND id = "' . $cur_type . '"');
                 $stt->execute();
                 while ($row = $stt->fetch(PDO::FETCH_ASSOC)) {
-                    $cur_text1 = $row['text1']; // template name
-                    $cur_text2 = $row['text2']; // mail title
-                    $cur_text3 = $row['text3']; // mail template information
-                    $cur_text4 = $row['text4']; // comment
-                    $cur_text5 = $row['text5']; // mail_sign, place
+                    $cur_text1 = stripslashes($row['text1']); // template name
+                    $cur_text2 = stripslashes($row['text2']); // mail title
+                    $cur_text3 = stripslashes($row['text3']); // mail template information
+                    $cur_text4 = stripslashes($row['text4']); // comment
+                    $cur_text5 = stripslashes($row['text5']); // mail_sign, place
                 }
 
                 // get mail template signs belong to type (place = text5)
@@ -643,11 +643,11 @@ if (date('H') == 12) {
 
                 while ($row4 = $stt4->fetch(PDO::FETCH_ASSOC)) {
                     $cur_sign_id = $row4['id']; // title
-                    $cur_sign_text1 = $row4['text1']; // title
-                    $cur_sign_text2 = $row4['text2']; // not use
-                    $cur_sign_text3 = $row4['text3']; // sign_information
-                    $cur_sign_text4 = $row4['text4']; // comment
-                    $cur_sign_text5 = $row4['text5']; // mail_sign, place
+                    $cur_sign_text1 = stripslashes($row4['text1']); // title
+                    $cur_sign_text2 = stripslashes($row4['text2']); // not use
+                    $cur_sign_text3 = stripslashes($row4['text3']); // sign_information
+                    $cur_sign_text4 = stripslashes($row4['text4']); // comment
+                    $cur_sign_text5 = stripslashes($row4['text5']); // mail_sign, place
                 }
 
                 if (isset($cur_sign_id)) {
@@ -664,11 +664,11 @@ if (date('H') == 12) {
 
                     while ($row4 = $stt4->fetch(PDO::FETCH_ASSOC)) {
                         $cur_sign_id = $row4['id']; // title
-                        $cur_sign_text1 = $row4['text1']; // title
-                        $cur_sign_text2 = $row4['text2']; // not use
-                        $cur_sign_text3 = $row4['text3']; // sign_information
-                        $cur_sign_text4 = $row4['text4']; // comment
-                        $cur_sign_text5 = $row4['text5']; // mail_sign, place
+                        $cur_sign_text1 = stripslashes($row4['text1']); // title
+                        $cur_sign_text2 = stripslashes($row4['text2']); // not use
+                        $cur_sign_text3 = stripslashes($row4['text3']); // sign_information
+                        $cur_sign_text4 = stripslashes($row4['text4']); // comment
+                        $cur_sign_text5 = stripslashes($row4['text5']); // mail_sign, place
                     }
                 }
 

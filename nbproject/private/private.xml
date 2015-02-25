@@ -52,7 +52,9 @@
             <file>file:/var/www/jawhm.localhost/public_html/mailsystem/mem/css/contents.css</file>
             <file>file:/var/www/jawhm.localhost/public_html/yoyaku/yoyakukanri_cron.php</file>
             <file>file:/var/www/jawhm.localhost/public_html/mailsystem/mem/js/script.js</file>
+            <file>file:/var/www/jawhm.localhost/public_html/mailsystem/mem/php/fnc_functions.php</file>
             <file>file:/var/www/jawhm.localhost/public_html/mailsystem/mem/cont/mailtemp.php</file>
+            <file>file:/var/www/jawhm.localhost/public_html/mailsystem/mem/php/fnc_inputfield.php</file>
         </group>
     </open-files>
 </project-private>

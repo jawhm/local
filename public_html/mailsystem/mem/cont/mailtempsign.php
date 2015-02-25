@@ -371,8 +371,8 @@ switch ($data_param) {
             $stt = $db->prepare('SELECT id, text1, text2, text3, text4, text5 FROM mailtext WHERE keycd = "mail_temp" AND id=' . (int) $tempid);
             $stt->execute();
             while ($row = $stt->fetch(PDO::FETCH_ASSOC)) {
-                $mail_body = $row['text3'];
-                $subject = $row['text2'];
+                $mail_body = stripslashes($row['text3']);
+                $subject = stripslashes($row['text2']);
             }
         } catch (PDOException $e) {
             die($e->getMessage());
@@ -382,7 +382,7 @@ switch ($data_param) {
             $stt = $db->prepare('SELECT id, text1, text2, text3, text4, text5 FROM mailtext WHERE keycd = "mail_sign" AND id=' . (int) $signid);
             $stt->execute();
             while ($row = $stt->fetch(PDO::FETCH_ASSOC)) {
-                $mail_sign = $row['text3'];     // 署名テンプレート名
+                $mail_sign = stripslashes($row['text3']);     // 署名テンプレート名
             }
         } catch (PDOException $e) {
             die($e->getMessage());
