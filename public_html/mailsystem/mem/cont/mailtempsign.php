@@ -191,7 +191,7 @@ switch ($data_param) {
             $table_mail_temp_data = '<table class="list-data"><tr>'
                     . '<th>No.</th>'
                     . '<th>所属エリア</th>'
-                    . '<th>署名タイトル</th>'
+                    . '<th>署名テンプレート名</th>'
                     . '<th>更新日時</th>'
                     . '<th>編集</th>'
                     . '</tr>';

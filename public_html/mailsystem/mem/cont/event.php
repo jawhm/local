@@ -147,6 +147,7 @@ switch ($data_param)	{
 						}
 					}
 				}
+
 				document.getElementById("eventsubmit").value = "Wait";
 				document.getElementById("eventsubmit").disabled = true;
 				jQuery("#processing").show();
@@ -157,9 +158,11 @@ switch ($data_param)	{
 					success: function(msg){
 						jQuery("#processing").hide();
 						res = eval(msg);
-						alert(res[0].msg);
 						if (res[0].result == \'OK\')	{
+							alert(res[0].msg);
 							jQuery.unblockUI();
+						}else{
+							alert(msg);
 						}
 					},
 					error:function(){
@@ -224,15 +227,29 @@ switch ($data_param)	{
 					jQuery("#yobi").html("不正な日付です");
 				}
 			}
+
+			// キーワード設定
+			function setkeyword(btn)	{
+				$obj = jQuery(btn);
+				$key = jQuery("#edit_desc2");
+				$key.val($key.val() + " " + $obj.val());
+			}
 		';
 
 		// 検索画面表示
 		if ($data_param == 'list')	{
 			$body_title[] .= '予約状況リスト';
 			$ser_cond = '　　　　<input type="checkbox" name="ser_cxl">キャンセル待ち発生中のイベント';
+			$ser_cond2 = '';
 		}else{
 			$body_title[] .= 'イベント検索';
 			$ser_cond = '';
+			$ser_cond2 = '
+						<td style="text-align:right;">キーワード無</td>
+						<td>
+							<input type=checkbox name="ser_keynone" value="none">
+						</td>
+					';
 		}
 		$body[] .= '
 			<form id="form_event_list">
@@ -251,11 +268,12 @@ switch ($data_param)	{
 					</tr>
 					<tr>
 						<td style="text-align:right;">セミナー区分</td>
-						<td colspan="3">
+						<td>
 							<input type=checkbox name="free_p1" value="0">無料　
 							<input type=checkbox name="free_p2" value="1">有料　
 							'.$ser_cond.'
 						</td>
+						'.$ser_cond2.'
 					</tr>
 					<tr>
 						<td style="text-align:right;">開催地</td>
@@ -272,7 +290,7 @@ switch ($data_param)	{
 					</tr>
 					<tr>
 						<td style="text-align:right;">キーワード</td>
-						<td>
+						<td colspan="2">
 							'.field_text('ser_keyword1', 20, '').'　and　
 							'.field_text('ser_keyword2', 20, '').'　and　
 							'.field_text('ser_keyword3', 20, '').'
@@ -305,7 +323,7 @@ switch ($data_param)	{
 			<input type=button class="button_save" value="　新しいイベントを登録する" onclick="fnceventShow(\'\');">
 			<div id="res_event_edit" style=""></div>
 		';
-                
+
 		break;
 	case "event_show":
 		// イベント編集（新規）
@@ -319,7 +337,7 @@ switch ($data_param)	{
                     $stt->execute();
                     while ($row = $stt->fetch(PDO::FETCH_ASSOC)) {
                         $id_mail_temp = $row['id'];
-                        $list_mail_template[$id_mail_temp] = $row['text1'];
+                        $list_mail_template[$id_mail_temp] = stripslashes($row['text1']);
                     }
                 } catch (PDOException $e) {
                     die($e->getMessage());
@@ -448,6 +466,7 @@ switch ($data_param)	{
 
 		$country_code['none'] = '';
 		$country_code['au'] = '';
+		$country_code['us'] = '';
 		$country_code['ca'] = '';
 		$country_code['de'] = '';
 		$country_code['dk'] = '';
@@ -481,16 +500,16 @@ switch ($data_param)	{
 			<table><tr><td style="vertical-align:top;">
 				<table>
 					<tr>
-						<td class="label" width="100">掲載</td>
-						<td class="infield" width="360">
+						<td class="label" width="20%" nowrap>掲載</td>
+						<td class="infield" width="360" colspan="3">
 							<input type="checkbox" id="edit_use" name="edit_use" '.$cur_use.'>掲載する　　　　　
 							<input type="checkbox" id="edit_new" name="edit_new" '.$cur_new.'>フォローメール不要
 							<input type="hidden" name="edit_id" value="'.$cur_id.'">
 						</td>
 					</tr>
 					<tr>
-						<td class="label">日程</td>
-						<td class="infield">
+						<td class="label" nowrap>日程</td>
+						<td class="infield" colspan="3">
 							<input class="calendar" id="edit_hiduke" name="edit_hiduke" size="16" type="hidden" value="'.$cur_hiduke.'" />
 							<select id="y" name="y" onchange="fncSetDate();">';
 		for ($idx=2010; $idx<=2030; $idx++)	{
@@ -523,8 +542,8 @@ switch ($data_param)	{
 						</td>
 					</tr>
 					<tr>
-						<td class="label">時間</td>
-						<td class="infield">
+						<td class="label" nowrap>時間</td>
+						<td class="infield" colspan="3">
 							<select id="edit_sttime" name="edit_sttime">';
 		for ($idx=6; $idx<=23; $idx++)	{
 			$data = substr("00".$idx,-2).'';
@@ -554,8 +573,8 @@ switch ($data_param)	{
 						</td>
 					</tr>
 					<tr>
-						<td class="label">開催地</td>
-						<td class="infield">
+						<td class="label" nowrap>開催地</td>
+						<td class="infield" colspan="3">
 							<input type="radio" name="edit_place" value="tokyo"'.$place['tokyo'].'>東京&nbsp;
 							<input type="radio" name="edit_place" value="osaka"'.$place['osaka'].'>大阪&nbsp;
 							<input type="radio" name="edit_place" value="nagoya"'.$place['nagoya'].'>名古屋&nbsp;
@@ -567,24 +586,24 @@ switch ($data_param)	{
 						</td>
 					</tr>
 					<tr>
-						<td class="label">状態</td>
-						<td class="infield">
+						<td class="label" nowrap>状態</td>
+						<td class="infield" colspan="3">
 							<input type=radio name="edit_stat" value="0"'.$stat[0].'>空き　
 							<input type=radio name="edit_stat" value="1"'.$stat[1].'>混雑　
 							<input type=radio name="edit_stat" value="2"'.$stat[2].'>満席
 						</td>
 					</tr>
 					<tr>
-						<td class="label">種別</td>
-						<td class="infield">
+						<td class="label" nowrap>種別</td>
+						<td class="infield" colspan="3">
 							<input type=radio name="edit_free" value="0"'.$free[0].'>無料　
 							<input type=radio name="edit_free" value="1"'.$free[1].'>有料
                                                         ' . dropdown_list('edit_type', $cur_type, $list_mail_template, array('empty' => 'メールを送信しない')) . '    
 						</td>
 					</tr>
 					<tr>
-						<td class="label">規模</td>
-						<td class="infield">
+						<td class="label" nowrap>規模</td>
+						<td class="infield" colspan="3">
 							定員：'.field_text('edit_pax', 4, $cur_pax).'　　　
 							予約：'.$cur_booking.'　　　
 							CXL待ち：'.$cur_waitting.'
@@ -599,7 +618,7 @@ switch ($data_param)	{
 				<tr><td>&nbsp;</td></tr>
 
 					<tr>
-						<td class="label">アイコン</td>
+						<td class="label" nowrap>アイコン</td>
 						<td class="infield">
 							<select id="edit_indicated_option" name="edit_indicated_option">
 								<option value="0" '.$indicated_option[0].'>無し</option>
@@ -607,20 +626,19 @@ switch ($data_param)	{
 								<option value="2" '.$indicated_option[2].'>ＮＥＷ</option>
 							</select>
 						</td>
-					</tr>
-					<tr>
-						<td class="label">Ustream</td>
+						<td class="label" nowrap>Ustream</td>
 						<td class="infield">
 							<input type=radio name="edit_broadcasting" value="0"'.$broadcasting[0].'>無し　
-							<input type=radio name="edit_broadcasting" value="1"'.$broadcasting[1].'>中継セミナー
+							<input type=radio name="edit_broadcasting" value="1"'.$broadcasting[1].'>中継
 						</td>
 					</tr>
 
 					<tr>
-						<td class="label">国旗表示</td>
+						<td class="label" nowrap>国旗表示</td>
 						<td class="infield">
 							<select id="edit_country_code" name="edit_country_code">
 								<option value=""   '.$country_code['none'].'>無し</option>
+								<option value="us" '.$country_code['us'].'>アメリカ</option>
 								<option value="au" '.$country_code['au'].'>オーストラリア</option>
 								<option value="ca" '.$country_code['ca'].'>カナダ</option>
 								<option value="de" '.$country_code['de'].'>ドイツ</option>
@@ -631,9 +649,7 @@ switch ($data_param)	{
 								<option value="wd" '.$country_code['wd'].'>ワールドワイド</option>
 							</select>
 						</td>
-					</tr>
-					<tr>
-						<td class="label">表示色</td>
+						<td class="label" nowrap>表示色</td>
 						<td class="infield">
 							<select id="edit_group_color" name="edit_group_color">
 								<option value=""  '.$group_color['none'].'>選んでね</option>
@@ -654,54 +670,78 @@ switch ($data_param)	{
 						</td>
 					</tr>
 					<tr>
-						<td class="label">CALタイトル</td>
-						<td class="infield">'.field_required('edit_seminar_name', 60, $cur_seminar_name).'</td>
+						<td class="label" nowrap>CALタイトル</td>
+						<td class="infield" colspan="3">'.field_required('edit_seminar_name', 60, $cur_seminar_name).'</td>
 					</tr>
 					<tr>
-						<td class="label">CAL補足</td>
-						<td class="infield">'.field_text('edit_short_description', 60, $cur_short_description).'</td>
+						<td class="label" nowrap>CAL補足</td>
+						<td class="infield" colspan="3">'.field_text('edit_short_description', 60, $cur_short_description).'</td>
 					</tr>
-
-
+					<tr>
+						<td class="label" nowrap>メール補足</td>
+						<td class="infield" colspan="3">
+							<textarea name="edit_mailinfo" cols="50" rows="3" style="font-size:9pt;">'.$cur_mailinfo.'</textarea>
+						</td>
+					</tr>
 					</table>
-			</td></tr><tr><td>
+			</td><td>
 				<table>
 					<tr>
-						<td class="label" width="120">タイトル</td>
-						<td class="infield">'.field_required('edit_title1', 60, $cur_title1).'</td>
+						<td class="label" width="18%" nowrap>タイトル</td>
+						<td class="infield">'.field_required('edit_title1', 100, $cur_title1).'</td>
 					</tr>
 					<tr>
-						<td class="label">内部タイトル</td>
-						<td class="infield">'.field_text('edit_title2', 60, $cur_title2).'</td>
+						<td class="label" nowrap>内部タイトル</td>
+						<td class="infield">'.field_text('edit_title2', 100, $cur_title2).'</td>
 					</tr>
 					<tr>
-						<td class="label">説明文</td>
+						<td class="label" nowrap>説明文</td>
 						<td class="infield">
 							<textarea name="edit_desc1" cols="80" rows="12" style="font-size:9pt;">'.$cur_desc1.'</textarea>
 						</td>
 					</tr>
 					<tr>
-						<td class="label">キーワード</td>
+						<td class="label" nowrap>キーワード</td>
 						<td class="infield">
-							<textarea name="edit_desc2" cols="80" rows="1" style="font-size:9pt;">'.$cur_desc2.'</textarea>
-						</td>
-					</tr>
-					<tr>
-						<td class="label">メール補足</td>
-						<td class="infield">
-							<textarea name="edit_mailinfo" cols="80" rows="3" style="font-size:9pt;">'.$cur_mailinfo.'</textarea>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2" style="text-align:right;">
-							<input type=button class="button_list" value="アイコン" onclick="window.open(\'http://www.jawhm.or.jp/mailsystem/icon.php\', \'win_icon\', \'width=500, height=600, menubar=no, toolbar=no, scrollbars=yes\');">　
-							<input type=button class="button_save" value="　画像　" onclick="window.open(\'http://www.jawhm.or.jp/mailsystem/tools/upload/\', \'win_icon\', \'width=1000, height=600, menubar=no, toolbar=no, scrollbars=yes\');">　　　　
-							<input type=button class="button_cancel" value="やめる" onclick="fncHide();">　　
-							<input type=button class="button_submit" value="登録" id="eventsubmit" onclick="fnceventPost(\'form_event_edit\');">
+							<textarea name="edit_desc2" id="edit_desc2" cols="80" rows="1" style="font-size:9pt;">'.$cur_desc2.'</textarea>
+							<div style="font-size:9pt;">
+								<input type=button class="sml_button" value="初心者" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="プランニング" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="学校比較" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="看護師" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="休学" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="住まい仕事" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="学習法" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="セカンド" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="資格" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="渡航相談会" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="女性限定" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="休職" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="体験談" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="学校セミナー" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="学校懇談" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="注目" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="学生限定" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="都市比較" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="会員限定" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="出発前" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="パーティー" onclick="setkeyword(this);">
+								<input type=button class="sml_button" value="国比較" onclick="setkeyword(this);">
+							</div>
 						</td>
 					</tr>
 				</table>
-			</td></tr></table>
+			</td></tr>
+						<tr>
+						<td colspan="2" style="text-align:center;">
+							<input type=button class="button_list" value="アイコン" onclick="window.open(\'http://www.jawhm.or.jp/mailsystem/icon.php\', \'win_icon\', \'width=500, height=600, menubar=no, toolbar=no, scrollbars=yes\');">
+							<input type=button class="button_save" value="画像" onclick="window.open(\'http://www.jawhm.or.jp/mailsystem/tools/upload/\', \'win_icon\', \'width=1000, height=600, menubar=no, toolbar=no, scrollbars=yes\');">
+							<input type=button class="button_save" value="画像２" onclick="window.open(\'http://www.jawhm.or.jp/files2/\', \'win_icon\', \'width=1200, height=720, menubar=no, toolbar=no, scrollbars=yes\');">　　　
+							<input type=button class="button_cancel" value="やめる" onclick="fncHide();">　　　
+							<input type=button class="button_submit" value="登録" id="eventsubmit" onclick="fnceventPost(\'form_event_edit\');">
+						</td>
+						</tr>
+						</table>
 				</form>
 			</div>
 		';
@@ -884,6 +924,7 @@ switch ($data_param)	{
 		$ser_evtno = fnc_getpost('ser_evtno');
 		$ser_param = fnc_getpost('ser_param');
 		$ser_cxl = fnc_getpost('ser_cxl');
+		$ser_keynone = fnc_getpost('ser_keynone');
 
 		$body_title[] .= 'イベント検索結果';
 		$msg = '';
@@ -934,6 +975,9 @@ switch ($data_param)	{
 			$cond .= ' k_title2 like "%'.$ser_keyword3.'%" or ';
 			$cond .= ' k_desc1 like "%'.$ser_keyword3.'%" or ';
 			$cond .= ' k_desc2 like "%'.$ser_keyword3.'%" ) ';
+		}
+		if ($ser_keynone <> '')	{
+			$cond .= ' and k_desc2 = "" ';
 		}
 		if ($ser_evtno <> '')	{
 			$cond .= ' and id = "'.$ser_evtno.'" ';
@@ -1014,7 +1058,7 @@ switch ($data_param)	{
 					if ($cur_use == '1')	{
 						$msg .= '掲';
 					}else{
-						$msg .= '未';
+						$msg .= '<span style="font-weight:bold; background-color:red; font-size:96%;">未</span>';
 					}
 					switch ($cur_stat)	{
 						case '0':
@@ -1024,11 +1068,11 @@ switch ($data_param)	{
 							$msg .= '(混)';
 							break;
 						case '2':
-							$msg .= '<b>(満)</b>';
+							$msg .= '(<span style="font-weight:bold; background-color:red; font-size:96%;">満</span>)';
 							break;
 					}
 					$msg .= '</td>';
-					$msg .= '<td><input type="text" readonly size="48" value="'.$cur_title.'"></td>';
+					$msg .= '<td><input type="text" readonly size="40" value="'.$cur_title.'"></td>';
 				//	$msg .= '<td><a id="list'.$cur_id.'" href="#'.$cur_id.'" onclick="fncshowdesc(\''.$cur_id.'\',\'div_'.$cur_id.'\');">'.$cur_title.'</a><div id="div_'.$cur_id.'"></div></td>';
 					$msg .= '<td width="160">';
 					$msg .= '<table><tr>';
@@ -1040,14 +1084,16 @@ switch ($data_param)	{
 						$msg .= '<td width="40" style="text-align:right;">'.$cur_waitting.'</td>';
 					}
 					if ($cur_pax > 0)	{
-						$yoyaku_riyu = $cur_booking / $cur_pax * 100;
+						$yoyaku_riyu = ($cur_booking + $cur_waitting) / $cur_pax * 100;
 
 						if ($yoyaku_riyu < 30)	{
 							$msg .= '<td width="40" style="font-size:10pt; text-align:right; background-color:#7FFF00;">'.number_format($yoyaku_riyu,0).'%</td>';
 						}elseif ($yoyaku_riyu < 60 )	{
 							$msg .= '<td width="40" style="font-size:10pt; text-align:right; background-color:#FFDAB9;">'.number_format($yoyaku_riyu,0).'%</td>';
-						}else{
+						}elseif ($yoyaku_riyu <= 100 )	{
 							$msg .= '<td width="40" style="font-size:10pt; text-align:right;">'.number_format($yoyaku_riyu,0).'%</td>';
+						}else{
+							$msg .= '<td width="40" style="font-size:10pt; text-align:right; background-color:#FC1616; color:white;">'.number_format($yoyaku_riyu,0).'%</td>';
 						}
 					}else{
 						$yoyaku_riyu = '';
@@ -1096,7 +1142,11 @@ switch ($data_param)	{
 						$msg .= '<tr class="odd">';
 					}
 					$msg .= '<td><input type=button class="button_save" value=" 修正" onclick="fnceventShow(\''.$cur_id.'\');"><br/>';
-					$msg .= '<input type=button class="button_rev" value=" 予約" onclick="fncyoyakuShow(\''.$cur_id.'\');"></td>';
+					if ($cur_use == '1')	{
+						$msg .= '<input type=button class="button_rev" value=" 予約" onclick="fncyoyakuShow(\''.$cur_id.'\');"></td>';
+					}else{
+						$msg .= '<input type=button class="button_rev" value=" 予約" onclick="if(confirm(\'未掲載のセミナーです。予約しますか？\')){fncyoyakuShow(\''.$cur_id.'\');}"></td>';
+					}
 					$msg .= '<td>'.$cur_hiduke.'<br/>'.$cur_sttime.'-'.$cur_edtime.'</td>';
 					$msg .= '<td>';
 					switch ($cur_place)	{
@@ -1129,7 +1179,7 @@ switch ($data_param)	{
 					if ($cur_use == '1')	{
 						$msg .= '掲載';
 					}else{
-						$msg .= '未掲';
+						$msg .= '<span style="font-weight:bold; background-color:red; font-size:96%;">未掲</span>';
 					}
 					switch ($cur_stat)	{
 						case '0':
@@ -1139,7 +1189,7 @@ switch ($data_param)	{
 							$msg .= '(混雑)';
 							break;
 						case '2':
-							$msg .= '<b>(満席)</b>';
+							$msg .= '(<span style="font-weight:bold; background-color:red; font-size:96%;">満席</span>)';
 							break;
 					}
 					$msg .= '</td>';
@@ -1190,7 +1240,7 @@ switch ($data_param)	{
 				if ($cur_free == '0')	{
 					$msg .= '無料';
 				}else{
-					$msg .= '有料';
+					$msg .= '<span style="font-weight:bold; background-color:red; font-size:96%;">有料</span>';
 				}
 				$msg .= '</td>';
 				$msg .= '<td>';
@@ -1215,7 +1265,8 @@ switch ($data_param)	{
 				$msg .= '</td>';
 				$msg .= '</tr>';
 				$msg .= '<tr><td colspan="3">&nbsp;時刻 ： '.$cur_sttime.'　～　'.$cur_edtime.'</td></tr>';
-				$msg .= '<tr><td colspan="3"><input type="text" size="100" value="http://www.jawhm.or.jp/s/go/'.$cur_id.'"></td></tr>';
+				$msg .= '<tr><td colspan="2">単独表示</td><td colspan="1"><input type="text" size="60" value="http://www.jawhm.or.jp/s/go/'.$cur_id.'"></td></tr>';
+				$msg .= '<tr><td colspan="2">同時開催</td><td colspan="1"><input type="text" size="60" value="http://www.jawhm.or.jp/s/go2/'.$cur_id.'"></td></tr>';
 				$msg .= '</table>';
 				$msg .= '';
 			}
@@ -1320,6 +1371,7 @@ switch ($data_param)	{
 		$msg .= ',"種別１"';
 		$msg .= ',"種別２"';
 		$msg .= ',"定員"';
+		$msg .= ',"予約"';
 		$msg .= ',"アイコン"';
 		$msg .= ',"中継"';
 		$msg .= ',"国旗"';
@@ -1330,6 +1382,8 @@ switch ($data_param)	{
 		$msg .= ',"内部タイトル"';
 //		$msg .= ',"説明文"';
 		$msg .= ',"キーワード"';
+		$msg .= ',"担当者"';
+		$msg .= ',"中継"';
 		$msg .= chr(13).chr(10);
 
 		try {
@@ -1349,12 +1403,15 @@ switch ($data_param)	{
 			$sql .= ' ,free';
 			$sql .= ' ,type';
 			$sql .= ' ,pax';
+			$sql .= ' ,booking';
 			$sql .= ' ,seminar_name';
 			$sql .= ' ,short_description';
 			$sql .= ' ,country_code';
 			$sql .= ' ,indicated_option';
 			$sql .= ' ,broadcasting';
 			$sql .= ' ,group_color';
+			$sql .= ' ,title';
+			$sql .= ' ,memo';
 			$sql .= ' FROM event_list WHERE '.$cond.' ORDER BY hiduke, starttime, place';
 			$stt = $db->prepare($sql);
 			$stt->execute();
@@ -1372,6 +1429,7 @@ switch ($data_param)	{
 				$cur_free = $row['free'];
 				$cur_type = $row['type'];
 				$cur_pax = $row['pax'];
+				$cur_booking = $row['booking'];
 				$cur_indicated_option = $row['indicated_option'];
 				$cur_broadcasting = $row['broadcasting'];
 				$cur_country_code = $row['country_code'];
@@ -1382,6 +1440,8 @@ switch ($data_param)	{
 				$cur_title2 = $row['k_title2'];
 				$cur_desc1 = $row['k_desc1'];
 				$cur_desc2 = $row['k_desc2'];
+				$cur_title = $row['title'];
+				$cur_memo = $row['memo'];
 
 				$msg .= '"既存"';
 				$msg .= ',"'.$cur_id.'"';
@@ -1394,6 +1454,7 @@ switch ($data_param)	{
 				$msg .= ',"'.$cur_free.'"';
 				$msg .= ',"'.$cur_type.'"';
 				$msg .= ',"'.$cur_pax.'"';
+				$msg .= ',"'.$cur_booking.'"';
 				$msg .= ',"'.$cur_indicated_option.'"';
 				$msg .= ',"'.$cur_broadcasting.'"';
 				$msg .= ',"'.$cur_country_code.'"';
@@ -1404,6 +1465,8 @@ switch ($data_param)	{
 				$msg .= ',"'.$cur_title2.'"';
 //				$msg .= ',"'.$cur_desc1.'"';
 				$msg .= ',"'.$cur_desc2.'"';
+				$msg .= ',"'.$cur_title.'"';
+				$msg .= ',"'.$cur_memo.'"';
 
 				$msg .= chr(13).chr(10);
 			}
