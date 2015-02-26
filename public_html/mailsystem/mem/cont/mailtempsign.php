@@ -406,6 +406,16 @@ switch ($data_param) {
                 'booking_num' => $row['booking_num'],
             );
         }
+        //test
+        while ($row = $stt2->fetch(PDO::FETCH_ASSOC)) {
+            $data_s = array(
+                'subscriber_name' => "予約者の名前",
+                'seminar_date' => "セミナーの開催日時",
+                'seminar_title' => "セミナー名",
+                'seminar_id' => "セミナーID",
+                'booking_num' => "予約番号",
+            );
+        }
         
         require_once '../../lib/TemplateFile.php';
         
