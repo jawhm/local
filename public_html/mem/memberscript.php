@@ -175,6 +175,7 @@ if ($act == 's2') {
             $chk = 'ng';
         }
 
+        /*
         $dat_job = @$_POST['job'];
         $dat_country = '';
         for ($idx = 1; $idx <= 99; $idx++) {
@@ -204,6 +205,8 @@ if ($act == 's2') {
                 $dat_know .= @$_POST['k' . $idx];
             }
         }
+        */
+        
         $dat_mailsend = @$_POST['mailsend'];
         $dat_agree = @$_POST['agree'];
 
