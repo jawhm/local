@@ -287,11 +287,12 @@ if ($act == 's3') {
         $dat_add3 = @$_POST['add3'];
         $dat_tel = @$_POST['tel'];
 
-        $dat_job = @$_POST['job'];
-        $dat_country = @$_POST['country'];
-        $dat_gogaku = @$_POST['gogaku'];
-        $dat_purpose = @$_POST['purpose'];
-        $dat_know = @$_POST['know'];
+//        $dat_job = @$_POST['job'];
+//        $dat_country = @$_POST['country'];
+//        $dat_gogaku = @$_POST['gogaku'];
+//        $dat_purpose = @$_POST['purpose'];
+//        $dat_know = @$_POST['know'];
+        
         $dat_mailsend = @$_POST['mailsend'];
         $dat_agree = @$_POST['agree'];
 
@@ -388,9 +389,9 @@ if ($act == 's3') {
             try {
                 $db = connexion_database();
                 $sql = 'INSERT INTO memlist (';
-                $sql .= ' id ,email ,password ,namae ,furigana ,gender ,birth ,pcode ,add1 ,add2 ,add3 ,add4 ,tel ,job ,country ,gogaku ,purpose ,know ,agree ,state ,indate ,mailcheck ,mailcheckdate ,mailsend ,insdate ,upddate, kyoten, sid ';
+                $sql .= ' id ,email ,password ,namae ,furigana ,gender ,birth ,pcode ,add1 ,add2 ,add3 ,add4 ,tel ,agree ,state ,indate ,mailcheck ,mailcheckdate ,mailsend ,insdate ,upddate, kyoten, sid ';
                 $sql .= ') VALUES (';
-                $sql .= ' :id ,:email ,:password ,:namae ,:furigana ,:gender ,:birth ,:pcode ,:add1 ,:add2 ,:add3 ,:add4 ,:tel ,:job ,:country ,:gogaku ,:purpose ,:know ,:agree ,:state ,:indate ,:mailcheck ,:mailcheckdate ,:mailsend ,:insdate ,:upddate, :kyoten, :sid ';
+                $sql .= ' :id ,:email ,:password ,:namae ,:furigana ,:gender ,:birth ,:pcode ,:add1 ,:add2 ,:add3 ,:add4 ,:tel ,:agree ,:state ,:indate ,:mailcheck ,:mailcheckdate ,:mailsend ,:insdate ,:upddate, :kyoten, :sid ';
                 $sql .= ')';
                 $stt2 = $db->prepare($sql);
                 $stt2->bindValue(':id', $dat_id);
@@ -406,11 +407,11 @@ if ($act == 's3') {
                 $stt2->bindValue(':add3', $dat_add3);
                 $stt2->bindValue(':add4', NULL);
                 $stt2->bindValue(':tel', $dat_tel);
-                $stt2->bindValue(':job', $dat_job);
-                $stt2->bindValue(':country', $dat_country);
-                $stt2->bindValue(':gogaku', $dat_gogaku);
-                $stt2->bindValue(':purpose', $dat_purpose);
-                $stt2->bindValue(':know', $dat_know);
+//                $stt2->bindValue(':job', $dat_job);
+//                $stt2->bindValue(':country', $dat_country);
+//                $stt2->bindValue(':gogaku', $dat_gogaku);
+//                $stt2->bindValue(':purpose', $dat_purpose);
+//                $stt2->bindValue(':know', $dat_know);
                 $stt2->bindValue(':agree', $dat_agree);
                 $stt2->bindValue(':state', '0');
                 $stt2->bindValue(':indate', date('Y/m/d'));
@@ -453,16 +454,16 @@ if ($act == 's3') {
             $body .= chr(10);
             $body .= '電話番号：' . $dat_tel;
             $body .= chr(10);
-            $body .= '職業：' . $dat_job;
-            $body .= chr(10);
-            $body .= '渡航予定国：' . $dat_country;
-            $body .= chr(10);
-            $body .= '語学力：' . $dat_gogaku;
-            $body .= chr(10);
-            $body .= '渡航目的：' . $dat_purpose;
-            $body .= chr(10);
-            $body .= '協会：' . $dat_know;
-            $body .= chr(10);
+//            $body .= '職業：' . $dat_job;
+//            $body .= chr(10);
+//            $body .= '渡航予定国：' . $dat_country;
+//            $body .= chr(10);
+//            $body .= '語学力：' . $dat_gogaku;
+//            $body .= chr(10);
+//            $body .= '渡航目的：' . $dat_purpose;
+//            $body .= chr(10);
+//            $body .= '協会：' . $dat_know;
+//            $body .= chr(10);
             $body .= '案内メール：' . $dat_mailsend . '  (0:不要 1:必要)';
             $body .= chr(10);
             $body .= '同意確認：' . $dat_agree;
