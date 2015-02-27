@@ -271,7 +271,130 @@
                 </div>
             </td>
         </tr>
-
+        <tr>
+            <td class="td_flag">
+            </td>
+            <td class="td_tag">
+                職業
+            </td>
+            <td class="td_method"></td>
+            <td class="td_input">
+                <input type="radio" class="radio" name="job" value="会社員">&nbsp;会社員
+                &nbsp;&nbsp;
+                <input type="radio" class="radio" name="job" value="派遣">&nbsp;派遣
+                &nbsp;&nbsp;
+                <input type="radio" class="radio" name="job" value="アルバイト">&nbsp;アルバイト
+                &nbsp;&nbsp;
+                <input type="radio" class="radio" name="job" value="学生">&nbsp;学生
+                &nbsp;&nbsp;
+                <input type="radio" class="radio" name="job" value="無職">&nbsp;無職
+                &nbsp;&nbsp;
+                <input type="radio" class="radio" name="job" value="その他">&nbsp;その他
+                <br/>
+            </td>
+        </tr>
+        <tr>
+            <td class="td_flag">
+            </td>
+            <td class="td_tag">
+                渡航予定国
+            </td>
+            <td class="td_method"></td>
+            <td class="td_input">
+                <input type="checkbox" class="checkbox" name="c1" value="オーストラリア">&nbsp;オーストラリア
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="c2" value="ニュージーランド">&nbsp;ニュージーランド
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="c3" value="カナダ">&nbsp;カナダ
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="c4" value="韓国">&nbsp;韓国
+                <br/>
+                <input type="checkbox" class="checkbox" name="c5" value="フランス">&nbsp;フランス
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="c6" value="ドイツ">&nbsp;ドイツ
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="c7" value="イギリス">&nbsp;イギリス
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="c8" value="アイルランド">&nbsp;アイルランド
+                <br/>
+                <input type="checkbox" class="checkbox" name="c9" value="デンマーク">&nbsp;デンマーク
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="c10" value="台湾">&nbsp;台湾
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="c11" value="香港">&nbsp;香港
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="c12" value="未定">&nbsp;未定
+                <br/>
+            </td>
+        </tr>
+        <tr>
+            <td class="td_flag">
+            </td>
+            <td class="td_tag">
+                渡航予定国の語学力
+            </td>
+            <td class="td_method"></td>
+            <td class="td_input">
+                <input type="radio" class="radio" name="gogaku" value="堪能">&nbsp;堪能
+                &nbsp;&nbsp;
+                <input type="radio" class="radio" name="gogaku" value="日常会話">&nbsp;日常会話
+                &nbsp;&nbsp;
+                <input type="radio" class="radio" name="gogaku" value="挨拶程度">&nbsp;挨拶程度
+                &nbsp;&nbsp;
+                <input type="radio" class="radio" name="gogaku" value="全然できない">&nbsp;全然できない
+                &nbsp;&nbsp;
+                <input type="radio" class="radio" name="gogaku" value="その他">&nbsp;その他
+                <br/>
+            </td>
+        </tr>
+        <tr>
+            <td class="td_flag">
+            </td>
+            <td class="td_tag">
+                渡航目的
+            </td>
+            <td class="td_method"></td>
+            <td class="td_input">
+                <input type="checkbox" class="checkbox" name="p1" value="観光">&nbsp;観光
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="p2" value="語学上達のため">&nbsp;語学上達のため
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="p3" value="将来のキャリアアップ">&nbsp;将来のキャリアアップ
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="p4" value="海外生活体験">&nbsp;海外生活体験
+                <br/>
+                <input type="checkbox" class="checkbox" name="p5" value="現地調査">&nbsp;現地調査
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="p6" value="研究">&nbsp;研究
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="p7" value="その他">&nbsp;その他
+                <br/>
+            </td>
+        </tr>
+        <tr>
+            <td class="td_flag">
+            </td>
+            <td class="td_tag">
+                どこで当協会を<br/>　　　知りましたか
+            </td>
+            <td class="td_method"></td>
+            <td class="td_input">
+                <input type="checkbox" class="checkbox" name="k1" value="協会ホームページ">&nbsp;協会ホームページ
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="k2" value="留学エージェントの紹介">&nbsp;留学エージェントの紹介
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="k3" value="書籍・雑誌">&nbsp;書籍・雑誌
+                <br/>
+                <input type="checkbox" class="checkbox" name="k4" value="友人の紹介">&nbsp;友人の紹介
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="k5" value="大使館の紹介">&nbsp;大使館の紹介
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="k6" value="学校の紹介">&nbsp;学校の紹介
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" class="checkbox" name="k7" value="その他">&nbsp;その他
+                <br/>
+            </td>
+        </tr>
         <tr>
             <td class="td_flag">
             </td>

@@ -20,19 +20,17 @@
         <tr>
             <td class="td_check_tag">性別</td>
             <td class="td_check_input">
-                <?php
-                if ($dat_gender == 'm') {
+                <?php if ($dat_gender == 'm') {
                     echo '男性';
                 } else {
                     echo '女性';
-                }
-                ?>
+                } ?>
             </td>
         </tr>
         <tr>
             <td class="td_check_tag">生年月日</td>
             <td class="td_check_input">
-                <?php echo $dat_year . '年 ' . $dat_month . '月 ' . $dat_day . '日'; ?>
+<?php echo $dat_year . '年 ' . $dat_month . '月 ' . $dat_day . '日'; ?>
             </td>
         </tr>
         <tr>
@@ -63,15 +61,33 @@
             <td class="td_check_input"><?php echo $dat_tel; ?></td>
         </tr>
         <tr>
+            <td class="td_check_tag">職業</td>
+            <td class="td_check_input"><?php echo $dat_job; ?></td>
+        </tr>
+        <tr>
+            <td class="td_check_tag">渡航予定国</td>
+            <td class="td_check_input"><?php echo $dat_country; ?></td>
+        </tr>
+        <tr>
+            <td class="td_check_tag">渡航予定国の語学力</td>
+            <td class="td_check_input"><?php echo $dat_gogaku; ?></td>
+        </tr>
+        <tr>
+            <td class="td_check_tag">渡航目的</td>
+            <td class="td_check_input"><?php echo $dat_purpose; ?></td>
+        </tr>
+        <tr>
+            <td class="td_check_tag">どこで当協会を知りましたか</td>
+            <td class="td_check_input"><?php echo $dat_know; ?></td>
+        </tr>
+        <tr>
             <td class="td_check_tag">今後のご案内</td>
             <td class="td_check_input">
-                <?php
-                if ($dat_mailsend == '1') {
-                    echo '受け取る';
-                } else {
-                    echo '受け取らない';
-                }
-                ?>
+<?php if ($dat_mailsend == '1') {
+    echo '受け取る';
+} else {
+    echo '受け取らない';
+} ?>
             </td>
         </tr>
     </table>
@@ -101,9 +117,9 @@
         <input type="hidden" name="agree" value="<?php echo $dat_agree; ?>">
 
         <input type="button" class="back" value="<< 戻る" onclick="history.back();" style="width:150px; height:30px; margin:18px 0 10px 20px; font-size:11pt; font-weight:bold;">
-        <?php if ($chk == 'ok') { ?>
+<?php if ($chk == 'ok') { ?>
             <input type="submit" class="submit" value="次へ >>" style="width:150px; height:30px; margin:18px 0 10px 0; font-size:11pt; font-weight:bold;">
-        <?php } ?>
+<?php } ?>
     </form>
 
 </div>
