@@ -53,15 +53,15 @@
                 </div>
                 ※半角英数字５～２０文字で入力してください。 <br /><br />
                 <input class="<?php echo $field_type['password2'] ?>" type="password" maxlength="20" name="password2" id="password2" data-mini="true" value="<?php echo $field_value['password2']; ?>"  />
-<?php
-if ($field_type['password2'] == '_field_error') {
-    if ($different_password == 1)
-        echo '<p class="msg_error">上記のパスワードと異なります。確認してください。</p>';
-    else
-        echo '<p class="msg_error">パスワードを再度入力してください。</p>';
-} else
-    echo '<br />';
-?>
+                <?php
+                if ($field_type['password2'] == '_field_error') {
+                    if ($different_password == 1)
+                        echo '<p class="msg_error">上記のパスワードと異なります。確認してください。</p>';
+                    else
+                        echo '<p class="msg_error">パスワードを再度入力してください。</p>';
+                } else
+                    echo '<br />';
+                ?>
                 ※確認の為、同じパスワードを入力してください。 
             </div>
 
@@ -69,10 +69,10 @@ if ($field_type['password2'] == '_field_error') {
                 <span class="mandatory<?php echo $field_type['name'] ?><?php echo $field_type['firstname'] ?>">お名前 <span class="text-type">[全角]</span></span>
                 <div class="part1">
                     <input class="<?php echo $field_type['name'] ?>" type="text" name="name" id="name" data-mini="true" placeholder="姓 . 例） 山田" value="<?php echo html_entity_decode($field_value['name']); ?>" />
-<?php
-if ($field_type['name'] == '_field_error')
-    echo '<p class="msg_error">お名前（氏）を入力してください</p>';
-?>
+                    <?php
+                    if ($field_type['name'] == '_field_error')
+                        echo '<p class="msg_error">お名前（氏）を入力してください</p>';
+                    ?>
                 </div>
                 <div class="part2">
                     <input class="<?php echo $field_type['firstname'] ?>" type="text" name="firstname" id="firstname" data-mini="true" value="<?php echo html_entity_decode($field_value['firstname']); ?>" placeholder="名 . 例） 太郎" />
@@ -86,16 +86,16 @@ if ($field_type['name'] == '_field_error')
 
 
             <div data-role="fieldcontain" class="div-form">
-                <span class="mandatory<?php echo $field_type['phonetic_name'] ?><?php echo $field_type['phonetic_firstname'] ?>">フリガナ <span class="text-type">[全角カナ]</span></span>
+                <span class="mandatory<?php echo $field_type['phonetic_name'] ?><?php echo $field_type['phonetic_firstname'] ?>">ふりがな <span class="text-type">[ひらがな]</span></span>
                 <div class="part1">
-                    <input class="<?php echo $field_type['phonetic_name'] ?>" type="text" name="phonetic_name" id="phonetic_name" data-mini="true" value="<?php echo html_entity_decode($field_value['phonetic_name']); ?>" placeholder="セイ . 例） ヤマダ" data-inline="true" />
-<?php
-if ($field_type['phonetic_name'] == '_field_error')
-    echo '<p class="msg_error">フリガナ（氏）を入力してください</p>';
-?>
+                    <input class="<?php echo $field_type['phonetic_name'] ?>" type="text" name="phonetic_name" id="phonetic_name" data-mini="true" value="<?php echo html_entity_decode($field_value['phonetic_name']); ?>" placeholder="せい . 例） やまだ" data-inline="true" />
+                    <?php
+                    if ($field_type['phonetic_name'] == '_field_error')
+                        echo '<p class="msg_error">フリガナ（氏）を入力してください</p>';
+                    ?>
                 </div>
                 <div class="part2">
-                    <input class="<?php echo $field_type['phonetic_firstname'] ?>" type="text" name="phonetic_firstname" id="phonetic_firstname" data-mini="true" value="<?php echo html_entity_decode($field_value['phonetic_firstname']); ?>" placeholder="メイ .例） タロウ"  />
+                    <input class="<?php echo $field_type['phonetic_firstname'] ?>" type="text" name="phonetic_firstname" id="phonetic_firstname" data-mini="true" value="<?php echo html_entity_decode($field_value['phonetic_firstname']); ?>" placeholder="めい .例） たろう"  />
                     <?php
                     if ($field_type['phonetic_firstname'] == '_field_error')
                         echo '<p class="msg_error">フリガナ（名）を入力してください</p>';
@@ -122,16 +122,16 @@ if ($field_type['phonetic_name'] == '_field_error')
                 <fieldset data-role="controlgroup" data-type="horizontal">
                     <label for="select-choice-year">年</label>
                     <select name="select-choice-year" id="select-choice-year"  data-mini="true">
-<?php
-for ($i = 1970; $i <= date('Y'); $i++) {
-    echo '<option value="' . $i . '"';
-    if ($field_value['select-choice-year'] == $i)
-        echo'selected';
-    elseif ($i == (date('Y') - 22))
-        echo'selected';
-    echo '>' . $i . '年</option>';
-}
-?>                            
+                        <?php
+                        for ($i = 1970; $i <= date('Y'); $i++) {
+                            echo '<option value="' . $i . '"';
+                            if ($field_value['select-choice-year'] == $i)
+                                echo'selected';
+                            elseif ($i == (date('Y') - 22))
+                                echo'selected';
+                            echo '>' . $i . '年</option>';
+                        }
+                        ?>                            
                     </select>
 
                     <label for="select-choice-month">月</label>
@@ -164,10 +164,10 @@ for ($i = 1970; $i <= date('Y'); $i++) {
             <div data-role="fieldcontain" class="div-form">
                 <span class="mandatory<?php echo $field_type['postcode'] ?>">郵便番号 <span class="text-type">[半角数字]</span></span>
                 <input class="<?php echo $field_type['postcode'] ?>" type="text" name="postcode" pattern="[0-9]*" id="postcode" data-mini="true" value="<?php echo $field_value['postcode']; ?>" onKeyUp="AjaxZip2.zip2addr(this, 'province', 'municipality', null, 'municipality');" placeholder="例） 160-0023" />
-                        <?php
-                        if ($field_type['postcode'] == '_field_error')
-                            echo '<p class="msg_error">郵便番号を入力してください</p>';
-                        ?>
+                <?php
+                if ($field_type['postcode'] == '_field_error')
+                    echo '<p class="msg_error">郵便番号を入力してください</p>';
+                ?>
                 <p>郵便番号をご入力頂くと、ご住所が自動で入力されます。<!--<a href="http://www.post.japanpost.jp/zipcode/" target="_blank" data-role="button" data-icon="info" data-mini="true">[ 〒郵便番号検索ページへ ]</a>--></p>
             </div>
 
@@ -183,19 +183,19 @@ for ($i = 1970; $i <= date('Y'); $i++) {
             <div data-role="fieldcontain" class="div-form">
                 <span class="mandatory<?php echo $field_type['municipality'] ?>">市区町村 <span class="text-type">[全角]</span></span>
                 <input class="<?php echo $field_type['municipality'] ?>" type="text" name="municipality" id="municipality" data-mini="true" value="<?php echo html_entity_decode($field_value['municipality']); ?>" placeholder="例） 新宿区西新宿" />
-<?php
-if ($field_type['municipality'] == '_field_error')
-    echo '<p class="msg_error">市区町村を入力してください</p>';
-?>
+                <?php
+                if ($field_type['municipality'] == '_field_error')
+                    echo '<p class="msg_error">市区町村を入力してください</p>';
+                ?>
             </div>
 
             <div data-role="fieldcontain" class="div-form">
                 <span class="mandatory<?php echo $field_type['address'] ?>">番地・建物名 <span class="text-type">[全角]</span></span>
                 <textarea class="<?php echo $field_type['address'] ?>" cols="40" rows="8" name="address" id="address" placeholder="例） １－３－３　ステーションビル５０７"><?php echo html_entity_decode($field_value['address']); ?></textarea>
-<?php
-if ($field_type['address'] == '_field_error')
-    echo '<p class="msg_error">番地・建物名を入力してください</p>';
-?>
+                <?php
+                if ($field_type['address'] == '_field_error')
+                    echo '<p class="msg_error">番地・建物名を入力してください</p>';
+                ?>
                 <div data-role="collapsible" data-mini="true" data-iconpos="notext" data-theme="f" >
                     <h3 class="moreinfo"></h3>
                     <p class="moretext">※海外からの場合、国名を「都道府県」の欄に入力し<br/>
@@ -208,27 +208,47 @@ if ($field_type['address'] == '_field_error')
             <div data-role="fieldcontain" class="div-form">
                 <span class="mandatory<?php echo $field_type['phonenumber'] ?>">電話番号 <span class="text-type">[半角数字]</span></span>
                 <input class="<?php echo $field_type['phonenumber'] ?>" type="text" pattern="[0-9]*" name="phonenumber" id="phonenumber" data-mini="true" value="<?php echo $field_value['phonenumber']; ?>" placeholder="例） 0363045858" />
-<?php
-if ($field_type['phonenumber'] == '_field_error') {
-    if ($wrong_phone_format)
-        echo '<p class="msg_error">ハイフンの入力は不要です（電話番号は半角数字で入力してください）</p>';
-    else
-        echo '<p class="msg_error">電話番号を入力してください </p>';
-} else
-    echo'<br />※ハイフンは入力不要です。';
-?>
+                <?php
+                if ($field_type['phonenumber'] == '_field_error') {
+                    if ($wrong_phone_format)
+                        echo '<p class="msg_error">ハイフンの入力は不要です（電話番号は半角数字で入力してください）</p>';
+                    else
+                        echo '<p class="msg_error">電話番号を入力してください </p>';
+                } else
+                    echo'<br />※ハイフンは入力不要です。';
+                ?>
             </div>
 
             <div data-role="fieldcontain" class="div-form">
-                <span class="mandatory<?php echo $field_type['agree'] ?>">利用規約同意</span>
+                <?php if ($field_type['agree'] <> '' || $field_type['agree2'] <> '' || $field_type['agree3'] <> '') { ?>
+                    <span class="mandatory_field_error">利用規約同意</span>
+                <?php } else { ?>
+                    <span class="mandatory<?php echo $field_type['agree'] ?>">利用規約同意</span>
+                <?php } ?>
+                <span class="title">必ず以下の、「メンバー規約」「プライバシーポリシー」「ビザ申請に関する重要事項」を読みご理解の上、メンバー登録を行ってください。</span>
                 <a href="#members-term" data-role="button" data-rel="dialog" data-icon="info" data-transition="pop" data-mini="true" data-inline="true">【　メンバー規約　】</a>
                 <a href="#privacy-policy" data-role="button" data-rel="dialog" data-icon="info" data-transition="pop" data-mini="true" data-inline="true" >【　プライバシーポリシー　】</a>
+                <a href="#visa-suport" data-role="button" data-rel="dialog" data-icon="info" data-transition="pop" data-mini="true" data-inline="true" >【　ビザ申請に関する重要事項　】</a>
+
                 <input type="checkbox" id="agree" name="agree" value="1" data-mini="true" <?php if ($field_value['agree'] == 1) echo 'checked'; ?> />
-                <label for="agree">メンバー規約」に同意し、「プライバシーポリシー」を確認しました</label>
+                <label for="agree">「メンバー規約」に同意します。</label>
                 <?php
                 if ($field_type['agree'] == '_field_error')
-                    echo '<p class="msg_error">メンバー登録するには、メンバー規約への同意及びプライバシーポリシーをご確認頂く必要があります。
-</p>';
+                    echo '<p class="msg_error">メンバー登録には、メンバー規約への同意が必要です。</p>';
+                ?>
+
+                <input type="checkbox" id="agree2" name="agree2" value="1" data-mini="true" <?php if ($field_value['agree2'] == 1) echo 'checked'; ?> />
+                <label for="agree2">「プライバシーポリシー」を確認しました。</label>
+                <?php
+                if ($field_type['agree2'] == '_field_error')
+                    echo '<p class="msg_error">メンバー登録には、プライバシーポリシーの確認が必要です。</p>';
+                ?>
+
+                <input type="checkbox" id="agree3" name="agree3" value="1" data-mini="true" <?php if ($field_value['agree3'] == 1) echo 'checked'; ?> />
+                <label for="agree3">「ビザ申請に関する重要事項」を確認しました。</label>
+                <?php
+                if ($field_type['agree3'] == '_field_error')
+                    echo '<p class="msg_error">メンバー登録には、ビザ申請に関する重要事項の確認が必要です。</p>';
                 ?>
             </div>
 
@@ -238,7 +258,7 @@ if ($field_type['phonenumber'] == '_field_error') {
 
     </div><!-- /content -->
 
-                <?php echo footer(); ?>
+    <?php echo footer(); ?>
 
 </div><!-- /page -->
 
@@ -355,3 +375,38 @@ if ($field_type['phonenumber'] == '_field_error') {
     </div><!-- /content -->
 
 </div><!-- /page privacy-policy -->
+
+<div data-role="page" id="visa-suport">
+
+    <div data-role="header" data-theme="b">
+        <h1>メンバー登録</h1>
+    </div><!-- /header -->
+
+    <div data-role="content" data-theme="b" class="info">	
+        <p>
+            「ビザ申請に関する重要事項」<br/>
+            &nbsp;<br/>
+            一般社団法人日本ワーキング・ホリデー協会（以下、当協会という）では、皆様のビザ（査証）申請に当り、以下の様な宣言をします。<br/>
+            &nbsp;<br/>
+            １．ビザ申請のサポートとはビザの発給を保証するものではなく、ビザの審査、発給に関しては各移民局、大使館が行うものであり、当協会にて審査、発行を行っている訳ではありません。<br/>
+            よって、ビザの審査期間、発給時期、発給期間等の保証は一切しません。<br/>
+            &nbsp;<br/>
+            ２．原則、ビザ申請は申請者本人で行うものであり、当協会ではビザの代行申請を行っていません。<br/>
+            万が一希望された場合でも、申請者本人の承諾かつ、当協会サポートの元、申請者本人にて申請するものであり、当協会では一切の責任を負いません。<br/>
+            また、ビザ申請必要書類に関しては作成方法等の案内や添削のサポートを行うが、作成代行を行うものではありません。<br/>
+            &nbsp;<br/>
+            ３．当協会のビザ申請サポート前にご自身でビザ申請をした場合の、不許可通知、追加申請等のトラブルに関しての対応、サポートは一切できません。<br/>
+            メンバー登録後、このような事例が発覚した際には、会員登録を解除します。なお、この場合のメンバー登録料は返金しません。<br/>
+            &nbsp;<br/>
+            ４．ビザ申請サポートに関しては申請者本人からの依頼があり行うものであり、その申し出が遅れたために申請期間に間に合わない、または定員達してしまった場合等の保証は一切できません。<br/>
+            また、ビザ申請サポートが途中であっても、申請者本人からの連絡がなく申請者本人が放置した場合、当協会は一切の責任を負いません。<br/>
+            &nbsp;<br/>
+            ５．ビザ申請サポートに関して、虚偽の申請または内容の漏れや間違いなどが発覚した場合にはサポートが出来ません。<br/>
+            また、ビザ申請に対して、移民局、大使館より追加書類や面接を求められた場合も代行は出来できませんので、申請者本人にて対応する必要があります。<br/>
+            &nbsp;<br/>
+
+            以上<br/>
+        </p>
+    </div><!-- /content -->
+
+</div><!-- /page visa-support -->

@@ -10,8 +10,8 @@ require_once('./include/set_param.php');
 //mb_internal_encoding("utf8");
 // Check step1 Data
 
-$list_fields = array('email', 'password', 'password2', 'name', 'firstname', 'phonetic_name', 'phonetic_firstname', 'gender', 'select-choice-year', 'select-choice-month', 'select-choice-day', 'postcode', 'province', 'municipality', 'address', 'phonenumber', 'occupation', 'country', 'language-skill', 'travel-purpose', 'know-how', 'guide', 'agree');
-$list_mandatory_fields = array('email', 'password', 'password2', 'name', 'firstname', 'phonetic_name', 'phonetic_firstname', 'gender', 'select-choice-year', 'select-choice-month', 'select-choice-day', 'postcode', 'province', 'municipality', 'address', 'phonenumber', 'agree');
+$list_fields = array('email', 'password', 'password2', 'name', 'firstname', 'phonetic_name', 'phonetic_firstname', 'gender', 'select-choice-year', 'select-choice-month', 'select-choice-day', 'postcode', 'province', 'municipality', 'address', 'phonenumber', 'occupation', 'country', 'language-skill', 'travel-purpose', 'know-how', 'guide', 'agree', 'agree2', 'agree3');
+$list_mandatory_fields = array('email', 'password', 'password2', 'name', 'firstname', 'phonetic_name', 'phonetic_firstname', 'gender', 'select-choice-year', 'select-choice-month', 'select-choice-day', 'postcode', 'province', 'municipality', 'address', 'phonenumber', 'agree', 'agree2', 'agree3');
 
 
 //****************************
@@ -147,7 +147,7 @@ if ($_POST['step'] == '2') {
     $dat_email = $data_array['email'];
     $dat_password = md5($data_array['password']);
     $dat_namae = trimspace($data_array['name']) . '  ' . trimspace($data_array['firstname']);
-    $dat_furigana = mb_convert_kana(trimspace($data_array['phonetic_name']) . '  ' . trimspace($data_array['phonetic_firstname']), "C");
+    $dat_furigana = mb_convert_kana(trimspace($data_array['phonetic_name']) . '  ' . trimspace($data_array['phonetic_firstname']), "KC");
     $dat_gender = $data_array['gender'];
     $dat_year = $data_array['select-choice-year'];
     $dat_month = $data_array['select-choice-month'];
@@ -159,19 +159,20 @@ if ($_POST['step'] == '2') {
     $dat_add3 = $data_array['address'];
     $dat_tel = mb_convert_kana($data_array['phonenumber'], "a");
 
-    $dat_job = $data_array['occupation'];
-    $dat_country = $data_array['country'];
-    $dat_gogaku = $data_array['language-skill'];
-    $dat_purpose = $data_array['travel-purpose'];
-    $dat_know = $data_array['know-how'];
+    $dat_job = $data_array['occupation'] = isset($_POST['occupation']) ? $_POST['occupation'] : '';
+    $dat_country = $data_array['country'] = isset($_POST['country']) ? $_POST['country'][0] : '';
+    $dat_gogaku = $data_array['language-skill'] = isset($_POST['language-skill']) ? $_POST['language-skill'] : '';
+    $dat_purpose = $data_array['travel-purpose'] = isset($_POST['travel-purpose']) ? $_POST['travel-purpose'][0] : '';
+    $dat_know = $data_array['know-how'] = isset($_POST['know-how']) ? $_POST['know-how'][0] : '';
     $dat_mailsend = $data_array['guide'];
     $dat_agree = $data_array['agree'];
+    $dat_agree2 = $data_array['agree2'];
+    $dat_agree3 = $data_array['agree3'];
 
     $dat_kyoten = NULL;
 
     // 付加情報を設定 random number to check e-mail
     $mail_check = getRandomString(5);
-
 
     // Insert data
     try {
@@ -179,9 +180,9 @@ if ($_POST['step'] == '2') {
         $db = connexion_database();
 
         $sql = 'INSERT INTO memlist (';
-        $sql .= ' id ,email ,password ,namae ,furigana ,gender ,birth ,pcode ,add1 ,add2 ,add3 ,add4 ,tel ,job ,country ,gogaku ,purpose ,know ,agree ,state ,indate ,mailcheck ,mailcheckdate ,mailsend ,insdate ,upddate, kyoten, sid, payment_url, payment_nb, payment_expired_date';
+        $sql .= ' id ,email ,password ,namae ,furigana ,gender ,birth ,pcode ,add1 ,add2 ,add3 ,add4 ,tel ,job ,country ,gogaku ,purpose ,know ,agree ,agree2 ,agree3 ,state ,indate ,mailcheck ,mailcheckdate ,mailsend ,insdate ,upddate, kyoten, sid, payment_url, payment_nb, payment_expired_date';
         $sql .= ') VALUES (';
-        $sql .= ' :id ,:email ,:password ,:namae ,:furigana ,:gender ,:birth ,:pcode ,:add1 ,:add2 ,:add3 ,:add4 ,:tel ,:job ,:country ,:gogaku ,:purpose ,:know ,:agree ,:state ,:indate ,:mailcheck ,:mailcheckdate ,:mailsend ,:insdate ,:upddate, :kyoten, :sid, :payment_url, :payment_nb, :payment_expired_date';
+        $sql .= ' :id ,:email ,:password ,:namae ,:furigana ,:gender ,:birth ,:pcode ,:add1 ,:add2 ,:add3 ,:add4 ,:tel ,:job ,:country ,:gogaku ,:purpose ,:know ,:agree ,:agree2 ,:agree3 ,:state ,:indate ,:mailcheck ,:mailcheckdate ,:mailsend ,:insdate ,:upddate, :kyoten, :sid, :payment_url, :payment_nb, :payment_expired_date';
         $sql .= ')';
         $stt2 = $db->prepare($sql);
         $stt2->bindValue(':id', $dat_id);
@@ -203,6 +204,8 @@ if ($_POST['step'] == '2') {
         $stt2->bindValue(':purpose', $dat_purpose);
         $stt2->bindValue(':know', $dat_know);
         $stt2->bindValue(':agree', $dat_agree);
+        $stt2->bindValue(':agree2', $dat_agree2);
+        $stt2->bindValue(':agree3', $dat_agree3);
         $stt2->bindValue(':state', '0');
         $stt2->bindValue(':indate', date('Y/m/d'));
         $stt2->bindValue(':mailcheck', $mail_check);
@@ -258,7 +261,7 @@ if ($_POST['step'] == '2') {
     $body .= '渡航目的：' . $dat_purpose;
     $body .= chr(10);
     $body .= '協会：' . $dat_know;
-    $body .= chr(10);
+    $body .= chr(10);   // 受け取らない 
     $body .= '案内メール：' . $dat_mailsend . '  (0:不要 1:必要)';
     $body .= chr(10);
     $body .= '同意確認：' . $dat_agree;
@@ -270,6 +273,7 @@ if ($_POST['step'] == '2') {
     $body .= chr(10);
     $body .= '--------------------------------------';
     $body .= chr(10);
+    
     foreach ($data_array as $post_name => $post_value) {
         $body .= chr(10);
         $body .= $post_name . " : " . $post_value;

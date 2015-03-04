@@ -3,3 +3,6 @@ ALTER TABLE `mailtext` ADD `date_created` DATETIME NOT NULL DEFAULT '0000-00-00 
 ALTER TABLE `mailtext` ADD `date_modified` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `date_created` ;
 
 ALTER TABLE `event_list` ADD `beginer` TINYINT( 1 ) NOT NULL DEFAULT '0'
+
+ALTER TABLE `memlist` ADD `agree2` VARCHAR( 10 ) NOT NULL AFTER `agree` ,
+ADD `agree3` VARCHAR( 10 ) NOT NULL AFTER `agree2` 
