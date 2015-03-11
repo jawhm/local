@@ -6,3 +6,5 @@ ALTER TABLE `event_list` ADD `beginer` TINYINT( 1 ) NOT NULL DEFAULT '0'
 
 ALTER TABLE `memlist` ADD `agree2` VARCHAR( 10 ) NOT NULL AFTER `agree` ,
 ADD `agree3` VARCHAR( 10 ) NOT NULL AFTER `agree2` 
+
+ALTER TABLE `maillist` ADD `riyu` VARCHAR( 256 ) NULL AFTER `haihai` 
