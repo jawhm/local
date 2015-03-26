@@ -220,7 +220,7 @@
             </div>
 
             <div data-role="fieldcontain" class="div-form">
-                <?php if ($field_type['agree']) { ?>
+                <?php if ($field_type['agree'] <> '' || $field_type['agree2'] <> '' || $field_type['agree3'] <> '') { ?>
                     <span class="mandatory_field_error">利用規約同意</span>
                 <?php } else { ?>
                     <span class="mandatory<?php echo $field_type['agree'] ?>">利用規約同意</span>
@@ -235,6 +235,20 @@
                 <?php
                 if ($field_type['agree'] == '_field_error')
                     echo '<p class="msg_error">メンバー登録には、メンバー規約への同意が必要です。</p>';
+                ?>
+                
+                <input type="checkbox" id="agree2" name="agree2" value="1" data-mini="true" <?php if ($field_value['agree2'] == 1) echo 'checked'; ?> />
+                <label for="agree2">「プライバシーポリシー」を確認しました。</label>
+                <?php
+                if ($field_type['agree2'] == '_field_error')
+                    echo '<p class="msg_error">メンバー登録には、プライバシーポリシーの確認が必要です。</p>';
+                ?>
+
+                <input type="checkbox" id="agree3" name="agree3" value="1" data-mini="true" <?php if ($field_value['agree3'] == 1) echo 'checked'; ?> />
+                <label for="agree3">「ビザ申請に関する重要事項」を確認しました。</label>
+                <?php
+                if ($field_type['agree3'] == '_field_error')
+                    echo '<p class="msg_error">メンバー登録には、ビザ申請に関する重要事項の確認が必要です。</p>';
                 ?>
 
             </div>

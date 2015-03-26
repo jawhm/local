@@ -10,8 +10,8 @@ require_once('./include/set_param.php');
 //mb_internal_encoding("utf8");
 // Check step1 Data
 
-$list_fields = array('email', 'password', 'password2', 'name', 'firstname', 'phonetic_name', 'phonetic_firstname', 'gender', 'select-choice-year', 'select-choice-month', 'select-choice-day', 'postcode', 'province', 'municipality', 'address', 'phonenumber', 'occupation', 'country', 'language-skill', 'travel-purpose', 'know-how', 'guide', 'agree');
-$list_mandatory_fields = array('email', 'password', 'password2', 'name', 'firstname', 'phonetic_name', 'phonetic_firstname', 'gender', 'select-choice-year', 'select-choice-month', 'select-choice-day', 'postcode', 'province', 'municipality', 'address', 'phonenumber', 'agree');
+$list_fields = array('email', 'password', 'password2', 'name', 'firstname', 'phonetic_name', 'phonetic_firstname', 'gender', 'select-choice-year', 'select-choice-month', 'select-choice-day', 'postcode', 'province', 'municipality', 'address', 'phonenumber', 'occupation', 'country', 'language-skill', 'travel-purpose', 'know-how', 'guide', 'agree', 'agree2', 'agree3');
+$list_mandatory_fields = array('email', 'password', 'password2', 'name', 'firstname', 'phonetic_name', 'phonetic_firstname', 'gender', 'select-choice-year', 'select-choice-month', 'select-choice-day', 'postcode', 'province', 'municipality', 'address', 'phonenumber', 'agree', 'agree2', 'agree3');
 
 
 //****************************

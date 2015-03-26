@@ -11,67 +11,70 @@
 
         <?php //echo debug_array($final_array);	?>	
 
+        <div data-role="fieldcontain" >
+            <span class="listing-title">メールアドレス</span>
+            <p><?php echo $final_array['email'] ?></p>
+        </div>
+        <div data-role="fieldcontain" >
+            <span class="listing-title">お名前</span>
+            <p><?php echo $final_array['name'] . '&nbsp;&nbsp;' . $final_array['firstname'] ?></p>
+        </div>
+        <div data-role="fieldcontain" >
+            <span class="listing-title">ふりがな</span>
+            <p><?php echo mb_convert_kana($final_array['phonetic_name'], 'KC') . '&nbsp;&nbsp;' . mb_convert_kana($final_array['phonetic_firstname'], 'KC') ?></p>
+        </div>
+        <div data-role="fieldcontain" >
+            <span class="listing-title">性別</span>
+            <p>
+                <?php
+                if ($final_array['gender'] == 'm')
+                    echo '男性';
+                else
+                    echo '女性';
+                ?>
+            </p>
+        </div>
+        <div data-role="fieldcontain">
+            <span class="listing-title">生年月日</span>
+            <p><?php echo $final_array['select-choice-year'] . '年&nbsp;' . $final_array['select-choice-month'] . '月&nbsp;' . $final_array['select-choice-day'] . '日'; ?></p>
+        </div>
+
+        <div data-role="fieldcontain">
+            <span class="listing-title">メールアドレス</span>
+            <table cellspacing="10" border="0">
+                <tr>
+                    <td>郵便番号</td><td><?php echo $final_array['postcode'] ?></td>
+                </tr>
+                <tr>
+                    <td>都道府県</td><td><?php echo $final_array['province'] ?></td>
+                </tr>	
+                <tr>
+                    <td>市区町村</td><td><?php echo $final_array['municipality'] ?></td>
+                </tr>	
+                <tr>
+                    <td>番地・建物名</td><td><?php echo $final_array['address'] ?></td>
+                </tr>	
+            </table>
+        </div>
+        <div data-role="fieldcontain" class="div-form">
+            <span class="listing-title">電話番号</span>
+            <p><?php echo $final_array['phonenumber'] ?></p>
+        </div>
+        <div data-role="fieldcontain" class="div-form">
+            <span class="listing-title">今後のご案内</span>
+            <p><?php
+                if ($final_array['guide'] == '1')
+                    echo '受け取る';
+                else
+                    echo '受け取らない';
+                ?>
+            </p>
+        </div>
+
+    </div><!-- /content -->
+
+    <div data-role="content">
         <form name="step2form" method="post" action="check.php" data-ajax="false">
-
-            <div data-role="fieldcontain" >
-                <span class="listing-title">メールアドレス</span>
-                <p><?php echo $final_array['email'] ?></p>
-            </div>
-            <div data-role="fieldcontain" >
-                <span class="listing-title">お名前</span>
-                <p><?php echo $final_array['name'] . '&nbsp;&nbsp;' . $final_array['firstname'] ?></p>
-            </div>
-            <div data-role="fieldcontain" >
-                <span class="listing-title">ふりがな</span>
-                <p><?php echo mb_convert_kana($final_array['phonetic_name'], 'KC') . '&nbsp;&nbsp;' . mb_convert_kana($final_array['phonetic_firstname'], 'KC') ?></p>
-            </div>
-            <div data-role="fieldcontain" >
-                <span class="listing-title">性別</span>
-                <p>
-                    <?php
-                    if ($final_array['gender'] == 'm')
-                        echo '男性';
-                    else
-                        echo '女性';
-                    ?>
-                </p>
-            </div>
-            <div data-role="fieldcontain">
-                <span class="listing-title">生年月日</span>
-                <p><?php echo $final_array['select-choice-year'] . '年&nbsp;' . $final_array['select-choice-month'] . '月&nbsp;' . $final_array['select-choice-day'] . '日'; ?></p>
-            </div>
-
-            <div data-role="fieldcontain">
-                <span class="listing-title">メールアドレス</span>
-                <table cellspacing="10" border="0">
-                    <tr>
-                        <td>郵便番号</td><td><?php echo $final_array['postcode'] ?></td>
-                    </tr>
-                    <tr>
-                        <td>都道府県</td><td><?php echo $final_array['province'] ?></td>
-                    </tr>	
-                    <tr>
-                        <td>市区町村</td><td><?php echo $final_array['municipality'] ?></td>
-                    </tr>	
-                    <tr>
-                        <td>番地・建物名</td><td><?php echo $final_array['address'] ?></td>
-                    </tr>	
-                </table>
-            </div>
-            <div data-role="fieldcontain" class="div-form">
-                <span class="listing-title">電話番号</span>
-                <p><?php echo $final_array['phonenumber'] ?></p>
-            </div>
-            <div data-role="fieldcontain" class="div-form">
-                <span class="listing-title">今後のご案内</span>
-                <p><?php
-                    if ($final_array['guide'] == '1')
-                        echo '受け取る';
-                    else
-                        echo '受け取らない';
-                    ?>
-                </p>
-            </div>
 
             <div data-role="fieldcontain" class="div-form">
                 <span class="titlebar">アンケート</span>
