@@ -126,7 +126,7 @@ $config = array(
 			),
 			array(	'id' => 's07',
 				'name' => '注目！人気のセミナー',
-				'word2' => array('注目','学校セミナー','学校懇談','パーティー'),
+				'word2' => array('注目','学校セミナー','学校懇談','パーティー','国比較'),
 				'active' => 'on',
 			),
 			array(	'id' => 's08',
@@ -184,7 +184,7 @@ $header_obj->fncMenuHead_h1text = 'ワーホリ・留学の無料セミナー（
   }
 */
 
-$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="../images/mainimg/seminar-mainimg.jpg" alt="" />';
+$header_obj->fncMenuHead_imghtml = '<img id="top-mainimg" src="/images/mainimg/seminar-mainimg.jpg" alt="" />';
 
 
 $header_obj->display_header();

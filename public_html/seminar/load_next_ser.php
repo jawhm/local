@@ -1,6 +1,6 @@
 <?php
 	require_once('include/mobile_function.php');
-	require_once ('include/where_condition.php');
+	require_once ('include/where_condition_new.php');
 
 	ini_set ('session.bug_compat_42', 0);
 	ini_set ('session.bug_compat_warn', 0);
@@ -8,6 +8,8 @@
 	session_start();
 
 	$use_area = true;
+
+    $fullari = false;
 
 //retrieve data sent by the seminar menu
 	$retrieved_data = array( 'last_msg_id' 		=> $_POST['last_msg_id'],
@@ -28,7 +30,7 @@
 	
 //	$last_limit = $last_limit + 5;
 		
-	$SQL_limit = 'LIMIT '.$last_limit.',15';
+	$SQL_limit = 'LIMIT '.$last_limit.',' . DEFAULT_SEMINAR_COUNT;
 		
 	//print_r($retrieved_data);
 	//echo $SQL_limit.'<br />';
@@ -129,10 +131,27 @@
 		}
 		//else
 			//$free=0;
-		
+        $addfullsql = "";
+        
+        //本日以降の全てのセミナーが満席だった場合
+        $completelyFull = false;
+        $sql = 'SELECT count(*) as num FROM event_list WHERE k_use = 1 '.$free_query.' AND hiduke >= DATE_SUB(CURDATE(),INTERVAL 0 DAY) ' . $keyword . ' AND k_stat != 2 AND booking < pax ORDER BY hiduke, starttime, id ';
+        $rs = $db->query($sql);
+        while($row = $rs->fetch(PDO::FETCH_ASSOC)){
+            if($row['num'] < 1){
+                $completelyFull = true;
+            }
+        }
+        if (@$_POST['isFull'] == '1' || $completelyFull) {
+        } else {
+            $addfullsql = ' AND k_stat != 2 AND booking < pax';
+        }
+
+        $sql = 'SELECT id, hiduke, year(hiduke) as yy, month(hiduke) as mm, day(hiduke) as dd, date_format(starttime, \'%c月%e日 (%a) %k:%i\') as start, date_format(starttime, \'%k:%i\') as starttime, title, memo, place, k_use, k_title1, k_desc1, k_desc2, k_stat, free, pax, booking, group_color, indicated_option, broadcasting, country_code FROM event_list WHERE k_use = 1 '.$free_query.' AND hiduke >= DATE_SUB(CURDATE(),INTERVAL 0 DAY) ' . $keyword . $addfullsql . ' ORDER BY hiduke, starttime, id '.$SQL_limit;
+
 		//sql query
-		$rs = $db->query('SELECT id, hiduke, year(hiduke) as yy, month(hiduke) as mm, day(hiduke) as dd, date_format(starttime, \'%c月%e日 (%a) %k:%i\') as start, date_format(starttime, \'%k:%i\') as starttime, title, memo, place, k_use, k_title1, k_desc1, k_desc2, k_stat, free, pax, booking, group_color, indicated_option, broadcasting, country_code FROM event_list WHERE k_use = 1 '.$free_query.' AND hiduke >= DATE_SUB(CURDATE(),INTERVAL 0 DAY) '.$keyword.' ORDER BY hiduke, starttime, id '.$SQL_limit);
-		
+		$rs = $db->query($sql);
+
 		$cnt = 0;
 		while($row = $rs->fetch(PDO::FETCH_ASSOC))
 		{
@@ -239,9 +258,13 @@
 
 			$just_one = false;
 			// message to display
-			
+            //$hidden_block = "";
+            $hidden_block = "not-full";
+                        if(preg_match('/満席です/i', $c_img)){
+                            $hidden_block = "full-seminar";
+                        }
 			$cal[$year.$month.$day] .= '<img src="images/sa01.jpg">';
-			$c_msg  = '<div id="'.$row['id'].'-'.($last_limit + $cnt).'" class="message_box" data-role="collapsible" style="background-color:white;">';
+			$c_msg  = '<div id="'.$row['id'].'-'.($last_limit + $cnt).'" class="message_box '.$hidden_block.'" data-role="collapsible" style="background-color:white;">';
 			$c_msg .= '<h3 class="time-place-seminar" style="border:0px;">'.$c_img;
 			$c_msg .= $flag.$row['starttime'].'～　'.$japanese_city_name.'会場&nbsp;'.$icon_live.$indication.'<br/>';
 			$c_msg .= $row['k_title1'].'</h3>';
@@ -262,7 +285,7 @@
 			$c_msg .= '<br/></div>';
 			$c_msg .= '</div></div>';
 
-			$cal_msg[$year.$month.$day] .= $c_msg;
+                        $cal_msg[$year.$month.$day] .= $c_msg;
 			
 			
 			if(empty($cal_cnt[$year.$month.$day]))
@@ -275,8 +298,26 @@
 				$cal_flaglist[$year.$month.$day] = flag_list_of_the_day($keyword,$row['hiduke'],$free);
 
 		}
-		
-	} 
+
+        $fullSql    = 'SELECT id, hiduke, year(hiduke) as yy, month(hiduke) as mm, day(hiduke) as dd, date_format(starttime, \'%c月%e日 (%a) %k:%i\') as start, date_format(starttime, \'%k:%i\') as starttime, title, memo, place, k_use, k_title1, k_desc1, k_desc2, k_stat, free, pax, booking, group_color, indicated_option, broadcasting, country_code FROM event_list WHERE k_use = 1 '.$free_query.' AND hiduke >= DATE_SUB(CURDATE(),INTERVAL 0 DAY) '.$keyword.' ORDER BY hiduke, starttime, id '.$SQL_limit;
+        $notFullSql = 'SELECT id, hiduke, year(hiduke) as yy, month(hiduke) as mm, day(hiduke) as dd, date_format(starttime, \'%c月%e日 (%a) %k:%i\') as start, date_format(starttime, \'%k:%i\') as starttime, title, memo, place, k_use, k_title1, k_desc1, k_desc2, k_stat, free, pax, booking, group_color, indicated_option, broadcasting, country_code FROM event_list WHERE k_use = 1 '.$free_query.' AND hiduke >= DATE_SUB(CURDATE(),INTERVAL 0 DAY) '.$keyword.' AND k_stat != 2 AND booking < pax  ORDER BY hiduke, starttime, id '.$SQL_limit;
+
+        $fullrs = $db->query($fullSql);
+        $notfullrs = $db->query($notFullSql);
+
+        $fullResult = $fullrs->fetchAll();
+        $notFullResult = $notfullrs->fetchAll();
+
+        $fullItem = array_pop($fullResult);
+        $notFullItem = array_pop($notFullResult);
+
+        if ($fullItem['id'] != $notFullItem['id'] || count($fullResult) != count($notFullResult)) {
+            $fullari = true;
+        }
+        if($completelyFull){
+            $fullari = false;
+        }
+    }
 	catch (PDOException $e) 
 	{
 		die($e->getMessage());
@@ -284,11 +325,12 @@
 	
 	//Avoid to keep loading while no more content are available but the last count was 5!
 	//create then a last line with 0 as attribute
-	
-	if($cnt==0) 
-		echo '<p style="display:none;" class="title-date" title="0"></span>';
-	else
-		calendar_list($format_last_date);
-	
-	?>
-	
+
+	if($cnt==0) {
+            echo '<p style="display:none;" class="title-date" title="0"></p>';
+        } else {
+            calendar_list($format_last_date);
+            if ($fullari) {
+                echo '<p style="display: none;" id="fullari"></p>';
+            }
+        }

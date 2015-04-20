@@ -240,6 +240,21 @@
 
 	text-shadow: none;
 }
-
-
-
+#fullsem_flip{
+    display: flex;
+    display: -webkit-flex;
+    float: right;
+}
+#fullsem_flip #mes{
+    padding-top: 0.5em;
+    padding-right: 1em;
+}
+.full-seminar{
+    /* display: none; */
+}
+.clearfix{
+    display: inline-table;
+}
+.ui-btn-corner-left{
+    border-radius: 0.5em !important;
+}

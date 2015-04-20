@@ -1,5 +1,7 @@
 <?php
 
+    define('DEFAULT_SEMINAR_COUNT', '15');
+
 	//---------------------------------------------------
 	//Function to secure form and url 
 	//---------------------------------------------------
@@ -107,6 +109,9 @@
 					//create flag list for title-date cal_flaglist
 					$display_flag = '';
 						
+					if(in_array('us', $cal_flaglist[date('Ynj', $print_today)]))
+						$display_flag .= '<span class=" flag us"></span>';
+
 					if(in_array('wd', $cal_flaglist[date('Ynj', $print_today)]))
 						$display_flag .= '<span class=" flag wd"></span>';
 					
@@ -152,6 +157,11 @@
 					
 				}
 				
+                                $fullsemclass = " full-seminar";
+                                if(preg_match('/not-full/i', ''.$cal_msg[date('Ynj', $print_today)].'')){
+                                    $fullsemclass = "";
+                                }
+
 				//display the title-date only if the date are different while loading more data
 				if (date('Ynj', $print_today) != $lastdate_display || $lastdate_display == 'empty')
 				{
@@ -167,13 +177,12 @@
 					else
 						$titledate_title = '';
 
-					print '<h3 class="title-date'.$class_selected_title_date.'" '.$titledate_title.'>'.$display_flag.date('n月j日 ('.$yobi[date('w', $print_today)].')', $print_today).'&nbsp;&nbsp;'.$display_icon;
-					if ($just_one === false)
-					print '<span class="seminar-count">'.$cal_cnt[date('Ynj', $print_today)].'</span>';
+					print '<h3 class="title-date'.$class_selected_title_date.$fullsemclass.'" '.$titledate_title.'>'.$display_flag.date('n月j日 ('.$yobi[date('w', $print_today)].')', $print_today).'&nbsp;&nbsp;'.$display_icon;
+//					if ($just_one === false)
+//					print '<span class="seminar-count">'.$cal_cnt[date('Ynj', $print_today)].'</span>';
 					
 					print'</h3>';
 				}
-				
 				print ''.$cal_msg[date('Ynj', $print_today)].'';
 			}
 
