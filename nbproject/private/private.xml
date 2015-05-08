@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="7">
-        <file>
-            <url>public_html/mailsystem/mem/cont/mailtempsign.php</url>
-            <bookmark id="7">
-                <name/>
-                <line>433</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>public_html/yoyaku/yoyakukanri.php</url>
-            <bookmark id="1">
-                <name/>
-                <line>367</line>
-                <key/>
-            </bookmark>
-            <bookmark id="2">
-                <name/>
-                <line>776</line>
-                <key/>
-            </bookmark>
-        </file>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="22">
         <file>
             <url>public_html/mailsystem/mem/cont/event.php</url>
             <bookmark id="4">
@@ -45,6 +24,101 @@
                 <key/>
             </bookmark>
         </file>
+        <file>
+            <url>public_html/yoyaku/yoyaku.php</url>
+            <bookmark id="14">
+                <name/>
+                <line>198</line>
+                <key/>
+            </bookmark>
+            <bookmark id="13">
+                <name/>
+                <line>207</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>public_html/seminar/ser.php</url>
+            <bookmark id="15">
+                <name/>
+                <line>1440</line>
+                <key/>
+            </bookmark>
+            <bookmark id="9">
+                <name/>
+                <line>1712</line>
+                <key/>
+            </bookmark>
+            <bookmark id="21">
+                <name/>
+                <line>1899</line>
+                <key/>
+            </bookmark>
+            <bookmark id="12">
+                <name/>
+                <line>2108</line>
+                <key/>
+            </bookmark>
+            <bookmark id="10">
+                <name/>
+                <line>2869</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>public_html/yoyaku/yoyakukanri.php</url>
+            <bookmark id="1">
+                <name/>
+                <line>367</line>
+                <key/>
+            </bookmark>
+            <bookmark id="2">
+                <name/>
+                <line>776</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>public_html/mailsystem/mem/cont/mailtempsign.php</url>
+            <bookmark id="7">
+                <name/>
+                <line>433</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>public_html/seminar/thankyou.php</url>
+            <bookmark id="8">
+                <name/>
+                <line>723</line>
+                <key/>
+            </bookmark>
+            <bookmark id="18">
+                <name/>
+                <line>1371</line>
+                <key/>
+            </bookmark>
+            <bookmark id="17">
+                <name/>
+                <line>1374</line>
+                <key/>
+            </bookmark>
+            <bookmark id="19">
+                <name/>
+                <line>1374</line>
+                <key/>
+            </bookmark>
+            <bookmark id="16">
+                <name/>
+                <line>1485</line>
+                <key/>
+            </bookmark>
+            <bookmark id="20">
+                <name/>
+                <line>1555</line>
+                <key/>
+            </bookmark>
+        </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
@@ -57,6 +131,17 @@
             <file>file:/var/www/jawhm.localhost/public_html/mobileform/step/step2.php</file>
         </group>
         <group name="QJNAVI"/>
-        <group name="PLATE"/>
+        <group name="PLATE">
+            <file>file:/var/www/html/jawhm.localhost/public_html/seminar/load_next_ser_bplace.php</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/seminar_module/bk/20140625_test_platetec/include/mobile_function.php</file>
+            <file>file:/var/www/html/jawhm.localhost/_/jawhm_20150119/jawhm_20150119/2013summer/include/function.php</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/yoyaku/yoyaku.php</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/seminar/thankyou.php</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/include/header.php</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/seminar/include/where_condition.php</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/seminar/ser.php</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/seminar/load_next_ser.php</file>
+            <file>file:/var/www/html/jawhm.localhost/_/%2313639/list.txt</file>
+        </group>
     </open-files>
 </project-private>
