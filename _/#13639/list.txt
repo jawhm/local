@@ -1,0 +1,7 @@
+/var/www/html/jawhm.localhost/public_html/seminar/css/base_mobile_extra.css
+/var/www/html/jawhm.localhost/public_html/yoyaku/yoyaku.php
+/var/www/html/jawhm.localhost/public_html/seminar/ser.php
+/var/www/html/jawhm.localhost/public_html/seminar/thankyou.php
+/var/www/html/jawhm.localhost/public_html/seminar/load_next_ser.php
+/var/www/html/jawhm.localhost/public_html/seminar/load_next_ser_bplace.php
+/var/www/html/jawhm.localhost/public_html/seminar/include/mobile_function.php
