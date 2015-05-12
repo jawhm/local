@@ -1,3 +1,5 @@
+rsync -av --files-from=list.txt / ./
+
 
 ALTER TABLE `mailtext` ADD `date_created` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `text5` ; 
 ALTER TABLE `mailtext` ADD `date_modified` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `date_created` ;

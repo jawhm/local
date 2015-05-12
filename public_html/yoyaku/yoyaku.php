@@ -190,7 +190,7 @@ if ($seminarid <> '') {
 
         //$url = 'https://toratoracrm.com/crm/';
         //$val = wbsRequest($url, $data);
-//			$ret = json_decode($val, true);     /* Khang comment */
+        $ret = json_decode($val, true);
 
         $customid = '';
         //if ($ret['result'] == 'OK')	{
@@ -406,7 +406,6 @@ if ($seminarid <> '') {
                 }
             }
             $body .= '';
-            //$from = mb_encode_mimeheader(mb_convert_encoding("日本ワーキングホリデー協会","JIS"))."<info@jawhm.or.jp>";
             $from = $_POST['メール'];
             mb_send_mail($vmail2, $subject, $body, "From:" . $from);
         }
@@ -543,8 +542,7 @@ if ($seminarid <> '') {
         $body .= '';
 
         $from = mb_encode_mimeheader(mb_convert_encoding("日本ワーキングホリデー協会", "JIS")) . "<info@jawhm.or.jp>";
-        //mb_send_mail($email,$subject,$body,"From:".$from);
-        mb_send_mail('j-doi@plate.co.jp', $subject, $body, "From:" . $from);
+        mb_send_mail($email,$subject,$body,"From:".$from);
 
         if ($wait == 0) {
             $msg .= '仮予約を受け付けました。';
@@ -554,7 +552,7 @@ if ($seminarid <> '') {
         $msg .= 'メールにてご案内を差し上げておりますので、ご確認ください。';
 
         // カレンダー変更
-//			GC_Edit($seminarid);    /* Khang comment */
+        GC_Edit($seminarid);
     } else {
         $msg .= 'シーケンスエラー';
     }

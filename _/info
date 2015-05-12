@@ -9,7 +9,7 @@ Zend
 /usr/share/php
 
 ssh
-jawhm.pa.platetec.com
+jawhm.pa.platetec.com   52.68.188.122
 user: ec2-user
 ssh key => plate.ppk
 
