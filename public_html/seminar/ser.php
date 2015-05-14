@@ -507,8 +507,9 @@ $c_footer .= '</p></div>';
 
 
 
+$url_home = '/seminar/ser';
 
-$url_home = '/seminar/thankyou';
+$url_thankyou = '/seminar/thankyou';
 
 $url_top = '/';
 
@@ -1444,7 +1445,7 @@ $page_tile .= ' | 日本ワーキングホリデー協会';
 
 //                        alert(msg);
 
-                        location.href = '<?php print $url_home; ?>';
+                        location.href = '<?php print $url_thankyou; ?>';
 
                     },
                     error: function () {
