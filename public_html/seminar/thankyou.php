@@ -1435,6 +1435,7 @@ $page_tile .= ' | 日本ワーキングホリデー協会';
                     <a href="/seminar/ser/" data-role="button" data-inline="true" data-rel="back" data-theme="a">戻る</a>
 
                     <br>
+                    
 
                 </div>
 
@@ -1539,12 +1540,6 @@ $page_tile .= ' | 日本ワーキングホリデー協会';
                             print '<h2 class="title-city">イベント情報</h2>';
 
                             break;
-                        default:
-
-                            print '<h2 class="title-city">Test Thankyou Page</h2>';
-                            print '<p><img src="http://www.jawhm.or.jp/css/images/googlemap16.png"><a href="/event/map/pc.php?p=tokyo" target="_blank">Test 会場のご案内</a> TEL:<a href="tel:03-6304-5858">03-6304-5858</a></p>';
-
-                            break;
                     }
                     ?>
 
@@ -1599,7 +1594,66 @@ $page_tile .= ' | 日本ワーキングホリデー協会';
                         どうぞ、お気軽にご予約の上、ご参加ください。<br/>
 
                     </p>-->
+                    
+                    <ul data-role="listview" data-inset="true" data-theme="a" data-dividertheme="a">
 
+                        <li data-role="list-divider">内容からセミナーを探す</li>
+
+                        <li data-icon="arrow-r-lblue" id="first-btn"><a href="/seminar/ser/know/first"><img src="/images/seminaryoyaku/syoshinsya.png" alt="" class="ui-li-icon" />初心者セミナー</a></li>
+
+                        <li data-icon="arrow-r-orange" id="plan-btn"><a href="/seminar/ser/know/plan"><img src="/images/seminaryoyaku/planning.png" alt="" class="ui-li-icon" />プランニング法セミナー</a></li>
+
+                        <li data-icon="arrow-r-pink" id="student-btn"><a href="/seminar/ser/know/student"><img src="/images/seminaryoyaku/jouhou.png" alt="" class="ui-li-icon" />情報収集セミナー</a></li>
+
+                        <li data-icon="arrow-r-orange" id="foot-btn"><a href="/seminar/ser/know/foot"><img src="/images/seminaryoyaku/kondan.png" alt="" class="ui-li-icon" />人数限定！懇談セミナー</a></li>
+
+                        <li data-icon="arrow-r-yellow" id="kouen-btn"><a href="/seminar/ser/know/kouen"><img src="/images/seminaryoyaku/taikendan.png" alt="" class="ui-li-icon" />体験談セミナー</a></li>
+
+                        <li data-icon="arrow-r-dblue" id="school-btn"><a href="/seminar/ser/know/school"><img src="/images/seminaryoyaku/school.png" alt="" class="ui-li-icon" />語学学校セミナー</a></li>
+
+                        <li data-icon="arrow-r-green" id="abili-btn"><a href="/seminar/ser/know/abili"><img src="/images/seminaryoyaku/chumoku.png" alt="" class="ui-li-icon" />注目！！人気のセミナー</a></li>
+
+                        <li data-icon="arrow-r-red" id="member-btn"><a href="/seminar/ser/page/member"><img src="/seminar/css/themes/images/icon7-18x18.png" alt="" class="ui-li-icon" />メンバー限定セミナー</a></li>
+
+                        <li id="all-btn"><a href="/seminar/ser/know/all">全て</a></li>
+
+                    </ul>
+
+
+
+                    <ul data-role="listview" data-inset="true" data-theme="a" data-dividertheme="a">
+
+                        <li data-role="list-divider">興味のある国からセミナーを探す</li>
+
+                    </ul>
+
+
+
+                    <div class="ui-grid-b">
+
+                        <div class="ui-block-a"><a href="/seminar/ser/country/aus" data-mini="true" data-role="button" data-theme="d"><img src="/images/flag01.gif" /><span class="smaller-text">オーストラリア</span></a></div>
+
+                        <div class="ui-block-b"><a href="/seminar/ser/country/can" data-mini="true" data-role="button" data-theme="d"><img src="/images/flag03.gif" /><span class="smaller-text">カナダ</span></a></div>
+
+                        <div class="ui-block-c"><a href="/seminar/ser/country/nz" data-mini="true" data-role="button" data-theme="d"><img src="/images/flag02.gif" /><span class="smaller-text">ニュージーランド</span></a></div>
+
+                    </div>
+
+                    <div class="ui-grid-b">
+
+                        <div class="ui-block-a"><a href="/seminar/ser/country/uk"  data-role="button" data-theme="d"><img src="/images/flag07.gif" /><span class="smaller-text">イギリス</span></a></div>
+
+                        <div class="ui-block-b"><a href="/seminar/ser/country/fra"  data-role="button" data-theme="d"><img src="/images/flag05.gif" /><span class="smaller-text">フランス</span></a></div>
+
+                        <div class="ui-block-c"><a href="/seminar/ser/country/usa" data-role="button" data-theme="d"><img src="/images/seminaryoyaku/america.png" /><span class="smaller-text">アメリカ</span></a></div>
+
+                    </div>
+
+                    <div class="ui-grid-solo">
+
+                        <div class="ui-block-a"><a href="/seminar/ser/country/other" data-role="button" data-theme="d"><img src="/images/earth-medium.png" /><span class="smaller-text">その他</span></a></div>
+
+                    </div>
 
 
                     <?php print $c_footer; ?>
