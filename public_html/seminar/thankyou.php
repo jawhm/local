@@ -1476,13 +1476,19 @@ $page_tile .= ' | 日本ワーキングホリデー協会';
 
                     </div>
 
-                    <div style="margin:8px 0 12px 0;">
-                        <p>
-                            ゼミナーの仮予約ありがとうございました。よろしければ同日・同会場のゼミナーもご覧下さい。
-                        </p>
+                    <div style="margin:8px 0 12px 0;" class="ui-body ui-body-d">
+                        <div style="font-size: 12px;font-weight: bold;text-align: center;padding: 10px 0px;">
+                            ゼミナーの仮予約ありがとうございました。
+                        </div>
                     </div>
 
-
+                    <div style="margin:8px 0 12px 0;">
+                        <img src="/css/images/tri.png" style="vertical-align: top">
+                        <p style="display: inline-block">
+                            当日はその他にもセミナーが開催されます。<br/>
+                            よろしければ、ご予約の上、併せてご参加ください。
+                        </p>
+                    </div>
 
                     <?php
                     switch ($para1 . $para2) {

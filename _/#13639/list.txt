@@ -5,3 +5,4 @@
 /var/www/html/jawhm.localhost/public_html/seminar/load_next_ser.php
 /var/www/html/jawhm.localhost/public_html/seminar/load_next_ser_bplace.php
 /var/www/html/jawhm.localhost/public_html/seminar/include/mobile_function.php
+/var/www/html/jawhm.localhost/public_html/css/images/tri.png
