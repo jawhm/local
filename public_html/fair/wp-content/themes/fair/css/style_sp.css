@@ -151,7 +151,7 @@ div.wrapper header {
 	background-color:#fff;
 	position:relative;
 	z-index:9999;
-	-webkit-box-shadow::0px 1px 2px 0px #333333;
+	-webkit-box-shadow:0px 1px 2px 0px #333333;
 	-moz-box-shadow:0px 1px 2px 0px #333333;
 	box-shadow:0px 1px 2px 0px #333333;
 	padding:10px;
@@ -541,8 +541,40 @@ ul.voiceList li p span { display:block; text-align:right; }
 }
 
 /*****************************************************************
- footer
+ footer , sidemenu
 *****************************************************************/
+.sidr ul li {
+	background:url(../images/arrow_black.png) no-repeat 95% center;
+	-webkit-background-size:7px 10px;
+	-moz-background-size:7px 10px;
+	background-size:7px 10px;
+}
+
+.sidr ul li a.nav01 {
+	background:url(../images/foot_iconCalendar.png) no-repeat 5% center;
+	-webkit-background-size:25px 20px;
+	-moz-background-size:25px 20px;
+	background-size:25px 20px;
+}
+.sidr ul li a.nav02 {
+	background:url(../images/foot_iconSchool.png) no-repeat 5% center;
+	-webkit-background-size:25px 20px;
+	-moz-background-size:25px 20px;
+	background-size:25px 20px;
+}
+.sidr ul li a.nav03 {
+	background:url(../images/foot_iconQA.png) no-repeat 5% center;
+	-webkit-background-size:25px 20px;
+	-moz-background-size:25px 20px;
+	background-size:25px 20px;
+}
+.sidr ul li a.nav04 {
+	background:url(../images/foot_iconAccess.png) no-repeat 6% center;
+	-webkit-background-size:14px 20px;
+	-moz-background-size:14px 20px;
+	background-size:14px 20px;
+}
+
 div.pgTop {
 	text-align:right;
 	padding-right:15px;
@@ -659,7 +691,7 @@ footer .btn span {
 .underSec.seminar div.btnArea ul li,
 .underSec.seminar div.btnArea2 ul li { display:inline-block; }
 .underSec.seminar div.btnArea ul li:first-child,
-.underSec.seminar div.btnArea2 ul li:first-child { margin-right:10px; }
+.underSec.seminar div.btnArea2 ul li:first-child { margin-right:5px; }
 .underSec.seminar div.btnArea ul li a,
 .underSec.seminar div.btnArea2 ul li a {
 	display:block;
@@ -755,7 +787,7 @@ div.srcArea ul li {
 	box-sizing:border-box;
 	width:48%;
 	display:inline-block;
-	margin-right:8px;
+	margin-right:5px;
 }
 div.srcArea ul li:last-child { margin:0 ; }
 section.schoolArea h3 {
@@ -862,9 +894,9 @@ div.sclList ul li {
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	box-sizing: border-box;
-  width: 48%;
+  width: 47%;
   position: relative;
- 	height: 110px;
+ 	min-height: 110px;
 }
 div.sclList ul li > a {
 	position:absolute;
@@ -1054,8 +1086,12 @@ a.mapBtn span {
 	background-size:16px 14px;
 	padding-right:20px;
 }
-	
 .underSec.access section.areaBox p.textArea {	margin:15px 0; }
+.underSec.access .mapArea iframe {
+	width:100%;
+	height:200px;
+	border:0;
+}
 
 
 /*****************************************************************

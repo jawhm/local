@@ -73,6 +73,7 @@ a { text-decoration:none; }
 	text-decoration:none;
 	font-size:120%;
 	font-weight:bold;
+	behavior:url(/fairtest/css/PIE.htc);
 }
 .btn.Orng {
 	background:url(../images/arrow_white.png) no-repeat 96% center #ff9000;
@@ -120,21 +121,21 @@ a { text-decoration:none; }
 	-webkit-background-size:7px 10px;
 	-moz-background-size:7px 10px;
 	background-size:7px 10px;
-	color:#fff;	
+	color:#fff;
 }
 .btn.Blue {
 	background:url(../images/arrow_white.png) no-repeat 96% center #3687d9;
 	-webkit-background-size:7px 10px;
 	-moz-background-size:7px 10px;
 	background-size:7px 10px;
-	color:#fff;	
+	color:#fff;
 }
 .btn.Pink {
 	background:url(../images/arrow_white.png) no-repeat 96% center #ff797e;
 	-webkit-background-size:7px 10px;
 	-moz-background-size:7px 10px;
 	background-size:7px 10px;
-	color:#fff;	
+	color:#fff;
 }
 .btnShadow {
 	background-color: rgba(0, 0, 0, 0.4);
@@ -163,17 +164,10 @@ div.wrapper header {
 	-moz-box-shadow:0px 1px 2px 0px #333333;
 	box-shadow:0px 1px 2px 0px #333333;
 	padding:30px 10px 10px 10px;
+	margin:0;
+	behavior:url(/fairtest/css/PIE.htc);
 }
-div.wrapper header:after{
-	content: "";
-  border: 50px solid transparent;
-  border-bottom: 22px solid #fff;
-  position: absolute;
-  right: 50%;
-  bottom: -22px;
-  margin-right: -50px;
-  border-radius: 100%;
-}
+
 div.wrapper header h1 {
 	font-weight: bold;
   font-size: 24px;
@@ -181,6 +175,14 @@ div.wrapper header h1 {
   text-align: left;
 	width:965px;
 	margin:0 auto;
+}
+div.wrapper header img.tabImg {
+	position:absolute;
+	display:block;
+	left:50%;
+	bottom: -18px;
+  width: 76px;
+  margin-left: -38px;
 }
 nav.topNav {
 	width:965px;
@@ -203,38 +205,26 @@ nav.topNav.pcview a {
 }
 nav.topNav.pcview a:hover { opacity:0.8; }
 nav.topNav.pcview a.nav01 {
-	background:url(../images/foot_iconCalendar.png) no-repeat 9% center;
-	-webkit-background-size: 23px auto;
-	-moz-background-size: 23px auto;
-	background-size: 23px auto;
+	background:url(../images/head_iconCalendar.png) no-repeat 9% center;
 	padding-left:45px;
 }
 nav.topNav.pcview a.nav02 {
-	background:url(../images/foot_iconSchool.png) no-repeat 16% center;
-	-webkit-background-size: 24px auto;
-	-moz-background-size: 24px auto;
-	background-size: 24px auto;
+	background:url(../images/head_iconSchool.png) no-repeat 16% center;
 	padding-left:47px;
 }
 nav.topNav.pcview a.nav03 {
-	background:url(../images/foot_iconQA.png) no-repeat 24% center;
-	-webkit-background-size: 27px auto;
-	-moz-background-size: 27px auto;
-	background-size: 27px auto;
+	background:url(../images/head_iconQA.png) no-repeat 24% center;
 	padding-left:45px;
 }
 nav.topNav.pcview a.nav04 {
-	background:url(../images/foot_iconAccess.png) no-repeat 28% center;
-	-webkit-background-size: 13px auto;
-	-moz-background-size: 13px auto;
-	background-size: 13px auto;
+	background:url(../images/head_iconAccess.png) no-repeat 28% center;
 	padding-left:45px;
 }
 nav.topNav.pcview a:last-child {
 	border-right:1px dotted #2e2e2e;
 }
 header a.reserve {
-	background:url(../images/icon_star.png) no-repeat 5% center #f6913f;
+	background:url(../images/icon_star_pc.png) no-repeat 5% center #f6913f;
 	-webkit-background-size:15px 14px;
 	-moz-background-size:15px 14px;
 	background-size:15px 14px;
@@ -259,6 +249,7 @@ section.normalBox {
 	-webkit-box-shadow: 0px 1px 2px 1px #C5C5C5;
 	-moz-box-shadow: 0px 1px 2px 1px #C5C5C5;
   box-shadow: 0px 1px 2px 1px #C5C5C5;
+	behavior:url(/fairtest/css/PIE.htc);
 }
 section.normalBox h2 {
 	margin-bottom:5px;
@@ -286,7 +277,7 @@ section.normalBox h2.hukidashi:before{
 	border-top: 13px solid #213263;
 	position: absolute;
 	right: 50%;
-	bottom: -39px;
+	bottom: -38px;
 	margin-right:-25px;
 }
 section.normalBox h2.hukidashi:after{
@@ -295,7 +286,7 @@ section.normalBox h2.hukidashi:after{
 	border-top: 13px solid #fff;
 	position: absolute;
 	right: 50%;
-	bottom: -38px;
+	bottom: -37px;
 	margin-right:-25px;
 }
 section.normalBox .contentBox {
@@ -306,6 +297,7 @@ section.normalBox .contentBox {
 	-webkit-box-shadow: 0px 1px 2px 0px #989898;
 	-moz-box-shadow: 0px 1px 2px 0px #989898;
   box-shadow: 0px 1px 2px 0px #989898;
+	behavior:url(/fairtest/css/PIE.htc);
 }
 
 
@@ -357,6 +349,7 @@ ul.point li {
   text-align: center;
 	margin-right:10px;
 	float:left;
+	behavior:url(/fairtest/css/PIE.htc);
 }
 ul.point li:last-child { margin: 0; }
 ul.point li p {
@@ -434,28 +427,28 @@ section.semBox2.firstSem, section.semBox2.orangeSem { float:left; }
 section.semBox2.blueSem, section.semBox2.pinkSem { float:right; }
 
 section.semBox2.firstSem h3 {
-	background:url(../images/icon_step01.png) no-repeat left center;
+	background:url(../images/icon_step01_pc.png) no-repeat left center;
 	-webkit-background-size:30px;
 	-moz-background-size:30px;
 	background-size:30px;	
 	color:#8cc409;
 }
 section.semBox2.blueSem h3 {
-	background:url(../images/icon_schoolSem.png) no-repeat left center;
+	background:url(../images/icon_schoolSem_pc.png) no-repeat left center;
 	-webkit-background-size:30px;
 	-moz-background-size:30px;
 	background-size:30px;	
 	color:#1d71c7;
 }
 section.semBox2.orangeSem h3 {
-	background:url(../images/icon_taikenSem.png) no-repeat left center;
+	background:url(../images/icon_taikenSem_pc.png) no-repeat left center;
 	-webkit-background-size:30px;
 	-moz-background-size:30px;
 	background-size:30px;	
 	color:#ff7800;
 }
 section.semBox2.pinkSem h3 {
-	background:url(../images/icon_kondanSem.png) no-repeat left center;
+	background:url(../images/icon_kondanSem_pc.png) no-repeat left center;
 	-webkit-background-size:30px;
 	-moz-background-size:30px;
 	background-size:30px;	
@@ -513,93 +506,6 @@ ul.voiceList li p {
 }
 ul.voiceList li p span { display:block; text-align:right; }
 
-/*****************************************************************
- MODAL
-*****************************************************************/
-
-/* ****************
- * Modal window
- * *************** */
-.modal {
-  display: none;
-  position: fixed;
-  top: 3%;
-  left: 3%;
-  width: 94%;
-  height: 94%;
-  overflow-y: auto;
-  padding: 60px 5% 5%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 30px;
-  background-color: rgba(255,255,255,.08);
-  text-shadow:0 1px 0 #333;
-  color: #fff;
-  text-align: center;
-  font-size: 20px;
-}
-.modal h2 {
-  border-bottom:1px solid;
-  padding-bottom:20px;
-}
-
-/* Second modal window */
-.modal.two {
-  color:lightblue;
-}
-
-/* Close button */
-.modal .close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(255,255,255,.2);
-  cursor:pointer;
-}
-.modal .close:before,
-.modal .close:after{
-  position:absolute;
-  top:4px;
-  border:1px solid #fff;
-  height:30px;
-  content:"";
-}
-.modal .close:before {
-  left:19px;
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-.modal .close:after {
-  right:19px;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.modal .close span {
-  display:none;
-}
-
-/* ****************
- * Background filter (blur)
- * *************** */
-.bg-blur {
-  filter: blur(10px);
-  -webkit-filter: blur(10px);
-  -moz-filter: blur(10px);
-  -o-filter: blur(10px);
-  -ms-filter: blur(10px);
-  filter: url(#blur);
-  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='10');
-  -webkit-transition: all .4s linear;
-  transition: all .4s linear;
-}
-
 
 /*****************************************************************
  footer
@@ -647,6 +553,7 @@ ul.footMenu li.menu01 {
 	float:left;
 	border-right:none;
 	border-bottom:none;
+	behavior:url(/fairtest/css/PIE.htc);
 }
 ul.footMenu li.menu02 {
 	-webkit-border-radius:0 5px 0 0;
@@ -654,6 +561,7 @@ ul.footMenu li.menu02 {
 	border-radius:0 5px 0 0;
 	float:right;
 	border-bottom:none;
+	behavior:url(/fairtest/css/PIE.htc);
 }
 ul.footMenu li.menu03 {
 	-webkit-border-radius:0 0 0 5px;
@@ -661,12 +569,14 @@ ul.footMenu li.menu03 {
 	border-radius:0 0 0 5px;
 	float:left;
 	border-right:none;
+	behavior:url(/fairtest/css/PIE.htc);
 }
 ul.footMenu li.menu04 {
 	-webkit-border-radius:0 0 5px 0;
 	-moz-border-radius:0 0 5px 0;
 	border-radius:0 0 5px 0;
 	float:right;
+	behavior:url(/fairtest/css/PIE.htc);
 }
 ul.footMenu li.menu01 a {
 	background:url(../images/foot_iconCalendar.png) no-repeat 5% center;
@@ -719,7 +629,7 @@ footer .btn {
   font-weight: normal;
 }
 footer .btn span {
-	background:url(../images/icon_home.png) no-repeat left center;
+	background:url(../images/icon_home_pc.png) no-repeat left center;
 	-webkit-background-size:16px 15px;
 	-moz-background-size:16px 15px;
 	background-size:16px 15px;
@@ -762,30 +672,24 @@ footer .btn span {
 .underSec.seminar div.btnArea2 ul li a {
 	display:block;
 	overflow:hidden;
-	padding-top:52px;
+	padding-top:55px;
 	width:180px; height:0 ;
 }
 .underSec.seminar div.btnArea ul li a {
-	background:url(../images/areaBtn.png) no-repeat left top;
-	-webkit-background-size: 180px 209px;
-	-moz-background-size: 180px 209px;
-	background-size: 180px 209px;
+	background:url(../images/areaBtn_pc.png) no-repeat left top;
 }
 .underSec.seminar .normalBox div.btnArea ul li a.tokyo { background-position:0 0; }
-.underSec.seminar .normalBox div.btnArea ul li a.osaka { background-position:0 -53px; }
-.underSec.seminar .normalBox div.btnArea ul li a.nagoya { background-position:0 -105px; }
-.underSec.seminar .normalBox div.btnArea ul li a.fukuoka { background-position:0 -157px; }
+.underSec.seminar .normalBox div.btnArea ul li a.osaka { background-position:0 -55px; }
+.underSec.seminar .normalBox div.btnArea ul li a.nagoya { background-position:0 -110px; }
+.underSec.seminar .normalBox div.btnArea ul li a.fukuoka { background-position:0 -165px; }
 
 .underSec.seminar div.btnArea2 ul li a {
-	background:url(../images/semBtn.png) no-repeat left top;
-	-webkit-background-size: 180px 209px;
-	-moz-background-size: 180px 209px;
-	background-size: 180px 209px;
+	background:url(../images/semBtn_pc.png) no-repeat left top;
 }
 .underSec.seminar .normalBox div.btnArea2 ul li a.first { background-position:0 0; }
-.underSec.seminar .normalBox div.btnArea2 ul li a.taiken { background-position:0 -53px; }
-.underSec.seminar .normalBox div.btnArea2 ul li a.gogaku { background-position:0 -105px; }
-.underSec.seminar .normalBox div.btnArea2 ul li a.all { background-position:0 -157px; }
+.underSec.seminar .normalBox div.btnArea2 ul li a.taiken { background-position:0 -55px; }
+.underSec.seminar .normalBox div.btnArea2 ul li a.gogaku { background-position:0 -110px; }
+.underSec.seminar .normalBox div.btnArea2 ul li a.all { background-position:0 -165px; }
 
 .underSec.seminar div.btnArea ul li a.off,
 .underSec.seminar div.btnArea2 ul li a.off { opacity:0.4; }
@@ -918,6 +822,7 @@ div.slide_wrap ul.slide_body li {
 	margin-right:10px;
 	height:220px;
 	width: 260px !important;
+	behavior:url(/fairtest/css/PIE.htc);
 }
 div.slide_wrap ul.slide_body li img { border-radius:5px 5px 0 0; }
 div.slide_wrap ul.slide_body li h4 a {
@@ -959,7 +864,8 @@ div.sclList ul li {
 	box-sizing: border-box;
   width: 208px;
   position: relative;
- 	height: 125px;
+ 	min-height: 125px;
+	behavior:url(/fairtest/css/PIE.htc);
 }
 div.sclList ul li > a {
 	position:absolute;
@@ -1070,6 +976,7 @@ div.schoolList div.comment {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
   box-sizing: border-box;
+	behavior:url(/fairtest/css/PIE.htc);
 }
 div.schoolList div.comment img {
   width: 140px;
@@ -1173,6 +1080,12 @@ a.mapBtn span {
 	margin:0 0 40px 0 !important;
 }
 .underSec.access section.areaBox p.textArea {	margin:20px 0; }
+.underSec.access .mapArea iframe {
+	width:100%;
+	height:200px;
+	border:0;
+}
+
 
 /*****************************************************************
 FAQ
@@ -1194,6 +1107,7 @@ FAQ
 	border-radius:3px;
 	border:1px solid #f0f0f0;
 	font-size:110%;
+	behavior:url(/fairtest/css/PIE.htc);
 }
 .underSec.faq dl.faqBox dt {
 	background:url(../images/faq/faqQicon.png) no-repeat left center;

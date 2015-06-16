@@ -1,23 +1,23 @@
         <ul class="footMenu">
-          <li class="menu01"><a href="/fairtest/seminar/">セミナースケジュール</a></li>
-          <li class="menu02"><a href="/fairtest/school/">参加語学学校紹介</a></li>
+          <li class="menu01"><a href="<?php echo get_template_directory_uri() ?>/seminar/">セミナースケジュール</a></li>
+          <li class="menu02"><a href="<?php echo get_template_directory_uri() ?>/school/">参加語学学校紹介</a></li>
         </ul>
         <ul class="footMenu mgb150">
-          <li class="menu03"><a href="/fairtest/faq/">よくある質問</a></li>
-          <li class="menu04"><a href="/fairtest/access/">会場までのアクセス</a></li>
+          <li class="menu03"><a href="<?php echo get_template_directory_uri() ?>/faq/">よくある質問</a></li>
+          <li class="menu04"><a href="<?php echo get_template_directory_uri() ?>/access/">会場までのアクセス</a></li>
         </ul><!-- /.footMenu -->
 
       	
         <div class="pgTop"><a id="toTop" href="">ページトップヘ</a></div>
       </section><!-- /.footSec -->
       <ul class="footMenu spview">
-      	<li class="menu01"><a href="/fairtest/seminar/">セミナースケジュール</a></li>
-        <li class="menu02"><a href="/fairtest/school/">参加語学学校紹介</a></li>
-        <li class="menu03"><a href="/fairtest/faq/">よくある質問</a></li>
-        <li class="menu04"><a href="/fairtest/access/">会場までのアクセス</a></li>
+      	<li class="menu01"><a href="<?php echo get_template_directory_uri() ?>/seminar/">セミナースケジュール</a></li>
+        <li class="menu02"><a href="<?php echo get_template_directory_uri() ?>/school/">参加語学学校紹介</a></li>
+        <li class="menu03"><a href="<?php echo get_template_directory_uri() ?>/faq/">よくある質問</a></li>
+        <li class="menu04"><a href="<?php echo get_template_directory_uri() ?>/access/">会場までのアクセス</a></li>
       </ul><!-- /.footMenu -->
       
-      <div class="pgTop spview"><a id="toTop" class="fadeThis" href="">ページトップヘ</a></div>
+      <div class="pgTop spview"><a id="toTopSp" class="fadeThis" href="">ページトップヘ</a></div>
                
     </div><!-- warraper --> 
        

@@ -18,7 +18,7 @@ get_header();
                              
           <div class="contentBox noPad">        
             <p class="planeText mgb20">
-              フェアセミナーは全国４箇所の会場で開催しています。お近くの会場とお好みのセミナーを選択してください。
+              <?php the_seminar_description() ?>
             </p><!-- /.planeText -->
             
             <div class="btnArea">
@@ -32,7 +32,7 @@ get_header();
                 <li><a class="fukuoka off" href="">福岡会場</a></li>
               </ul><!-- /.areaList -->
             </div><!-- /.btnArea -->
-            
+            <?php if(is_seminar_category_open()): ?>
             <div class="btnArea2">
             	<p class="mgb10">お好みのセミナーをクリックしてください。</p>
               <ul>
@@ -43,7 +43,8 @@ get_header();
                 <li><a class="gogaku off" href="">語学学校セミナー</a></li>
                 <li><a class="all off" href="">全てのセミナー</a></li>
               </ul><!-- /.areaList -->
-            </div><!-- /.btnArea --> 
+            </div><!-- /.btnArea -->
+            <?php endif; ?>
             
             <section class="semListArea">            	
             	<h3 class="spview">東京会場<span>の</span>初心者セミナー</h3>
