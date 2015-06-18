@@ -311,6 +311,7 @@ div.keyvisual {
 	background:url(../images/keyvisual_pc.jpg) no-repeat center center;
 	background-size:auto 100%;
 	position:relative;
+        display: none;
 }
 div.keyvisual > p {
 	background:url(../images/keyvisual_textImg.png) no-repeat left top;
