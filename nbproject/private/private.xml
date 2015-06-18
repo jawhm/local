@@ -132,17 +132,19 @@
         </group>
         <group name="QJNAVI"/>
         <group name="PLATE">
-            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/functions.php</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/seminar.php</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/twentyeleven/inc/theme-options.php</file>
-            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/MyTheme_Customize.php</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/theme-customizer.js</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/header.php</file>
-            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-includes/theme.php</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/access.php</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/index.php</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-config.php</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/js/common.js</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/functions.php</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/cpt_acf_definitions.php</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/MyTheme_Customize.php</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-includes/theme.php</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/css/simple.modal.css</file>
         </group>
     </open-files>
 </project-private>

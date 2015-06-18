@@ -11,7 +11,8 @@
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
         <link id="size-stylesheet" rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/style_pc.css">  
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/css/jquery.bxslider.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/css/jquery.sidr.dark.css">  
+        <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/css/jquery.sidr.dark.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/css/simple.modal.css">
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script> 
@@ -58,7 +59,7 @@
     <body id="top">
         <div class="wrapper">
             <header class="head">
-                <h1><a href="<?php echo get_template_directory_uri() ?>/">ワーキングホリデー＆留学フェア2015年秋</a></h1>       
+                <h1><a href="/fair">ワーキングホリデー＆留学フェア2015年秋</a></h1>       
                 <nav class="topNav pcview clearfix">
                     <a class="btn reserve pcview" href="">セミナー予約</a>
                     <a class="nav01" href="/fair/seminar/">セミナースケジュール</a>

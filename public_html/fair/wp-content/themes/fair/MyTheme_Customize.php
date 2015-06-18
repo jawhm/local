@@ -76,9 +76,19 @@ function theme_customize_register($wp_customize) {
         'default' => '#ffffff',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'about_button_color_c', array(
-        'label' => 'ボタンカラー変更',
+        'label' => 'ボタンカラーBG変更',
         'section' => 'index',
         'settings' => 'about_button_color',
+        'priority' => 1,
+    )));
+    
+    $wp_customize->add_setting('about_button_border_color', array(
+        'default' => '#fe7608',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'about_button_border_color_c', array(
+        'label' => 'ボタンカラーBorder変更',
+        'section' => 'index',
+        'settings' => 'about_button_border_color',
         'priority' => 1,
     )));
 
@@ -171,7 +181,7 @@ function theme_customize_register($wp_customize) {
         'type' => 'textarea',
         'priority' => 1,
     ));
-    
+
     $wp_customize->add_setting('guide_step_1_button', array(
         'default' => 'ここはテキストエリアでHTMLでボタン',
     ));
@@ -182,7 +192,7 @@ function theme_customize_register($wp_customize) {
         'type' => 'textarea',
         'priority' => 1,
     ));
-    
+
     $wp_customize->add_setting('guide_step_1_button_sp', array(
         'default' => 'ここはテキストエリアでHTMLでボタン',
     ));
@@ -236,7 +246,7 @@ function theme_customize_register($wp_customize) {
         'type' => 'textarea',
         'priority' => 1,
     ));
-    
+
     $wp_customize->add_setting('guide_step_2_button_sp', array(
         'default' => 'ここはテキストエリアでHTMLでボタン',
     ));
@@ -260,7 +270,7 @@ function theme_customize_register($wp_customize) {
         'type' => 'checkbox',
         'priority' => 1,
     ));
-    
+
     $wp_customize->add_setting('index_seminar_text', array(
         'default' => 'ここはトップページのセミナーのテキストエリアです',
     ));
@@ -271,7 +281,7 @@ function theme_customize_register($wp_customize) {
         'type' => 'text',
         'priority' => 1,
     ));
-    
+
     $wp_customize->add_setting('index_seminar_description', array(
         'default' => '',
     ));
@@ -282,9 +292,9 @@ function theme_customize_register($wp_customize) {
         'type' => 'textarea',
         'priority' => 1,
     ));
-    
+
     /* INDEX - voice */
-    
+
     $wp_customize->add_setting('voice_status', array(
         'default' => '状態',
         'transport' => 'refresh',
@@ -296,7 +306,7 @@ function theme_customize_register($wp_customize) {
         'type' => 'checkbox',
         'priority' => 1,
     ));
-    
+
     $wp_customize->add_setting('voice_text', array(
         'default' => 'ここはトップページのセミナー参加者の声のテキストエリアです',
     ));
@@ -307,32 +317,8 @@ function theme_customize_register($wp_customize) {
         'type' => 'text',
         'priority' => 1,
     ));
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
     //
     $wp_customize->add_setting('seminar_description', array(
         'default' => 'ここはフェアセミナーの説明文です',
@@ -373,7 +359,7 @@ function theme_customize_register($wp_customize) {
         'priority' => 1,
     ));
 
-    //banner register to db & add control
+    /* BANNER register to db & add control */
     $wp_customize->add_setting('banner_upload', array(
         'capability' => 'edit_theme_options',
         'transport' => 'refresh',
@@ -386,28 +372,15 @@ function theme_customize_register($wp_customize) {
     )));
 
     $wp_customize->add_setting('banner_text', array(
-        'default' => '世界で、君の「明日」を広げよう。',
+        'capability' => 'edit_theme_options',
         'transport' => 'refresh',
     ));
-    $wp_customize->add_control('banner_text_c', array(
-        'label' => 'テキスト１',
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'banner_text_c', array(
+        'label' => __('ファイルをアップロード', ''),
         'section' => 'banner',
         'settings' => 'banner_text',
-        'type' => 'text',
-        'priority' => 2,
-    ));
-
-    $wp_customize->add_setting('banner_text_sub', array(
-        'default' => '習学・ワーキングホリデーフェア2015',
-        'transport' => 'refresh',
-    ));
-    $wp_customize->add_control('banner_text_sub_c', array(
-        'label' => 'テキスト2',
-        'section' => 'banner',
-        'settings' => 'banner_text_sub',
-        'type' => 'text',
-        'priority' => 2,
-    ));
+        'priority' => 1,
+    )));
 
     $wp_customize->add_setting('banner_text_status', array(
         'default' => '画像を表示',
@@ -444,7 +417,7 @@ function theme_customize_register($wp_customize) {
         'settings' => 'access_menu_color',
         'priority' => 1,
     )));
-    
+
     $wp_customize->add_setting('access_menu_border_color', array(
         'default' => '#284189',
         'transport' => 'refresh',
@@ -478,7 +451,7 @@ function theme_customize_register($wp_customize) {
         'settings' => 'access_tokyo_image',
         'priority' => 2,
     )));
-    
+
     $wp_customize->add_setting('access_tokyo_info', array(
         'default' => '情報を入力',
         'transport' => 'refresh',
@@ -487,18 +460,6 @@ function theme_customize_register($wp_customize) {
         'label' => '「東京」情報',
         'section' => 'access',
         'settings' => 'access_tokyo_info',
-        'type' => 'textarea',
-        'priority' => 2,
-    ));
-
-    $wp_customize->add_setting('access_tokyo_map', array(
-        'default' => '',
-        'transport' => 'refresh',
-    ));
-    $wp_customize->add_control('access_tokyo_map_c', array(
-        'label' => '「東京」マップ',
-        'section' => 'access',
-        'settings' => 'access_tokyo_map',
         'type' => 'textarea',
         'priority' => 2,
     ));
@@ -515,7 +476,7 @@ function theme_customize_register($wp_customize) {
         'type' => 'checkbox',
         'priority' => 3,
     ));
-    
+
     $wp_customize->add_setting('access_osaka_image', array(
         'transport' => 'refresh',
     ));
@@ -538,18 +499,6 @@ function theme_customize_register($wp_customize) {
         'priority' => 3,
     ));
 
-    $wp_customize->add_setting('access_osaka_map', array(
-        'default' => '',
-        'transport' => 'refresh',
-    ));
-    $wp_customize->add_control('access_osaka_map_c', array(
-        'label' => '「大阪」マップ',
-        'section' => 'access',
-        'settings' => 'access_osaka_map',
-        'type' => 'textarea',
-        'priority' => 3,
-    ));
-
     // access - nagoya
     $wp_customize->add_setting('access_nagoya_status', array(
         'default' => '状態',
@@ -562,7 +511,7 @@ function theme_customize_register($wp_customize) {
         'type' => 'checkbox',
         'priority' => 4,
     ));
-    
+
     $wp_customize->add_setting('access_nagoya_image', array(
         'transport' => 'refresh',
     ));
@@ -585,18 +534,6 @@ function theme_customize_register($wp_customize) {
         'priority' => 4,
     ));
 
-    $wp_customize->add_setting('access_nagoya_map', array(
-        'default' => '',
-        'transport' => 'refresh',
-    ));
-    $wp_customize->add_control('access_nagoya_map_c', array(
-        'label' => '「名古屋」マップ',
-        'section' => 'access',
-        'settings' => 'access_nagoya_map',
-        'type' => 'textarea',
-        'priority' => 4,
-    ));
-
     // access - fukuoka
     $wp_customize->add_setting('access_fukuoka_status', array(
         'default' => '状態',
@@ -609,7 +546,7 @@ function theme_customize_register($wp_customize) {
         'type' => 'checkbox',
         'priority' => 5,
     ));
-    
+
     $wp_customize->add_setting('access_fukuoka_image', array(
         'transport' => 'refresh',
     ));
@@ -631,25 +568,6 @@ function theme_customize_register($wp_customize) {
         'type' => 'textarea',
         'priority' => 5,
     ));
-
-    $wp_customize->add_setting('access_fukuoka_map', array(
-        'default' => '',
-        'transport' => 'refresh',
-    ));
-    $wp_customize->add_control('access_fukuoka_map_c', array(
-        'label' => '「福岡」マップ',
-        'section' => 'access',
-        'settings' => 'access_fukuoka_map',
-        'type' => 'textarea',
-        'priority' => 5,
-    ));
-
-
-    $wp_customize->add_setting('header_color', array(
-        'default' => '#00FF00',
-//        'transport' => 'refresh',
-        'transport' => 'postMessage',
-    ));
 }
 
 add_action('customize_register', 'theme_customize_register');
@@ -659,9 +577,7 @@ function generate_css() {
     ?>
     <style>
         div.keyvisual > p{
-            background: none;
-            height: auto;
-            font-size: 38px;
+            background: background: url(<?php echo get_banner_text() ?>) no-repeat center center !important;
         }
         div.keyvisual{
             background: url(<?php echo get_banner_image_url() ?>) no-repeat center center !important;
@@ -672,11 +588,10 @@ function generate_css() {
             border: 2px solid <?php echo get_access_menu_border_color() ?> !important;
         }
 
-        div.wrapper header h1 a {
-            color: <?php echo get_theme_mod('header_color', '#FF00FF'); ?>; 
-        }
         .about .btn.Orng2{
             background: <?php echo get_about_button_color() ?> !important;
+            color: <?php echo get_about_button_border_color() ?> !important;
+            border: 2px solid <?php echo get_about_button_border_color() ?> !important;
         }
         ul.point li > a.btn{
             background: <?php echo get_point_more_button_color() ?> !important;
@@ -719,6 +634,12 @@ function get_about_button_color() {
 }
 
 add_action('customize_register', 'get_about_button_color');
+
+function get_about_button_border_color() {
+    return get_theme_mod('about_button_border_color');
+}
+
+add_action('customize_register', 'get_about_button_border_color');
 
 /* INDEX - Point */
 
@@ -815,6 +736,7 @@ function get_guide_step_2_button_sp() {
 add_action('customize_register', 'get_guide_step_2_button_sp');
 
 /* INDEX - Seminar */
+
 function get_index_seminar_status() {
     return get_theme_mod('index_seminar_status');
 }
@@ -835,6 +757,7 @@ add_action('customize_register', 'get_index_seminar_description');
 
 
 /* INDEX - Voice */
+
 function get_voice_status() {
     return get_theme_mod('voice_status');
 }
@@ -846,10 +769,6 @@ function get_voice_text() {
 }
 
 add_action('customize_register', 'get_voice_text');
-
-
-
-
 
 //////////////////// ------------------------------------
 
@@ -873,24 +792,16 @@ add_action('customize_register', 'get_button_color_class');
 
 // BANNER
 function get_banner_image_url() {
-    // http://jawhm.localhost/fair/wp-content/uploads/2015/06/24-Highly-Creative-and-Clever-Gardening-Tricks-to-Enhance-Garden-homesthetics-decor-7.jpg
-
     return esc_url_raw(get_theme_mod('banner_upload'));
 }
 
 add_action('customize_register', 'get_banner_image_url');
 
-function get_banner_text_1() {
-    return get_theme_mod('banner_text');
+function get_banner_text() {
+    return esc_url_raw(get_theme_mod('banner_text'));
 }
 
-add_action('customize_register', 'get_banner_text_1');
-
-function get_banner_text_2() {
-    return get_theme_mod('banner_text_sub');
-}
-
-add_action('customize_register', 'get_banner_text_2');
+add_action('customize_register', 'get_banner_text');
 
 function get_banner_text_status() {
     return get_theme_mod('banner_text_status');
@@ -939,12 +850,6 @@ function get_access_tokyo_info() {
 
 add_action('customize_register', 'get_access_tokyo_info');
 
-function get_access_tokyo_map() {
-    return get_theme_mod('access_tokyo_map');
-}
-
-add_action('customize_register', 'get_access_tokyo_map');
-
 /* ACCESS - OSAKA */
 
 function get_access_osaka_status() {
@@ -964,12 +869,6 @@ function get_access_osaka_info() {
 }
 
 add_action('customize_register', 'get_access_osaka_info');
-
-function get_access_osaka_map() {
-    return get_theme_mod('access_osaka_map');
-}
-
-add_action('customize_register', 'get_access_osaka_map');
 
 /* ACCESS - NAGOYA */
 
@@ -991,12 +890,6 @@ function get_access_nagoya_info() {
 
 add_action('customize_register', 'get_access_nagoya_info');
 
-function get_access_nagoya_map() {
-    return get_theme_mod('access_nagoya_map');
-}
-
-add_action('customize_register', 'get_access_nagoya_map');
-
 /* ACCESS - FUKUOKA */
 
 function get_access_fukuoka_status() {
@@ -1016,9 +909,3 @@ function get_access_fukuoka_info() {
 }
 
 add_action('customize_register', 'get_access_fukuoka_info');
-
-function get_access_fukuoka_map() {
-    return get_theme_mod('access_fukuoka_map');
-}
-
-add_action('customize_register', 'get_access_fukuoka_map');

@@ -132,13 +132,13 @@ add_action( 'init', 'cptui_register_my_taxes' );
 function cptui_register_my_taxes() {
 
 	$labels = array(
-		"name" => "country",
+		"name" => "国",
 		"label" => "国",
 		);
 
 	$args = array(
 		"labels" => $labels,
-		"hierarchical" => false,
+		"hierarchical" => true,
 		"label" => "国",
 		"show_ui" => true,
 		"query_var" => true,
@@ -153,6 +153,42 @@ function cptui_register_my_taxes() {
 //custom fields definitions
 if(function_exists("register_field_group"))
 {
+        register_field_group(array (
+		'id' => 'acf_point',
+		'title' => 'point',
+		'fields' => array (
+			array (
+				'key' => 'field_558110678cdb5',
+				'label' => '+more説明文',
+				'name' => 'text',
+				'type' => 'textarea',
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => '',
+				'formatting' => 'br',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'point',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+        
 	register_field_group(array (
 		'id' => 'acf_question',
 		'title' => 'question',
@@ -401,6 +437,15 @@ if(function_exists("register_field_group"))
 				'required' => 1,
 				'default_value' => '',
 			),
+                        array (
+                                'key' => 'field_5581247b5f4e3',
+                                'label' => 'アイコン',
+                                'name' => 'icon',
+                                'type' => 'image',
+                                'save_format' => 'url',
+                                'preview_size' => 'full',
+                                'library' => 'all',
+                        ),
 			array (
 				'key' => 'field_557f9025f2e95',
 				'label' => 'セミナー検索用キーワード',

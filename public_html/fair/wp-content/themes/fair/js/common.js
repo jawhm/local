@@ -62,23 +62,28 @@ $(document).on('click', function(e){
     
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
+/* Khang simple modal window */
+$(function(){
+  var target = '';
+  $(".more-btn").click(function(){
+    // Get the second class of "btn" class
+    target = $(this).get(0).className.split(" ")[2];
+    // Set the target modal window
+    console.log(target);
+    target = $(".modal." + target);
+    // Show modal window
+    if ( target.is(":hidden") ) {
+      target.fadeIn(600);
+      $(".container").addClass("bg-blur");
+    } else {
+      target.hide();
+      $(".container").removeClass("bg-blur");
+    }
+  });
+  
+  // Hide modal window
+  $(".close, .modal").click(function(){
+    $(".modal").hide();
+    $(".container").removeClass("bg-blur");
+  });
+});

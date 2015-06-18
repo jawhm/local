@@ -2,7 +2,7 @@
 
 <div class="keyvisual">
     <?php if (get_banner_text_status()) { ?>
-        <p><?php echo get_banner_text_1() ?></p><span><?php echo get_banner_text_2() ?></span>
+        <p></p>
     <?php } ?>
     <!--img src="images/icon_plane.png" alt="飛行機"-->
 </div><!-- /.keyvisual -->      
@@ -35,62 +35,66 @@
     <section class="normalBox">
         <h2 class="hukidashi"><?php echo get_point_text() ?><span>POINT</span></h2>
         <div class="contentBox topSec2">
-            <ul class="point green mgb10">
-                <li>
-                    <p><span>PONIT.1</span>セミナーで<br>有益な情報収集</p>
-                    <a class="btn" href="">+more</a>
-                </li>
-                <li>
-                    <p><span>PONIT.2</span>学校スタッフと<br>直接話が出来る</p>
-                    <a class="btn" href="">+more</a>
-                </li>
-            </ul><!-- /.point -->        
-            <ul class="point green">
-                <li>
-                    <p><span>PONIT.3</span>その場での<br>お申込みが可能</p>
-                    <a class="btn" href="">+more</a>
-                </li>
-                <li>
-                    <p><span>PONIT.4</span>セミナー後に<br>質疑応答タイム有</p>
-                    <a class="btn" href="">+more</a>
-                </li>
-            </ul><!-- /.point -->        
-            <ul class="point green lastUl">
-                <li>
-                    <p><span>PONIT.5</span>参加者特典有り</p>
-                    <a class="btn" href="">+more</a>
-                </li>
-                <!--li>
-                  <p><span>PONIT.2</span>学校スタッフと直接話が出来る</p>
-                  <a href="">+more</a>
-                </li-->
-            </ul><!-- /.point -->
+            <?php
+            $tmp_point = '';
+            $tmp_point_modal = '';
+            $args = array(
+                'post_type' => 'point',
+                'posts_per_page' => 5,
+                'orderby' => array('date' => 'ASC'),
+            );
+            $loop = new WP_Query($args);
+            //
+            if ($loop->have_posts()) {
+                $p = 1;
+                $p_open_tag = false;
+                //
+                while ($loop->have_posts()) {
+                    $loop->the_post();
+                    if ($p % 2 !== 0) {
+                        if ($p_open_tag === false) {
+                            $p_lastUl = '';
+                            if ($p == $loop->post_count) {
+                                $p_lastUl = 'lastUl';
+                            } elseif ($p == 1) {
+                                $p_lastUl = 'mgb10';
+                            }
+                            $tmp_point .= '<ul class="point green ' . $p_lastUl . '">';
+                            $p_open_tag = true;
+                        }
+                        $tmp_point .= '<li>';
+                        $tmp_point .= '<p><span>PONIT.' . $p . '</span>' . get_the_title() . '</p>';
+                        $tmp_point .= '<a href="javascript:void(0);" class="btn more-btn ' . 'panel' . get_the_ID() . '" href="">+more</a>';
+                        $tmp_point .= '</li>';
+                        if ($p == $loop->post_count) {
+                            $tmp_point .= '</ul><!-- /.point -->';
+                        }
+                    } else {
+                        $tmp_point .= '<li>';
+                        $tmp_point .= '<p><span>PONIT.' . $p . '</span>' . get_the_title() . '</p>';
+                        $tmp_point .= '<a href="javascript:void(0);" class="btn more-btn ' . 'panel' . get_the_ID() . '" href="">+more</a>';
+                        $tmp_point .= '</li>';
+                        if ($p_open_tag === true) {
+                            $tmp_point .= '</ul><!-- /.point -->';
+                            $p_open_tag = false;
+                        }
+                    }
+                    $p++;
+                    
+                    $tmp_point_modal .= '<div class="modal ' . 'panel' . get_the_ID() . '">';
+                    $tmp_point_modal .= '<p>' . get_field('text') . '</p>';
+                    $tmp_point_modal .= '<div class="close"><span>close</span></div>';
+                    $tmp_point_modal .= '</div>';
+                }
+            }
+            //
+            wp_reset_postdata();
+            ?>
+            
+            <?php echo $tmp_point ?>
 
             <div class="modal-area">
-                <div class="modal panel01">
-                    <p>ここに詳細説明を記述します。</p>
-                    <div class="close"><span>close</span></div>
-                </div><!-- /.panel01 -->
-
-                <div class="modal panel02">
-                    <p>ここに詳細説明を記述します。</p>
-                    <div class="close"><span>close</span></div>
-                </div><!-- /.panel01 -->
-
-                <div class="modal panel03">
-                    <p>ここに詳細説明を記述します。</p>
-                    <div class="close"><span>close</span></div>
-                </div><!-- /.panel01 -->
-
-                <div class="modal panel04">
-                    <p>ここに詳細説明を記述します。</p>
-                    <div class="close"><span>close</span></div>
-                </div><!-- /.panel01 -->
-
-                <div class="modal panel05">
-                    <p>ここに詳細説明を記述します。</p>
-                    <div class="close"><span>close</span></div>
-                </div><!-- /.panel01 -->          
+                <?php echo $tmp_point_modal ?>       
             </div><!-- /.modal-area -->
 
 
@@ -145,75 +149,77 @@
     <section class="normalBox">
         <h2 class="hukidashi"><?php echo get_index_seminar_text() ?><span>SEMINAR</span></h2>
         <div class="contentBox">
-            <?php if(get_index_seminar_description() != ''): ?>
-            <p class="planeText mgb20"><?php echo get_index_seminar_description() ?></p>
+            <?php if (get_index_seminar_description() != ''): ?>
+                <p class="planeText mgb20"><?php echo get_index_seminar_description() ?></p>
             <?php endif; ?>
 
-            <section class="semBox2 firstSem">
-                <div class="inner">
-                    <img src="<?php echo get_template_directory_uri() ?>/images/photo_sem01.jpg" alt="セミナー画像">
-                    <div class="textBox">
-                        <h3>初心者向けセミナー</h3>
-                        <p>ワーキングホリデー・留学の基本が1日でわかる大人気のセミナーです。初めの方はまずこちらにご参加ください。</p>
-                    </div><!-- /.textBox -->
-                </div><!-- /.inner -->
-                <ul class="feature">
-                    <li>一度にワーホリ＆留学の基本がわかるセミナー</li>
-                    <li>ビザ～準備まで全ての疑問不安を解決できます！</li>
-                    <li>当協会カウンセラーがわかりやすくご説明します</li>
-                </ul><!-- /.feature -->
-                <div class="btnShadow2 w90"><a class="btn Green" href="">このセミナーを予約する</a></div>
-            </section><!-- /.semBox2 firstSem -->
-
-            <section class="semBox2 blueSem">
-                <div class="inner">
-                    <img src="<?php echo get_template_directory_uri() ?>/images/photo_sem02.jpg" alt="セミナー画像">
-                    <div class="textBox">
-                        <h3>語学学校セミナー</h3>
-                        <p>来日中の語学学校スタッフによる特別セミナー。セミナー後には直接ご相談が可能！不安や疑問を解決できます。</p>
-                    </div><!-- /.textBox -->
-                </div><!-- /.inner -->
-                <ul class="feature">
-                    <li>語学学校によるフェアだけの特別セミナー</li>
-                    <li>来日中の学校スタッフと直接話して疑問解決！</li>
-                    <li>渡航費用が安くなる！？特典＆即日お申込みも</li>
-                </ul><!-- /.feature -->
-                <div class="btnShadow2 w90"><a class="btn Blue" href="">このセミナーを予約する</a></div>
-            </section><!-- /.semBox2 blueSem -->
-
-            <div class="pcview clearfix"></div>
-
-            <section class="semBox2 orangeSem">
-                <div class="inner">
-                    <img src="<?php echo get_template_directory_uri() ?>/images/photo_sem03.jpg" alt="セミナー画像">
-                    <div class="textBox">
-                        <h3>体験談セミナー</h3>
-                        <p>よかったことはもちろん失敗したことまでワーホリ・留学体験者とお話ができる少人数制の人気セミナー。</p>
-                    </div><!-- /.textBox -->
-                </div><!-- /.inner -->
-                <ul class="feature">
-                    <li>経験者だからお話出来る現地の生の声</li>
-                    <li>よかったことはもちろん失敗したことまで渡航前の皆さんのタメになる内容です</li>
-                </ul><!-- /.feature -->
-                <div class="btnShadow2 w90"><a class="btn Orng" href="">このセミナーを予約する</a></div>
-            </section><!-- /.semBox2 blueSem -->
-
-            <section class="semBox2 pinkSem">
-                <div class="inner">
-                    <img src="<?php echo get_template_directory_uri() ?>/images/photo_sem04.jpg" alt="セミナー画像">
-                    <div class="textBox">
-                        <h3>懇談カウンセリング</h3>
-                        <p>プロのカウンセラーに渡航の相談ができる少人数制のカウンセリング。プランニングに最適なセミナーです。</p>
-                    </div><!-- /.textBox -->
-                </div><!-- /.inner -->
-                <ul class="feature">
-                    <li>渡航の相談・プランニングが可能</li>
-                    <li>小人数制なので一人一人にあった内容をお話</li>
-                    <li>渡航経験のあるプロのカウンセラーが担当</li>
-                </ul><!-- /.feature -->
-                <div class="btnShadow2 w90"><a class="btn Pink" href="">このセミナーを予約する</a></div>
-            </section><!-- /.semBox2 blueSem -->
-
+            <?php
+            $args = array(
+                'post_type' => 'seminar',
+                'posts_per_page' => 4,
+                'orderby' => array('date' => 'ASC'),
+            );
+            $loop = new WP_Query($args);
+            ?>
+            <?php if ($loop->have_posts()): ?>
+                <?php $i = 0; ?>
+                <?php while ($loop->have_posts()): $loop->the_post(); ?>
+                    <style>
+            <?php if ($i % 2 === 0): ?>
+                            section.semBox2.cuz-seminar-<?php echo the_ID() ?>{
+                                float: left;
+                            }
+            <?php else: ?>
+                            section.semBox2.cuz-seminar-<?php echo the_ID() ?>{
+                                float: right;
+                            }
+            <?php endif; ?>
+                        section.semBox2.cuz-seminar-<?php echo the_ID() ?> h3{
+                            background: url("<?php echo get_field('icon') ?>") no-repeat scroll left center / 30px auto rgba(0, 0, 0, 0);
+                            color: <?php echo get_field('color') ?>;
+                        }
+                        section.semBox2.cuz-seminar-<?php echo the_ID() ?> ul.feature > li{
+                            color: <?php echo get_field('color') ?>;
+                        }
+                        section.semBox2.cuz-seminar-<?php echo the_ID() ?> ul.feature > li:before{
+                            -moz-border-bottom-colors: none;
+                            -moz-border-left-colors: none;
+                            -moz-border-right-colors: none;
+                            -moz-border-top-colors: none;
+                            border-color: transparent transparent transparent <?php echo get_field('color') ?>;
+                            border-image: none;
+                            border-style: solid;
+                            border-width: 7px;
+                        }
+                        .btn.cuz-btn-seminar-<?php echo the_ID() ?>{
+                            background: url("<?php echo get_template_directory_uri() ?>/images/arrow_white.png") no-repeat scroll 96% center / 7px 10px <?php echo get_field('color') ?>;
+                            color: #fff;
+                        }
+                    </style>
+                    <section class="semBox2 cuz-seminar-<?php echo the_ID() ?>">
+                        <div class="inner">
+                            <img src="<?php echo get_field('image') ?>" alt="<?php echo the_title() ?>">
+                            <div class="textBox">
+                                <h3><?php echo the_title() ?></h3>
+                                <p><?php echo get_field('description') ?></p>
+                            </div><!-- /.textBox -->
+                        </div><!-- /.inner -->
+                        <?php if (have_rows('points')): ?>
+                            <ul class="feature">
+                                <?php while (have_rows('points')): the_row(); ?>
+                                    <li><?php echo the_sub_field('point') ?></li>
+                                <?php endwhile; ?>
+                            </ul><!-- /.feature -->
+                        <?php endif; ?>
+                        <div class="btnShadow2 w90"><a class="btn cuz-btn-seminar-<?php echo the_ID() ?>" href="<?php echo get_field('keyword') ?>">このセミナーを予約する</a></div>
+                    </section><!-- /.semBox2 firstSem -->
+                    <?php if ($i % 2 !== 0 && $i !== 0): ?>
+                        <div class="pcview clearfix"></div>
+                    <?php endif; ?>
+                    <?php $i++; ?>
+                <?php endwhile; ?>
+            <?php endif; ?>
+            <?php wp_reset_postdata(); ?>
         </div><!-- /.contentBox -->        
     </section><!-- /.normalBox -->
 <?php endif; ?>
@@ -223,31 +229,29 @@
     <section class="normalBox mgb30">
         <h2 class="hukidashi"><?php echo get_voice_text() ?><span>VOICE</span></h2>
         <div class="contentBox">
-            <ul class="voiceList">
-                <li>
-                    <img src="<?php echo get_template_directory_uri() ?>/images/photo_voice01.jpg" alt="参加者の写真">
-                    <p>
-                        様々な留学への考えやきっかけを聞けたのは非常に貴重でした。<br>
-                        自分のやりたいことをもっと具体的にしぼっていかないといけないと思いました。
-                        <span>（女性）</span>
-                    </p>
-                </li>          
-                <li>
-                    <img src="<?php echo get_template_directory_uri() ?>/images/photo_voice02.jpg" alt="参加者の写真">
-                    <p>
-                        カウンセラーの方のお話がいい事も悪い事もリアルで泣きそうになった。<br>
-                        色んな年齢、職業の人がどのような目的やきっかけで海外に行こうと思ったかなど話が聞けて楽しかった。
-                        <span>（26歳　女性　美容師）</span>
-                    </p>
-                </li>          
-                <li>
-                    <img src="<?php echo get_template_directory_uri() ?>/images/photo_voice03.jpg" alt="参加者の写真">
-                    <p>
-                        海外での生活、ワーキングホリデーに行くまでの経緯、感じたことなど色々お話しをきけて、これから何を準備すればいいか、目的意識など考えるきっかけになりました。また同じ悩みをもった人たちと交流出来て楽しかったです。
-                        <span>（25歳　男性）</span>
-                    </p>
-                </li>        
-            </ul><!-- /.voiceList -->
+            <?php
+            $args = array(
+                'post_type' => 'voice',
+                'posts_per_page' => 3,
+                'orderby' => array('date' => 'ASC'),
+            );
+            $loop = new WP_Query($args);
+            ?>
+            <?php if ($loop->have_posts()): ?>
+                <ul class="voiceList">
+                    <?php while ($loop->have_posts()): $loop->the_post(); ?>
+                        <li>
+                            <img src="<?php echo get_field('image') ?>" alt="<?php echo the_title() ?>">
+                            <p>
+                                <?php echo get_field('body') ?>
+                                <span>（<?php echo get_field('profile') ?>）</span>
+                            </p>
+                        </li>
+
+                    <?php endwhile; ?>
+                </ul><!-- /.voiceList -->
+            <?php endif; ?>
+            <?php wp_reset_postdata(); ?>
         </div><!-- /.contentBox -->
     </section><!-- /.normalBox -->
 <?php endif; ?>
