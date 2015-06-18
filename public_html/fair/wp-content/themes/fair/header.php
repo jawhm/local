@@ -21,8 +21,10 @@
         <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/prefixfree.min.js"></script>
         <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/jquery.sidr.min.js"></script>
         <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/jquery.heightLine.js"></script>
+        <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/jssor/js/jssor.js"></script>
+        <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/jssor/js/jssor.slider.js"></script>
         <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/common.js"></script>
-
+        
         <script>
             $(document).ready(function () {
                 $('#openMenu').sidr({
