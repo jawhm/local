@@ -9,7 +9,10 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
         <meta name="format-detection" content="telephone=no">
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-        <link id="size-stylesheet" rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/style_pc.css">  
+        
+        <link rel="stylesheet" media="(max-width: 700px)" href="<?php echo get_template_directory_uri() ?>/css/style_sp.css">
+        <link rel="stylesheet" media="(min-width: 699px)" href="<?php echo get_template_directory_uri() ?>/css/style_pc.css">
+        
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/css/jquery.bxslider.css">
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/css/jquery.sidr.dark.css">
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/css/simple.modal.css">
@@ -29,13 +32,6 @@
             $(document).ready(function () {
                 $('#openMenu').sidr({
                     side: 'right'
-                });
-            });
-        </script>
-
-        <script>
-            $(function () {
-                $(".sclList ul li.sclBox").heightLine({
                 });
             });
         </script>
@@ -77,7 +73,7 @@
                 <img class="tabImg pcview" src="<?php echo get_template_directory_uri() ?>/images/bgTabImg.png" alt="">
             </header>
 
-            <div id="sidr" class="spview">
+            <div id="sidr" class="spview sidr">
                 <ul>
                     <li><a class="nav01" href="/fair/seminar/">セミナースケジュール</a></li>
                     <li><a class="nav02" href="/fair/school/">参加語学学校紹介</a></li>

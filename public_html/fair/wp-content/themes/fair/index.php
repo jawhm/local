@@ -1,11 +1,10 @@
 <?php get_header(); ?>
-
-<div class="keyvisual">
-    <?php if (get_banner_text_status()) { ?>
-        <p></p>
-    <?php } ?>
-    <!--img src="images/icon_plane.png" alt="飛行機"-->
-</div><!-- /.keyvisual -->      
+<?php if (get_banner_text_status()): ?>
+    <div class="keyvisual index">
+        <p class="keyvisual-text">afadfafad</p>
+        <!--img src="images/icon_plane.png" alt="飛行機"-->
+    </div><!-- /.keyvisual -->      
+<?php endif; ?>
 
 <?php if (get_about_status()): ?>
     <!-- ▼ ワーキングホリデー＆留学フェアとは？ ▼ -->
@@ -23,8 +22,8 @@
                 <?php echo get_about_description() ?>
             </p><!-- /.planeText -->
             <ul class="btnList pdl55 about">
-                <li class="left w60"><a class="btn Orng2" href="">セミナースケジュール</a></li>
-                <li class="right w40"><a class="btn Orng2" href="">アクセス</a></li>
+                <li class="left w60"><a class="btn Orng2" href="/seminar/">セミナースケジュール</a></li>
+                <li class="right w40"><a class="btn Orng2" href="/access/">アクセス</a></li>
             </ul><!-- /.btnList -->
         </div><!-- /.contentBox -->
     </section><!-- /.normalBpx -->
@@ -71,7 +70,7 @@
                         }
                     } else {
                         $tmp_point .= '<li>';
-                        $tmp_point .= '<p><span>PONIT.' . $p . '</span>' . get_the_title() . '</p>';
+                        $tmp_point .= '<p><span>POINT.' . $p . '</span>' . get_the_title() . '</p>';
                         $tmp_point .= '<a href="javascript:void(0);" class="btn more-btn ' . 'panel' . get_the_ID() . '" href="">+more</a>';
                         $tmp_point .= '</li>';
                         if ($p_open_tag === true) {
@@ -80,7 +79,7 @@
                         }
                     }
                     $p++;
-                    
+
                     $tmp_point_modal .= '<div class="modal ' . 'panel' . get_the_ID() . '">';
                     $tmp_point_modal .= '<p>' . get_field('text') . '</p>';
                     $tmp_point_modal .= '<div class="close"><span>close</span></div>';
@@ -90,7 +89,7 @@
             //
             wp_reset_postdata();
             ?>
-            
+
             <?php echo $tmp_point ?>
 
             <div class="modal-area">
@@ -98,8 +97,8 @@
             </div><!-- /.modal-area -->
 
 
-            <div class="btnShadow mgt30 w60 pcview"><a class="btn Orng" href="">スケジュール＆ご予約はこちら</a></div>        
-            <div class="btnShadow mgt30 w90 spview"><a class="btn Orng" href="">スケジュール＆ご予約はこちら</a></div>
+            <div class="btnShadow mgt30 w60 pcview"><a class="btn Orng" style="background: <?php echo get_point_button_color() ?>" href="">スケジュール＆ご予約はこちら</a></div>        
+            <div class="btnShadow mgt30 w90 spview"><a class="btn Orng" style="background: <?php echo get_point_button_color() ?>" href="">スケジュール＆ご予約はこちら</a></div>
         </div><!-- /.contentBox -->
     </section><!-- /.normalBpx -->
 <?php endif; ?>
@@ -109,37 +108,41 @@
     <section class="normalBox">
         <h2 class="hukidashi"><?php echo get_guide_text() ?><span>GUIDE</span></h2>
         <div class="contentBox">
-            <section class="semBox mgb30">
-                <h3 class="step1"><span>STEP1</span><?php echo get_guide_step_1_text() ?></h3>
-                <div class="inner">
-                    <?php if (get_guide_step_1_image() != ''): ?>
-                        <img src="<?php echo get_guide_step_1_image() ?>" alt="セミナー画像">
-                    <?php else: ?>
-                        <img src="<?php echo get_template_directory_uri() ?>/images/photo_step01.jpg" alt="セミナー画像">
-                    <?php endif; ?>
-                    <p>
-                        <?php echo get_guide_step_1_description() ?>
-                        <?php echo get_guide_step_1_button() ?>
-                    </p>
-                </div><!-- /.inner -->
-                <?php echo get_guide_step_1_button_sp() ?>
-            </section><!-- /.semBox -->
-
-            <section class="semBox">
-                <h3 class="step2"><span>STEP2</span><?php echo get_guide_step_2_text() ?></h3>
-                <div class="inner">
-                    <?php if (get_guide_step_2_image() != ''): ?>
-                        <img src="<?php echo get_guide_step_2_image() ?>" alt="セミナー画像">
-                    <?php else: ?>
-                        <img src="<?php echo get_template_directory_uri() ?>/images/photo_step02.jpg" alt="セミナー画像">
-                    <?php endif; ?>
-                    <p>
-                        <?php echo get_guide_step_2_description() ?>
-                        <?php echo get_guide_step_2_button() ?>
-                    </p>
-                </div><!-- /.inner -->
-                <?php echo get_guide_step_2_button_sp() ?>
-            </section><!-- /.semBox -->
+            <?php
+            query_posts("post_type=step&posts_per_page=-1");
+            if (have_posts()): while (have_posts()): the_post();
+                    ?>        
+                    <section class="semBox mgb30">
+                        <h3 class="step1" style="background: url('<?php the_field("icon") ?>') no-repeat left center;"><span><?php the_title() ?></span><?php the_field("caption") ?></h3>
+                        <div class="inner">
+                          <!--<img src="<?php the_field("image") ?>" alt="セミナー画像">-->
+                            <img src="<?php echo get_template_directory_uri() ?>/images/photo_step01.jpg" alt="セミナー画像">
+                            <p>
+                                <?php the_field("body") ?>
+                                <?php
+                                foreach (get_field("buttons") as $button):
+                                    ?>
+                                    <a href="<?php echo $button["link"] ?>" class="btnShadow2 block pcview mgt30">
+                                        <span class="btn Green" style="background: <?php echo $button["color"] ?>">
+                                            <?php echo $button["text"] ?>
+                                        </span>
+                                    </a>
+                                <?php endforeach; ?>
+                            </p>
+                        </div><!-- /.inner -->
+                        <?php
+                        foreach (get_field("buttons") as $button):
+                            ?>
+                            <div class="btnShadow2 w90 spview">
+                                <a class="btn Green" style="background: <?php echo $button["color"] ?>" href="<?php echo $button["link"] ?>"><?php echo $button["text"] ?></a>
+                            </div>
+                        <?php endforeach; ?>
+                    </section><!-- /.semBox -->
+                    <?php
+                endwhile;
+            endif;
+            wp_reset_query();
+            ?>
         </div><!-- /.contentBox -->
     </section><!-- /.normalBox -->
 <?php endif; ?>

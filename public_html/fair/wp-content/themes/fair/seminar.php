@@ -7,7 +7,7 @@ get_header();
 
       <div class="underSec seminar">
       
-        <div class="keyvisual">
+        <div class="keyvisual seminar">
           <p>ワーキングホリデー＆留学フェアのセミナー一覧</p>
           <!--img src="images/icon_plane.png" alt="飛行機"-->
         </div><!-- /.keyvisual -->      

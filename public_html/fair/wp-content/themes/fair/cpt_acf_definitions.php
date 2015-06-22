@@ -123,6 +123,29 @@ function cptui_register_my_cpts() {
 		"supports" => array( "title" ),		
 	);
 	register_post_type( "school", $args );
+        
+        $labels = array(
+		"name" => "ステップ",
+		"singular_name" => "ステップ",
+		);
+
+	$args = array(
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"show_ui" => true,
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "step", "with_front" => true ),
+		"query_var" => true,
+				
+		"supports" => array( "title"),		
+	);
+	register_post_type( "step", $args );
 
 // End of cptui_register_my_cpts()
 }
@@ -286,6 +309,18 @@ if(function_exists("register_field_group"))
 				'preview_size' => 'full',
 				'library' => 'all',
 			),
+                        array (
+				'key' => 'field_place',
+				'label' => '地域詳細',
+				'name' => 'place',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
 			array (
 				'key' => 'field_557f967abe8ba',
 				'label' => '学校紹介画像',
@@ -310,7 +345,7 @@ if(function_exists("register_field_group"))
 				'label' => '現地スタッフ紹介画像',
 				'name' => 'staff_image',
 				'type' => 'image',
-				'save_format' => 'object',
+				'save_format' => 'url',
 				'preview_size' => 'full',
 				'library' => 'all',
 			),
@@ -525,6 +560,125 @@ if(function_exists("register_field_group"))
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'voice',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+        register_field_group(array (
+		'id' => 'acf_step',
+		'title' => 'step',
+		'fields' => array (
+			array (
+				'key' => 'field_5583ffc25716e',
+				'label' => '見出し',
+				'name' => 'caption',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+                        array (
+				'key' => 'field_step_body',
+				'label' => '説明文',
+				'name' => 'body',
+				'type' => 'textarea',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+                        array (
+				'key' => 'field_step_image',
+				'label' => '画像',
+				'name' => 'image',
+				'type' => 'image',
+				'save_format' => 'url',
+				'preview_size' => 'full',
+				'library' => 'all',
+			),
+			array (
+				'key' => 'field_5584074ca63b8',
+				'label' => 'ボタン',
+				'name' => 'buttons',
+				'type' => 'repeater',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_55840774a63b9',
+						'label' => 'カラー',
+						'name' => 'color',
+						'type' => 'color_picker',
+						'column_width' => '',
+						'default_value' => '',
+					),
+					array (
+						'key' => 'field_5584078fa63ba',
+						'label' => 'テキスト',
+						'name' => 'text',
+						'type' => 'text',
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
+					),
+					array (
+						'key' => 'field_5584079da63bb',
+						'label' => 'リンク先',
+						'name' => 'link',
+						'type' => 'text',
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
+					),
+				),
+				'row_min' => '',
+				'row_limit' => '',
+				'layout' => 'table',
+				'button_label' => 'Add Row',
+                        ),
+			array (
+				'key' => 'field_5583fffb57171',
+				'label' => 'テーマカラー',
+				'name' => 'color',
+				'type' => 'color_picker',
+				'default_value' => '',
+			),
+			array (
+				'key' => 'field_5584001157172',
+				'label' => 'アイコン',
+				'name' => 'icon',
+				'type' => 'image',
+				'save_format' => 'url',
+				'preview_size' => 'full',
+				'library' => 'all',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'step',
 					'order_no' => 0,
 					'group_no' => 0,
 				),

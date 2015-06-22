@@ -26,6 +26,10 @@ function theme_customize_register($wp_customize) {
         'title' => 'ACCESS',
         'priority' => 24,
     ));
+    $wp_customize->add_section('faq', array(
+        'title' => 'FAQ',
+        'priority' => 25,
+    ));
 
     //setting definition
     /* INDEX - about */
@@ -65,7 +69,7 @@ function theme_customize_register($wp_customize) {
 
     $wp_customize->add_setting('top_kevisual');
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'top_kevisual_c', array(
-        'label' => 'キービジュアル', //設定ラベル
+        'label' => 'アバウトの画像', //設定ラベル
         'section' => 'index', //セクションID
         'settings' => 'top_kevisual', //セッティングID
         'description' => 'キービジュアルの画像設定',
@@ -81,7 +85,7 @@ function theme_customize_register($wp_customize) {
         'settings' => 'about_button_color',
         'priority' => 1,
     )));
-    
+
     $wp_customize->add_setting('about_button_border_color', array(
         'default' => '#fe7608',
     ));
@@ -120,9 +124,19 @@ function theme_customize_register($wp_customize) {
         'default' => '#12b49b',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'point_more_button_color_c', array(
-        'label' => 'ボタンカラー変更',
+        'label' => '+moreボタンカラー変更',
         'section' => 'index',
         'settings' => 'point_more_button_color',
+        'priority' => 1,
+    )));
+
+    $wp_customize->add_setting('point_button_color', array(
+        'default' => '#12b49b',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'point_button_color_c', array(
+        'label' => '予約ボタンカラー変更',
+        'section' => 'index',
+        'settings' => 'point_button_color',
         'priority' => 1,
     )));
 
@@ -136,125 +150,6 @@ function theme_customize_register($wp_customize) {
         'section' => 'index',
         'settings' => 'guide_status',
         'type' => 'checkbox',
-        'priority' => 1,
-    ));
-
-    $wp_customize->add_setting('guide_text', array(
-        'default' => 'ここはトップページのガイドのテキストエリアです',
-    ));
-    $wp_customize->add_control('guide_text_c', array(
-        'section' => 'index',
-        'settings' => 'guide_text',
-        'label' => 'GUIDEのテキスト',
-        'type' => 'text',
-        'priority' => 1,
-    ));
-
-    $wp_customize->add_setting('guide_step_1_text', array(
-        'default' => 'ここはトップページのガイドのテキストエリアです',
-    ));
-    $wp_customize->add_control('guide_step_1_text_c', array(
-        'section' => 'index',
-        'settings' => 'guide_step_1_text',
-        'label' => 'GUIDEのStep1テキスト',
-        'type' => 'text',
-        'priority' => 1,
-    ));
-
-    $wp_customize->add_setting('guide_step_1_image', array(
-        'default' => '',
-    ));
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'guide_step_1_image_c', array(
-        'section' => 'index',
-        'settings' => 'guide_step_1_image',
-        'label' => 'GUIDEのStep1画像',
-        'priority' => 1,
-    )));
-
-    $wp_customize->add_setting('guide_step_1_description', array(
-        'default' => 'ここはトップページのガイドのテキストエリアです',
-    ));
-    $wp_customize->add_control('guide_step_1_description_c', array(
-        'section' => 'index',
-        'settings' => 'guide_step_1_description',
-        'label' => 'GUIDEの詳細1',
-        'type' => 'textarea',
-        'priority' => 1,
-    ));
-
-    $wp_customize->add_setting('guide_step_1_button', array(
-        'default' => 'ここはテキストエリアでHTMLでボタン',
-    ));
-    $wp_customize->add_control('guide_step_1_button_c', array(
-        'section' => 'index',
-        'settings' => 'guide_step_1_button',
-        'label' => 'GUIDEのバタン1',
-        'type' => 'textarea',
-        'priority' => 1,
-    ));
-
-    $wp_customize->add_setting('guide_step_1_button_sp', array(
-        'default' => 'ここはテキストエリアでHTMLでボタン',
-    ));
-    $wp_customize->add_control('guide_step_1_button_sp_c', array(
-        'section' => 'index',
-        'settings' => 'guide_step_1_button_sp',
-        'label' => 'GUIDEのバタンsp1',
-        'type' => 'textarea',
-        'priority' => 1,
-    ));
-
-    $wp_customize->add_setting('guide_step_2_text', array(
-        'default' => 'ここはトップページのガイドのテキストエリアです',
-    ));
-    $wp_customize->add_control('guide_step_2_text_c', array(
-        'section' => 'index',
-        'settings' => 'guide_step_2_text',
-        'label' => 'GUIDEのStep2テキスト',
-        'type' => 'text',
-        'priority' => 1,
-    ));
-
-    $wp_customize->add_setting('guide_step_2_image', array(
-        'default' => '',
-    ));
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'guide_step_2_image_c', array(
-        'section' => 'index',
-        'settings' => 'guide_step_2_image',
-        'label' => 'GUIDEのStep2画像',
-        'priority' => 1,
-    )));
-
-    $wp_customize->add_setting('guide_step_2_description', array(
-        'default' => 'ここはトップページのガイドのテキストエリアです',
-    ));
-    $wp_customize->add_control('guide_step_2_description_c', array(
-        'section' => 'index',
-        'settings' => 'guide_step_2_description',
-        'label' => 'GUIDEの詳細2',
-        'type' => 'textarea',
-        'priority' => 1,
-    ));
-
-    $wp_customize->add_setting('guide_step_2_button', array(
-        'default' => 'ここはテキストエリアでHTMLでボタン',
-    ));
-    $wp_customize->add_control('guide_step_2_button_c', array(
-        'section' => 'index',
-        'settings' => 'guide_step_2_button',
-        'label' => 'GUIDEのバタン1',
-        'type' => 'textarea',
-        'priority' => 1,
-    ));
-
-    $wp_customize->add_setting('guide_step_2_button_sp', array(
-        'default' => 'ここはテキストエリアでHTMLでボタン',
-    ));
-    $wp_customize->add_control('guide_step_2_button_sp_c', array(
-        'section' => 'index',
-        'settings' => 'guide_step_2_button_sp',
-        'label' => 'GUIDEのバタンsp2',
-        'type' => 'textarea',
         'priority' => 1,
     ));
 
@@ -319,7 +214,18 @@ function theme_customize_register($wp_customize) {
     ));
 
 
-    //
+    //SEMINAR
+    $wp_customize->add_setting('seminar_keyvisual', array(
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'seminar_keyvisual_c', array(
+        'label' => __('キービジュアル', ''),
+        'section' => 'seminar',
+        'settings' => 'seminar_keyvisual',
+        'priority' => 1,
+    )));
+
     $wp_customize->add_setting('seminar_description', array(
         'default' => 'ここはフェアセミナーの説明文です',
     ));
@@ -343,7 +249,18 @@ function theme_customize_register($wp_customize) {
         'priority' => 2,
     ));
 
-    //school
+    //SCHOOL
+    $wp_customize->add_setting('school_keyvisual', array(
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'school_keyvisual_c', array(
+        'label' => __('キービジュアル', ''),
+        'section' => 'school',
+        'settings' => 'school_keyvisual',
+        'priority' => 1,
+    )));
+
     $wp_customize->add_setting('button_color', array(
         'default' => 'Navy2',
     ));
@@ -365,9 +282,20 @@ function theme_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'banner_upload_c', array(
-        'label' => __('ファイルをアップロード', ''),
+        'label' => __('キービジュアル背景', ''),
         'section' => 'banner',
         'settings' => 'banner_upload',
+        'priority' => 1,
+    )));
+
+    $wp_customize->add_setting('banner_upload_sp', array(
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'banner_upload_sp_c', array(
+        'label' => 'SPファイルをアップロード',
+        'section' => 'banner',
+        'settings' => 'banner_upload_sp',
         'priority' => 1,
     )));
 
@@ -376,7 +304,7 @@ function theme_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'banner_text_c', array(
-        'label' => __('ファイルをアップロード', ''),
+        'label' => __('キービジュアル正面画像', ''),
         'section' => 'banner',
         'settings' => 'banner_text',
         'priority' => 1,
@@ -394,7 +322,18 @@ function theme_customize_register($wp_customize) {
         'priority' => 3,
     ));
 
-    // access
+    // ACCESS
+    $wp_customize->add_setting('access_keyvisual', array(
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'access_keyvisual_c', array(
+        'label' => __('キービジュアル', ''),
+        'section' => 'access',
+        'settings' => 'access_keyvisual',
+        'priority' => 1,
+    )));
+
     $wp_customize->add_setting('access_menu_status', array(
         'default' => '状態',
         'transport' => 'refresh',
@@ -426,6 +365,17 @@ function theme_customize_register($wp_customize) {
         'label' => 'ボタンのBorderカラー変更',
         'section' => 'access',
         'settings' => 'access_menu_border_color',
+        'priority' => 1,
+    )));
+
+    $wp_customize->add_setting('access_button_color', array(
+        'default' => '#ffffff',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'access_button_color_c', array(
+        'label' => '各会場のボタンカラー',
+        'section' => 'access',
+        'settings' => 'access_button_color',
         'priority' => 1,
     )));
 
@@ -568,6 +518,18 @@ function theme_customize_register($wp_customize) {
         'type' => 'textarea',
         'priority' => 5,
     ));
+
+    //faq
+    $wp_customize->add_setting('faq_keyvisual', array(
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'faq_keyvisual_c', array(
+        'label' => __('キービジュアル', ''),
+        'section' => 'faq',
+        'settings' => 'faq_keyvisual',
+        'priority' => 1,
+    )));
 }
 
 add_action('customize_register', 'theme_customize_register');
@@ -576,11 +538,29 @@ add_action('customize_register', 'theme_customize_register');
 function generate_css() {
     ?>
     <style>
-        div.keyvisual > p{
-            background: background: url(<?php echo get_banner_text() ?>) no-repeat center center !important;
+        div.keyvisual-text{
+            background: url(<?php echo get_banner_text() ?>) no-repeat center center !important;
         }
-        div.keyvisual{
-            background: url(<?php echo get_banner_image_url() ?>) no-repeat center center !important;
+        /*sp*/
+        @media screen and (max-device-width: 700px){
+            div.keyvisual.index{
+                background: url("<?php echo get_banner_sp_image_url() ?>") no-repeat scroll center center rgba(0, 0, 0, 0) !important;
+            }
+        }
+        /*pc*/
+        @media screen and (min-device-width: 699px){
+            div.keyvisual.index{
+                background: url("<?php echo get_banner_image_url() ?>") no-repeat scroll center center / auto 100% rgba(0, 0, 0, 0) !important;
+            }
+            div.keyvisual.access{
+                background: url(<?php echo get_access_keyvisual() ?>) no-repeat center center !important;
+            }
+            div.keyvisual.school{
+                background: url(<?php echo get_school_keyvisual() ?>) no-repeat center center !important;
+            }
+            div.keyvisual.seminar{
+                background: url(<?php echo get_seminar_keyvisual() ?>) no-repeat center center !important;
+            }
         }
         .access .btn.Navy2{
             background: <?php echo get_access_menu_color() ?> !important;
@@ -771,6 +751,12 @@ function get_voice_text() {
 add_action('customize_register', 'get_voice_text');
 
 //////////////////// ------------------------------------
+//SEMINAR
+function get_seminar_keyvisual() {
+    return esc_url_raw(get_theme_mod('seminar_keyvisual'));
+}
+
+add_action('customize_register', 'get_seminar_keyvisual');
 
 function the_seminar_description() {
     echo get_theme_mod('seminar_description');
@@ -797,6 +783,12 @@ function get_banner_image_url() {
 
 add_action('customize_register', 'get_banner_image_url');
 
+function get_banner_sp_image_url() {
+    return esc_url_raw(get_theme_mod('banner_upload_sp'));
+}
+
+add_action('customize_register', 'get_banner_sp_image_url');
+
 function get_banner_text() {
     return esc_url_raw(get_theme_mod('banner_text'));
 }
@@ -811,6 +803,12 @@ add_action('customize_register', 'get_banner_text_status');
 
 
 /* ACCESS */
+
+function get_access_keyvisual() {
+    return esc_url_raw(get_theme_mod('access_keyvisual'));
+}
+
+add_action('customize_register', 'get_access_keyvisual');
 
 function get_access_menu_status() {
     return get_theme_mod('access_menu_status');
@@ -909,3 +907,29 @@ function get_access_fukuoka_info() {
 }
 
 add_action('customize_register', 'get_access_fukuoka_info');
+
+function get_access_button_color() {
+    return get_theme_mod('access_button_color');
+}
+
+add_action('customize_register', 'get_access_button_color');
+
+function get_point_button_color() {
+    return get_theme_mod('point_button_color');
+}
+
+add_action('customize_register', 'get_point_button_color');
+
+//FAQ
+function get_faq_keyvisual() {
+    return esc_url_raw(get_theme_mod('faq_keyvisual'));
+}
+
+add_action('customize_register', 'get_faq_keyvisual');
+
+//SCHOOL
+function get_school_keyvisual() {
+    return esc_url_raw(get_theme_mod('school_keyvisual'));
+}
+
+add_action('customize_register', 'get_school_keyvisual');

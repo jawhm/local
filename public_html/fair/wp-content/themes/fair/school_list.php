@@ -7,7 +7,7 @@ get_header()
 
       <div class="underSec school">
       
-        <div class="keyvisual">
+        <div class="keyvisual school">
           <p>ワーキングホリデー＆留学フェアに参加している語学学校一覧</p>
         </div><!-- /.keyvisual -->      
         
@@ -35,27 +35,27 @@ get_header()
               	<div class="slide_wrap">
                   <ul class="slide_body">
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                        <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
@@ -69,12 +69,12 @@ get_header()
                   <li class="sclBox sclOrange">
                     <a href="">BROWNS</a>
                     <p class="name"><span>ブラウンズ</span>BROWNS</p>
-                    <img class="logo" src="../images/school/logo_browns.png" alt="BROWNS">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_browns.png" alt="BROWNS">
                     <p class="caption">綺麗な校舎と最新設備。<br>独自の"Active8"は必見！</p>
                   </li><!-- /.sclBox --><li class="sclBox sclOrange">        
                     <a href="">Discover</a>
                     <p class="name"><span>ディスカバー</span>Discover</p>
-                    <img class="logo" src="../images/school/logo_discover.png" alt="Discover">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_discover.png" alt="Discover">
                     <p class="caption">生徒目線のAcademicとFunを取り入れた学習環境。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->
@@ -83,12 +83,12 @@ get_header()
                   <li class="sclBox sclOrange">
                     <a href="">Fusion</a>
                     <p class="name"><span>フュージョン</span>Fusion</p>
-                    <img class="logo" src="../images/school/logo_fusion.png" alt="Fusion">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_fusion.png" alt="Fusion">
                     <p class="caption">少人数・カジュアルなキャンパスで海外生活を満喫！</p>
                   </li><!-- /.sclBox --><li class="sclBox sclOrange">
                     <a href="">Greenwich</a>
                     <p class="name"><span>グリニッジ</span>Greenwich</p>
-                    <img class="logo" src="../images/school/logo_greenwich.png" alt="BROWNS">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_greenwich.png" alt="BROWNS">
                     <p class="caption">大規模校だけどアットホームな環境で英語を学べる。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->
@@ -97,12 +97,12 @@ get_header()
                   <li class="sclBox sclOrange">
                     <a href="">ICQA</a>
                     <p class="name"><span>アイシーキューエー</span>ICQA</p>
-                    <img class="logo" src="../images/school/logo_icqa.png" alt="ICQA">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_icqa.png" alt="ICQA">
                     <p class="caption">ホテルインターンやボランティアが充実した学校。</p>
                   </li><!-- /.sclBox --><li class="sclBox sclOrange">
                     <a href="">IH Brisbane</a>
                     <p class="name"><span>アイエイチ　ブリスベン</span>IH Brisbane</p>
-                    <img class="logo" src="../images/school/logo_ihbrisbane.png" alt="IH Brisbane">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_ihbrisbane.png" alt="IH Brisbane">
                     <p class="caption">勉強、仕事、そして楽しい留学生活を両立しよう。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->
@@ -111,12 +111,12 @@ get_header()
                   <li class="sclBox sclOrange">
                     <a href="">IH Sydney</a>
                     <p class="name"><span>アイエイチ　シドニー</span>IH Sydney</p>
-                    <img class="logo" src="../images/school/logo_ihsydney.png" alt="IH Sydney">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_ihsydney.png" alt="IH Sydney">
                     <p class="caption">英語の先生になれる資格“J-shine”をとるならココ。</p>
                   </li><!-- /.sclBox --><li class="sclBox sclOrange">
                     <a href="">Impact</a>
                     <p class="name"><span>インパクト</span>Impact</p>
-                    <img class="logo" src="../images/school/logo_impact.png" alt="Impact">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_impact.png" alt="Impact">
                     <p class="caption">徹底したEnglish Onlyポリシーが大人気。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->
@@ -125,12 +125,12 @@ get_header()
                   <li class="sclBox sclOrange">
                     <a href="">Inforum</a>
                     <p class="name"><span>インフォーラム</span>Inforum</p>
-                    <img class="logo" src="../images/school/logo_inforum.png" alt="Inforum">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_inforum.png" alt="Inforum">
                     <p class="caption">海外初心者の方へ。アットホームな雰囲気もGOOD!</p>
                   </li><!-- /.sclBox --><li class="sclBox sclOrange">
                     <a href="">Navitas</a>
                     <p class="name"><span>ナビタス</span>Navitas</p>
-                    <img class="logo" src="../images/school/logo_navitas.png" alt="Navitas">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_navitas.png" alt="Navitas">
                     <p class="caption">選べるロケーションと多彩なコースが魅力の伝統校。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->
@@ -139,12 +139,12 @@ get_header()
                   <li class="sclBox sclOrange">
                     <a href="">SELC</a>
                     <p class="name"><span>セルク</span>SELC</p>
-                    <img class="logo" src="../images/school/logo_selc.png" alt="SELC">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_selc.png" alt="SELC">
                     <p class="caption">接客英語習得やバリスタを目指そう。</p>
                   </li><!-- /.sclBox --><li class="sclBox sclOrange">
                     <a href="">VIVA</a>
                     <p class="name"><span>ビバ</span>VIVA</p>
-                    <img class="logo" src="../images/school/logo_viva.png" alt="VIVA">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_viva.png" alt="VIVA">
                     <p class="caption">多国籍な環境で実践的な英語”Smart Talk”を習得。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->
@@ -159,27 +159,27 @@ get_header()
               	<div class="slide_wrap">
                   <ul class="slide_body">
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
@@ -193,12 +193,12 @@ get_header()
                   <li class="sclBox sclPink">
                     <a href="">BROWNS</a>
                     <p class="name"><span>ブラウンズ</span>BROWNS</p>
-                    <img class="logo" src="../images/school/logo_browns.png" alt="BROWNS">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_browns.png" alt="BROWNS">
                     <p class="caption">綺麗な校舎と最新設備。<br>独自の"Active8"は必見！</p>
                   </li><!-- /.sclBox --><li class="sclBox sclPink">        
                     <a href="">Discover</a>
                     <p class="name"><span>ディスカバー</span>Discover</p>
-                    <img class="logo" src="../images/school/logo_discover.png" alt="Discover">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_discover.png" alt="Discover">
                     <p class="caption">生徒目線のAcademicとFunを取り入れた学習環境。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->
@@ -207,12 +207,12 @@ get_header()
                   <li class="sclBox sclPink">
                     <a href="">Fusion</a>
                     <p class="name"><span>フュージョン</span>Fusion</p>
-                    <img class="logo" src="../images/school/logo_fusion.png" alt="Fusion">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_fusion.png" alt="Fusion">
                     <p class="caption">少人数・カジュアルなキャンパスで海外生活を満喫！</p>
                   </li><!-- /.sclBox --><li class="sclBox sclPink">
                     <a href="">Greenwich</a>
                     <p class="name"><span>グリニッジ</span>Greenwich</p>
-                    <img class="logo" src="../images/school/logo_greenwich.png" alt="BROWNS">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_greenwich.png" alt="BROWNS">
                     <p class="caption">大規模校だけどアットホームな環境で英語を学べる。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->
@@ -221,12 +221,12 @@ get_header()
                   <li class="sclBox sclPink">
                     <a href="">ICQA</a>
                     <p class="name"><span>アイシーキューエー</span>ICQA</p>
-                    <img class="logo" src="../images/school/logo_icqa.png" alt="ICQA">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_icqa.png" alt="ICQA">
                     <p class="caption">ホテルインターンやボランティアが充実した学校。</p>
                   </li><!-- /.sclBox --><li class="sclBox sclPink">
                     <a href="">IH Brisbane</a>
                     <p class="name"><span>アイエイチ　ブリスベン</span>IH Brisbane</p>
-                    <img class="logo" src="../images/school/logo_ihbrisbane.png" alt="IH Brisbane">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_ihbrisbane.png" alt="IH Brisbane">
                     <p class="caption">勉強、仕事、そして楽しい留学生活を両立しよう。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->
@@ -235,12 +235,12 @@ get_header()
                   <li class="sclBox sclPink">
                     <a href="">IH Sydney</a>
                     <p class="name"><span>アイエイチ　シドニー</span>IH Sydney</p>
-                    <img class="logo" src="../images/school/logo_ihsydney.png" alt="IH Sydney">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_ihsydney.png" alt="IH Sydney">
                     <p class="caption">英語の先生になれる資格“J-shine”をとるならココ。</p>
                   </li><!-- /.sclBox --><li class="sclBox sclPink">
                     <a href="">Impact</a>
                     <p class="name"><span>インパクト</span>Impact</p>
-                    <img class="logo" src="../images/school/logo_impact.png" alt="Impact">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_impact.png" alt="Impact">
                     <p class="caption">徹底したEnglish Onlyポリシーが大人気。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->
@@ -249,12 +249,12 @@ get_header()
                   <li class="sclBox sclPink">
                     <a href="">Inforum</a>
                     <p class="name"><span>インフォーラム</span>Inforum</p>
-                    <img class="logo" src="../images/school/logo_inforum.png" alt="Inforum">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_inforum.png" alt="Inforum">
                     <p class="caption">海外初心者の方へ。アットホームな雰囲気もGOOD!</p>
                   </li><!-- /.sclBox --><li class="sclBox sclPink">
                     <a href="">Navitas</a>
                     <p class="name"><span>ナビタス</span>Navitas</p>
-                    <img class="logo" src="../images/school/logo_navitas.png" alt="Navitas">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_navitas.png" alt="Navitas">
                     <p class="caption">選べるロケーションと多彩なコースが魅力の伝統校。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->
@@ -263,12 +263,12 @@ get_header()
                   <li class="sclBox sclPink">
                     <a href="">SELC</a>
                     <p class="name"><span>セルク</span>SELC</p>
-                    <img class="logo" src="../images/school/logo_selc.png" alt="SELC">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_selc.png" alt="SELC">
                     <p class="caption">接客英語習得やバリスタを目指そう。</p>
                   </li><!-- /.sclBox --><li class="sclBox sclPink">
                     <a href="">VIVA</a>
                     <p class="name"><span>ビバ</span>VIVA</p>
-                    <img class="logo" src="../images/school/logo_viva.png" alt="VIVA">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_viva.png" alt="VIVA">
                     <p class="caption">多国籍な環境で実践的な英語”Smart Talk”を習得。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->
@@ -283,27 +283,27 @@ get_header()
               	<div class="slide_wrap">
                   <ul class="slide_body">
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
@@ -317,12 +317,12 @@ get_header()
                   <li class="sclBox sclGreen">
                     <a href="">CCEL</a>
                     <p class="name"><span>シーシーイーエル</span>CCEL</p>
-                    <img class="logo" src="../images/school/logo_browns.png" alt="CCEL">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_browns.png" alt="CCEL">
                     <p class="caption">綺麗な校舎と最新設備。<br>独自の"Active8"は必見！</p>
                   </li><!-- /.sclBox --><li class="sclBox sclGreen">        
                     <a href="">Discover</a>
                     <p class="name"><span>ディスカバー</span>Discover</p>
-                    <img class="logo" src="../images/school/logo_discover.png" alt="Discover">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_discover.png" alt="Discover">
                     <p class="caption">生徒目線のAcademicとFunを取り入れた学習環境。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->                
@@ -337,27 +337,27 @@ get_header()
               	<div class="slide_wrap">
                   <ul class="slide_body">
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
                     <li class="slide">
-                      <img src="../images/school/img_browns.jpg" alt="BROWNS">
+                      <img src="<?php echo get_template_directory_uri() ?>/images/school/img_browns.jpg" alt="BROWNS">
                       <h4><a href=""><span>ここは学校名ルビ</span>学校名が入ります</a></h4>
                       <p>スキルごとのレベル分けでしっかり勉強！綺麗な校舎と最新設備も魅力的。</p>
                     </li>
@@ -371,12 +371,12 @@ get_header()
                   <li class="sclBox sclAqua">
                     <a href="">CCEL</a>
                     <p class="name"><span>シーシーイーエル</span>CCEL</p>
-                    <img class="logo" src="../images/school/logo_browns.png" alt="CCEL">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_browns.png" alt="CCEL">
                     <p class="caption">綺麗な校舎と最新設備。<br>独自の"Active8"は必見！</p>
                   </li><!-- /.sclBox --><li class="sclBox sclAqua">        
                     <a href="">Discover</a>
                     <p class="name"><span>ディスカバー</span>Discover</p>
-                    <img class="logo" src="../images/school/logo_discover.png" alt="Discover">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_discover.png" alt="Discover">
                     <p class="caption">生徒目線のAcademicとFunを取り入れた学習環境。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->
@@ -385,12 +385,12 @@ get_header()
                   <li class="sclBox sclAqua">
                     <a href="">Fusion</a>
                     <p class="name"><span>フュージョン</span>Fusion</p>
-                    <img class="logo" src="../images/school/logo_fusion.png" alt="Fusion">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_fusion.png" alt="Fusion">
                     <p class="caption">少人数・カジュアルなキャンパスで海外生活を満喫！</p>
                   </li><!-- /.sclBox --><li class="sclBox sclAqua">
                     <a href="">Greenwich</a>
                     <p class="name"><span>グリニッジ</span>Greenwich</p>
-                    <img class="logo" src="../images/school/logo_greenwich.png" alt="BROWNS">
+                    <img class="logo" src="<?php echo get_template_directory_uri() ?>/images/school/logo_greenwich.png" alt="BROWNS">
                     <p class="caption">大規模校だけどアットホームな環境で英語を学べる。</p>
                   </li><!-- /.sclBox -->              
                 </ul><!-- /.clearfix -->
@@ -405,4 +405,4 @@ get_header()
       </div><!-- /.underSec -->
       
       <section class="normalBox footSec">      	      	
-	<?php include('../../footer.php'); ?>
+<?php get_footer() ?>
