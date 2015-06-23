@@ -320,7 +320,8 @@ div.keyvisual > p {
   height: 0;
   padding-top: 99px;
   position: absolute;
-  top: 41%;  right: 50%;
+  /*top: 41%;  right: 50%;*/
+  top: -100%;  right: 50%;
   margin-right: -311px;
 }
 section.normalBox.topSec1 ul.btnList { overflow:hidden; }

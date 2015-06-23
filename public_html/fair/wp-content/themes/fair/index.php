@@ -1,9 +1,10 @@
 <?php get_header(); ?>
 <?php if (get_banner_text_status()): ?>
     <div class="keyvisual index">
+        <div id="flight" style="background:url('') #fff; width: 100px;height: 50px;position: absolute;top:48%;left:-100px;opacity: 0;"></div>
         <p class="keyvisual-text">afadfafad</p>
         <!--img src="images/icon_plane.png" alt="飛行機"-->
-    </div><!-- /.keyvisual -->      
+    </div><!-- /.keyvisual -->
 <?php endif; ?>
 
 <?php if (get_about_status()): ?>
