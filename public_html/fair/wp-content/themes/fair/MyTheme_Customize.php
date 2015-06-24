@@ -261,20 +261,25 @@ function theme_customize_register($wp_customize) {
         'priority' => 1,
     )));
 
-    $wp_customize->add_setting('button_color', array(
-        'default' => 'Navy2',
+    $wp_customize->add_setting('school_button_bg', array(
+        'default' => '#fff',
     ));
-    $wp_customize->add_control('button_color_c', array(
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'school_button_bg_c', array(
         'section' => 'school',
-        'settings' => 'button_color',
-        'label' => 'ボタンの色',
-        'type' => 'radio',
-        'choices' => array(
-            'orng' => 'Orange',
-            'Navy' => 'Navy',
-        ),
+        'settings' => 'school_button_bg',
+        'label' => 'ボタンのBG色',
         'priority' => 1,
+    )));
+    
+    $wp_customize->add_setting('school_button_color', array(
+        'default' => '#284189',
     ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'school_button_color_c', array(
+        'section' => 'school',
+        'settings' => 'school_button_color',
+        'label' => 'ボタンのTEXT色',
+        'priority' => 1,
+    )));
 
     /* BANNER register to db & add control */
     $wp_customize->add_setting('banner_upload', array(
@@ -770,11 +775,6 @@ function is_seminar_category_open() {
 
 add_action('customize_register', 'is_seminar_category_open');
 
-function get_button_color_class() {
-    return get_theme_mod('button_color');
-}
-
-add_action('customize_register', 'get_button_color_class');
 
 // BANNER
 function get_banner_image_url() {
@@ -933,3 +933,15 @@ function get_school_keyvisual() {
 }
 
 add_action('customize_register', 'get_school_keyvisual');
+
+function get_school_button_bg() {
+    return get_theme_mod('school_button_bg');
+}
+
+add_action('customize_register', 'get_school_button_bg');
+
+function get_school_button_color() {
+    return get_theme_mod('school_button_color');
+}
+
+add_action('customize_register', 'get_school_button_color');
