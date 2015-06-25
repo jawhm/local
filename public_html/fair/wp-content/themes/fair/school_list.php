@@ -112,7 +112,7 @@ get_header()
                         $loop_li .= '</li><!-- /.sclBox -->';
                         //
                         if ($k == $loop_list->post_count) {
-                            $loop_li .= '</ul>';
+                            $loop_li .= '</ul> ';
                         }
                     } else {
                         $loop_li .= '<li class="sclBox ' . $sclBox_color[$i] . '">';
@@ -122,7 +122,7 @@ get_header()
                         $loop_li .= '<p class="caption">' . get_field('catchphrase') . '</p>';
                         $loop_li .= '</li><!-- /.sclBox -->';
                         if ($open_flag == true) {
-                            $loop_li .= '</ul>';
+                            $loop_li .= '</ul> ';
                             $open_flag = false;
                         }
                     }

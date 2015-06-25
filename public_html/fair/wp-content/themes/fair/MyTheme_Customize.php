@@ -30,6 +30,32 @@ function theme_customize_register($wp_customize) {
         'title' => 'FAQ',
         'priority' => 25,
     ));
+    $wp_customize->add_section('period', array(
+        'title' => 'フェア開催期間',
+        'priority' => 26,
+    ));
+    
+    //period
+    $wp_customize->add_setting('start_date', array(
+        'default' => '0000-00-00',
+    ));
+    $wp_customize->add_control('start_date_c', array(
+        'section' => 'period',
+        'settings' => 'start_date',
+        'label' => '開始日時',
+        'type' => 'text',
+        'priority' => 1,
+    ));
+    $wp_customize->add_setting('end_date', array(
+        'default' => '0000-00-00',
+    ));
+    $wp_customize->add_control('end_date_c', array(
+        'section' => 'period',
+        'settings' => 'end_date',
+        'label' => '終了日時',
+        'type' => 'text',
+        'priority' => 2,
+    ));
 
     //setting definition
     /* INDEX - about */
@@ -237,17 +263,49 @@ function theme_customize_register($wp_customize) {
         'priority' => 1,
     ));
 
-    //
+    $wp_customize->add_setting('seminar_place', array(
+        'default' => true,
+    ));
+    $wp_customize->add_control('seminar_place_c', array(
+        'section' => 'seminar',
+        'settings' => 'seminar_place',
+        'label' => '会場を表示する',
+        'type' => 'checkbox',
+        'priority' => 2,
+    ));
+    
     $wp_customize->add_setting('seminar_category', array(
-        'default' => 'ここはフェアセミナーの説明文です',
+        'default' => true,
     ));
     $wp_customize->add_control('seminar_category_c', array(
         'section' => 'seminar',
         'settings' => 'seminar_category',
         'label' => 'セミナーカテゴリを表示する',
         'type' => 'checkbox',
-        'priority' => 2,
+        'priority' => 3,
     ));
+    
+    $wp_customize->add_setting('seminar_bar_color', array(
+        'default' => '#3cbd85',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'seminar_bar_color_c', array(
+        'label' => 'バーの色',
+        'section' => 'seminar',
+        'settings' => 'seminar_bar_color',
+        'priority' => 4,
+    )));
+    
+    $wp_customize->add_setting('seminar_color', array(
+        'default' => 'orange',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'seminar_color_c', array(
+        'label' => 'セミナー表示のテーマカラー',
+        'section' => 'seminar',
+        'settings' => 'seminar_color',
+        'priority' => 4,
+    )));
 
     //SCHOOL
     $wp_customize->add_setting('school_keyvisual', array(
@@ -280,7 +338,7 @@ function theme_customize_register($wp_customize) {
         'label' => 'ボタンのTEXT色',
         'priority' => 1,
     )));
-
+    
     /* BANNER register to db & add control */
     $wp_customize->add_setting('banner_upload', array(
         'capability' => 'edit_theme_options',
@@ -327,6 +385,17 @@ function theme_customize_register($wp_customize) {
         'priority' => 3,
     ));
 
+    $wp_customize->add_setting('bg_center', array(
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'bg_center_c', array(
+        'label' => __('中心BG', ''),
+        'section' => 'banner',
+        'settings' => 'bg_center',
+        'priority' => 3,
+    )));
+    
     // ACCESS
     $wp_customize->add_setting('access_keyvisual', array(
         'capability' => 'edit_theme_options',
@@ -543,8 +612,11 @@ add_action('customize_register', 'theme_customize_register');
 function generate_css() {
     ?>
     <style>
-        div.keyvisual-text{
-            background: url(<?php echo get_banner_text() ?>) no-repeat center center !important;
+        p.keyvisual-text{
+            background: url(<?php echo get_banner_text() ?>) no-repeat scroll left top rgba(0, 0, 0, 0) !important;
+        }
+        section.normalBox{
+            background: url(<?php echo get_bg_center() ?>) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
         }
         /*sp*/
         @media screen and (max-device-width: 700px){
@@ -580,6 +652,12 @@ function generate_css() {
         }
         ul.point li > a.btn{
             background: <?php echo get_point_more_button_color() ?> !important;
+        }
+        p.mgb10{
+            background-color: <?php echo get_seminar_bar_color() ?> !important;
+        }
+        #seminar-calendar th{
+            background-color: <?php echo get_seminar_color() ?> !important;
         }
     </style>
     <?php
@@ -775,6 +853,28 @@ function is_seminar_category_open() {
 
 add_action('customize_register', 'is_seminar_category_open');
 
+function get_seminar_bar_color() {
+    return get_theme_mod('seminar_bar_color');
+}
+add_action('customize_register', 'get_seminar_bar_color');
+
+function get_seminar_color() {
+    return get_theme_mod('seminar_color');
+}
+add_action('customize_register', 'get_seminar_color');
+
+function get_seminar_place() {
+    return get_theme_mod('seminar_place');
+}
+
+add_action('customize_register', 'get_seminar_place');
+
+//
+function get_button_color_class() {
+    return get_theme_mod('button_color');
+}
+
+add_action('customize_register', 'get_button_color_class');
 
 // BANNER
 function get_banner_image_url() {
@@ -801,6 +901,11 @@ function get_banner_text_status() {
 
 add_action('customize_register', 'get_banner_text_status');
 
+function get_bg_center() {
+    return esc_url_raw(get_theme_mod('bg_center'));
+}
+
+add_action('customize_register', 'get_bg_center');
 
 /* ACCESS */
 
@@ -945,3 +1050,13 @@ function get_school_button_color() {
 }
 
 add_action('customize_register', 'get_school_button_color');
+
+function get_start_date() {
+    return get_theme_mod('start_date');
+}
+add_action('customize_register', 'get_start_date');
+
+function get_end_date() {
+    return get_theme_mod('end_date');
+}
+add_action('customize_register', 'get_end_date');
