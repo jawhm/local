@@ -613,7 +613,7 @@ function generate_css() {
     ?>
     <style>
         p.keyvisual-text{
-            background: url(<?php echo get_banner_text() ?>) no-repeat scroll left top rgba(0, 0, 0, 0) !important;
+            background: url(<?php echo get_banner_text() ?>) no-repeat scroll left top rgba(0, 0, 0, 0) 2/3 !important;
         }
         section.normalBox{
             background: url(<?php echo get_bg_center() ?>) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;

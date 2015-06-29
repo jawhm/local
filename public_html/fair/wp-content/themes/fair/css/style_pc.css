@@ -1132,3 +1132,6 @@ FAQ
 *****************************************************************/
 .spview { display:none !important; }
 .normalBox.mgb30 { margin-bottom:0 !important; }
+.slide_wrap .bx-wrapper{
+    margin: 0px auto 10px !important;
+}

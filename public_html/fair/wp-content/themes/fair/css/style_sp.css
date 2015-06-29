@@ -1149,3 +1149,15 @@ FAQ
  responce
 *****************************************************************/
 .pcview, .footSec { display:none !important; }
+.sp-seminar{
+    display: inline-block;
+}
+.sidr ul{
+    height: 100%;
+}
+.slide_wrap .bx-wrapper{
+    margin: 0px auto 10px !important;
+}
+.bx-wrapper{
+    max-width: 320px !important;
+}

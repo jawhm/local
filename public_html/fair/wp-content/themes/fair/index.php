@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php if (get_banner_text_status()): ?>
     <div class="keyvisual index">
-        <div id="flight" style="background:url('') #fff; width: 100px;height: 50px;position: absolute;top:48%;left:-100px;opacity: 0;"></div>
+        <div id="flight" style="background:url('<?php echo get_template_directory_uri() ?>/images/icon_plane.png') no-repeat; width: 60px;height: 27px;position: absolute;top:50%;left:-100px;opacity: 0;"></div>
         <p class="keyvisual-text">afadfafad</p>
         <!--img src="images/icon_plane.png" alt="飛行機"-->
     </div><!-- /.keyvisual -->
@@ -114,7 +114,7 @@
             if (have_posts()): while (have_posts()): the_post();
                     ?>        
                     <section class="semBox mgb30">
-                        <h3 class="step1" style="background: url('<?php the_field("icon") ?>') no-repeat left center;"><span><?php the_title() ?></span><?php the_field("caption") ?></h3>
+                        <h3 class="step1" style="background: url('<?php the_field("icon") ?>') no-repeat left center 2/3;"><span><?php the_title() ?></span><?php the_field("caption") ?></h3>
                         <div class="inner">
                           <!--<img src="<?php the_field("image") ?>" alt="セミナー画像">-->
                             <img src="<?php echo get_template_directory_uri() ?>/images/photo_step01.jpg" alt="セミナー画像">
@@ -152,7 +152,7 @@
     <!-- ▼ セミナー紹介ここから ▼ -->            
     <section class="normalBox">
         <h2 class="hukidashi"><?php echo get_index_seminar_text() ?><span>SEMINAR</span></h2>
-        <div class="contentBox">
+        <div class="contentBox sp-seminar">
             <?php if (get_index_seminar_description() != ''): ?>
                 <p class="planeText mgb20"><?php echo get_index_seminar_description() ?></p>
             <?php endif; ?>

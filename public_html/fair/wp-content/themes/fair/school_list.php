@@ -21,12 +21,42 @@ get_header()
             </p><!-- /.planeText -->            
             <div class="srcArea" id="rePoint">
                 <h3>学校を国から探す</h3>
-                <ul>
-                    <li><a class="btn Navy2" style="background: <?php echo get_school_button_bg() ?> !important;color: <?php echo get_school_button_color() ?> !important;border-color: <?php echo get_school_button_color() ?> !important;" href="#australia">オーストラリア</a></li><li><a class="btn Navy2" style="background: <?php echo get_school_button_bg() ?> !important;color: <?php echo get_school_button_color() ?> !important;border-color: <?php echo get_school_button_color() ?> !important;" href="#canada">カナダ</a></li>
-                </ul><!-- /.areaList -->
-                <ul>
-                    <li><a class="btn Navy2" style="background: <?php echo get_school_button_bg() ?> !important;color: <?php echo get_school_button_color() ?> !important;border-color: <?php echo get_school_button_color() ?> !important;" href="#newzealand">ニュージーランド</a></li><li><a class="btn Navy2" style="background: <?php echo get_school_button_bg() ?> !important;color: <?php echo get_school_button_color() ?> !important;border-color: <?php echo get_school_button_color() ?> !important;" href="#worldwide">多キャンパス</a></li>
-                </ul>
+
+                <?php
+                $args = array('hide_empty=0');
+                $terms = get_terms('country', $args);
+                $i = 1;
+                $open_flag = false;
+                $loop_category = '';
+                $section_count = count($terms);
+                foreach ($terms as $term):
+
+                    if ($i % 2 !== 0) {
+                        if ($open_flag == false) {
+                            $loop_category .= '<ul>';
+                            $open_flag = true;
+                        }
+                        $loop_category .= '<li><a class="btn Navy2" style="background: ' . get_school_button_bg() . ' !important;color: ' . get_school_button_color() . ' !important;border-color: ' . get_school_button_color() . '" href="#' . $term->slug . '">' . $term->name . '</a></li>';
+                        //
+                        if ($i == $section_count) {
+                            $loop_category .= '</ul> <!-- /.areaList -->';
+                        }
+                    } else {
+                        $loop_category .= '<li><a class="btn Navy2" style="background: ' . get_school_button_bg() . ' !important;color: ' . get_school_button_color() . ' !important;border-color: ' . get_school_button_color() . '" href="#' . $term->slug . '">' . $term->name . '</a></li>';
+                        if ($open_flag == true) {
+                            $loop_category .= '</ul> <!-- /.areaList -->';
+                            $open_flag = false;
+                        }
+                    }
+
+                    $i++;
+
+                endforeach;
+                ?>
+                <?php wp_reset_postdata(); ?>
+
+                <?php echo $loop_category ?>
+
             </div><!-- /.srcArea -->
 
             <?php
@@ -55,7 +85,7 @@ get_header()
                 $args = array(
                     'post_type' => 'school',
                     'posts_per_page' => 12,
-                    'offset' => 5,
+                    'offset' => 0,
                     'orderby' => array('date' => 'ASC'),
                     'tax_query' => array(
                         array(
@@ -95,13 +125,12 @@ get_header()
                 $loop_li = '';
                 $k = 1;
                 $open_flag = false;
-                $loop_temp .= '<div class="sclList">';
+                $loop_temp .= '<div class="sclList"> ';
                 while ($loop_list->have_posts()): $loop_list->the_post();
 
-
                     if ($k % 2 !== 0) {
-                        if ($open_flag == false){
-                            $loop_li .= '<ul class="clearfix">';
+                        if ($open_flag == false) {
+                            $loop_li .= ' <ul class="clearfix">';
                             $open_flag = true;
                         }
                         $loop_li .= '<li class="sclBox ' . $sclBox_color[$i] . '">';
@@ -129,7 +158,7 @@ get_header()
 
                     $k++;
                 endwhile;
-                
+
                 $loop_temp .= $loop_li;
                 $loop_temp .= '<div class="clearfix mgt20"><a href="#rePoint" class="btn Navy3 right w60">国選択へもどる</a></div>';
                 $loop_temp .= '</div>';
