@@ -23,13 +23,13 @@ function list_get_popup_js($uid)
  */
 function list_get_seminar_js()
 {
-	return '<script type="text/javascript" src="/js/jquery.blockUI.js"></script>
-<script type="text/javascript" src="/js/jquery-ui-1.8.16.custom.min.js"></script>
-<script>
+	return '<script type="text/javascript" src="http://'.$_SERVER['SERVER_NAME'].'/js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="http://'.$_SERVER['SERVER_NAME'].'/js/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript">
 function fnc_next()	{
 	$.ajax({
 		type: "GET",
-		url: "/seminar_module/seminar_yoyaku_input.php",
+		url: "http://'.$_SERVER['SERVER_NAME'].'/seminar_module/seminar_yoyaku_input.php?acao='.$_GET['acao'].'",
 		data: "",
 		success: function(msg){
 			first = true;
@@ -121,7 +121,7 @@ function fnc_do_login(){
 	$senddata = $("#yoyaku_login").serialize();
 	$.ajax({
 		type: "POST",
-		url: "/seminar_module/login.php",
+                url: "http://'.$_SERVER['SERVER_NAME'].'/seminar_module/login.php",
 		data: $senddata,
 		success: function(msg){
 			document.getElementById("div_wait_login").style.display = "none";
@@ -212,7 +212,12 @@ function btn_submit()	{
 		obj.focus();
 		return false;
 	}
-
+	/*if (obj.value[0] != "0")	{
+		alert("電話番号は正しく入力してください。");
+		obj.focus();
+		return false;
+	}*/
+        
 	if (!confirm("ご入力頂いた内容を送信します。よろしいですか？"))	{
 		return false;
 	}
@@ -226,7 +231,7 @@ function btn_submit()	{
 
 	$.ajax({
 		type: "POST",
-		url: "/yoyaku/yoyaku.php",
+		url: "http://'.$_SERVER['SERVER_NAME'].'/yoyaku/yoyaku.php",
 		data: $senddata,
 		success: function(msg){
 			document.getElementById("div_wait").style.display = "none";
@@ -246,6 +251,13 @@ jQuery(function($) {
 		jQuery(this).parent().children(".det").slideToggle("slow");
 	});
 });
+/*
+jQuery(document).ready(function() {
+    jQuery(".open").live("click", function(){
+        jQuery(this).next(".det").slideToggle("slow");
+    });
+});
+*/
 </script>
 ';
 }
@@ -256,7 +268,7 @@ jQuery(function($) {
  */
 function list_get_seminar_css()
 {
-	return '<link type="text/css" href="/css/jquery-ui-1.8.16.custom.css" rel="stylesheet" />';
+	return '<link type="text/css" href="http://'.$_SERVER['SERVER_NAME'].'/css/jquery-ui-1.8.16.custom.css" rel="stylesheet" />';
 }
 
 /**

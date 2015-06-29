@@ -139,10 +139,10 @@ function event_calender_list($cal, $cal_msg, $config = array(), $target_seminar_
 
 		$tmp_str = "";
 		$tmp_str .= '<div style="font-size: 13px; text-align: left; width: ' . $window_width . ';" id="'.date('Ymd', $print_today).'">';
-		$tmp_str .= '<div style="padding: 2px; margin: 10px; background-color: ' . $backcolor . '; color: ' . $forecolor . '; font-weight: bold; text-align: center;">';
+		$tmp_str .= '<div style="padding: 2px; margin: 10px; background-color: ' . $backcolor . '; color: ' . $forecolor . '; font-weight: bold; text-align: center;" class="seminar_date">';
 		$tmp_str .= date('Y年 n月 j日 ('.$yobi[date('w', $print_today)].')', $print_today);
 		$tmp_str .= '</div>';
-		$tmp_str .= '<table class="" style="margin: 0 14px; width: 90%;" >'.$cal_output.'</table>';
+		$tmp_str .= '<table class="seminar_table" style="margin: 0 14px; width: 90%;" >'.$cal_output.'</table>';
 		$tmp_str .= '</div>';
 
 		if (empty($target_seminar_id)) {

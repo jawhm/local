@@ -1,7 +1,7 @@
 <?php
-
 @session_start();
-
+header('Access-Control-Allow-Origin:http://'.$_GET['acao']);
+header('Access-Control-Allow-Credentials:true');
 date_default_timezone_set('Asia/Tokyo');
 
 require_once "seminar_db.php";
@@ -11,6 +11,7 @@ require_once "seminar_where.php";
 require_once "seminar_event_list.php";
 require_once "functions.php";
 require_once "jp-holiday.php";
+require_once "seminar_db_stub.php";
 
 function require_once_func($name) {
 	for ($r_o = 0; $r_o < 10; $r_o++) {
@@ -51,14 +52,19 @@ class SeminarModule
 	*/
 
 	private $_config = array(
-		'view_mode' => 'list',
+                'use_mode' => '',
+                'dummy_mode' => 'off',
+		'view_mode' => 'calendar',
 		'seminar_id' => array(), // array('6938')
 		'start_date' => '',
 		'end_date' => '',
 		'calendar' => array(
 
-			'title' => '',	// text or array
-			'keyword' => '',
+			'title' => '',		// text or array (and)
+			'title2' => '',		// text or array (or)
+
+			'keyword' => '',	// text or array (and)
+			'keyword2' => '',	// text or array (or)
 
 			'use_area' => '', // 地方セミナー対応
 			'place_active' => 'active',
@@ -217,8 +223,11 @@ class SeminarModule
 			'place_default' => 'tokyo',
 			'member_only' => 'false',
 
-			'title' => '',
-			'keyword' => '',
+			'title' => '',		// text or array (and)
+			'title2' => '',		// text or array (and)
+
+			'keyword' => '',	// text or array (and)
+			'keyword2' => '',	// text or array (and)
 
 			'count_field_active' => 'active',
 
@@ -256,6 +265,12 @@ class SeminarModule
 	private $_header_obj;
 	private $_is_list_view = true;
 
+        //js css style yoyaku_formの記述がページでユニークであることを保証するための静的変数。中身はURL
+        private static $_last_js_view;
+        private static $_last_css_view;
+        private static $_last_style_view;
+        private static $_last_form_view;
+
 	/**
 	 * コンストラクタ
 	 * @param $config
@@ -289,15 +304,22 @@ class SeminarModule
 		}
 
 		$tmp_config = array();
-		if ($_SESSION['seminar_config']) {
+		if ($_SESSION['seminar_config2']) {
+			$tmp_config = unserialize(gzuncompress(base64_decode($_SESSION['seminar_config2'])));
+		} elseif (isset($_COOKIE['seminar_config2'])) {
+			$tmp_config = unserialize(gzuncompress(base64_decode($_COOKIE['seminar_config2'])));
+		} elseif ($_SESSION['seminar_config']) {
 			$tmp_config = unserialize(base64_decode($_SESSION['seminar_config']));
 		} elseif (isset($_COOKIE['seminar_config'])) {
 			$tmp_config = unserialize(base64_decode($_COOKIE['seminar_config']));
 		}
+
 		$tmp_config[$_SERVER['SCRIPT_NAME']] = $this->_config;
-		$data_cookie = base64_encode(serialize($tmp_config));
-		setcookie("seminar_config", $data_cookie, time()+3600*24*30, "/");
-		$_SESSION['seminar_config'] = $data_cookie;
+		//$data_cookie = base64_encode(serialize($tmp_config));
+		$data_cookie = base64_encode(gzcompress(serialize($tmp_config)));
+		setcookie("seminar_config2", $data_cookie, time()+3600*24*30, "/");
+		$_SESSION['seminar_config2'] = $data_cookie;
+
 		$this->_init();
 	}
 
@@ -356,7 +378,14 @@ class SeminarModule
 			$this->_num = $this->_config['seminar_id'][0];
 		}
 		$this->_navigation = @$_GET['navigation'];
-		$this->_db = new SeminarDb();
+
+                //ダミーモード切り替え：データベースへのアクセスを禁止
+                if($this->_config['dummy_mode'] == 'on'){
+                    $this->_db = new StubSeminarDb();
+                }else{
+                    $this->_db = new SeminarDb();
+                }
+
 		$this->_mem_info = $this->_db->get_member_info(@$_SESSION['mem_id']);
 
 		// 同時開催チェック
@@ -433,6 +462,7 @@ class SeminarModule
 			$where_place = $this->_get_where_place($this->_place_name);
 			//$where_place = '(place = \'' . $this->_place_name . '\' or k_desc2 like \'%' . $this->_place_name .'%\') ';
 		}
+
 		/*
 		if (!empty($this->_config['calendar']['country_default']) && is_array($this->_config['calendar']['country_default'])) {
 			$this->_checked_countryname = implode(',', $this->_config['calendar']['country_default']);
@@ -587,9 +617,44 @@ class SeminarModule
 				$this->_keyword .= ' and (k_title1 like \'%' . $this->_config['calendar']['title'] . '%\' or k_title2 like \'%' . $this->_config['calendar']['title'] . '%\' or k_desc1 like \'%' . $this->_config['calendar']['title'] . '%\' or k_desc2 like \'%' . $this->_config['calendar']['title'] . '%\')';
 			}
 		}
-		if (!empty($this->_config['calendar']['keyword'])) {
-			$this->_keyword .= ' and (k_desc2 like \'%' . $this->_config['calendar']['keyword'] . '%\')';
+		if (!empty($this->_config['calendar']['title2'])) {
+			if (is_array($this->_config['calendar']['title2']))	{
+				$this->_keyword .= ' and ( 1 = 0 ';
+				foreach($this->_config['calendar']['title2'] as $val)	{
+					if ($val <> '')	{
+						$this->_keyword .= ' or (k_title1 like \'%' . $val . '%\' or k_title2 like \'%' . $val . '%\' or k_desc1 like \'%' . $val . '%\' or k_desc2 like \'%' . $val . '%\')';
+					}
+				}
+				$this->_keyword .= ' ) ';
+			}else{
+				$this->_keyword .= ' and (k_title1 like \'%' . $this->_config['calendar']['title2'] . '%\' or k_title2 like \'%' . $this->_config['calendar']['title2'] . '%\' or k_desc1 like \'%' . $this->_config['calendar']['title2'] . '%\' or k_desc2 like \'%' . $this->_config['calendar']['title2'] . '%\')';
+			}
 		}
+		if (!empty($this->_config['calendar']['keyword'])) {
+			if (is_array($this->_config['calendar']['keyword']))	{
+				foreach($this->_config['calendar']['keyword'] as $val)	{
+					if ($val <> '')	{
+						$this->_keyword .= ' and (k_desc2 like \'%' . $val . '%\')';
+					}
+				}
+			}else{
+				$this->_keyword .= ' and (k_desc2 like \'%' . $this->_config['calendar']['keyword'] . '%\')';
+			}
+		}
+		if (!empty($this->_config['calendar']['keyword2'])) {
+			if (is_array($this->_config['calendar']['keyword2']))	{
+				$this->_keyword .= 'and ( 1 = 0 ';
+				foreach($this->_config['calendar']['keyword2'] as $val)	{
+					if ($val <> '')	{
+						$this->_keyword .= ' or (k_desc2 like \'%' . $val . '%\')';
+					}
+				}
+				$this->_keyword .= ' ) ';
+			}else{
+				$this->_keyword .= ' and (k_desc2 like \'%' . $this->_config['calendar']['keyword'] . '%\')';
+			}
+		}
+
 		if (!empty($this->_config['start_date'])) {
 			$this->_keyword .= ' and \'' . $this->_config['start_date'] . '\' <= hiduke ';
 		}
@@ -680,6 +745,7 @@ class SeminarModule
 					}
 				}
 			}
+                        //SPの時の予約ボタンの記述
 			if ($this->_header_obj->computer_use() === false) {
 				// spの時は、強制的にser以下に飛ばす
 				$click_js = "location.href='/seminar/ser/id/" . $row['id'] . "'";
@@ -692,6 +758,23 @@ class SeminarModule
 							$click_js = "location.href='/seminar/ser/id/" . $row['id'] . "/area'";
 						} elseif ($row['place'] !== 'event' && $row['place'] !== $this->_place_name) {
 							$click_js = "location.href='/seminar/ser/id/" . $row['id'] . "/area'";
+						}
+					}
+				}
+			}
+                        //SPの時＆ウィジェットモード時の予約ボタンの記述
+			if ($this->_header_obj->computer_use() === false && $this->_config['use_mode'] == 'widget') {
+				// spの時は、強制的にser以下に飛ばす
+				$click_js = "yoyaku_jump('".$_SERVER['SERVER_NAME']."/seminar/ser/id/" . $row['id'] . "')";
+				if ($row['free'] == 1 && @$_SESSION['mem_id'] == '') {
+					$click_js = "yoyaku_jump('".$_SERVER['SERVER_NAME']."/seminar/ser/login/" . $row['id'] . "')";
+				} else {
+					if (empty($this->_config[$this->_config['view_mode']]['use_area']) || $this->_config[$this->_config['view_mode']]['use_area'] == 'off' || $this->_config[$this->_config['view_mode']]['use_area'] == 'no' || $this->_config[$this->_config['view_mode']]['use_area'] == 'false' || $this->_config[$this->_config['view_mode']]['use_area'] == '0') {
+					} else {
+						if ($row['place'] == 'event' && strpos($this->_place_name, $row['k_desc2']) === false) {
+							$click_js = "yoyaku_jump('".$_SERVER['SERVER_NAME']."/seminar/ser/id/" . $row['id'] . "/area')";
+						} elseif ($row['place'] !== 'event' && $row['place'] !== $this->_place_name) {
+							$click_js = "yoyaku_jump('".$_SERVER['SERVER_NAME']."/seminar/ser/id/" . $row['id'] . "/area')";
 						}
 					}
 				}
@@ -766,7 +849,7 @@ class SeminarModule
 			}
 
 			if (empty($this->_calendar[$year.'-'.$month.'-'.$day])) $this->_calendar[$year.'-'.$month.'-'.$day] = "";
-			$this->_calendar[$year.'-'.$month.'-'.$day] .= '<img src="/images/sa05.jpg">';
+			$this->_calendar[$year.'-'.$month.'-'.$day] .= '<img src="http://'.$_SERVER['SERVER_NAME'].'/images/sa05.jpg">';
 			$c_msg  = '<tr class="'.$selected_day_in_list.'"><td nowrap style="vertical-align:top;" colspan="3"><div class="square_color" style="background-color:'.$color.'; '.$bdcolor.'">&nbsp;</div><span class="starttime">'.$row['starttime'].'～ </span>';
 
 
@@ -779,7 +862,7 @@ class SeminarModule
 				}
 				$c_msg  .= $event_place;
 			}else
-				$c_msg  .= '<a target="_blank" href="/event/map/?p='.$row['place'].'">'.$this->_translate_city($row['place']).'会場</a>';
+				$c_msg  .= '<a target="_blank" href="http://'.$_SERVER['SERVER_NAME'].'/event/map/?p='.$row['place'].'">'.$this->_translate_city($row['place']).'会場</a>';
 
 			$c_msg .= $title_line.'</td></tr><tr class="'.$selected_day_in_list.'"><td colspan="4">';
 			$c_msg .= '<div class="c_btn" style="vertical-align:top;">'.$c_btn.'</div>'.$c_img.$c_open;
@@ -919,14 +1002,66 @@ class SeminarModule
 		}
 
 		$is_advanced_search = false;
+
+
+//		if (!empty($this->_config['list']['title'])) {
+//			//$is_advanced_search = true;
+//			$this->_keyword .= ' and (k_title1 like \'%' . $this->_config['list']['title'] . '%\' or k_title2 like \'%' . $this->_config['list']['title'] . '%\' or k_desc1 like \'%' . $this->_config['list']['title'] . '%\' or k_desc2 like \'%' . $this->_config['list']['title'] . '%\')';
+//		}
+//		if (!empty($this->_config['list']['keyword'])) {
+//			//$is_advanced_search = true;
+//			$this->_keyword .= ' and (k_desc2 like \'%' . $this->_config['list']['keyword'] . '%\')';
+//		}
 		if (!empty($this->_config['list']['title'])) {
-			//$is_advanced_search = true;
-			$this->_keyword .= ' and (k_title1 like \'%' . $this->_config['list']['title'] . '%\' or k_title2 like \'%' . $this->_config['list']['title'] . '%\' or k_desc2 like \'%' . $this->_config['list']['title'] . '%\')';
+			if (is_array($this->_config['list']['title']))	{
+				foreach($this->_config['list']['title'] as $val)	{
+					if ($val <> '')	{
+						$this->_keyword .= ' and (k_title1 like \'%' . $val . '%\' or k_title2 like \'%' . $val . '%\' or k_desc1 like \'%' . $val . '%\' or k_desc2 like \'%' . $val . '%\')';
+					}
+				}
+			}else{
+				$this->_keyword .= ' and (k_title1 like \'%' . $this->_config['list']['title'] . '%\' or k_title2 like \'%' . $this->_config['list']['title'] . '%\' or k_desc1 like \'%' . $this->_config['list']['title'] . '%\' or k_desc2 like \'%' . $this->_config['list']['title'] . '%\')';
+			}
+		}
+		if (!empty($this->_config['list']['title2'])) {
+			if (is_array($this->_config['list']['title2']))	{
+				$this->_keyword .= ' and ( 1 = 0 ';
+				foreach($this->_config['list']['title2'] as $val)	{
+					if ($val <> '')	{
+						$this->_keyword .= ' or (k_title1 like \'%' . $val . '%\' or k_title2 like \'%' . $val . '%\' or k_desc1 like \'%' . $val . '%\' or k_desc2 like \'%' . $val . '%\')';
+					}
+				}
+				$this->_keyword .= ' ) ';
+			}else{
+				$this->_keyword .= ' and (k_title1 like \'%' . $this->_config['list']['title2'] . '%\' or k_title2 like \'%' . $this->_config['list']['title2'] . '%\' or k_desc1 like \'%' . $this->_config['list']['title2'] . '%\' or k_desc2 like \'%' . $this->_config['list']['title2'] . '%\')';
+			}
 		}
 		if (!empty($this->_config['list']['keyword'])) {
-			//$is_advanced_search = true;
-			$this->_keyword .= ' and (k_desc2 like \'%' . $this->_config['list']['keyword'] . '%\')';
+			if (is_array($this->_config['list']['keyword']))	{
+				foreach($this->_config['list']['keyword'] as $val)	{
+					if ($val <> '')	{
+						$this->_keyword .= ' and (k_desc2 like \'%' . $val . '%\')';
+					}
+				}
+			}else{
+				$this->_keyword .= ' and (k_desc2 like \'%' . $this->_config['list']['keyword'] . '%\')';
+			}
 		}
+		if (!empty($this->_config['list']['keyword2'])) {
+			if (is_array($this->_config['list']['keyword2']))	{
+				$this->_keyword .= ' and ( 1 = 0 ';
+				foreach($this->_config['list']['keyword2'] as $val)	{
+					if ($val <> '')	{
+						$this->_keyword .= ' or (k_desc2 like \'%' . $val . '%\')';
+					}
+				}
+				$this->_keyword .= ' ) ';
+			}else{
+				$this->_keyword .= ' and (k_desc2 like \'%' . $this->_config['list']['keyword'] . '%\')';
+			}
+		}
+
+
 		if (!empty($this->_config['start_date'])) {
 			$is_advanced_search = true;
 			$this->_keyword .= ' and \'' . $this->_config['start_date'] . '\' <= hiduke ';
@@ -1031,6 +1166,7 @@ class SeminarModule
 						}
 					}
 				}
+                                //SPの時の予約ボタンの記述
 				if ($this->_header_obj->computer_use() === false) {
 					// spの時は、強制的にser以下に飛ばす
 					$click_js = "location.href='/seminar/ser/id/" . $row['id'] . "'";
@@ -1043,6 +1179,23 @@ class SeminarModule
 								$click_js = "location.href='/seminar/ser/id/" . $row['id'] . "/area'";
 							} elseif ($row['place'] !== 'event' && $row['place'] !== $this->_place_name) {
 								$click_js = "location.href='/seminar/ser/id/" . $row['id'] . "/area'";
+							}
+						}
+					}
+				}
+                                //SPの時＆ウィジェットモード時の予約ボタンの記述
+				if ($this->_header_obj->computer_use() === false && $this->_config['use_mode'] == 'widget') {
+					// spの時は、強制的にser以下に飛ばす
+					$click_js = "yoyaku_jump('".$_SERVER['SERVER_NAME']."/seminar/ser/id/" . $row['id'] . "')";
+					if ($row['free'] == 1 && @$_SESSION['mem_id'] == '') {
+						$click_js = "yoyaku_jump('".$_SERVER['SERVER_NAME']."/seminar/ser/login/" . $row['id'] . "')";
+					} elseif (empty($this->_config['seminar_id'])) {
+						if (empty($this->_config[$this->_config['view_mode']]['use_area']) || $this->_config[$this->_config['view_mode']]['use_area'] == 'off' || $this->_config[$this->_config['view_mode']]['use_area'] == 'no' || $this->_config[$this->_config['view_mode']]['use_area'] == 'false' || $this->_config[$this->_config['view_mode']]['use_area'] == '0') {
+						} else {
+							if ($row['place'] == 'event' && strpos($this->_place_name, $row['k_desc2']) === false) {
+                                                                $click_js = "yoyaku_jump('".$_SERVER['SERVER_NAME']."/seminar/ser/id/" . $row['id'] . "/area')";
+							} elseif ($row['place'] !== 'event' && $row['place'] !== $this->_place_name) {
+								$click_js = "yoyaku_jump('".$_SERVER['SERVER_NAME']."/seminar/ser/id/" . $row['id'] . "/area')";
 							}
 						}
 					}
@@ -1091,34 +1244,48 @@ class SeminarModule
 
 			$add_margin_left = "margin-left:150px;";
 			$add_detail_margin = "margin:5px 0 10px 50px;";
+                        if($this->_config['use_mode']){
+                            $add_detail_margin = "margin:5px 0 10px;";
+                        }
 			$add_text_align = "";
-			$add_colspan = '<td>'.$row['k_title1'].'</td></tr><tr><td colspan="4">';
+			$add_colspan = '<td class="seminar_title">'.$row['k_title1'].'</td></tr><tr><td colspan="4">';
 			if ($this->_header_obj->computer_use() === false && $_SESSION['pc'] != 'on') {
 				// spの時
 				$add_margin_left = "";
 				$add_detail_margin = "";
-				$add_colspan = '</tr><tr><td colspan="2">'.$row['k_title1'].'</td></tr><tr><td colspan="2">';
+				$add_colspan = '</tr><tr><td colspan="2" class="seminar_title">'.$row['k_title1'].'</td></tr><tr><td colspan="2">';
 				//$add_colspan = '<td colspan="2">'.$row['k_title1'].'</td></tr><tr><td colspan="2">';
 				$this->_config['list']['window_width'] = '100%';
 			}
 
 			if ($c_img <> '')	{
-				$c_img = '<div style="color:red; font-size:11pt; font-weight:bold; ' . $add_margin_left . '">'.$c_img.'</div>';
+				$c_img = '<div style="color:red; font-size:11pt; font-weight:bold; ' . $add_margin_left . '" class="seminar_status">'.$c_img.'</div>';
 			}
 
 			if (empty($this->_calendar[$year.'-'.$month.'-'.$day])) $this->_calendar[$year.'-'.$month.'-'.$day] = "";
-			$this->_calendar[$year.'-'.$month.'-'.$day] .= '<img src="/images/sa05.jpg">';
-			$c_msg  = '<tr><td nowrap style="vertical-align:top; width:20%;">'.$row['starttime'].'～ <img src="/images/sa05.jpg">' . $this->_translate_city($row['place']) . '</td><td nowrap style="vertical-align:top; width:10%;' . $add_text_align . '">'.$c_btn.'</td>';
-
+			$this->_calendar[$year.'-'.$month.'-'.$day] .= '<img src="http://'.$_SERVER['SERVER_NAME'].'/images/sa05.jpg">';
+                        if($this->_config['use_mode'] == 'widget'){
+                            $c_msg  = '<tr><td nowrap class="seminar_timeandplace" style="vertical-align:middle; width:20%; text-align:center">'.$row['starttime'].'～ <img src="http://'.$_SERVER['SERVER_NAME'].'/images/sa05.jpg">' . $this->_translate_city($row['place']) . '</td><td nowrap class="seminar_button" style="vertical-align:top; width:10%; text-align:center' . $add_text_align . '">'.$c_btn.'</td>';
+                        }else{
+                            $c_msg  = '<tr><td nowrap class="seminar_timeandplace" style="vertical-align:top; width:20%;">'.$row['starttime'].'～ <img src="http://'.$_SERVER['SERVER_NAME'].'/images/sa05.jpg">' . $this->_translate_city($row['place']) . '</td><td nowrap class="seminar_button" style="vertical-align:top; width:10%;' . $add_text_align . '">'.$c_btn.'</td>';
+                        }
 			$c_msg .= $add_colspan;
 			$c_msg .= $c_img;
 			$detail_open = 'none';
 			if (!empty($this->_config['list']['detail_open']) && ($this->_config['list']['detail_open'] == 'on' || $this->_config['list']['detail_open'] == '1' || $this->_config['list']['detail_open'] == 'yes' || $this->_config['list']['detail_open'] == 'true')) {
 				$detail_open = 'block';
 			} else {
+                            if($this->_config['use_mode'] == 'widget'){
+                                $c_msg .= '<div class="open" uid="' . $row['id'] . '">セミナー詳細はココをClick!!</div>';
+                            }else{
 				$c_msg .= '<div class="open" style="' . $add_margin_left . '" uid="' . $row['id'] . '">セミナー詳細はココをClick!!</div>';
+                            }
 			}
-			$c_msg .= '<div class="det" style="' . $add_detail_margin . ' padding: 5px 0 13px 12px; display:' . $detail_open . '; border-left:1px dotted navy; border-bottom: 1px dotted navy;width:80%;">'.$c_title.nl2br($c_desc).'</div></td></tr>';
+                        if($this->_config['use_mode'] == 'widget'){
+                            $c_msg .= '<div class="det" style="' . $add_detail_margin . ' padding: 5px 0 13px 12px; display:' . $detail_open . '; border-left:1px dotted navy; border-bottom: 1px dotted navy; width:auto;">'.$c_title.nl2br($c_desc).'</div></td></tr>';
+                        }else{
+                            $c_msg .= '<div class="det" style="' . $add_detail_margin . ' padding: 5px 0 13px 12px; display:' . $detail_open . '; border-left:1px dotted navy; border-bottom: 1px dotted navy; width:80%;">'.$c_title.nl2br($c_desc).'</div></td></tr>';
+                        }
 			if (empty($this->_calendar_msgs[$year.'-'.$month.'-'.$day])) $this->_calendar_msgs[$year.'-'.$month.'-'.$day] = "";
 			$this->_calendar_msgs[$year.'-'.$month.'-'.$day] .= $c_msg;
 
@@ -1165,18 +1332,18 @@ class SeminarModule
 			echo '
 <div class="orange-solid">
 	<p>【カレンダー上のアイコンの意味】<br/><br/></p>
-	<span style="margin-left:50px;"><img src="../css/images/au.png" alt="Australian Flag" />&nbsp;<img src="../css/images/ca.png" alt="Canadian Flag" />&nbsp;<img src="../css/images/uk.png" alt="Union Jack" />&nbsp;&nbsp;各国向けのセミナーです</span>
-	<span style="margin-left:100px;"><img src="../css/images/wd.png" alt="World" />&nbsp;&nbsp;英語圏の国セミナーです</span>
-	<span style="margin-left:100px;"><img src="../css/images/full.png" alt="fullybooked" />&nbsp;&nbsp;予約が満席のセミナーです</span><br/><br/>
-	<span style="margin-left:50px;"><img src="../css/images/camera.png" alt="camera" />&nbsp;&nbsp;中継対象セミナー（メンバー登録された方がオンラインでご覧いただけます）</span>
-	<span style="margin-left:180px;"><img src="../css/images/hoshi.png" alt="osusume" />&nbsp;&nbsp;おススメのセミナーです</span><br/><br/>
+	<span style="margin-left:50px;"><img src="/css/images/au.png" alt="Australian Flag" />&nbsp;<img src="/css/images/ca.png" alt="Canadian Flag" />&nbsp;<img src="../css/images/uk.png" alt="Union Jack" />&nbsp;&nbsp;各国向けのセミナーです</span>
+	<span style="margin-left:100px;"><img src="/css/images/wd.png" alt="World" />&nbsp;&nbsp;英語圏の国セミナーです</span>
+	<span style="margin-left:100px;"><img src="/css/images/full.png" alt="fullybooked" />&nbsp;&nbsp;予約が満席のセミナーです</span><br/><br/>
+	<span style="margin-left:50px;"><img src="/css/images/camera.png" alt="camera" />&nbsp;&nbsp;中継対象セミナー（メンバー登録された方がオンラインでご覧いただけます）</span>
+	<span style="margin-left:180px;"><img src="/css/images/hoshi.png" alt="osusume" />&nbsp;&nbsp;おススメのセミナーです</span><br/><br/>
 </div>';
 		}
 
 		echo '<div style="margin:20px 0 0 0 ;" id="semi_show" >' . $this->get_seminar_show() . '</div>';
 
 		if ($this->_config['calendar']['footer_desc_active'] == 'active' || $this->_config['calendar']['footer_desc_active'] == 'yes' || $this->_config['calendar']['footer_desc_active'] == 'on' || $this->_config['calendar']['footer_desc_active'] == 'true') {
-			echo '
+			/*echo '
 <div class="navy-dotted">
 【ご注意：スマートフォンをご利用の方へ】<br/>
 スマートフォンなど、ＰＣ以外のブラウザからご利用された場合、予約フォームが正しく機能しない場合があります。<br/>
@@ -1214,7 +1381,7 @@ class SeminarModule
 </div>
 
 <div style="height:50px;">&nbsp;</div>
-';
+';*/
 		}
 		echo $this->yoyakuform();
 
@@ -1242,7 +1409,13 @@ class SeminarModule
 		list($ret, $isView) = event_calender_list($this->_calendar, $this->_calendar_msgs, $this->_config, $target_seminar_id, $isPc);
 		$output .= '<div style="width:620; float:clear;">' . $ret . '</div>';
 
-		if ($this->_is_list_view && $this->_config['list']['multi_use'] == 'off') $output .= $this->yoyakuform();
+		//if ($this->_is_list_view && $this->_config['list']['multi_use'] == 'off') $output .= $this->yoyakuform();
+                if(empty(self::$_last_form_view)){
+                    if ($this->_is_list_view && $this->_config['list']['multi_use'] == 'off') $output .= $this->yoyakuform();
+                    self::$_last_form_view = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+                }else{
+                    if(self::$_last_form_view != $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']) $output .= $this->yoyakuform();
+                }
 
 		if ($this->_is_list_view) $output .= $this->checkdouji();
 
@@ -1361,9 +1534,9 @@ class SeminarModule
 			</form>
 		</div>
 		<div id="div_wait_login" style="display:none;">
-			<img src="../images/ajaxwait.gif">
+			<img src="http://'.$_SERVER['SERVER_NAME'].'/images/ajaxwait.gif">
 			&nbsp;予約処理中です。しばらくお待ちください。&nbsp;
-			<img src="../images/ajaxwait.gif">
+			<img src="http://'.$_SERVER['SERVER_NAME'].'/images/ajaxwait.gif">
 		</div>
 		<div style="margin-top:10px;">
 			<input type="button" class="button_cancel" value=" 取消 " onClick="btn_cancel();">　　　　　
@@ -1417,10 +1590,14 @@ class SeminarModule
 		このフォームでは仮予約を行います。<br/>
 		予約確認のメールをお送りしますので、メールの指示に従って予約を確定させてください。<br/>
 	</div>
+	<div id="msg_hajimete" style="display:none; font-size:10pt; font-weight:bold; margin:10px 0 10px 0; background-color:LightPink; color:red;">
+		***&nbsp;&nbsp;ご注意&nbsp;&nbsp;***<br/>
+		初めてセミナーご参加される場合は、<a href="http://'.$_SERVER['SERVER_NAME'].'/seminar/seminar_01" target="_blank">初心者向けセミナー</a>へのご予約をお願いします。<br/>
+	</div>
 	<div id="div_wait" style="display:none;">
-		<img src="../images/ajaxwait.gif">
+		<img src="http://'.$_SERVER['SERVER_NAME'].'/images/ajaxwait.gif">
 		&nbsp;予約処理中です。しばらくお待ちください。&nbsp;
-		<img src="../images/ajaxwait.gif">
+		<img src="http://'.$_SERVER['SERVER_NAME'].'/images/ajaxwait.gif">
 	</div>
 	<input type="button" class="button_cancel" value=" 取消 " onClick="btn_cancel();">　　　　　
 	<input type="button" class="button_submit" value=" 送信 " id="btn_soushin" onClick="btn_submit();">
@@ -1487,11 +1664,7 @@ jQuery(function($) {
 			$ret .= '&nbsp;<br/><span style="font-size:11pt;">
 	<a href="/event.html">その他のイベントはこちらからどうぞ</a>
 </span>
-<div class="navy-dotted">
-無料セミナーのご予約は、各セミナー日程に表示された「予約」ボタンをご利用ください。<br/>
-各セミナーへのご質問は toiawase@jawhm.or.jp　にメールをお願いいたします。<br/>
-なお、当日のセミナーのご予約は、03-6304-5858までご連絡ください。<br/>
-</div>';
+';
 		}
 		$ret .= '<div id="list_calendar_display">';
 		$ret .= calender_list($this->_calendar, $this->_calendar_msgs, $this->_year, $this->_month, $this->_place_name);
@@ -1645,7 +1818,12 @@ jQuery(function($) {
 	 */
 	public function get_add_js()
 	{
-		return $this->_add_js;
+            if(empty(self::$_last_js_view)){
+                self::$_last_js_view = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+                return $this->_add_js;
+            }else{
+                if(self::$_last_js_view != $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']) return $this->_add_js;
+            }
 	}
 
 	/**
@@ -1654,7 +1832,12 @@ jQuery(function($) {
 	 */
 	public function get_add_css()
 	{
-		return $this->_add_css;
+            if(empty(self::$_last_css_view)){
+                self::$_last_css_view = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+                return $this->_add_css;
+            }else{
+                if(self::$_last_css_view != $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']) return $this->_add_css;
+            }
 	}
 
 	/**
@@ -1663,7 +1846,12 @@ jQuery(function($) {
 	 */
 	public function get_add_style()
 	{
-		return $this->_add_style;
+            if(empty(self::$_last_style_view)){
+                self::$_last_style_view = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+                return $this->_add_style;
+            }else{
+                if(self::$_last_style_view != $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']) return $this->_add_style;
+            }
 	}
 
 	/**
@@ -1955,5 +2143,9 @@ jQuery(function($) {
 				return 'tokyo';
 		}
 	}
+        public function getDate(){
+            $date = $this->_db->get_event_info_for_hiduke($this->_num);
+            $date = $date['place'].$date['yyy'].$date['mmm'].$date['ddd'];
+            return $date;
+        }
 }
-

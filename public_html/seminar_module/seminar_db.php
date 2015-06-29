@@ -188,19 +188,9 @@ class SeminarDb
 			if (is_file($parse_file_path)) {
 				$ini = parse_ini_file($parse_file_path, FALSE);
 			}
-			if (empty($ini)) {
-				$parse_file_path = '../' . $parse_file_path;
-				if (is_file($parse_file_path)) {
-					$ini = parse_ini_file($parse_file_path, FALSE);
-				}
-			}
-			if (empty($ini)) {
-				$parse_file_path = '../' . $parse_file_path;
-				if (is_file($parse_file_path)) {
-					$ini = parse_ini_file($parse_file_path, FALSE);
-				}
-			}
-			if (empty($ini)) {
+			$err=0;
+			while(empty($ini) && $err < 10) {
+				$err++;
 				$parse_file_path = '../' . $parse_file_path;
 				if (is_file($parse_file_path)) {
 					$ini = parse_ini_file($parse_file_path, FALSE);
@@ -217,5 +207,13 @@ class SeminarDb
 			die($e->getMessage());
 		}
 	}
+        public function check_4beginer($id){
+            $stt = $this->_db->prepare('SELECT * FROM event_list WHERE id = :id');
+            $stt->bindValue(':id', $id);
+            $stt->execute();
+            $seminar_info = $stt->fetch();
+            
+            return $seminar_info;
+        }
 }
 

@@ -1,12 +1,18 @@
 <?php
-
 session_start();
-
+//header('Access-Control-Allow-Origin:*');
+//header("P3P: CP='UNI CUR OUR'");
+header('Access-Control-Allow-Origin:http://'.$_GET['acao']);
+//header('Access-Control-Allow-Origin:http://mryugaku.dev.platetec.com');
+//header('Access-Control-Allow-Origin:http://sabusan.jp');
+//header('Access-Control-Allow-Origin:http://srs.jawhm.or.jp');
+header('Access-Control-Allow-Credentials:true');
 $output = "";
 
 function get_select_countries()
 {
 	$countries = array(
+                'アメリカ',
 		'オーストラリア',
 		'ニュージーランド',
 		'カナダ',

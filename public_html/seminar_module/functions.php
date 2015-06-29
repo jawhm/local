@@ -1,5 +1,5 @@
 <?php
-
+header('Access-Control-Allow-Origin:*');//全ドメイン許可する場合 
 //---------------------------------------------------
 //Function to secure form and url
 //---------------------------------------------------
@@ -464,7 +464,6 @@ function count_number_of_seminar($year,$month,$keyword,$navigation_used=0)
 
 	//connect to database
 	$db = connexion_database ();
-
 	$rs = $db->query('SELECT count(*) as number FROM event_list WHERE  hiduke <= \''.$limit_date['ending_date_yy'].'-'.$new_format_ending_month.'-'.$new_format_ending_day.'\' and hiduke >= \''.$limit_date['beginning_date_yy'].'-'.$new_format_beginning_month.'-'.$new_format_beginning_day.'\' and  k_use = 1 '.$keyword.' ORDER BY hiduke, starttime, id');
 
 	$row = $rs->fetch(PDO::FETCH_ASSOC);
@@ -511,7 +510,6 @@ function calender_output($cal, $i,$w,$year,$month,$day,$place_name,$keyword,$sel
 
 	//connect to database
 	$db = connexion_database ();
-
 	$rs = $db->query('SELECT id, hiduke, year(hiduke) as yy, month(hiduke) as mm, day(hiduke) as dd, date_format(starttime, \'%c月%e日 (%a) %k:%i\') as start, date_format(starttime, \'%k:%i\') as starttime, title, memo, place, k_use, k_title1, k_desc1, k_stat, free, pax, booking, group_color, broadcasting, indicated_option, country_code, short_description, seminar_name FROM event_list WHERE  hiduke = \''.$year.'-'.$new_format_month.'-'.$new_format_i.'\' and  k_use = 1 '.$keyword.' ORDER BY hiduke, starttime, id');
 
 	$change = "";
@@ -781,7 +779,7 @@ function calender_output($cal, $i,$w,$year,$month,$day,$place_name,$keyword,$sel
 		{
 			$text_tooltip = $month."月".$i."日 " . $row['starttime'] . '〜 ';
 
-			if(mb_strlen($format_text) > 100)
+			if(mb_strlen($format_text) > 200)
 			{
 				$text_tooltip .= "<div>".mb_substr($format_text ,0,100). "...</div>";
 			}
@@ -877,8 +875,8 @@ function next_month($month, $year, $place_name, $checked_countryname, $checked_k
 	}
 	else
 		$date = $month.'月&gt;&gt;';
-
-	return '<a href="?navigation=1&amp;month='.$month.'&amp;year='.$year.'&amp;place_name='.$place_name.'&amp;checked_countryname='.$checked_countryname.'&amp;checked_know='.$checked_know.'#calendar_start">'.$date.'</a>';
+        //suspicious
+	return '<a href="'.$_SERVER['HTTP_REFERER'].'?navigation=1&amp;month='.$month.'&amp;year='.$year.'&amp;place_name='.$place_name.'&amp;checked_countryname='.$checked_countryname.'&amp;checked_know='.$checked_know.'#calendar_start">'.$date.'</a>';
 }
 
 
@@ -900,7 +898,7 @@ function previous_month($month, $year, $place_name, $checked_countryname, $check
 	else
 		$date = '&lt;&lt;'.$month.'月';
 
-	return '<a href="?navigation=1&amp;month='.$month.'&amp;year='.$year.'&amp;place_name='.$place_name.'&amp;checked_countryname='.$checked_countryname.'&amp;checked_know='.$checked_know.'#calendar_start">'.$date.'</a>';
+	return '<a href="'.$_SERVER['HTTP_REFERER'].'?navigation=1&amp;month='.$month.'&amp;year='.$year.'&amp;place_name='.$place_name.'&amp;checked_countryname='.$checked_countryname.'&amp;checked_know='.$checked_know.'#calendar_start">'.$date.'</a>';
 }
 
 //--------------------------------------------------------------------

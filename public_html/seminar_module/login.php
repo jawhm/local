@@ -1,6 +1,6 @@
 <?php
-
 session_start();
+header('Access-Control-Allow-Origin:*');//全ドメイン許可する場合 
 
 $email = @$_POST['email'];
 $pwd = @$_POST['pwd'];

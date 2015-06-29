@@ -32,6 +32,7 @@ function get_popup_js($id, $num)
 					' . $goto_view . '
 				}
 			});
+                        
 		</script>
 ';
 	return $str;
@@ -90,7 +91,7 @@ jQuery(function($) {
 		$senddata = $("#feedform").serialize();
 		$.ajax({
 			type: "POST",
-			url: "http://www.jawhm.or.jp/feedback/sendmail.php",
+			url: "http://'.$_SERVER['SERVER_NAME'].'/feedback/sendmail.php",
 			data: $senddata + "&subject=Seminar Request",
 			success: function(msg){
 				alert("リクエストありがとうございました。");
@@ -106,7 +107,6 @@ jQuery(function($) {
 
 	jQuery( "input:checkbox", "#shiborikomi" ).button();
 	jQuery( "input:radio", "#shiborikomi" ).button();
-//	fncsemiser();
 
 });
 
@@ -150,11 +150,12 @@ function fncknowall()	{
 	fncsemiser();
 }
 function fncsemiser()	{
-	jQuery("#semi_show").html("<div style=\"vertical-align:middle; text-align:center; margin:30px 0 30px 0; font-size:20pt;\"><img src=\"../images/ajax-loader.gif\">セミナーを探しています...</div>");
+	jQuery("#semi_show").html("<div style=\"vertical-align:middle; text-align:center; margin:30px 0 30px 0; font-size:20pt;\"><img src=\"http://'.$_SERVER['SERVER_NAME'].'/images/ajax-loader.gif\">セミナーを探しています...</div>");
 	$senddata = jQuery("#kensakuform").serialize();
+        /*alert($senddata);*/
 	$.ajax({
 		type: "POST",
-		url: "/seminar_module/search.php",
+		url: "http://'.$_SERVER['SERVER_NAME'].'/seminar_module/search.php",
 		data: $senddata,
 		success: function(msg){
 			jQuery("#semi_show").html(msg);
@@ -172,8 +173,11 @@ function fncsemiser()	{
 function fnc_next()	{
 	$.ajax({
 		type: "GET",
-		url: "/seminar_module/seminar_yoyaku_input.php",
+		url: "http://'.$_SERVER['SERVER_NAME'].'/seminar_module/seminar_yoyaku_input.php?acao='.$_GET['acao'].'",
 		data: "",
+                xhrFields: {
+                    withCredentials: true
+                },
 		success: function(msg){
 			first = true;
 			$("#form_yoyaku table tr").each(function() {
@@ -192,6 +196,20 @@ function fnc_next()	{
 	document.getElementById("form0").style.display = "none";
 	document.getElementById("form1").style.display = "none";
 	document.getElementById("form2").style.display = "";
+        /*初心者向けセミナーでは誘導メッセージを表示*/
+        $id = $("input#txt_id").val();
+        $.ajax({
+            type: "POST",
+            url: "http://'.$_SERVER["SERVER_NAME"].'/seminar_module/check_4beginer.php",
+            data: {id:$id},
+            success: function(is4beginer){
+                if(is4beginer != 0){
+                    $("#msg_hajimete").css("display", "none");
+                }else{
+                    $("#msg_hajimete").css("display", "block");
+                }
+            }
+        });
 }
 
 function fnc_area(obj) {
@@ -206,7 +224,6 @@ function fnc_area(obj) {
 	document.getElementById("div_wait").style.display = "none";
 
 	document.getElementById("area_name").innerHTML = obj.getAttribute("area");
-	//document.getElementById("alert_place").innerHTML = obj.getAttribute("alertplace");
 
 	var alertplace = obj.getAttribute("alertplace");
 	if (alertplace) {
@@ -271,7 +288,7 @@ function fnc_do_login(){
 	$senddata = $("#yoyaku_login").serialize();
 	$.ajax({
 		type: "POST",
-		url: "/seminar_module/login.php",
+		url: "http://'.$_SERVER['SERVER_NAME'].'/seminar_module/login.php",
 		data: $senddata,
 		success: function(msg){
 			document.getElementById("div_wait_login").style.display = "none";
@@ -311,6 +328,7 @@ function fnc_yoyaku(obj)	{
 	document.getElementById("form_title").innerHTML = obj.getAttribute("name");
 	document.getElementById("txt_title").value = obj.getAttribute("name");
 	document.getElementById("txt_id").value = obj.getAttribute("uid");
+
 	$.blockUI({ message: $("#yoyakuform"),
 	css: {
 		top:  ($(window).height() - 500) /2 + "px",
@@ -380,7 +398,12 @@ function btn_submit()	{
 		obj.focus();
 		return false;
 	}
-
+	/*if (obj.value[0] != "0")	{
+		alert("電話番号は正しく入力してください。");
+		obj.focus();
+		return false;
+	}*/
+        
 	if (!confirm("ご入力頂いた内容を送信します。よろしいですか？"))	{
 		return false;
 	}
@@ -394,7 +417,7 @@ function btn_submit()	{
 
 	$.ajax({
 		type: "POST",
-		url: "/yoyaku/yoyaku.php",
+		url: "http://'.$_SERVER['SERVER_NAME'].'/yoyaku/yoyaku.php",
 		data: $senddata,
 		success: function(msg){
 			document.getElementById("div_wait").style.display = "none";
@@ -414,11 +437,12 @@ function btn_submit()	{
 		$(".day_information").bind("mouseenter", function() {
 			this.position = setInterval(function (){
 
-				if($(".day_information .det").is(":animated")){$(".blockMsg").css("top", ($(window).height()-$(".blockMsg").height())/2 +"px");}
+				if($(".day_information .det").is(":animated")){
+                                    $(".blockMsg").css("top", ($(window).height()-$(".blockMsg").height())/2 +"px");
+                                }
 
 			},1);
 		}).bind("mouseleave", function() {
-			//this.position && clearInterval(this.position);
 		});
 
 		$(window).resize(function () {
@@ -436,6 +460,16 @@ function btn_submit()	{
 		});
 	});
 </script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery(".open open_only").live("click", function(){
+            jQuery(this).next(".det").slideToggle("slow");
+        });
+    });
+</script>
+
+<script type="text/javascript" src="/seminar/js/script-form.js"></script>
+
 ';
 }
 
@@ -450,7 +484,9 @@ function get_seminar_css()
     <link rel="stylesheet" href="/css/style_ie.css" />
 <![endif]-->
 
-<link type="text/css" href="/css/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+<link type="text/css" href="http://'.$_SERVER['SERVER_NAME'].'/css/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+<link type="text/css" href="/seminar/css/style-p.css" rel="stylesheet" />
+<link type="text/css" href="/seminar/css/style-fonts.css" rel="stylesheet" />
 ';
 }
 
