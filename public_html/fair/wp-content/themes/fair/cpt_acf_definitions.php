@@ -184,7 +184,7 @@ if(function_exists("register_field_group"))
 				'key' => 'field_558110678cdb5',
 				'label' => '+more説明文',
 				'name' => 'text',
-				'type' => 'textarea',
+				'type' => 'wysiwyg',
 				'default_value' => '',
 				'placeholder' => '',
 				'maxlength' => '',
@@ -491,7 +491,7 @@ if(function_exists("register_field_group"))
 				'label' => 'テーマカラー',
 				'name' => 'color',
 				'type' => 'color_picker',
-				'required' => 1,
+				'required' => 0,
 				'default_value' => '',
 			),
                         array (
@@ -505,10 +505,10 @@ if(function_exists("register_field_group"))
                         ),
 			array (
 				'key' => 'field_557f9025f2e95',
-				'label' => 'セミナー検索用キーワード',
+				'label' => 'リンク先',
 				'name' => 'keyword',
 				'type' => 'text',
-				'required' => 1,
+				'required' => 0,
 				'default_value' => '',
 				'placeholder' => '',
 				'prepend' => '',
@@ -710,6 +710,7 @@ if(function_exists("register_field_group"))
 			'position' => 'normal',
 			'layout' => 'no_box',
 			'hide_on_screen' => array (
+                            0 => 'the_content',
 			),
 		),
 		'menu_order' => 0,

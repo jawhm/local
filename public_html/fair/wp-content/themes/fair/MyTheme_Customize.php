@@ -7,7 +7,7 @@ function theme_customize_register($wp_customize) {
     //section definition
     //ここの記述は一例です。今後、他のカスタマイザー対応機能はこのような形で書いてください
     $wp_customize->add_section('banner', array(
-        'title' => 'BANNER',
+        'title' => 'TOP KEYVISUAL',
         'priority' => 20,
     ));
     $wp_customize->add_section('index', array(
@@ -30,17 +30,17 @@ function theme_customize_register($wp_customize) {
         'title' => 'FAQ',
         'priority' => 25,
     ));
-    $wp_customize->add_section('period', array(
-        'title' => 'フェア開催期間',
+    $wp_customize->add_section('general', array(
+        'title' => '全体設定',
         'priority' => 26,
     ));
     
-    //period
+    //general
     $wp_customize->add_setting('start_date', array(
         'default' => '0000-00-00',
     ));
     $wp_customize->add_control('start_date_c', array(
-        'section' => 'period',
+        'section' => 'general',
         'settings' => 'start_date',
         'label' => '開始日時',
         'type' => 'text',
@@ -50,11 +50,42 @@ function theme_customize_register($wp_customize) {
         'default' => '0000-00-00',
     ));
     $wp_customize->add_control('end_date_c', array(
-        'section' => 'period',
+        'section' => 'general',
         'settings' => 'end_date',
         'label' => '終了日時',
         'type' => 'text',
         'priority' => 2,
+    ));
+    $wp_customize->add_setting('bg', array(
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'bg_c', array(
+        'label' => __('全体背景', ''),
+        'section' => 'general',
+        'settings' => 'bg',
+        'priority' => 3,
+    )));
+
+    $wp_customize->add_setting('bg_center', array(
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'bg_center_c', array(
+        'label' => __('中心BG', ''),
+        'section' => 'general',
+        'settings' => 'bg_center',
+        'priority' => 4,
+    )));
+    $wp_customize->add_setting('keyword', array(
+        'default' => '',
+    ));
+    $wp_customize->add_control('keyword_c', array(
+        'section' => 'general',
+        'settings' => 'keyword',
+        'label' => 'セミナー表示用キーワード',
+        'type' => 'text',
+        'priority' => 5,
     ));
 
     //setting definition
@@ -385,16 +416,6 @@ function theme_customize_register($wp_customize) {
         'priority' => 3,
     ));
 
-    $wp_customize->add_setting('bg_center', array(
-        'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
-    ));
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'bg_center_c', array(
-        'label' => __('中心BG', ''),
-        'section' => 'banner',
-        'settings' => 'bg_center',
-        'priority' => 3,
-    )));
     
     // ACCESS
     $wp_customize->add_setting('access_keyvisual', array(
@@ -617,6 +638,9 @@ function generate_css() {
         }
         section.normalBox{
             background: url(<?php echo get_bg_center() ?>) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+        }
+        div.wrapper{
+              background: url(<?php echo get_bg() ?>) repeat fixed !important;
         }
         /*sp*/
         @media screen and (max-device-width: 700px){
@@ -901,12 +925,6 @@ function get_banner_text_status() {
 
 add_action('customize_register', 'get_banner_text_status');
 
-function get_bg_center() {
-    return esc_url_raw(get_theme_mod('bg_center'));
-}
-
-add_action('customize_register', 'get_bg_center');
-
 /* ACCESS */
 
 function get_access_keyvisual() {
@@ -1060,3 +1078,18 @@ function get_end_date() {
     return get_theme_mod('end_date');
 }
 add_action('customize_register', 'get_end_date');
+
+function get_bg_center() {
+    return esc_url_raw(get_theme_mod('bg_center'));
+}
+add_action('customize_register', 'get_bg_center');
+
+function get_bg() {
+    return esc_url_raw(get_theme_mod('bg'));
+}
+add_action('customize_register', 'get_bg');
+
+function get_keyword() {
+    return get_theme_mod('keyword');
+}
+add_action('customize_register', 'get_keyword');

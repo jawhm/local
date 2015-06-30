@@ -114,7 +114,7 @@ get_header()
                 </p><!-- /.text -->
             </div><!-- /.comment -->
 
-            <div class="btnShadow2 mgb20 w90"><a href="" class="btn Orng">語学学校セミナーはこちら</a></div>
+            <div class="btnShadow2 mgb20 w90"><a href="<?php bloginfo("url") ?>/seminar/?title=語学学校" class="btn Orng" style="background-color: <?php the_field("color") ?>">語学学校セミナーはこちら</a></div>
 
             <section class="feature">
                 <h3>この語学学校の特徴</h3>
@@ -150,4 +150,5 @@ get_header()
 
 <section class="normalBox footSec pad50">
     <div class="btnShadow w60 mgb30"><a class="btn Orng" href="">スケジュール＆ご予約はこちら</a></div>  
+    <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/school.js"></script>
     <?php get_footer() ?>

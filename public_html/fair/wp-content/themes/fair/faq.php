@@ -39,8 +39,8 @@ get_header()
     </section><!-- /.normalBpx -->
 </div><!-- /.underSec -->
 
-<div class="btnShadow w80 mgb30 spview"><a class="btn Orng" href="">スケジュール＆ご予約はこちら</a></div>
+<div class="btnShadow w80 mgb30 spview"><a class="btn Orng" href="<?php bloginfo("url") ?>/seminar/">スケジュール＆ご予約はこちら</a></div>
 
 <section class="normalBox footSec">
-    <div class="btnShadow w60 mgb30"><a class="btn Orng" href="">スケジュール＆ご予約はこちら</a></div>          	
+    <div class="btnShadow w60 mgb30"><a class="btn Orng" href="<?php bloginfo("url") ?>/seminar/">スケジュール＆ご予約はこちら</a></div>          	
 <?php get_footer() ?>

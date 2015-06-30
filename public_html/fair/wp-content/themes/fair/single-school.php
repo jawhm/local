@@ -16,7 +16,7 @@ if(wp_is_mobile()){
     $config = array(
         'start_date' => get_start_date(),
         'end_date' => get_end_date(),
-        'view_mode' => 'calendar',
+        'view_mode' => 'list',
         'calendar' => array(
             'place_default' => '',
             'title' => get_the_title(),
@@ -36,7 +36,7 @@ $sm = new SeminarModule($config);
 
       <div class="underSec schoolList">
       
-        <a href="" class="returnHd">学校一覧に戻る</a>      
+        <a href="<?php bloginfo("url") ?>/seminar/" class="returnHd">学校一覧に戻る</a>      
         
         <!-- ▼ ワーキングホリデー＆留学フェアとは？ ▼ -->      
         <section class="normalBox">
@@ -129,7 +129,7 @@ $sm = new SeminarModule($config);
                              
           <div class="contentBox noPad"> 
                             
-          	<div class="comment">
+              <div class="comment" style="border-color: <?php the_field("color") ?>">
             	<h3>現地スタッフからのコメント</h3>
               <img class="left" src="<?php the_field('staff_image') ?>" alt="スタッフ写真">
               <p class="text">
@@ -137,7 +137,7 @@ $sm = new SeminarModule($config);
               </p><!-- /.text -->
             </div><!-- /.comment -->
             
-            <div class="btnShadow2 mgb20 w90"><a href="" class="btn Orng">語学学校セミナーはこちら</a></div>
+            <div class="btnShadow2 mgb20 w90"><a href="<?php bloginfo("url") ?>/seminar/?title=語学学校" class="btn Orng" style="background-color: <?php the_field("color") ?>">語学学校セミナーはこちら</a></div>
             
             <section class="feature">
             	<h3>この語学学校の特徴</h3>
@@ -156,13 +156,17 @@ $sm = new SeminarModule($config);
               <?php $sm->show() ?>
             </section><!-- /.semSche -->
             
-            <a class="returnFt spview" href="">学校一覧に戻る</a>
+            <a class="returnFt spview" href="<?php bloginfo("url") ?>/seminar/">学校一覧に戻る</a>
           </div><!-- /.contentBox -->         
         </section><!-- /.normalBpx -->
       </div><!-- /.underSec -->
       
-       <div class="btnShadow w80 mgb30 spview"><a class="btn Orng" href="">スケジュール＆ご予約はこちら</a></div>
-      
+       <div class="btnShadow w80 mgb30 spview"><a class="btn Orng" href="<?php bloginfo("url") ?>/seminar/" style="background-color: <?php the_field("color") ?>">スケジュール＆ご予約はこちら</a></div>
+       <style>
+           .seminar_date{
+               background-color: <?php the_field("color") ?> !important;
+           }
+       </style>
       <section class="normalBox footSec pad50">
           <div class="btnShadow w60 mgb30"><a class="btn Orng" href="<?php bloginfo("url") ?>/seminar/">スケジュール＆ご予約はこちら</a></div>  
         <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/school.js"></script>
