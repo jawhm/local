@@ -15,8 +15,8 @@ $(function () {
     });
 });
 
-
-$(function () {
+/* Khang school list bxslider */
+$(document).ready(function(){
     // Slider
     function FixBxSliderPC() {
         var opts = {
@@ -25,11 +25,10 @@ $(function () {
             maxSlides: 3,
             moveSlides: 1,
             slideMargin: 0,
+            controls: false,
             translateValue: 190
         };
-        var slider = $('.slide_body').bxSlider(opts);
-        var current = slider.getCurrentSlide();
-        console.log(current)
+        $('.slide_body').bxSlider(opts);
     }
     function FixBxSliderSP() {
         var opts = {
@@ -38,9 +37,10 @@ $(function () {
             maxSlides: 3,
             moveSlides: 1,
             slideMargin: 0,
+            controls: false,
             translateValue: 50
         };
-        var slider = $('.slide_body').bxSlider(opts);
+        $('.slide_body').bxSlider(opts);
     }
 
     //you can remove responsive code if you don't want the slider scales while window resizes
@@ -119,7 +119,6 @@ $(function () {
         // Get the second class of "btn" class
         target = $(this).get(0).className.split(" ")[2];
         // Set the target modal window
-        console.log(target);
         target = $(".modal." + target);
         // Show modal window
         if (target.is(":hidden")) {

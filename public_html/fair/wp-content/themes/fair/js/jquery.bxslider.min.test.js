@@ -1,13 +1,3 @@
-/**
- * BxSlider v4.1.2 - Fully loaded, responsive content slider
- * http://bxslider.com
- *
- * Copyright 2014, Steven Wanderski - http://stevenwanderski.com - http://bxcreative.com
- * Written while drinking Belgian ales and listening to jazz
- *
- * Released under the MIT license - http://opensource.org/licenses/MIT
- */
-
 ;(function($){
 
 	var plugin = {};
@@ -35,7 +25,6 @@
 		responsive: true,
 		slideZIndex: 50,
 		wrapperClass: 'bx-wrapper',
-                translateValue: 0,
 
 		// TOUCH
 		touchEnabled: true,
@@ -388,12 +377,7 @@
 			var width = '100%';
 			if(slider.settings.slideWidth > 0){
 				if(slider.settings.mode == 'horizontal'){
-                                    /* Khang added */
-                                    if(slider.children.length == 1){
-                                        width = 260;
-                                    }else{
 					width = (slider.settings.maxSlides * slider.settings.slideWidth) + ((slider.settings.maxSlides - 1) * slider.settings.slideMargin);
-                                    }
 				}else{
 					width = slider.settings.slideWidth;
 				}
@@ -542,12 +526,7 @@
 			// use CSS transform
 			if(slider.usingCSS){
 				// determine the translate3d value
-                                /* Khang added */
-                                if(slider.children.length == 1){
-                                    var propValue = slider.settings.mode == 'vertical' ? 'translate3d(0, -270px, 0)' : 'translate3d(-270px, 0, 0)';
-                                }else{
-                                    var propValue = slider.settings.mode == 'vertical' ? 'translate3d(0, ' + (value + slider.settings.translateValue) + 'px, 0)' : 'translate3d(' + (value + slider.settings.translateValue) + 'px, 0, 0)';
-                                }
+				var propValue = slider.settings.mode == 'vertical' ? 'translate3d(0, ' + value + 'px, 0)' : 'translate3d(' + value + 'px, 0, 0)';
 				// add the CSS transition-duration
 				el.css('-' + slider.cssPrefix + '-transition-duration', duration / 1000 + 's');
 				if(type == 'slide'){

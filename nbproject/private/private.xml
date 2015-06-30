@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="24">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="25">
+        <file>
+            <url>public_html/fair/wp-content/themes/fair/js/jquery.bxslider.js</url>
+            <bookmark id="25">
+                <name/>
+                <line>544</line>
+                <key/>
+            </bookmark>
+        </file>
         <file>
             <url>public_html/fair/wp-content/themes/fair/MyTheme_Customize.php</url>
             <bookmark id="24">
@@ -145,18 +153,14 @@
         </group>
         <group name="QJNAVI"/>
         <group name="PLATE">
-            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/seminar.php</file>
-            <file>file:/var/www/html/jawhm.localhost/public_html/seminar_module/seminar_module.php</file>
-            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/css/style_sp.css</file>
-            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/css/jquery.sidr.dark.css</file>
-            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/css/style_pc.css</file>
-            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/MyTheme_Customize.php</file>
+            <file>file:/var/www/html/jawhm.localhost/_/info</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/school.php</file>
-            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/js/jquery.bxslider.min.bk.js</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/header.php</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/school_list.php</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/js/school-list.js</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/js/common.js</file>
-            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/index.php</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/js/jquery.bxslider.js</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-config.php</file>
         </group>
     </open-files>
 </project-private>

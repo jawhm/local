@@ -175,5 +175,6 @@ get_header()
     </section><!-- /.normalBpx -->
 </div><!-- /.underSec -->
 
-<section class="normalBox footSec">      	      	
+<section class="normalBox footSec">
+    <!--<script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/school-list.js"></script>-->
     <?php get_footer() ?>
