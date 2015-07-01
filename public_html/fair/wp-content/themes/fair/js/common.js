@@ -26,7 +26,9 @@ $(document).ready(function(){
             moveSlides: 1,
             slideMargin: 0,
             controls: false,
-            translateValue: 190
+            translateValue: 190,
+            oneWrapperWidth: 260,
+            oneTranslateValue: -270
         };
         $('.slide_body').bxSlider(opts);
     }
@@ -38,7 +40,9 @@ $(document).ready(function(){
             moveSlides: 1,
             slideMargin: 0,
             controls: false,
-            translateValue: 50
+            translateValue: 50,
+            oneWrapperWidth: 260,
+            oneTranslateValue: -175
         };
         $('.slide_body').bxSlider(opts);
     }

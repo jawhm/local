@@ -36,6 +36,8 @@
 		slideZIndex: 50,
 		wrapperClass: 'bx-wrapper',
                 translateValue: 0,
+                oneTranslateValue: 0,
+                oneWrapperWidth: 0,
 
 		// TOUCH
 		touchEnabled: true,
@@ -390,7 +392,7 @@
 				if(slider.settings.mode == 'horizontal'){
                                     /* Khang added */
                                     if(slider.children.length == 1){
-                                        width = 260;
+                                        width = slider.settings.oneWrapperWidth;
                                     }else{
 					width = (slider.settings.maxSlides * slider.settings.slideWidth) + ((slider.settings.maxSlides - 1) * slider.settings.slideMargin);
                                     }
@@ -544,9 +546,10 @@
 				// determine the translate3d value
                                 /* Khang added */
                                 if(slider.children.length == 1){
-                                    var propValue = slider.settings.mode == 'vertical' ? 'translate3d(0, -270px, 0)' : 'translate3d(-270px, 0, 0)';
+//                                    var propValue = slider.settings.mode == 'vertical' ? 'translate3d(0, -270px, 0)' : 'translate3d(-270px, 0, 0)';
+                                    var propValue = slider.settings.mode == 'vertical' ? 'translate3d(0, ' + (slider.settings.oneTranslateValue) + 'px, 0)' : 'translate3d(' + (slider.settings.oneTranslateValue) + 'px, 0, 0)';
                                 }else{
-                                    var propValue = slider.settings.mode == 'vertical' ? 'translate3d(0, ' + (value + slider.settings.translateValue) + 'px, 0)' : 'translate3d(' + (value + slider.settings.translateValue) + 'px, 0, 0)';
+                                    var propValue = slider.settings.mode == 'vertical' ? 'translate3d(0, ' + (slider.settings.translateValue) + 'px, 0)' : 'translate3d(' + (value + slider.settings.translateValue) + 'px, 0, 0)';
                                 }
 				// add the CSS transition-duration
 				el.css('-' + slider.cssPrefix + '-transition-duration', duration / 1000 + 's');

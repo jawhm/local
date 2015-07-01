@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="25">
-        <file>
-            <url>public_html/fair/wp-content/themes/fair/js/jquery.bxslider.js</url>
-            <bookmark id="25">
-                <name/>
-                <line>544</line>
-                <key/>
-            </bookmark>
-        </file>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="27">
         <file>
             <url>public_html/fair/wp-content/themes/fair/MyTheme_Customize.php</url>
             <bookmark id="24">
@@ -96,6 +88,19 @@
             <bookmark id="2">
                 <name/>
                 <line>776</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>public_html/fair/wp-content/themes/fair/js/jquery.bxslider.js</url>
+            <bookmark id="27">
+                <name/>
+                <line>215</line>
+                <key/>
+            </bookmark>
+            <bookmark id="25">
+                <name/>
+                <line>546</line>
                 <key/>
             </bookmark>
         </file>
