@@ -574,7 +574,17 @@ ul.voiceList li p span { display:block; text-align:right; }
 	-moz-background-size:14px 20px;
 	background-size:14px 20px;
 }
-
+.sidr a.closeBtn {
+  background: url(../images/icon_close.png) no-repeat 95% center #3E3E3E;
+  -webkit-background-size: 15px;
+  -moz-background-size: 15px;
+  background-size: 15px;
+  display: block;
+  color: #fff;
+  text-align: right;
+  padding-right: 35px;
+  line-height: 3;
+}
 div.pgTop {
 	text-align:right;
 	padding-right:15px;
@@ -1152,6 +1162,12 @@ FAQ
 .sp-seminar{
     display: inline-block;
 }
+section.normalBox{
+    padding-bottom: 15px;
+}
+section.normalBox.mgb30{
+    padding-bottom: 0px;
+}
 .sidr ul{
     height: 100%;
 }
@@ -1160,4 +1176,7 @@ FAQ
 }
 .bx-wrapper{
     max-width: 320px !important;
+}
+.contentBox.topSec2 .btnShadow{
+    clear: both;
 }

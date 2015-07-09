@@ -109,7 +109,7 @@ $header_obj->display_header();
 		$body .= chr(10);
 		$body .= chr(10);
 		$body .= '';
-		$from = mb_encode_mimeheader(mb_convert_encoding("日本ワーキングホリデー協会","JIS"))."<info@jawhm.or.jp>";
+		$from = mb_encode_mimeheader(mb_convert_encoding("日本ワーキングホリデー協会","JIS"))."<meminfo@jawhm.or.jp>";
 		mb_send_mail('toiawase@jawhm.or.jp',$subject,$body,"From:".$from);
 
 	}

@@ -63,7 +63,9 @@ $(document).ready(function(){
     });
 
     $(window).resize(function () {
-        window.location.href = '/fair/school' + getCookie('SchoolArea');
+        if((window.location.href).indexOf('school') >= 0){
+            window.location.href = '/fair/school' + getCookie('SchoolArea');
+        }
     });
     //responsive code end
     function getCookie(cname) {
@@ -111,6 +113,10 @@ $(document).on('click', function (e) {
     var container = $('#sidr');
 
     if (!container.is(e.target) && container.has(e.target).length === 0) {
+        $.sidr('close', 'sidr');
+    }
+    
+    if($(e.target).hasClass('closeBtn')){
         $.sidr('close', 'sidr');
     }
 

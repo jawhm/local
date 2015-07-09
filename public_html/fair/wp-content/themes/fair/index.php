@@ -23,8 +23,8 @@
                 <?php echo get_about_description() ?>
             </p><!-- /.planeText -->
             <ul class="btnList pdl55 about">
-                <li class="left w60"><a class="btn Orng2" href="/seminar/">セミナースケジュール</a></li>
-                <li class="right w40"><a class="btn Orng2" href="/access/">アクセス</a></li>
+                <li class="left w60"><a class="btn Orng2" href="<?php bloginfo("url") ?>/seminar/">セミナースケジュール</a></li>
+                <li class="right w40"><a class="btn Orng2" href="<?php bloginfo("url") ?>/access/">アクセス</a></li>
             </ul><!-- /.btnList -->
         </div><!-- /.contentBox -->
     </section><!-- /.normalBpx -->
@@ -98,8 +98,8 @@
             </div><!-- /.modal-area -->
 
 
-            <div class="btnShadow mgt30 w60 pcview"><a class="btn Orng" style="background: <?php echo get_point_button_color() ?>" href="">スケジュール＆ご予約はこちら</a></div>        
-            <div class="btnShadow mgt30 w90 spview"><a class="btn Orng" style="background: <?php echo get_point_button_color() ?>" href="">スケジュール＆ご予約はこちら</a></div>
+            <div class="btnShadow mgt30 w60 pcview"><a class="btn Orng" style="background: <?php echo get_point_button_color() ?>" href="<?php bloginfo("url") ?>/seminar/">スケジュール＆ご予約はこちら</a></div>        
+            <div class="btnShadow mgt30 w90 spview"><a class="btn Orng" style="background: <?php echo get_point_button_color() ?>" href="<?php bloginfo("url") ?>/seminar/">スケジュール＆ご予約はこちら</a></div>
         </div><!-- /.contentBox -->
     </section><!-- /.normalBpx -->
 <?php endif; ?>
@@ -110,14 +110,25 @@
         <h2 class="hukidashi"><?php echo get_guide_text() ?><span>GUIDE</span></h2>
         <div class="contentBox">
             <?php
-            query_posts("post_type=step&posts_per_page=-1");
+            query_posts("post_type=step&posts_per_page=-1&orderby=date&order=asc");
             if (have_posts()): while (have_posts()): the_post();
-                    ?>        
+                    ?>
+            <style>
+                section.semBox h3.step-<?php echo the_ID() ?>{
+                    background: url('<?php the_field("icon") ?>') no-repeat left center;
+                    color: <?php the_field("color") ?>;
+                }
+                /*sp*/
+                @media screen and (max-device-width: 700px){
+                section.semBox h3.step-<?php echo the_ID() ?>{
+                    background-size: 10%;
+                }
+                }
+            </style>
                     <section class="semBox mgb30">
-                        <h3 class="step1" style="background: url('<?php the_field("icon") ?>') no-repeat left center 2/3;"><span><?php the_title() ?></span><?php the_field("caption") ?></h3>
+                        <h3 class="step-<?php echo the_ID() ?>" style="background: url('') 2/3"><span><?php the_title() ?></span><?php the_field("caption") ?></h3>
                         <div class="inner">
-                          <!--<img src="<?php the_field("image") ?>" alt="セミナー画像">-->
-                            <img src="<?php echo get_template_directory_uri() ?>/images/photo_step01.jpg" alt="セミナー画像">
+                            <img src="<?php the_field("image") ?>" alt="<?php the_title() ?>">
                             <p>
                                 <?php the_field("body") ?>
                                 <?php
@@ -160,7 +171,7 @@
             <?php
             $args = array(
                 'post_type' => 'seminar',
-                'posts_per_page' => 4,
+                'posts_per_page' => -1,
                 'orderby' => array('date' => 'ASC'),
             );
             $loop = new WP_Query($args);
@@ -236,7 +247,7 @@
             <?php
             $args = array(
                 'post_type' => 'voice',
-                'posts_per_page' => 3,
+                'posts_per_page' => -1,
                 'orderby' => array('date' => 'ASC'),
             );
             $loop = new WP_Query($args);
@@ -260,7 +271,7 @@
     </section><!-- /.normalBox -->
 <?php endif; ?>
 
-    <div class="btnShadow w80 mgb30 spview"><a class="btn Orng" href="<?php bloginfo("url") ?>/seminar/">スケジュール＆ご予約はこちら</a></div>
+<div class="btnShadow w80 mgb30 spview"><a class="btn Orng" href="<?php bloginfo("url") ?>/seminar/">スケジュール＆ご予約はこちら</a></div>
 
 <section class="normalBox footSec">
     <div class="btnShadow w60 mgb30"><a class="btn Orng" href="<?php bloginfo("url") ?>/seminar/">スケジュール＆ご予約はこちら</a></div>      

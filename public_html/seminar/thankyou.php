@@ -1478,11 +1478,11 @@ $page_tile .= ' | 日本ワーキングホリデー協会';
 
                     <div style="margin:8px 0 12px 0;" class="ui-body ui-body-d">
                         <div style="font-size: 12px;font-weight: bold;text-align: center;padding: 10px 0px;">
-                            ゼミナーの仮予約ありがとうございました。
+                            セミナーの仮予約ありがとうございました。
                         </div>
                     </div>
 
-                    <div style="margin:8px 0 12px 0;">
+                    <div style="margin:8px 0 12px 0; text-align: center">
                         <img src="/css/images/tri.png" style="vertical-align: top">
                         <p style="display: inline-block">
                             当日はその他にもセミナーが開催されます。<br/>

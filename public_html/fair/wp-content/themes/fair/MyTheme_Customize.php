@@ -176,6 +176,24 @@ function theme_customize_register($wp_customize) {
         'type' => 'text',
         'priority' => 1,
     ));
+    
+    $wp_customize->add_setting('point_bg');
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'point_bg_c', array(
+        'label' => 'POINTの背景画像',
+        'section' => 'index',
+        'settings' => 'point_bg',
+        'description' => '背景の画像設定',
+        'priority' => 1,
+    )));
+    
+    $wp_customize->add_setting('point_sp_bg');
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'point_sp_bg_c', array(
+        'label' => 'POINTの背景画像SP',
+        'section' => 'index',
+        'settings' => 'point_sp_bg',
+        'description' => '背景の画像設定',
+        'priority' => 1,
+    )));    
 
     $wp_customize->add_setting('point_more_button_color', array(
         'default' => '#12b49b',
@@ -640,12 +658,27 @@ function generate_css() {
             background: url(<?php echo get_bg_center() ?>) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
         }
         div.wrapper{
-              background: url(<?php echo get_bg() ?>) repeat fixed !important;
+            background: url(<?php echo get_bg() ?>) repeat fixed !important;
         }
         /*sp*/
         @media screen and (max-device-width: 700px){
             div.keyvisual.index{
                 background: url("<?php echo get_banner_sp_image_url() ?>") no-repeat scroll center center rgba(0, 0, 0, 0) !important;
+            }
+            div.keyvisual.access{
+                background: url("<?php echo get_faq_keyvisual() ?>") no-repeat scroll center center rgba(0, 0, 0, 0) !important;
+            }
+            div.keyvisual.school{
+                background: url("<?php echo get_faq_keyvisual() ?>") no-repeat scroll center center rgba(0, 0, 0, 0) !important;
+            }
+            div.keyvisual.seminar{
+                background: url("<?php echo get_faq_keyvisual() ?>") no-repeat scroll center center rgba(0, 0, 0, 0) !important;
+            }
+            div.keyvisual.faq{
+                background: url("<?php echo get_faq_keyvisual() ?>") no-repeat scroll center center rgba(0, 0, 0, 0) !important;
+            }
+            section.normalBox .contentBox.topSec2{
+                background: url(<?php echo get_point_sp_bg() ?>) no-repeat scroll left top / 100% auto #fff !important;
             }
         }
         /*pc*/
@@ -654,13 +687,23 @@ function generate_css() {
                 background: url("<?php echo get_banner_image_url() ?>") no-repeat scroll center center / auto 100% rgba(0, 0, 0, 0) !important;
             }
             div.keyvisual.access{
-                background: url(<?php echo get_access_keyvisual() ?>) no-repeat center center !important;
+                background: url(<?php echo get_access_keyvisual() ?>) no-repeat scroll center center / auto 100% rgba(0, 0, 0, 0) !important;
+                min-height: 430px !important;
             }
             div.keyvisual.school{
-                background: url(<?php echo get_school_keyvisual() ?>) no-repeat center center !important;
+                background: url(<?php echo get_school_keyvisual() ?>) no-repeat scroll center center / auto 100% rgba(0, 0, 0, 0) !important;
+                min-height: 430px !important;
             }
             div.keyvisual.seminar{
-                background: url(<?php echo get_seminar_keyvisual() ?>) no-repeat center center !important;
+                background: url(<?php echo get_seminar_keyvisual() ?>) no-repeat scroll center center / auto 100% rgba(0, 0, 0, 0) !important;
+                min-height: 430px !important;
+            }
+            div.keyvisual.faq{
+                background: url("<?php echo get_faq_keyvisual() ?>") no-repeat scroll center center / auto 100% rgba(0, 0, 0, 0) !important;
+                min-height: 430px !important;
+            }
+            section.normalBox .contentBox.topSec2{
+                background: url(<?php echo get_point_bg() ?>) no-repeat scroll left top / 100% auto #fff !important;
             }
         }
         .access .btn.Navy2{
@@ -747,6 +790,18 @@ function get_point_more_button_color() {
 }
 
 add_action('customize_register', 'get_point_more_button_color');
+
+function get_point_bg() {
+    return esc_url(get_theme_mod('point_bg'));
+}
+
+add_action('customize_register', 'get_point_bg');
+
+function get_point_sp_bg() {
+    return esc_url(get_theme_mod('point_sp_bg'));
+}
+
+add_action('customize_register', 'get_point_sp_bg');
 
 /* INDEX - guide */
 

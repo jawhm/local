@@ -17,8 +17,12 @@
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/css/jquery.sidr.dark.css">
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/css/simple.modal.css">
 
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script> 
+        <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>-->
+	<!--<script type="text/javascript">-->
+	<!--var $j123 = $.noConflict(true);-->
+	<!--</script>-->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> 
         <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/jquery.smoothScroll.js"></script>
         <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/jquery.bxslider.min.js"></script>
         <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/prefixfree.min.js"></script>
@@ -116,8 +120,8 @@
                     <li><a class="nav02" href="<?php bloginfo("url") ?>/school/">参加語学学校紹介</a></li>
                     <li><a class="nav03" href="<?php bloginfo("url") ?>/faq/">よくある質問</a></li>
                     <li><a class="nav04" href="<?php bloginfo("url") ?>/access/">会場アクセス</a></li>
+                    <li id="closeBtn"><a class="closeBtn" href="javascript: void(0)">close</a></li>
                 </ul>
-                <a class="closeBtn" href="">close</a>
             </div>
 
 

@@ -5,12 +5,7 @@ header('Access-Control-Allow-Origin:*');
 include '../seminar_module/seminar_module.php';
 
 $tmp_config = array();
-
-if ($_SESSION['seminar_config2']) {
-	$tmp_config = unserialize(gzuncompress(base64_decode($_SESSION['seminar_config2'])));
-} elseif (isset($_COOKIE['seminar_config2'])) {
-	$tmp_config = unserialize(gzuncompress(base64_decode($_COOKIE['seminar_config2'])));
-} elseif ($_SESSION['seminar_config']) {
+if ($_SESSION['seminar_config']) {
 	$tmp_config = unserialize(base64_decode($_SESSION['seminar_config']));
 } elseif (isset($_COOKIE['seminar_config'])) {
 	$tmp_config = unserialize(base64_decode($_COOKIE['seminar_config']));

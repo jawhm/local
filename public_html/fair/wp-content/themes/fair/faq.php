@@ -22,7 +22,7 @@ get_header()
             </p><!-- /.planeText -->
 
             <?php
-            query_posts("post_type=question&posts_per_page=-1");
+            query_posts("post_type=question&posts_per_page=-1&orderby=date&order=asc");
             if (have_posts()): while (have_posts()): the_post();
                     ?>
                     <dl class="faqBox">

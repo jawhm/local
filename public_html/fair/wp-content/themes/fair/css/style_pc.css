@@ -1135,3 +1135,6 @@ FAQ
 .slide_wrap .bx-wrapper{
     margin: 0px auto 10px !important;
 }
+.contentBox.topSec2 .btnShadow{
+    clear: both;
+}

@@ -113,7 +113,7 @@ get_header()
                 while ($loop->have_posts()): $loop->the_post();
                     $loop_temp .= '<li class="slide">';
                     $loop_temp .= '<img src="' . get_field('image') . '" alt="' . get_the_title() . '">';
-                    $loop_temp .= '<h4><a href=""><span>' . get_field('rubi') . '</span>' . get_the_title() . '</a></h4>';
+                    $loop_temp .= '<h4><a href="' . get_post_permalink() . '"><span>' . get_field('rubi') . '</span>' . get_the_title() . '</a></h4>';
                     $loop_temp .= '<p>' . get_field('catchphrase') . '</p>';
                     $loop_temp .= '</li>';
                 endwhile;
@@ -134,7 +134,7 @@ get_header()
                             $open_flag = true;
                         }
                         $loop_li .= '<li class="sclBox ' . $sclBox_color[$i] . '">';
-                        $loop_li .= '<a href="">' . get_the_title() . '</a>';
+                        $loop_li .= '<a href="' . get_post_permalink() . '">' . get_the_title() . '</a>';
                         $loop_li .= '<p class="name"><span>' . get_field('rubi') . '</span>' . get_the_title() . '</p>';
                         $loop_li .= '<img class="logo" src="' . get_field('logo') . '" alt="' . get_the_title() . '">';
                         $loop_li .= '<p class="caption">' . get_field('catchphrase') . '</p>';
@@ -145,7 +145,7 @@ get_header()
                         }
                     } else {
                         $loop_li .= '<li class="sclBox ' . $sclBox_color[$i] . '">';
-                        $loop_li .= '<a href="">' . get_the_title() . '</a>';
+                        $loop_li .= '<a href="' . get_post_permalink() . '">' . get_the_title() . '</a>';
                         $loop_li .= '<p class="name"><span>' . get_field('rubi') . '</span>' . get_the_title() . '</p>';
                         $loop_li .= '<img class="logo" src="' . get_field('logo') . '" alt="' . get_the_title() . '">';
                         $loop_li .= '<p class="caption">' . get_field('catchphrase') . '</p>';
@@ -175,6 +175,5 @@ get_header()
     </section><!-- /.normalBpx -->
 </div><!-- /.underSec -->
 
-<section class="normalBox footSec">
-    <!--<script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/school-list.js"></script>-->
+<section class="normalBox footSec">      	      	
     <?php get_footer() ?>

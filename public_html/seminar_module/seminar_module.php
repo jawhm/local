@@ -264,7 +264,7 @@ class SeminarModule
 	private $_douji_info = array();
 	private $_header_obj;
 	private $_is_list_view = true;
-
+        
         //js css style yoyaku_formの記述がページでユニークであることを保証するための静的変数。中身はURL
         private static $_last_js_view;
         private static $_last_css_view;
@@ -304,22 +304,15 @@ class SeminarModule
 		}
 
 		$tmp_config = array();
-		if ($_SESSION['seminar_config2']) {
-			$tmp_config = unserialize(gzuncompress(base64_decode($_SESSION['seminar_config2'])));
-		} elseif (isset($_COOKIE['seminar_config2'])) {
-			$tmp_config = unserialize(gzuncompress(base64_decode($_COOKIE['seminar_config2'])));
-		} elseif ($_SESSION['seminar_config']) {
+		if ($_SESSION['seminar_config']) {
 			$tmp_config = unserialize(base64_decode($_SESSION['seminar_config']));
 		} elseif (isset($_COOKIE['seminar_config'])) {
 			$tmp_config = unserialize(base64_decode($_COOKIE['seminar_config']));
 		}
-
 		$tmp_config[$_SERVER['SCRIPT_NAME']] = $this->_config;
-		//$data_cookie = base64_encode(serialize($tmp_config));
-		$data_cookie = base64_encode(gzcompress(serialize($tmp_config)));
-		setcookie("seminar_config2", $data_cookie, time()+3600*24*30, "/");
-		$_SESSION['seminar_config2'] = $data_cookie;
-
+		$data_cookie = base64_encode(serialize($tmp_config));
+		setcookie("seminar_config", $data_cookie, time()+3600*24*30, "/");
+		$_SESSION['seminar_config'] = $data_cookie;
 		$this->_init();
 	}
 
@@ -378,14 +371,14 @@ class SeminarModule
 			$this->_num = $this->_config['seminar_id'][0];
 		}
 		$this->_navigation = @$_GET['navigation'];
-
+                
                 //ダミーモード切り替え：データベースへのアクセスを禁止
                 if($this->_config['dummy_mode'] == 'on'){
                     $this->_db = new StubSeminarDb();
                 }else{
                     $this->_db = new SeminarDb();
                 }
-
+                
 		$this->_mem_info = $this->_db->get_member_info(@$_SESSION['mem_id']);
 
 		// 同時開催チェック
@@ -462,7 +455,6 @@ class SeminarModule
 			$where_place = $this->_get_where_place($this->_place_name);
 			//$where_place = '(place = \'' . $this->_place_name . '\' or k_desc2 like \'%' . $this->_place_name .'%\') ';
 		}
-
 		/*
 		if (!empty($this->_config['calendar']['country_default']) && is_array($this->_config['calendar']['country_default'])) {
 			$this->_checked_countryname = implode(',', $this->_config['calendar']['country_default']);
@@ -2149,3 +2141,4 @@ jQuery(function($) {
             return $date;
         }
 }
+
