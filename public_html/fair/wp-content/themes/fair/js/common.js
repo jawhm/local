@@ -150,19 +150,14 @@ $(function () {
 /* Khang fadein */
 $(window).load(function () {
     $('div.keyvisual').css({'overflow': 'hidden'}).fadeIn(3000, function () {
-        $('div.keyvisual p').animate({
-            top: '41%',
-            opacity: 1
-        }, 1000, function () {
-            var curWidth = $(window).width();
-            var startPos = -100;
-            var midPos = (curWidth / 2) + (startPos / 2);
-            var endPos = curWidth;
+        var curWidth = $(window).width();
+        var startPos = -100;
+        var midPos = (curWidth / 2) + (startPos / 2);
+        var endPos = curWidth;
 
-            $('#flight').animate({opacity: 1, left: midPos}, 5000, function () {
-                $(this).animate({opacity: 0, left: endPos}, 3000, function () {
-                    $(this).remove();
-                });
+        $('#flight').animate({opacity: 1, left: midPos}, 5000, 'linear', function () {
+            $(this).animate({opacity: 0, left: endPos}, 4000, 'linear', function () {
+                $(this).remove();
             });
         });
     });
