@@ -704,6 +704,7 @@ section.semListArea div.pcview {
 	color:#0c6bef;
 	font-weight:bold;
 	margin-bottom:15px;
+        border-bottom: 1px solid;
 }
 section.semListArea div.pcview p.right { font-size:24px; }
 section.semListArea div.pcview p.right span { color:#434343; }
@@ -1135,6 +1136,15 @@ FAQ
 .slide_wrap .bx-wrapper{
     margin: 0px auto 10px !important;
 }
-.contentBox.topSec2 .btnShadow{
+.contentBox.topSec2 .btnShadow {
     clear: both;
+}
+#seminar-calendar tr.head_table th {
+    text-align: center;
+}
+#seminar-calendar .data_table td.following_month span.date_sunday, #seminar-calendar .data_table td.actual_month-following_month span.date_sunday,
+#seminar-calendar .data_table td.following_month span.date_number, #seminar-calendar .data_table td.actual_month-following_month span.date_number,
+#seminar-calendar .data_table td.following_month span.date_saturday, #seminar-calendar .data_table td.actual_month-following_month span.date_saturday{
+    text-align: center;
+    display: block !important;
 }

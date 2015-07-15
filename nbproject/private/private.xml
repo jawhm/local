@@ -2,6 +2,32 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="27">
         <file>
+            <url>public_html/fair/wp-content/themes/fair/js/jquery.bxslider.js</url>
+            <bookmark id="27">
+                <name/>
+                <line>215</line>
+                <key/>
+            </bookmark>
+            <bookmark id="25">
+                <name/>
+                <line>546</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>public_html/fair/wp-content/themes/fair/MyTheme_Customize.php</url>
+            <bookmark id="24">
+                <name/>
+                <line>281</line>
+                <key/>
+            </bookmark>
+            <bookmark id="23">
+                <name/>
+                <line>382</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
             <url>public_html/mailsystem/mem/cont/event.php</url>
             <bookmark id="4">
                 <name/>
@@ -21,40 +47,6 @@
             <bookmark id="6">
                 <name/>
                 <line>710</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>public_html/mailsystem/mem/cont/mailtempsign.php</url>
-            <bookmark id="7">
-                <name/>
-                <line>433</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>public_html/fair/wp-content/themes/fair/js/jquery.bxslider.js</url>
-            <bookmark id="27">
-                <name/>
-                <line>215</line>
-                <key/>
-            </bookmark>
-            <bookmark id="25">
-                <name/>
-                <line>546</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>public_html/fair/wp-content/themes/fair/MyTheme_Customize.php</url>
-            <bookmark id="24">
-                <name/>
-                <line>272</line>
-                <key/>
-            </bookmark>
-            <bookmark id="23">
-                <name/>
-                <line>373</line>
                 <key/>
             </bookmark>
         </file>
@@ -109,6 +101,14 @@
             <bookmark id="2">
                 <name/>
                 <line>776</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>public_html/mailsystem/mem/cont/mailtempsign.php</url>
+            <bookmark id="7">
+                <name/>
+                <line>433</line>
                 <key/>
             </bookmark>
         </file>

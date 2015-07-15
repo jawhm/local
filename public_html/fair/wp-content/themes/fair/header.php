@@ -17,7 +17,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/css/jquery.sidr.dark.css">
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/css/simple.modal.css">
 
-        <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>-->
+        <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"></script>-->
 	<!--<script type="text/javascript">-->
 	<!--var $j123 = $.noConflict(true);-->
 	<!--</script>-->
