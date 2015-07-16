@@ -336,11 +336,13 @@ section.normalBox .contentBox.topSec2 {
 	margin-bottom:35px;
 }
 ul.point {
-	float:left;
-	margin-right:10px;
+	/*float:left;*/
+	/*margin-right:10px;*/
+        display: inline-block;
 }
 ul.point.lastUl { float:none; margin:0; overflow:hidden; }
 ul.point li {
+    margin-bottom: 10px;
 	background-color: rgba( 255, 255, 255, 0.55 );
   border: 1px solid #fff;
   border-radius: 50%;
@@ -1157,4 +1159,12 @@ ul.voiceList li:nth-child(3n + 2) {
 }
 ul.voiceList li:nth-child(3n) {
     margin: 0;
+}
+.block-center{
+    clear: both;
+    text-align: center;
+    width: 965px;
+}
+.point-sp{
+    display: none;
 }

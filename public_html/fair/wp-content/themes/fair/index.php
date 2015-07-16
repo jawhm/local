@@ -57,7 +57,7 @@
                 $p = 1;
                 $p_open_tag = false;
                 //
-                $tmp_point .= '<div class="block-center">';
+                $tmp_point .= '<div class="point-sp block-center">';
                 while ($loop->have_posts()) {
                     $loop->the_post();
                     if ($p % 2 !== 0) {
@@ -73,7 +73,7 @@
                         }
                         $tmp_point .= '<li>';
                         $tmp_point .= '<p><span>POINT.' . $p . '</span>' . get_the_title() . '</p>';
-                        $tmp_point .= '<a href="javascript:void(0);" class="btn more-btn ' . 'panel' . get_the_ID() . '" href="">+more</a>';
+                        $tmp_point .= '<a href="javascript:void(0);" class="btn more-btn ' . 'sp-panel' . get_the_ID() . '">+more</a>';
                         $tmp_point .= '</li>';
                         if ($p == $loop->post_count) {
                             $tmp_point .= '</ul><!-- /.point -->';
@@ -81,7 +81,7 @@
                     } else {
                         $tmp_point .= '<li>';
                         $tmp_point .= '<p><span>POINT.' . $p . '</span>' . get_the_title() . '</p>';
-                        $tmp_point .= '<a href="javascript:void(0);" class="btn more-btn ' . 'panel' . get_the_ID() . '" href="">+more</a>';
+                        $tmp_point .= '<a href="javascript:void(0);" class="btn more-btn ' . 'sp-panel' . get_the_ID() . '">+more</a>';
                         $tmp_point .= '</li>';
                         if ($p_open_tag === true) {
                             $tmp_point .= '</ul><!-- /.point -->';
@@ -90,12 +90,33 @@
                     }
                     $p++;
 
-                    $tmp_point_modal .= '<div class="modal ' . 'panel' . get_the_ID() . '">';
+                    $tmp_point_modal .= '<div class="modal ' . 'sp-panel' . get_the_ID() . '">';
                     $tmp_point_modal .= '<p>' . get_field('text') . '</p>';
                     $tmp_point_modal .= '<div class="close"><span>close</span></div>';
                     $tmp_point_modal .= '</div>';
                 }
                 $tmp_point .= '</div>';
+                
+                $p = 1;
+                $tmp_point .= '<div class="point-pc block-center">';
+                $tmp_point .= '<ul class="point green">';
+                while ($loop->have_posts()) {
+                    $loop->the_post();
+                    $tmp_point .= '<li>';
+                    $tmp_point .= '<p><span>POINT.' . $p . '</span>' . get_the_title() . '</p>';
+                    $tmp_point .= '<a href="javascript:void(0);" class="btn more-btn ' . 'pc-panel' . get_the_ID() . '">+more</a>';
+                    $tmp_point .= '</li>';
+                    
+                    $tmp_point_modal .= '<div class="modal ' . 'pc-panel' . get_the_ID() . '">';
+                    $tmp_point_modal .= '<p>' . get_field('text') . '</p>';
+                    $tmp_point_modal .= '<div class="close"><span>close</span></div>';
+                    $tmp_point_modal .= '</div>';
+                    
+                    $p++;
+                }
+                $tmp_point .= '</ul>';
+                $tmp_point .= '</div>';
+                
             }
             //
             wp_reset_postdata();

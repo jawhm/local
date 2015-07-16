@@ -1189,3 +1189,6 @@ section.normalBox.mgb30{
 .contentBox.topSec2 .btnShadow{
     clear: both;
 }
+.point-pc{
+    display: none;
+}
