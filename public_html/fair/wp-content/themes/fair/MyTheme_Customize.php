@@ -77,6 +77,7 @@ function theme_customize_register($wp_customize) {
         'settings' => 'bg_center',
         'priority' => 4,
     )));
+    
     $wp_customize->add_setting('keyword', array(
         'default' => '',
     ));
@@ -421,7 +422,7 @@ function theme_customize_register($wp_customize) {
         'settings' => 'banner_text',
         'priority' => 1,
     )));
-
+    
     $wp_customize->add_setting('banner_text_status', array(
         'default' => '画像を表示',
         'transport' => 'refresh',
@@ -431,9 +432,32 @@ function theme_customize_register($wp_customize) {
         'section' => 'banner',
         'settings' => 'banner_text_status',
         'type' => 'checkbox',
-        'priority' => 3,
+        'priority' => 1,
     ));
 
+    $wp_customize->add_setting('banner_flight', array(
+        'default' => '',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'banner_flight_c', array(
+        'label' => __('飛行機画像', ''),
+        'section' => 'banner',
+        'settings' => 'banner_flight',
+        'priority' => 1,
+    )));
+    
+    $wp_customize->add_setting('banner_flight_top', array(
+        'default' => '50',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('banner_flight_top_c', array(
+        'label' => '飛行機上から（パーセント%）',
+        'section' => 'banner',
+        'settings' => 'banner_flight_top',
+        'type' => 'text',
+        'priority' => 1,
+    ));
     
     // ACCESS
     $wp_customize->add_setting('access_keyvisual', array(
@@ -657,11 +681,11 @@ function generate_css() {
         section.normalBox{
             background: url(<?php echo get_bg_center() ?>) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
         }
-        div.wrapper{
-            background: url(<?php echo get_bg() ?>) repeat fixed !important;
-        }
         /*sp*/
         @media screen and (max-device-width: 700px){
+            div.wrapper{
+                background: url(<?php echo get_bg_center() ?>) repeat fixed !important;
+            }
             div.keyvisual.index{
                 background: url("<?php echo get_banner_sp_image_url() ?>") no-repeat scroll center center rgba(0, 0, 0, 0) !important;
             }
@@ -683,24 +707,27 @@ function generate_css() {
         }
         /*pc*/
         @media screen and (min-device-width: 699px){
+            div.wrapper{
+                background: url(<?php echo get_bg() ?>) repeat fixed !important;
+            }
             div.keyvisual.index{
                 background: url("<?php echo get_banner_image_url() ?>") no-repeat scroll center center / auto 100% rgba(0, 0, 0, 0) !important;
             }
             div.keyvisual.access{
                 background: url(<?php echo get_access_keyvisual() ?>) no-repeat scroll center center / auto 100% rgba(0, 0, 0, 0) !important;
-                min-height: 430px !important;
+                /*min-height: 430px !important;*/
             }
             div.keyvisual.school{
                 background: url(<?php echo get_school_keyvisual() ?>) no-repeat scroll center center / auto 100% rgba(0, 0, 0, 0) !important;
-                min-height: 430px !important;
+                /*min-height: 430px !important;*/
             }
             div.keyvisual.seminar{
                 background: url(<?php echo get_seminar_keyvisual() ?>) no-repeat scroll center center / auto 100% rgba(0, 0, 0, 0) !important;
-                min-height: 430px !important;
+                /*min-height: 430px !important;*/
             }
             div.keyvisual.faq{
                 background: url("<?php echo get_faq_keyvisual() ?>") no-repeat scroll center center / auto 100% rgba(0, 0, 0, 0) !important;
-                min-height: 430px !important;
+                /*min-height: 430px !important;*/
             }
             section.normalBox .contentBox.topSec2{
                 background: url(<?php echo get_point_bg() ?>) no-repeat scroll left top / 100% auto #fff !important;
@@ -973,6 +1000,18 @@ function get_banner_text() {
 }
 
 add_action('customize_register', 'get_banner_text');
+
+function get_banner_flight() {
+    return esc_url_raw(get_theme_mod('banner_flight'));
+}
+
+add_action('customize_register', 'get_banner_text');
+
+function get_banner_flight_top() {
+    return get_theme_mod('banner_flight_top');
+}
+
+add_action('customize_register', 'get_banner_flight_top');
 
 function get_banner_text_status() {
     return get_theme_mod('banner_text_status');

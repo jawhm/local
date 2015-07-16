@@ -1148,3 +1148,13 @@ FAQ
     text-align: center;
     display: block !important;
 }
+ul.voiceList li:first-child{
+    margin: 0;
+}
+ul.voiceList li:nth-child(3n + 2) {
+    margin-left: 32px;
+    margin-right: 32px;
+}
+ul.voiceList li:nth-child(3n) {
+    margin: 0;
+}

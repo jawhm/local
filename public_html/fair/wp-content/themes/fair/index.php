@@ -1,8 +1,16 @@
 <?php get_header(); ?>
 <?php if (get_banner_text_status()): ?>
     <div class="keyvisual index">
-        <div id="flight" style="background:url('<?php echo get_template_directory_uri() ?>/images/icon_plane.png') no-repeat; width: 60px;height: 27px;position: absolute;top:50%;left:-100px;opacity: 0;"></div>
-        <p class="keyvisual-text">afadfafad</p>
+        <?php
+        if(get_banner_flight() != ''){
+            $banner_flight = get_banner_flight();
+        }else{
+            $banner_flight = get_template_directory_uri() . '/images/icon_plane.png';
+        }
+        list($width, $height) = getimagesize($banner_flight);
+        ?>
+        <div id="flight" style="background:url('<?php echo $banner_flight ?>') no-repeat; width: <?php echo $width ?>px;height: <?php echo $height ?>px;position: absolute;top:<?php echo get_banner_flight_top() ?>%;left:0px;opacity: 0;"></div>
+        <p class="keyvisual-text"></p>
         <!--img src="images/icon_plane.png" alt="飛行機"-->
     </div><!-- /.keyvisual -->
 <?php endif; ?>
@@ -49,6 +57,7 @@
                 $p = 1;
                 $p_open_tag = false;
                 //
+                $tmp_point .= '<div class="block-center">';
                 while ($loop->have_posts()) {
                     $loop->the_post();
                     if ($p % 2 !== 0) {
@@ -63,7 +72,7 @@
                             $p_open_tag = true;
                         }
                         $tmp_point .= '<li>';
-                        $tmp_point .= '<p><span>PONIT.' . $p . '</span>' . get_the_title() . '</p>';
+                        $tmp_point .= '<p><span>POINT.' . $p . '</span>' . get_the_title() . '</p>';
                         $tmp_point .= '<a href="javascript:void(0);" class="btn more-btn ' . 'panel' . get_the_ID() . '" href="">+more</a>';
                         $tmp_point .= '</li>';
                         if ($p == $loop->post_count) {
@@ -86,6 +95,7 @@
                     $tmp_point_modal .= '<div class="close"><span>close</span></div>';
                     $tmp_point_modal .= '</div>';
                 }
+                $tmp_point .= '</div>';
             }
             //
             wp_reset_postdata();
