@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="27">
         <file>
+            <url>public_html/fair/wp-content/themes/fair/js/jquery.bxslider.js</url>
+            <bookmark id="27">
+                <name/>
+                <line>215</line>
+                <key/>
+            </bookmark>
+            <bookmark id="25">
+                <name/>
+                <line>546</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
             <url>public_html/fair/wp-content/themes/fair/MyTheme_Customize.php</url>
             <bookmark id="24">
                 <name/>
@@ -92,19 +105,6 @@
             </bookmark>
         </file>
         <file>
-            <url>public_html/fair/wp-content/themes/fair/js/jquery.bxslider.js</url>
-            <bookmark id="27">
-                <name/>
-                <line>215</line>
-                <key/>
-            </bookmark>
-            <bookmark id="25">
-                <name/>
-                <line>546</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
             <url>public_html/mailsystem/mem/cont/mailtempsign.php</url>
             <bookmark id="7">
                 <name/>
@@ -165,11 +165,11 @@
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/css/style_sp.css</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/MyTheme_Customize.php</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/header.php</file>
-            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/school_list.php</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/index.php</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/seminar_module/bk/20140625_test_platetec/seminar_module.php</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/js/common.js</file>
             <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/faq.php</file>
+            <file>file:/var/www/html/jawhm.localhost/public_html/fair/wp-content/themes/fair/single-school.php</file>
         </group>
     </open-files>
 </project-private>

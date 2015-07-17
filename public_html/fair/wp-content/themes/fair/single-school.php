@@ -1,7 +1,7 @@
 <?php
 get_header();
 
-if(wp_is_mobile()){
+if (wp_is_mobile()) {
     $config = array(
         'view_mode' => 'list',
         'start_date' => get_start_date(),
@@ -12,7 +12,7 @@ if(wp_is_mobile()){
             'count_field_active' => 'deactive',
         ),
     );
-}else{
+} else {
     $config = array(
         'start_date' => get_start_date(),
         'end_date' => get_end_date(),
@@ -34,18 +34,21 @@ if(wp_is_mobile()){
 $sm = new SeminarModule($config);
 ?>
 
-      <div class="underSec schoolList">
-      
-        <a href="<?php bloginfo("url") ?>/seminar/" class="returnHd">学校一覧に戻る</a>      
-        
-        <!-- ▼ ワーキングホリデー＆留学フェアとは？ ▼ -->      
-        <section class="normalBox">
-            <p class="area aus"><?php $term = get_the_terms($post->ID, 'country'); echo $term[0]->name ?>　<?php the_field("place") ?></p>
-            <h2 class="sclLogo"><img src="<?php the_field('logo') ?>" alt="<?php the_title() ?>"><span><?php the_title() ?></span></h2>
-          <!--<ul class="bxslider">
-          	<li><img src="<?php the_field('image') ?>" alt="スライド画像"></li>
-          </ul>-->
-          <!-- Jssor Slider Begin -->
+<div class="underSec schoolList">
+
+    <a href="<?php bloginfo("url") ?>/seminar/" class="returnHd">学校一覧に戻る</a>      
+
+    <!-- ▼ ワーキングホリデー＆留学フェアとは？ ▼ -->      
+    <section class="normalBox">
+        <p class="area aus"><?php
+            $term = get_the_terms($post->ID, 'country');
+            echo $term[0]->name
+            ?>　<?php the_field("place") ?></p>
+        <h2 class="sclLogo"><img src="<?php the_field('logo') ?>" alt="<?php the_title() ?>"><span><?php the_title() ?></span></h2>
+        <!--<ul class="bxslider">
+              <li><img src="<?php the_field('image') ?>" alt="スライド画像"></li>
+        </ul>-->
+        <!-- Jssor Slider Begin -->
         <!-- To move inline styles to css file/block, please specify a class name for each element. --> 
         <div id="slider1_container" style="margin: 0 auto 20px; position: relative; top: 0px; left: 0px; width: 850px; height: 420px; overflow: hidden; ">
 
@@ -63,10 +66,10 @@ $sm = new SeminarModule($config);
             <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 850px; height: 420px; overflow: hidden;">
                 <?php
                 foreach (get_field("images") as $image):
-                ?>
-                <div>
-                    <img u="image" src="<?php echo $image["image"] ?>" />
-                </div>
+                    ?>
+                    <div>
+                        <img u="image" src="<?php echo $image["image"] ?>" />
+                    </div>
                 <?php endforeach; ?>
             </div>
 
@@ -126,48 +129,52 @@ $sm = new SeminarModule($config);
             <!--#endregion Arrow Navigator Skin End -->
         </div>
         <!-- Jssor Slider End -->
-                             
-          <div class="contentBox noPad"> 
-                            
-              <div class="comment" style="border-color: <?php the_field("color") ?>">
-            	<h3>現地スタッフからのコメント</h3>
-              <img class="left" src="<?php the_field('staff_image') ?>" alt="スタッフ写真">
-              <p class="text">
-              	<?php the_field('staff_comment') ?>
-              </p><!-- /.text -->
+
+        <div class="contentBox noPad"> 
+
+            <?php if (the_field('staff_comment') != NULL): ?>
+            <div class="comment" style="border-color: <?php the_field("color") ?>">
+                <h3>現地スタッフからのコメント</h3>
+                <img class="left" src="<?php the_field('staff_image') ?>" alt="スタッフ写真">
+                <p class="text">
+                    <?php the_field('staff_comment') ?>
+                </p><!-- /.text -->
             </div><!-- /.comment -->
-            
+            <?php endif; ?>
+
             <div class="btnShadow2 mgb20 w90"><a href="<?php bloginfo("url") ?>/seminar/?title=語学学校" class="btn Orng" style="background-color: <?php the_field("color") ?>">語学学校セミナーはこちら</a></div>
-            
+
             <section class="feature">
-            	<h3>この語学学校の特徴</h3>
-              <dl>
-                <?php
-                   foreach (get_field('features') as $feature):
-                ?>
-                    <dt><?php echo $feature['caption'] ?></dt>
-                    <dd><?php echo $feature['text'] ?></dd>
-                <?php endforeach; ?>             
-              </dl>
+                <h3>この語学学校の特徴</h3>
+                <dl>
+                    <?php
+                    foreach (get_field('features') as $feature):
+                        ?>
+                        <dt><?php echo $feature['caption'] ?></dt>
+                        <dd><?php echo $feature['text'] ?></dd>
+                    <?php endforeach; ?>             
+                </dl>
             </section><!-- /.feature -->
-            
+
             <section class="semSche">
-            	<h3>この語学学校のセミナースケジュール</h3>
-              <?php $sm->show() ?>
+                <h3>この語学学校のセミナースケジュール</h3>
+                <div class="school-semina-schedule">
+                    <?php $sm->show() ?>
+                </div>
             </section><!-- /.semSche -->
-            
+
             <a class="returnFt spview" href="<?php bloginfo("url") ?>/seminar/">学校一覧に戻る</a>
-          </div><!-- /.contentBox -->         
-        </section><!-- /.normalBpx -->
-      </div><!-- /.underSec -->
-      
-       <div class="btnShadow w80 mgb30 spview"><a class="btn Orng" href="<?php bloginfo("url") ?>/seminar/" style="background-color: <?php the_field("color") ?>">スケジュール＆ご予約はこちら</a></div>
-       <style>
-           .seminar_date{
-               background-color: <?php the_field("color") ?> !important;
-           }
-       </style>
-      <section class="normalBox footSec pad50">
-          <div class="btnShadow w60 mgb30"><a class="btn Orng" href="<?php bloginfo("url") ?>/seminar/">スケジュール＆ご予約はこちら</a></div>  
-        <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/school.js"></script>
-	<?php get_footer() ?>
+        </div><!-- /.contentBox -->         
+    </section><!-- /.normalBpx -->
+</div><!-- /.underSec -->
+
+<div class="btnShadow w80 mgb30 spview"><a class="btn Orng" href="<?php bloginfo("url") ?>/seminar/" style="background-color: <?php the_field("color") ?>">スケジュール＆ご予約はこちら</a></div>
+<style>
+    .seminar_date{
+        background-color: <?php the_field("color") ?> !important;
+    }
+</style>
+<section class="normalBox footSec pad50">
+    <div class="btnShadow w60 mgb30"><a class="btn Orng" href="<?php bloginfo("url") ?>/seminar/">スケジュール＆ご予約はこちら</a></div>  
+    <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/school.js"></script>
+    <?php get_footer() ?>

@@ -58,15 +58,23 @@ $(document).ready(function(){
     }
     ScaleBxSlider();
 
-    $('#rePoint .btn').on('click', function () {
-        document.cookie = 'SchoolArea=' + $(this).attr('href');
-    });
+//    $('#rePoint .btn').on('click', function () {
+//        document.cookie = 'SchoolArea=' + $(this).attr('href');
+//    });
 
-    $(window).resize(function () {
-        if((window.location.href).indexOf('school') >= 0){
-            window.location.href = '/fair/school' + getCookie('SchoolArea');
-        }
-    });
+//    $(window).resize(function () {
+//        if((window.location.href).indexOf('school') >= 0){
+//            window.location.href = '/fair/school' + getCookie('SchoolArea');
+//        }
+        //
+//        $.ajax({
+//            url: '/fair/wp-content/themes/fair/js/common.js',
+//            dataType: 'script'
+//        });
+        //
+//        $.getScript('/fair/wp-content/themes/fair/js/common.js');
+//    });
+
     //responsive code end
     function getCookie(cname) {
         var name = cname + "=";

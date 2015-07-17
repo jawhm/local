@@ -1168,3 +1168,12 @@ ul.voiceList li:nth-child(3n) {
 .point-sp{
     display: none;
 }
+.school-semina-schedule{
+    margin: 0 auto;
+    width: 705px;
+}
+.school-semina-schedule div:first-child{
+    margin-left: 0 !important;
+    text-align: center;
+    width: 660px !important;
+}
