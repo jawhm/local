@@ -12,6 +12,10 @@ RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*) $2 [L]
 RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ $2 [L]
 RewriteRule . index.php [L]
 
+# CORS Enabled
+# credentials can be true or false depending on your ajax request params
 <IfModule mod_headers.c>
+   #Header set Access-Control-Allow-Origin http://www.vknyvz.com  
    Header set Access-Control-Allow-Origin "*"
+   Header set Access-Control-Allow-Credentials true
 </IfModule>
